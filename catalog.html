@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Costume Catalog by Occasion - FancyVerse</title>
+  <meta name="description" content="Browse our luxury costume rental catalog filtered by occasion: kids birthdays, themed parties, cultural festivals, historical Victorian, sci-fi cosplay, and Halloween.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  
+  <!-- Theme, Dir, Palette & Font Head Bootstrap to Prevent Bright Flash / FOUC -->
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('fancy_theme');
+        if (t === 'dark' || (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+        var d = localStorage.getItem('fancy_dir');
+        if (d) document.documentElement.setAttribute('dir', d);
+        var p = localStorage.getItem('fancy_palette');
+        if (p && p !== 'default') document.documentElement.setAttribute('data-palette', p);
+        var f = localStorage.getItem('fancy_font');
+        if (f && f !== 'sans') document.documentElement.setAttribute('data-font', f);
+      } catch (e) {}
+    })();
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          colors: {
+            theme: {
+              main: 'var(--color-primary)',
+              secondary: 'var(--color-secondary)',
+              accent: 'var(--color-accent)',
+              subtle: 'var(--color-bg-subtle)',
+              light: 'var(--color-bg-light)',
+              card: 'var(--color-bg-card)',
+              gold: 'var(--color-gold)',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/styles-switcher.css">
+</head>
+
+<body class="font-sans antialiased text-[#271E1A] dark:text-white bg-[#FDFBF9] dark:bg-[#0D0D0E] transition-colors duration-300">
+  
+  <div id="navbar"></div>
+
+  <!-- BANNER -->
+  <section class="pt-32 pb-12 bg-theme-subtle dark:bg-[#151518] border-b border-theme">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-theme-main dark:text-white">
+        Costume Catalog by Occasion
+      </h1>
+      <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-300 mt-2">
+        Over 2,500 handcrafted costumes. Filter by event occasion, sizing measurements, or budget.
+      </p>
+    </div>
+  </section>
+
+  <!-- MAIN CATALOG AREA -->
+  <section class="py-12 bg-white dark:bg-[#121215]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <!-- Top Bar with Active Count, Search, and Mobile Filter Toggle -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pb-6 mb-8 border-b border-theme">
+        <div class="flex items-center gap-3 w-full sm:w-auto">
+          <button id="mobileFilterToggleBtn" class="lg:hidden btn-outline-theme text-xs py-2 px-3.5 flex items-center gap-2">
+            <i class="bi bi-sliders"></i> Filter Catalog
+          </button>
+          <span class="text-xs text-gray-500 font-medium" id="catalogResultsCount">Showing 12 luxury costumes</span>
+        </div>
+
+        <div class="flex items-center gap-3 w-full sm:w-auto">
+          <div class="relative flex-1 sm:w-56">
+            <i class="bi bi-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+            <input type="text" id="catalogSearchInput" placeholder="Search catalog..." class="theme-input text-xs pl-8 py-2">
+          </div>
+
+          <select id="catalogSortSelect" class="theme-input text-xs py-2 w-auto">
+            <option value="featured">Featured First</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating">Top Rated</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- SIDEBAR FILTERS (Persistent on desktop, drawer on mobile) -->
+        <aside id="catalogSidebar" class="lg:col-span-3 space-y-6 hidden lg:block bg-white dark:bg-[#151518] lg:bg-transparent p-6 lg:p-0 rounded-3xl lg:rounded-none border lg:border-none border-theme">
+          
+          <div class="flex items-center justify-between pb-3 border-b border-theme">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-theme-main dark:text-white flex items-center gap-2">
+              <i class="bi bi-funnel text-theme-accent"></i> Filters
+            </h3>
+            <button id="resetFiltersBtn" class="text-[11px] text-theme-accent hover:underline font-bold">
+              Reset All
+            </button>
+          </div>
+
+          <!-- Occasion Filter (Prompt Requirement) -->
+          <div class="space-y-2.5">
+            <label class="block text-xs font-bold uppercase tracking-wider text-theme-muted dark:text-gray-400">
+              Filter by Occasion
+            </label>
+            <div class="space-y-1.5 text-xs text-theme-muted dark:text-gray-300" id="occasionCheckboxGroup">
+              <label class="flex items-center gap-2.5 cursor-pointer hover:text-theme-accent">
+                <input type="checkbox" value="all" class="rounded text-theme-main" checked>
+                <span>All Occasions</span>
+              </label>
+              <label class="flex items-center gap-2.5 cursor-pointer hover:text-theme-accent">
+                <input type="checkbox" value="Kids" class="rounded text-theme-main">
+                <span>🎈 Kids (Fairytales & Heroes)</span>
+              </label>
+              <label class="flex items-center gap-2.5 cursor-pointer hover:text-theme-accent">
+                <input type="checkbox" value="Themed Parties" class="rounded text-theme-main">
+                <span>✨ Themed Parties (Gatsby, 70s, Mad Hatter)</span>
+              </label>
+              <label class="flex items-center gap-2.5 cursor-pointer hover:text-theme-accent">
+                <input type="checkbox" value="Cultural" class="rounded text-theme-main">
+                <span>🌸 Cultural (Silk Kimonos & Venice)</span>
+              </label>
+              <label class="flex items-center gap-2.5 cursor-pointer hover:text-theme-accent">
+                <input type="checkbox" value="Historical" class="rounded text-theme-main">
+                <span>⚔️ Historical (Victorian & Armor)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Size Filter -->
+          <div class="space-y-2.5 pt-4 border-t border-theme">
+            <div class="flex justify-between items-center">
+              <label class="block text-xs font-bold uppercase tracking-wider text-theme-muted dark:text-gray-400">
+                Size
+              </label>
+              <a href="size-guide.html" class="text-[10px] text-theme-accent hover:underline font-semibold">Size Guide</a>
+            </div>
+            <div class="flex flex-wrap gap-1.5" id="sizeSelectorPills">
+              <button class="size-pill active px-2.5 py-1.5 rounded-lg text-xs font-bold bg-theme-main text-white" data-size="All">All</button>
+              <button class="size-pill px-2 py-1.5 rounded-lg text-[11px] font-bold border border-theme hover:bg-theme-subtle" data-size="Age 3-5">Age 3-5</button>
+              <button class="size-pill px-2 py-1.5 rounded-lg text-[11px] font-bold border border-theme hover:bg-theme-subtle" data-size="Age 6-8">Age 6-8</button>
+              <button class="size-pill px-2 py-1.5 rounded-lg text-[11px] font-bold border border-theme hover:bg-theme-subtle" data-size="Age 9-11">Age 9-11</button>
+              <button class="size-pill px-2.5 py-1.5 rounded-lg text-xs font-bold border border-theme hover:bg-theme-subtle" data-size="XS">XS</button>
+              <button class="size-pill px-2.5 py-1.5 rounded-lg text-xs font-bold border border-theme hover:bg-theme-subtle" data-size="S">S</button>
+              <button class="size-pill px-2.5 py-1.5 rounded-lg text-xs font-bold border border-theme hover:bg-theme-subtle" data-size="M">M</button>
+              <button class="size-pill px-2.5 py-1.5 rounded-lg text-xs font-bold border border-theme hover:bg-theme-subtle" data-size="L">L</button>
+              <button class="size-pill px-2.5 py-1.5 rounded-lg text-xs font-bold border border-theme hover:bg-theme-subtle" data-size="XL">XL</button>
+              <button class="size-pill px-2 py-1.5 rounded-lg text-[11px] font-bold border border-theme hover:bg-theme-subtle" data-size="Adjustable">Adjustable</button>
+            </div>
+          </div>
+
+          <!-- Price Range Slider -->
+          <div class="space-y-2.5 pt-4 border-t border-theme">
+            <div class="flex justify-between items-center text-xs">
+              <label class="font-bold uppercase tracking-wider text-theme-muted dark:text-gray-400">Max Daily Rate</label>
+              <span id="priceDisplay" class="font-black text-theme-main dark:text-white">$250 / day</span>
+            </div>
+            <input type="range" id="priceRangeInput" min="20" max="250" value="250" class="w-full accent-theme-accent">
+            <div class="flex justify-between text-[10px] text-gray-400">
+              <span>$20</span>
+              <span>$250</span>
+            </div>
+          </div>
+
+        </aside>
+
+        <!-- COSTUMES GRID & CATEGORY CHIPS -->
+        <main class="lg:col-span-9 space-y-6">
+
+          <!-- Category Quick Pills -->
+          <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="catalogCategoryPills">
+            <button class="cat-pill active px-4 py-2 rounded-full text-xs font-bold bg-theme-main text-white whitespace-nowrap shadow-sm" data-category="All">All Costumes (16)</button>
+            <button class="cat-pill px-4 py-2 rounded-full text-xs font-bold border border-theme hover:bg-theme-subtle dark:hover:bg-[#1f1f25] whitespace-nowrap" data-category="Kids">🎈 Kids (4)</button>
+            <button class="cat-pill px-4 py-2 rounded-full text-xs font-bold border border-theme hover:bg-theme-subtle dark:hover:bg-[#1f1f25] whitespace-nowrap" data-category="Themed Parties">✨ Themed Parties (4)</button>
+            <button class="cat-pill px-4 py-2 rounded-full text-xs font-bold border border-theme hover:bg-theme-subtle dark:hover:bg-[#1f1f25] whitespace-nowrap" data-category="Cultural">🌸 Cultural (4)</button>
+            <button class="cat-pill px-4 py-2 rounded-full text-xs font-bold border border-theme hover:bg-theme-subtle dark:hover:bg-[#1f1f25] whitespace-nowrap" data-category="Historical">⚔️ Historical (4)</button>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="catalogGrid">
+            <!-- Rendered dynamically -->
+          </div>
+
+          <!-- Pagination (Interactive, Symbols Only) -->
+          <div id="catalogPagination" class="mt-12 pt-6 border-t border-theme flex items-center justify-between text-xs"></div>
+        </main>
+
+      </div>
+
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/styles-switcher.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    // URL Search Param pre-population
+    const urlParams = new URLSearchParams(window.location.search);
+    const preOccasion = urlParams.get('occasion');
+    const preCategory = urlParams.get('category');
+
+    let activeCategory = preCategory || 'All';
+    let activeOccasion = preOccasion || 'all';
+    let activeSize = 'All';
+    let maxPrice = 250;
+    let searchQuery = '';
+    let sortMode = 'featured';
+    let currentPage = 1;
+    const itemsPerPage = 6;
+
+    window.changePage = (page) => {
+      currentPage = page;
+      renderCatalog();
+      document.getElementById('catalogGrid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    const renderCatalog = () => {
+      const grid = document.getElementById('catalogGrid');
+      const countEl = document.getElementById('catalogResultsCount');
+      const paginationContainer = document.getElementById('catalogPagination');
+      if (!grid || !window.db) return;
+
+      let filtered = window.db.costumes.filter(c => {
+        const matchesCategory = activeCategory === 'All' || c.category === activeCategory;
+        const matchesOccasion = activeOccasion === 'all' || 
+          c.category.toLowerCase() === activeOccasion.toLowerCase() || 
+          c.occasion.toLowerCase().includes(activeOccasion.toLowerCase());
+        const matchesSize = activeSize === 'All' || 
+          c.sizes.includes(activeSize) || 
+          c.sizes.some(s => s.toLowerCase().includes(activeSize.toLowerCase())) ||
+          (activeSize === 'Adjustable' && c.sizes.some(s => s.includes('Adjustable') || s.includes('One Size')));
+        const matchesPrice = c.dailyRate <= maxPrice;
+        const matchesSearch = !searchQuery || 
+          c.name.toLowerCase().includes(searchQuery) || 
+          c.category.toLowerCase().includes(searchQuery) ||
+          c.occasion.toLowerCase().includes(searchQuery);
+
+        return matchesCategory && matchesOccasion && matchesSize && matchesPrice && matchesSearch;
+      });
+
+      // Sorting
+      if (sortMode === 'price-asc') filtered.sort((a, b) => a.dailyRate - b.dailyRate);
+      if (sortMode === 'price-desc') filtered.sort((a, b) => b.dailyRate - a.dailyRate);
+      if (sortMode === 'rating') filtered.sort((a, b) => b.rating - a.rating);
+
+      const totalItems = filtered.length;
+      const totalPages = Math.ceil(totalItems / itemsPerPage) || 1;
+      if (currentPage > totalPages) currentPage = totalPages;
+      if (currentPage < 1) currentPage = 1;
+
+      if (totalItems === 0) {
+        countEl.textContent = `Showing 0 luxury costumes`;
+        grid.innerHTML = `
+          <div class="col-span-full text-center py-16 space-y-4">
+            <div class="w-16 h-16 rounded-full bg-theme-subtle dark:bg-[#202025] flex items-center justify-center mx-auto text-theme-accent text-3xl">
+              <i class="bi bi-mask"></i>
+            </div>
+            <h4 class="text-base font-bold text-theme-main dark:text-white">No Costumes Match Your Filter Criteria</h4>
+            <p class="text-xs text-gray-400 max-w-sm mx-auto">Try loosening your occasion, category or price filter to view more handcrafted wardrobe pieces.</p>
+            <button onclick="resetFilters()" class="btn-primary-theme text-xs py-2 px-5 mt-2 shadow">Reset All Filters</button>
+          </div>
+        `;
+        if (paginationContainer) paginationContainer.innerHTML = '';
+        return;
+      }
+
+      const startIdx = (currentPage - 1) * itemsPerPage;
+      const endIdx = Math.min(startIdx + itemsPerPage, totalItems);
+      const paginatedItems = filtered.slice(startIdx, endIdx);
+
+      countEl.textContent = `Showing ${startIdx + 1}–${endIdx} of ${totalItems} luxury costume${totalItems !== 1 ? 's' : ''}`;
+
+      grid.innerHTML = paginatedItems.map(c => `
+        <div class="theme-card tilt-card flex flex-col h-full p-4 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl">
+          
+          <div class="aspect-[4/5] bg-gray-100 dark:bg-black/40 rounded-2xl mb-4 relative overflow-hidden">
+            <span class="absolute top-2.5 left-2.5 badge theme-badge-gold text-[9px] font-bold px-2.5 py-0.5 rounded-full z-10 shadow">
+              ${c.badge || c.category}
+            </span>
+
+            <button onclick="window.store.toggleWishlist('${c.id}'); this.querySelector('i').classList.toggle('text-red-500'); window.showToast('Wishlist updated', 'success');" class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white/90 dark:bg-black/70 backdrop-blur text-gray-700 dark:text-white flex items-center justify-center text-xs z-10 hover:text-red-500 transition shadow">
+              <i class="bi bi-heart-fill ${window.store.isInWishlist(c.id) ? 'text-red-500' : ''}"></i>
+            </button>
+
+            <a href="costume-details.html?id=${c.id}" class="w-full h-full block">
+              <img src="${c.image}" alt="${c.name}" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500">
+            </a>
+
+            <button onclick="window.openQuickView('${c.id}')" class="absolute bottom-3 left-3 right-3 py-2.5 bg-black/80 hover:bg-black text-white text-[11px] font-bold rounded-xl opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center gap-1.5 shadow-lg">
+              <i class="bi bi-eye"></i> Quick View
+            </button>
+          </div>
+
+          <div class="px-1 flex flex-col flex-grow">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-[9px] text-theme-accent uppercase tracking-widest font-bold block truncate max-w-[170px]">${c.occasion}</span>
+              <span class="text-[9px] text-emerald-600 font-bold flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Cleaned
+              </span>
+            </div>
+
+            <h4 class="font-bold text-theme-main dark:text-white text-sm mb-1 mt-0.5 leading-snug line-clamp-2">
+              <a href="costume-details.html?id=${c.id}" class="hover:text-theme-accent transition-colors">${c.name}</a>
+            </h4>
+
+            <!-- Size pills available -->
+            <div class="flex items-center gap-1 my-2 flex-wrap">
+              ${c.sizes.map(s => `<span class="text-[9px] font-semibold px-1.5 py-0.5 rounded bg-theme-subtle dark:bg-[#202025] text-theme-muted">${s}</span>`).join('')}
+            </div>
+
+            <div class="flex items-center justify-between mt-auto pt-2.5 border-t border-theme mb-3.5">
+              <div class="flex items-center gap-1 text-amber-500 text-xs">
+                <i class="bi bi-star-fill"></i>
+                <span class="text-theme-main dark:text-white font-bold text-xs">${c.rating}</span>
+                <span class="text-gray-400 text-[10px]">(${c.reviewsCount})</span>
+              </div>
+              <div class="text-right">
+                <span class="text-sm font-black text-theme-main dark:text-white">$${c.dailyRate}</span>
+                <span class="text-[10px] text-gray-400">/day</span>
+              </div>
+            </div>
+
+            <div class="flex gap-2">
+              <button onclick="window.store.addToCart('${c.id}'); window.showToast('Added ${c.name} to Rental Cart', 'success');" class="flex-1 btn-primary-theme text-[11px] py-2.5 rounded-xl font-bold shadow-sm">
+                <i class="bi bi-bag-plus"></i> Rent Now
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+      `).join('');
+
+      // Render Dynamic Interactive Pagination with symbols only (no RTL/LTR/text words)
+      if (paginationContainer) {
+        let pagesHtml = '';
+        for (let p = 1; p <= totalPages; p++) {
+          const isActive = p === currentPage;
+          pagesHtml += `
+            <button onclick="changePage(${p})" aria-label="Page ${p}" class="w-9 h-9 rounded-xl font-bold text-xs transition-all flex items-center justify-center ${isActive ? 'bg-theme-main text-white shadow-md' : 'border border-theme hover:bg-theme-subtle text-theme-main dark:text-white cursor-pointer'}">
+              ${p}
+            </button>
+          `;
+        }
+
+        const prevDisabled = currentPage <= 1;
+        const nextDisabled = currentPage >= totalPages;
+
+        paginationContainer.innerHTML = `
+          <button onclick="changePage(${currentPage - 1})" aria-label="Previous Page" class="btn-outline-theme w-10 h-10 p-0 text-sm flex items-center justify-center rounded-xl transition-all ${prevDisabled ? 'opacity-30 cursor-not-allowed pointer-events-none' : 'hover:bg-theme-main hover:text-white cursor-pointer'}">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+          <div class="flex items-center gap-1.5 font-bold">
+            ${pagesHtml}
+          </div>
+          <button onclick="changePage(${currentPage + 1})" aria-label="Next Page" class="btn-outline-theme w-10 h-10 p-0 text-sm flex items-center justify-center rounded-xl transition-all ${nextDisabled ? 'opacity-30 cursor-not-allowed pointer-events-none' : 'hover:bg-theme-main hover:text-white cursor-pointer'}">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+        `;
+      }
+
+      if (window.refreshPageEffects) {
+        window.refreshPageEffects();
+      }
+    };
+
+    // Category Pill Filter Binding
+    document.querySelectorAll('#catalogCategoryPills .cat-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('#catalogCategoryPills .cat-pill').forEach(p => {
+          p.classList.remove('bg-theme-main', 'text-white', 'shadow-sm');
+          p.classList.add('border', 'border-theme');
+        });
+        pill.classList.remove('border', 'border-theme');
+        pill.classList.add('bg-theme-main', 'text-white', 'shadow-sm');
+        activeCategory = pill.getAttribute('data-category');
+        currentPage = 1;
+        renderCatalog();
+      });
+    });
+
+    if (preCategory) {
+      document.querySelectorAll('#catalogCategoryPills .cat-pill').forEach(p => {
+        if (p.getAttribute('data-category') === preCategory) {
+          p.classList.remove('border', 'border-theme');
+          p.classList.add('bg-theme-main', 'text-white', 'shadow-sm');
+        } else {
+          p.classList.remove('bg-theme-main', 'text-white', 'shadow-sm');
+          p.classList.add('border', 'border-theme');
+        }
+      });
+    }
+
+    // Filter controls binding
+    const priceInput = document.getElementById('priceRangeInput');
+    const priceDisplay = document.getElementById('priceDisplay');
+    priceInput?.addEventListener('input', (e) => {
+      maxPrice = parseInt(e.target.value);
+      priceDisplay.textContent = `$${maxPrice} / day`;
+      currentPage = 1;
+      renderCatalog();
+    });
+
+    const searchInput = document.getElementById('catalogSearchInput');
+    searchInput?.addEventListener('input', (e) => {
+      searchQuery = e.target.value.toLowerCase().trim();
+      currentPage = 1;
+      renderCatalog();
+    });
+
+    const sortSelect = document.getElementById('catalogSortSelect');
+    sortSelect?.addEventListener('change', (e) => {
+      sortMode = e.target.value;
+      currentPage = 1;
+      renderCatalog();
+    });
+
+    // Occasion Checkbox group
+    const occasionCheckboxes = document.querySelectorAll('#occasionCheckboxGroup input');
+    if (preOccasion) {
+      occasionCheckboxes.forEach(cb => {
+        if (cb.value === preOccasion) cb.checked = true;
+        else cb.checked = false;
+      });
+    }
+
+    occasionCheckboxes.forEach(cb => {
+      cb.addEventListener('change', (e) => {
+        occasionCheckboxes.forEach(other => { if (other !== cb) other.checked = false; });
+        activeOccasion = cb.checked ? cb.value : 'all';
+        currentPage = 1;
+        renderCatalog();
+      });
+    });
+
+    // Size Pills
+    document.querySelectorAll('#sizeSelectorPills .size-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('#sizeSelectorPills .size-pill').forEach(p => {
+          p.classList.remove('bg-theme-main', 'text-white');
+          p.classList.add('border', 'border-theme');
+        });
+        pill.classList.remove('border', 'border-theme');
+        pill.classList.add('bg-theme-main', 'text-white');
+        activeSize = pill.getAttribute('data-size');
+        currentPage = 1;
+        renderCatalog();
+      });
+    });
+
+    // Reset Filters function
+    window.resetFilters = () => {
+      activeCategory = 'All';
+      activeOccasion = 'all';
+      activeSize = 'All';
+      maxPrice = 250;
+      searchQuery = '';
+      sortMode = 'featured';
+      currentPage = 1;
+
+      if (priceInput) priceInput.value = 250;
+      if (priceDisplay) priceDisplay.textContent = '$250 / day';
+      if (searchInput) searchInput.value = '';
+      if (sortSelect) sortSelect.value = 'featured';
+
+      occasionCheckboxes.forEach(cb => {
+        cb.checked = cb.value === 'all';
+      });
+
+      document.querySelectorAll('#catalogCategoryPills .cat-pill').forEach(p => {
+        p.classList.remove('bg-theme-main', 'text-white', 'shadow-sm');
+        p.classList.add('border', 'border-theme');
+      });
+      document.querySelector('#catalogCategoryPills [data-category="All"]')?.classList.add('bg-theme-main', 'text-white', 'shadow-sm');
+
+      document.querySelectorAll('#sizeSelectorPills .size-pill').forEach(p => {
+        p.classList.remove('bg-theme-main', 'text-white');
+        p.classList.add('border', 'border-theme');
+      });
+      document.querySelector('#sizeSelectorPills [data-size="All"]')?.classList.add('bg-theme-main', 'text-white');
+
+      renderCatalog();
+    };
+
+    document.getElementById('resetFiltersBtn')?.addEventListener('click', resetFilters);
+
+    // Mobile Sidebar Toggle
+    const mobileFilterToggleBtn = document.getElementById('mobileFilterToggleBtn');
+    const catalogSidebar = document.getElementById('catalogSidebar');
+    mobileFilterToggleBtn?.addEventListener('click', () => {
+      catalogSidebar?.classList.toggle('hidden');
+    });
+
+    renderCatalog();
+  </script>
+</body>
+</html>

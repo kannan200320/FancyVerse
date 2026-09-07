@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FancyVerse Studio - Theatrical, Film Wardrobe & Cosplay Agency</title>
+  <meta name="description" content="Dedicated studio agency services for film productions, Broadway theatre, gala directors, and cosplay creators. Full cast coordination, on-site master tailors, and bespoke wardrobe design.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  
+  <!-- Theme, Dir, Palette & Font Head Bootstrap to Prevent Bright Flash / FOUC -->
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('fancy_theme');
+        if (t === 'dark' || (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+        var d = localStorage.getItem('fancy_dir');
+        if (d) document.documentElement.setAttribute('dir', d);
+        var p = localStorage.getItem('fancy_palette');
+        if (p && p !== 'default') document.documentElement.setAttribute('data-palette', p);
+        var f = localStorage.getItem('fancy_font');
+        if (f && f !== 'sans') document.documentElement.setAttribute('data-font', f);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          colors: {
+            theme: {
+              main: 'var(--color-primary)',
+              secondary: 'var(--color-secondary)',
+              accent: 'var(--color-accent)',
+              subtle: 'var(--color-bg-subtle)',
+              light: 'var(--color-bg-light)',
+              card: 'var(--color-bg-card)',
+              gold: 'var(--color-gold)',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/styles-switcher.css">
+</head>
+
+<body class="font-sans antialiased text-[#271E1A] dark:text-white bg-[#FDFBF9] dark:bg-[#0D0D0E] transition-colors duration-300">
+  
+  <!-- Dynamic Top Navbar -->
+  <div id="navbar"></div>
+
+  <!-- STUDIO AGENCY HERO -->
+  <section class="relative min-h-[90vh] flex items-center pt-28 pb-16 bg-[#0D051A] text-white overflow-hidden">
+    
+    <!-- Cinematic Grand Theatre Background with Dramatic Velvet & Gold Tones -->
+    <div class="absolute inset-0 pointer-events-none">
+      <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&q=80&w=2000" alt="Grand Theatrical Opera Stage" class="w-full h-full object-cover object-center transform scale-105 opacity-40">
+      <div class="absolute inset-0 bg-gradient-to-r from-[#0D051A]/95 via-[#180D2B]/85 to-[#0D051A]/80"></div>
+    </div>
+
+    <!-- Radial Warm Velvet Glows -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
+    <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl pointer-events-none animate-pulse-glow" style="animation-delay: 2s;"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <div class="lg:col-span-7 space-y-8 reveal-left">
+        
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-amber-200 text-xs font-bold uppercase tracking-widest border border-white/15 badge-interactive">
+          <i class="bi bi-camera-reels-fill text-amber-400"></i>
+          <span>Production Wardrobe & Film Agency</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.1] text-white">
+          Stage & Screen <br>
+          <span class="font-serif italic font-normal text-amber-300 block my-1">
+            Costume Concierge.
+          </span>
+        </h1>
+
+        <p class="text-sm sm:text-base text-white/80 max-w-xl leading-relaxed">
+          Outfit full theatrical troupes, film productions, high-profile galas, and cosplay champions with screen-accurate tailoring, multi-week rental terms, and on-site master dressers.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 pt-2">
+          <a href="#calculator" class="px-8 py-3.5 rounded-xl bg-white text-zinc-950 font-black text-xs hover:bg-zinc-100 transition-all transform hover:scale-105 shadow-xl inline-flex items-center justify-center gap-2">
+            <i class="bi bi-calculator"></i> Calculate Troupe Rate
+          </a>
+          <a href="contact.html" class="px-8 py-3.5 rounded-xl border border-white/30 text-white font-bold text-xs hover:bg-white/10 transition-all inline-flex items-center justify-center gap-2">
+            <i class="bi bi-person-lines-fill"></i> Speak With A Wardrobe Director
+          </a>
+        </div>
+
+        <!-- Featured Troupe Metrics with Animated Counters -->
+        <div class="pt-6 border-t border-white/15 grid grid-cols-3 gap-6">
+          <div>
+            <p class="text-2xl sm:text-3xl font-black text-white" data-counter="500" data-suffix="+">500+</p>
+            <p class="text-[10px] uppercase font-bold tracking-widest text-white/60 mt-0.5">Productions Outfitted</p>
+          </div>
+          <div>
+            <p class="text-2xl sm:text-3xl font-black text-white" data-counter="99.8" data-suffix="%">99.8%</p>
+            <p class="text-[10px] uppercase font-bold tracking-widest text-white/60 mt-0.5">Curtain Accuracy</p>
+          </div>
+          <div>
+            <p class="text-2xl sm:text-3xl font-black text-white" data-counter="24" data-suffix="h">24h</p>
+            <p class="text-[10px] uppercase font-bold tracking-widest text-white/60 mt-0.5">Emergency Rush Delivery</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Visual Feature Card -->
+      <div class="lg:col-span-5 relative reveal-right">
+        <!-- Floating Badges -->
+        <div class="absolute -top-4 -left-4 z-20 bg-white/95 dark:bg-[#1A1A22]/95 backdrop-blur-md px-3.5 py-2 rounded-2xl shadow-xl border border-white/20 flex items-center gap-2.5 animate-float pointer-events-none">
+          <div class="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-600 flex items-center justify-center text-sm font-black">
+            <i class="bi bi-shield-check"></i>
+          </div>
+          <div>
+            <div class="text-[11px] font-extrabold text-gray-900 dark:text-white">Collector Grade</div>
+            <div class="text-[9px] text-gray-500 font-semibold">Screen-Accurate Plate</div>
+          </div>
+        </div>
+
+        <div class="absolute -bottom-5 -right-3 z-20 bg-white/95 dark:bg-[#1A1A22]/95 backdrop-blur-md px-3.5 py-2 rounded-2xl shadow-xl border border-white/20 flex items-center gap-2.5 animate-float-delayed pointer-events-none">
+          <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-600 flex items-center justify-center text-sm font-black">
+            <i class="bi bi-truck"></i>
+          </div>
+          <div>
+            <div class="text-[11px] font-extrabold text-gray-900 dark:text-white">Road Trunks</div>
+            <div class="text-[9px] text-gray-500 font-semibold">Pre-Hung & Tagged</div>
+          </div>
+        </div>
+
+        <div class="bg-white/10 dark:bg-black/30 backdrop-blur-xl p-3 sm:p-4 rounded-3xl border border-white/20 shadow-2xl tilt-card">
+          <div class="relative rounded-2xl overflow-hidden aspect-[4/5]">
+            <img src="https://i.pinimg.com/736x/8d/66/3b/8d663b94ed6da20d63a7a8101a4c7459.jpg" alt="Steel Knight Plate Armor" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
+              <span class="theme-badge-gold text-[10px] font-bold px-2.5 py-1 rounded-full mb-2 inline-block">Collector Grade Armor</span>
+              <h3 class="text-lg font-bold text-white">Full Steel Medieval Knight & Monarch Suites</h3>
+              <p class="text-xs text-white/80 mt-1">Available for 1-day events or 30-day filming blocks.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE PRODUCTION RENTAL ESTIMATOR (Niche Agency Feature) -->
+  <section class="py-24 bg-white dark:bg-[#121215]" id="calculator">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-theme-accent font-bold tracking-[0.2em] text-xs uppercase">Instant Budgeting</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-theme-main dark:text-white">
+          Troupe & Production Rental Estimator
+        </h2>
+        <p class="text-sm text-theme-muted dark:text-gray-300">
+          Adjust the sliders below to calculate your package hire cost and refundable deposit balance in real time.
+        </p>
+      </div>
+
+      <div class="bg-[#FDFBF9] dark:bg-[#151518] p-8 sm:p-12 rounded-[2.5rem] border border-theme shadow-xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          
+          <!-- Controls -->
+          <div class="space-y-6">
+            
+            <!-- Number of Costumes -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-xs font-bold text-theme-main dark:text-white">Number of Costumes Needed</label>
+                <span id="calcCostumeDisplay" class="text-xs font-black px-2.5 py-1 rounded-md bg-theme-main text-white">10 Outfits</span>
+              </div>
+              <input type="range" id="calcCostumeInput" min="1" max="50" value="10" class="w-full accent-theme-main">
+              <div class="flex justify-between text-[10px] text-gray-400 mt-1">
+                <span>1 Costume</span>
+                <span>25 Costumes</span>
+                <span>50 Costumes</span>
+              </div>
+            </div>
+
+            <!-- Duration in Days -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-xs font-bold text-theme-main dark:text-white">Rental Duration</label>
+                <span id="calcDurationDisplay" class="text-xs font-black px-2.5 py-1 rounded-md bg-theme-accent text-white">3-Day Weekend</span>
+              </div>
+              <input type="range" id="calcDurationInput" min="1" max="30" value="3" class="w-full accent-theme-accent">
+              <div class="flex justify-between text-[10px] text-gray-400 mt-1">
+                <span>1 Day</span>
+                <span>7 Days (Week)</span>
+                <span>30 Days (Production)</span>
+              </div>
+            </div>
+
+            <!-- Wardrobe Tier -->
+            <div>
+              <label class="block text-xs font-bold text-theme-main dark:text-white mb-2">Wardrobe Tier Grade</label>
+              <select id="calcTierSelect" class="theme-input text-xs">
+                <option value="35">🎈 Kids Fairytales & Heroes ($35/day avg)</option>
+                <option value="48" selected>✨ Themed Parties & Galas ($48/day avg)</option>
+                <option value="65">🌸 Cultural & Traditional Silk ($65/day avg)</option>
+                <option value="75">⚔️ Historical Re-enactments & Armor ($75/day avg)</option>
+              </select>
+            </div>
+
+          </div>
+
+          <!-- Live Output Estimate Card -->
+          <div class="bg-theme-main text-white p-8 rounded-3xl flex flex-col justify-between shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-theme-accent/20 rounded-full blur-2xl"></div>
+
+            <div>
+              <span class="theme-badge-gold text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2 inline-block shadow-sm">Estimated Budget Breakdown</span>
+              <h3 class="text-2xl font-black mb-4 text-white">Transparent Production Pricing</h3>
+              
+              <div class="space-y-3 text-xs border-y border-white/15 py-4 my-4">
+                <div class="flex justify-between">
+                  <span class="text-white/90">Estimated Rental Fee:</span>
+                  <span class="font-bold text-sm text-white" id="calcRentalTotal">$1,800.00</span>
+                </div>
+                <div class="flex justify-between text-emerald-300">
+                  <span class="font-semibold">Bulk Production Discount:</span>
+                  <span class="font-bold" id="calcDiscountRate">-20% Applied</span>
+                </div>
+                <div class="flex justify-between text-white/90">
+                  <span>Refundable Security Deposit:</span>
+                  <span class="font-bold text-white" id="calcDepositTotal">$1,200.00</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex items-baseline justify-between mb-4">
+                <span class="text-xs text-white/90 font-semibold">Total Payable At Booking:</span>
+                <span class="text-3xl font-black text-white" id="calcGrandTotal">$3,000.00</span>
+              </div>
+              <a href="contact.html?type=studio" class="w-full text-center block py-3 rounded-xl bg-white text-zinc-950 text-xs font-black hover:bg-zinc-100 transition shadow-lg">
+                Lock In Studio Booking
+              </a>
+              <p class="text-[10px] text-white/80 text-center mt-2">Deposit refunded within 24h of return receipt.</p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SCREEN & STAGE WARDROBE VAULT (Dynamic High-Impact Grid) -->
+  <section class="py-24 bg-white dark:bg-[#121215]" id="stage-vault">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div class="max-w-2xl space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-theme-subtle dark:bg-[#202025] text-theme-accent text-xs font-bold uppercase tracking-wider">
+            <i class="bi bi-film"></i> Screen-Accurate Archive
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-theme-main dark:text-white leading-tight">
+            Featured Screen & Stage Masterpieces
+          </h2>
+          <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-300">
+            Handcrafted for cinema close-ups, 4K broadcast lighting, and Broadway stage choreography.
+          </p>
+        </div>
+
+        <a href="catalog.html?category=Theatrical%20%26%20Period" class="btn-outline-theme text-xs py-3 px-6 whitespace-nowrap self-start md:self-auto">
+          Explore All Stage Costumes <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- Dynamically populated production costumes -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="stageCostumesGrid">
+        <!-- Injected via JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ON-SET CONCIERGE PROTOCOL (4-Step Agency Workflow) -->
+  <section class="py-24 bg-theme-subtle dark:bg-[#151518] border-y border-theme">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-theme-accent font-bold tracking-[0.2em] text-xs uppercase">Precision Production Logistics</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-theme-main dark:text-white">
+          The On-Set Concierge Protocol
+        </h2>
+        <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-300">
+          How our costume directors support productions from initial script table reads to post-wrap check-in.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <div class="theme-card tilt-card reveal-up delay-100 p-6 space-y-3 relative group">
+          <div class="w-12 h-12 rounded-2xl bg-theme-main text-white flex items-center justify-center font-bold text-lg shadow-md group-hover:bg-theme-accent transition">
+            1
+          </div>
+          <h3 class="font-bold text-base text-theme-main dark:text-white">Cast Size Profiling</h3>
+          <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed">
+            Our team receives your actor measurement sheets and cross-references historical silhouettes to ensure screen-accurate fits before shipment.
+          </p>
+        </div>
+
+        <div class="theme-card tilt-card reveal-up delay-200 p-6 space-y-3 relative group">
+          <div class="w-12 h-12 rounded-2xl bg-theme-main text-white flex items-center justify-center font-bold text-lg shadow-md group-hover:bg-theme-accent transition">
+            2
+          </div>
+          <h3 class="font-bold text-base text-theme-main dark:text-white">Sterilized Trunk Logistics</h3>
+          <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed">
+            Costumes arrive in actor-tagged rolling road trunks with pre-hung garments, matched accessories, and individualized spare fastener kits.
+          </p>
+        </div>
+
+        <div class="theme-card tilt-card reveal-up delay-300 p-6 space-y-3 relative group">
+          <div class="w-12 h-12 rounded-2xl bg-theme-main text-white flex items-center justify-center font-bold text-lg shadow-md group-hover:bg-theme-accent transition">
+            3
+          </div>
+          <h3 class="font-bold text-base text-theme-main dark:text-white">On-Call Wardrobe Master</h3>
+          <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed">
+            For major shoots and premiere weekends, our master tailors provide continuous on-set steaming, micro-repairs, and corset adjustments.
+          </p>
+        </div>
+
+        <div class="theme-card tilt-card reveal-up delay-400 p-6 space-y-3 relative group">
+          <div class="w-12 h-12 rounded-2xl bg-theme-main text-white flex items-center justify-center font-bold text-lg shadow-md group-hover:bg-theme-accent transition">
+            4
+          </div>
+          <h3 class="font-bold text-base text-theme-main dark:text-white">Seamless Wrap & Deposit Release</h3>
+          <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed">
+            Simply pack items into the provided prepaid trunks. Zero dry-cleaning required on your end; security bonds are released within 24 hours.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRODUCTION SERVICE TIERS COMPARISON -->
+  <section class="py-24 bg-[#FDFBF9] dark:bg-[#0D0D0E]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-theme-accent font-bold tracking-[0.2em] text-xs uppercase">Bespoke Solutions</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-theme-main dark:text-white">
+          Agency Package Comparison
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Package 1 -->
+        <div class="theme-card tilt-card reveal-up delay-100 p-8 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-theme-accent uppercase tracking-widest">Occasional</span>
+            <h3 class="text-2xl font-extrabold text-theme-main dark:text-white mt-1 mb-2">Solo Gala Hire</h3>
+            <p class="text-xs text-theme-muted dark:text-gray-400 mb-6">For single guests attending high-end masquerades or themed parties.</p>
+            
+            <div class="text-3xl font-black text-theme-main dark:text-white mb-6">
+              $65 <span class="text-xs font-normal text-gray-500">/ day starting</span>
+            </div>
+
+            <ul class="space-y-3 text-xs text-theme-muted dark:text-gray-300">
+              <li class="flex items-center gap-2"><i class="bi bi-check-lg text-emerald-600"></i> Full gown or suit ensemble</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check-lg text-emerald-600"></i> Matching mask or headpiece</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check-lg text-emerald-600"></i> Free eco dry cleaning</li>
+              <li class="flex items-center gap-2 text-gray-400"><i class="bi bi-x-lg text-gray-400"></i> On-site master dresser</li>
+            </ul>
+          </div>
+
+          <div class="pt-8">
+            <a href="catalog.html" class="w-full btn-outline-theme text-xs py-3 text-center block">
+              Browse Catalog
+            </a>
+          </div>
+        </div>
+
+        <!-- Package 2 (Featured) -->
+        <div class="theme-card tilt-card reveal-up delay-200 p-8 flex flex-col justify-between border-2 border-theme-accent relative shadow-2xl bg-white dark:bg-[#18181D]">
+          <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 theme-badge-gold text-[10px] font-bold px-4 py-1 rounded-full uppercase tracking-wider">
+            Most Selected by Studios
+          </span>
+
+          <div>
+            <span class="text-xs font-bold text-theme-accent uppercase tracking-widest">Ensemble Troupe</span>
+            <h3 class="text-2xl font-extrabold text-theme-main dark:text-white mt-1 mb-2">Stage & Cast Suite</h3>
+            <p class="text-xs text-theme-muted dark:text-gray-400 mb-6">Complete cast outfit packages for 5 to 30 actors or convention squads.</p>
+            
+            <div class="text-3xl font-black text-theme-main dark:text-white mb-6">
+              $450 <span class="text-xs font-normal text-gray-500">/ 5 outfits starting</span>
+            </div>
+
+            <ul class="space-y-3 text-xs text-theme-muted dark:text-gray-300">
+              <li class="flex items-center gap-2"><i class="bi bi-check-lg text-emerald-600"></i> Up to 35% ensemble discount</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check-lg text-emerald-600"></i> Actor name-tagged garment bags</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check-lg text-emerald-600"></i> Spare button & corset adjusters kit</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check-lg text-emerald-600"></i> Dedicated troupe account manager</li>
+            </ul>
+          </div>
+
+          <div class="pt-8">
+            <a href="contact.html?type=troupe" class="w-full btn-primary-theme text-xs py-3 text-center block">
+              Book Troupe Package
+            </a>
+          </div>
+        </div>
+
+        <!-- Package 3 -->
+        <div class="theme-card tilt-card reveal-up delay-300 p-8 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-theme-accent uppercase tracking-widest">VIP Production</span>
+            <h3 class="text-2xl font-extrabold text-theme-main dark:text-white mt-1 mb-2">Full Production Concierge</h3>
+            <p class="text-xs text-theme-muted dark:text-gray-400 mb-6">Filming sets, red carpet events, and theatrical tours requiring master dressers.</p>
+            
+            <div class="text-3xl font-black text-theme-main dark:text-white mb-6">
+              Custom <span class="text-xs font-normal text-gray-500">quote</span>
+            </div>
+
+            <ul class="space-y-3 text-xs text-theme-muted dark:text-gray-300">
+              <li class="flex items-center gap-2"><i class="bi bi-check-lg text-emerald-600"></i> Unlimited cast outfits & backups</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check-lg text-emerald-600"></i> On-set wardrobe master & steamer</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check-lg text-emerald-600"></i> Express replacement couriers</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check-lg text-emerald-600"></i> Customized film-grade distress/aging</li>
+            </ul>
+          </div>
+
+          <div class="pt-8">
+            <a href="contact.html?type=concierge" class="w-full btn-outline-theme text-xs py-3 text-center block">
+              Inquire Concierge
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Dynamic Footer -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/styles-switcher.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    // Live Rental Estimator Logic
+    const costumeInput = document.getElementById('calcCostumeInput');
+    const durationInput = document.getElementById('calcDurationInput');
+    const tierSelect = document.getElementById('calcTierSelect');
+
+    const costumeDisplay = document.getElementById('calcCostumeDisplay');
+    const durationDisplay = document.getElementById('calcDurationDisplay');
+    const rentalTotal = document.getElementById('calcRentalTotal');
+    const discountRate = document.getElementById('calcDiscountRate');
+    const depositTotal = document.getElementById('calcDepositTotal');
+    const grandTotal = document.getElementById('calcGrandTotal');
+
+    function updateCalculations() {
+      const costumes = parseInt(costumeInput.value);
+      const days = parseInt(durationInput.value);
+      const ratePerDay = parseFloat(tierSelect.value);
+
+      costumeDisplay.textContent = `${costumes} Outfit${costumes > 1 ? 's' : ''}`;
+      durationDisplay.textContent = days === 1 ? '1 Day Hire' : (days === 3 ? '3-Day Weekend' : `${days} Days Hire`);
+
+      // Discount tiers
+      let discount = 0;
+      if (costumes >= 20 || days >= 14) {
+        discount = 0.35;
+        discountRate.textContent = '-35% Bulk Troupe Rate';
+      } else if (costumes >= 10 || days >= 7) {
+        discount = 0.20;
+        discountRate.textContent = '-20% Applied';
+      } else if (costumes >= 5) {
+        discount = 0.10;
+        discountRate.textContent = '-10% Applied';
+      } else {
+        discountRate.textContent = '0% (Add 5+ for discounts)';
+      }
+
+      const rawHire = costumes * days * ratePerDay;
+      const finalHire = rawHire * (1 - discount);
+      const deposit = costumes * (ratePerDay * 1.5);
+      const total = finalHire + deposit;
+
+      rentalTotal.textContent = `$${finalHire.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      depositTotal.textContent = `$${deposit.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      grandTotal.textContent = `$${total.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    }
+
+    costumeInput.addEventListener('input', updateCalculations);
+    durationInput.addEventListener('input', updateCalculations);
+    tierSelect.addEventListener('change', updateCalculations);
+    updateCalculations();
+
+    // Render Stage & Production Costumes
+    function renderStageCostumes() {
+      const grid = document.getElementById('stageCostumesGrid');
+      if (!grid || !window.db) return;
+
+      const stageIds = ["CST-KID-101", "CST-PTY-201", "CST-PTY-202", "CST-CLT-301", "CST-CLT-302", "CST-HST-401"];
+      let items = window.db.costumes.filter(c => stageIds.includes(c.id));
+      if (items.length === 0) items = window.db.costumes.slice(0, 6);
+
+      grid.innerHTML = items.map(c => `
+        <div class="theme-card tilt-card reveal-up flex flex-col h-full p-4 group relative overflow-hidden hover:-translate-y-1.5 transition-all duration-300 shadow-md hover:shadow-2xl">
+          <div class="aspect-[4/5] bg-gray-100 dark:bg-black/40 rounded-2xl mb-4 relative overflow-hidden">
+            <span class="absolute top-3 left-3 badge theme-badge-gold text-[9px] font-bold px-2.5 py-0.5 rounded-full z-10 shadow">
+              ${c.badge || 'Film Grade'}
+            </span>
+
+            <button onclick="window.store.toggleWishlist('${c.id}'); this.querySelector('i').classList.toggle('text-red-500'); window.showToast('Wishlist updated', 'success');" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 dark:bg-black/70 backdrop-blur text-gray-700 dark:text-white flex items-center justify-center text-xs z-10 hover:text-red-500 transition shadow">
+              <i class="bi bi-heart-fill ${window.store.isInWishlist(c.id) ? 'text-red-500' : ''}"></i>
+            </button>
+
+            <a href="costume-details.html?id=${c.id}" class="w-full h-full block">
+              <img src="${c.image}" alt="${c.name}" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500">
+            </a>
+
+            <button onclick="window.openQuickView('${c.id}')" class="absolute bottom-3 left-3 right-3 py-2.5 bg-black/80 hover:bg-black text-white text-[11px] font-bold rounded-xl opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center gap-1.5 shadow-lg">
+              <i class="bi bi-eye"></i> Quick View
+            </button>
+          </div>
+
+          <div class="px-1 flex flex-col flex-grow">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-[9px] text-theme-accent uppercase tracking-widest font-bold block truncate max-w-[170px]">${c.occasion}</span>
+              <span class="text-[9px] text-emerald-600 font-bold flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Sanitized
+              </span>
+            </div>
+
+            <h4 class="font-bold text-theme-main dark:text-white text-sm mb-1 leading-snug line-clamp-2">
+              <a href="costume-details.html?id=${c.id}" class="hover:text-theme-accent transition-colors">${c.name}</a>
+            </h4>
+
+            <div class="flex items-center gap-1 my-2 flex-wrap">
+              ${c.sizes.map(s => `<span class="text-[9px] font-semibold px-1.5 py-0.5 rounded bg-theme-subtle dark:bg-[#202025] text-theme-muted">${s}</span>`).join('')}
+            </div>
+
+            <div class="flex items-center justify-between mt-auto pt-2.5 border-t border-theme mb-3.5">
+              <div class="flex items-center gap-1 text-amber-500 text-xs">
+                <i class="bi bi-star-fill"></i>
+                <span class="text-theme-main dark:text-white font-bold text-xs">${c.rating}</span>
+                <span class="text-gray-400 text-[10px]">(${c.reviewsCount})</span>
+              </div>
+              <div class="text-right">
+                <span class="text-sm font-black text-theme-main dark:text-white">$${c.dailyRate}</span>
+                <span class="text-[10px] text-gray-400">/day</span>
+              </div>
+            </div>
+
+            <div class="flex gap-2">
+              <button onclick="window.store.addToCart('${c.id}'); window.showToast('Added ${c.name} to Rental Cart', 'success');" class="flex-1 btn-primary-theme text-[11px] py-2.5 rounded-xl font-bold shadow-sm">
+                <i class="bi bi-bag-plus"></i> Rent Outfit
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      if (window.refreshPageEffects) {
+        window.refreshPageEffects();
+      }
+    }
+
+    renderStageCostumes();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rental Cart & Reservation Checkout - FancyVerse</title>
+  <meta name="description" content="Review your costume rental reservations, calculate refundable security deposits, choose delivery dates, and complete your booking.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  
+  <!-- Theme, Dir, Palette & Font Head Bootstrap to Prevent Bright Flash / FOUC -->
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('fancy_theme');
+        if (t === 'dark' || (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+        var d = localStorage.getItem('fancy_dir');
+        if (d) document.documentElement.setAttribute('dir', d);
+        var p = localStorage.getItem('fancy_palette');
+        if (p && p !== 'default') document.documentElement.setAttribute('data-palette', p);
+        var f = localStorage.getItem('fancy_font');
+        if (f && f !== 'sans') document.documentElement.setAttribute('data-font', f);
+      } catch (e) {}
+    })();
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          colors: {
+            theme: {
+              main: 'var(--color-primary)',
+              secondary: 'var(--color-secondary)',
+              accent: 'var(--color-accent)',
+              subtle: 'var(--color-bg-subtle)',
+              light: 'var(--color-bg-light)',
+              card: 'var(--color-bg-card)',
+              gold: 'var(--color-gold)',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/styles-switcher.css">
+</head>
+
+<body class="font-sans antialiased text-[#271E1A] dark:text-white bg-[#FDFBF9] dark:bg-[#0D0D0E] transition-colors duration-300">
+  
+  <div id="navbar"></div>
+
+  <!-- HEADER -->
+  <section class="pt-32 pb-10 bg-theme-subtle dark:bg-[#151518] border-b border-theme">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-theme-main dark:text-white">
+        Your Rental Cart
+      </h1>
+      <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-300 mt-1">
+        Review rental dates, calculate refundable deposits, and complete your reservation.
+      </p>
+    </div>
+  </section>
+
+  <!-- CART ITEMS & ORDER SUMMARY -->
+  <section class="py-12 bg-white dark:bg-[#121215]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start" id="cartContentWrapper">
+        
+        <!-- Cart Items List (Col 8) -->
+        <div class="lg:col-span-8 space-y-6">
+          <div class="flex items-center justify-between pb-4 border-b border-theme">
+            <span class="text-xs font-bold uppercase tracking-wider text-theme-muted dark:text-gray-400" id="cartCountTitle">
+              Reserved Costumes (0)
+            </span>
+            <button onclick="window.store.clearCart(); renderCart();" class="text-xs text-red-600 hover:underline font-semibold">
+              <i class="bi bi-trash3"></i> Clear Cart
+            </button>
+          </div>
+
+          <!-- Items Container -->
+          <div class="space-y-4" id="cartItemsContainer">
+            <!-- Dynamically populated via JS -->
+          </div>
+
+          <!-- Empty State -->
+          <div id="emptyCartState" class="hidden text-center py-16 space-y-4">
+            <div class="w-20 h-20 rounded-full bg-theme-subtle dark:bg-[#202025] flex items-center justify-center mx-auto text-theme-accent text-3xl">
+              <i class="bi bi-bag-x"></i>
+            </div>
+            <h3 class="text-lg font-bold text-theme-main dark:text-white">Your Rental Cart is Currently Empty</h3>
+            <p class="text-xs text-gray-500 max-w-sm mx-auto">
+              Explore our kids characters, themed party ensembles, cultural silk garments, and historical armor suites to begin your booking.
+            </p>
+            <a href="catalog.html" class="btn-primary-theme text-xs py-3 px-6 inline-block">
+              Browse Costume Catalog
+            </a>
+          </div>
+        </div>
+
+        <!-- Order Summary & Checkout Card (Col 4) -->
+        <div class="lg:col-span-4 space-y-6">
+          <div class="theme-card p-6 shadow-xl sticky top-28 space-y-6">
+            <h3 class="text-lg font-bold text-theme-main dark:text-white pb-3 border-b border-theme">
+              Reservation Summary
+            </h3>
+
+            <!-- Delivery vs Pickup Toggle -->
+            <div>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-2">Fulfillment Method</label>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <label class="cursor-pointer">
+                  <input type="radio" name="deliveryMethod" value="courier" class="peer sr-only" checked onchange="updateSummaryCalculations()">
+                  <div class="selection-pill py-2.5 px-2 shadow-sm">
+                    Express Courier (+$15)
+                  </div>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="radio" name="deliveryMethod" value="pickup" class="peer sr-only" onchange="updateSummaryCalculations()">
+                  <div class="selection-pill py-2.5 px-2 shadow-sm">
+                    Showroom Pickup ($0)
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Promo Voucher Code -->
+            <div class="space-y-2">
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300">Voucher / Gala Code</label>
+              <div class="flex gap-2">
+                <input type="text" id="couponCodeInput" placeholder="Try: GALA10" class="theme-input text-xs py-2 uppercase">
+                <button type="button" onclick="applyCoupon()" class="px-4 py-2 rounded-xl bg-theme-accent text-white text-xs font-bold hover:bg-theme-secondary transition flex-shrink-0">
+                  Apply
+                </button>
+              </div>
+              <p class="text-[10px] text-gray-400" id="couponFeedbackMsg">Use <strong>GALA10</strong> for 10% off hire fee.</p>
+            </div>
+
+            <!-- Calculations Breakdown -->
+            <div class="space-y-2.5 text-xs border-t border-theme pt-4">
+              <div class="flex justify-between text-theme-muted dark:text-gray-300">
+                <span>Rental Hire Subtotal:</span>
+                <span class="font-bold text-theme-main dark:text-white" id="summarySubtotal">$0.00</span>
+              </div>
+              <div class="flex justify-between text-emerald-600 hidden" id="discountRow">
+                <span>Discount (10%):</span>
+                <span class="font-bold" id="summaryDiscount">-$0.00</span>
+              </div>
+              <div class="flex justify-between text-theme-muted dark:text-gray-300">
+                <span>Courier / Shipping Box:</span>
+                <span class="font-bold text-theme-main dark:text-white" id="summaryShipping">$15.00</span>
+              </div>
+              <div class="flex justify-between text-theme-accent pt-2 border-t border-theme font-bold">
+                <span class="flex items-center gap-1">
+                  Refundable Security Deposit:
+                  <i class="bi bi-info-circle text-[10px]" title="Automatically refunded upon return receipt"></i>
+                </span>
+                <span id="summaryDeposit">$0.00</span>
+              </div>
+            </div>
+
+            <!-- Grand Total -->
+            <div class="pt-4 border-t border-theme flex items-baseline justify-between">
+              <div>
+                <span class="text-[10px] text-gray-400 uppercase font-bold block">Total Authorization</span>
+                <span class="text-xs text-gray-500">(Hire + Refundable Deposit)</span>
+              </div>
+              <span class="text-2xl font-black text-theme-main dark:text-white" id="summaryGrandTotal">$0.00</span>
+            </div>
+
+            <!-- Checkout Button -->
+            <button type="button" onclick="simulateCheckout()" id="checkoutBtn" class="w-full btn-primary-theme text-xs py-3.5 rounded-xl font-bold shadow-xl">
+              <i class="bi bi-lock-fill"></i> Complete Rental Authorization
+            </button>
+
+            <div class="text-[10px] text-gray-500 space-y-1.5 pt-2 text-center">
+              <p><i class="bi bi-shield-check text-emerald-600"></i> Medical ozone sanitization & dry-cleaning included</p>
+              <p><i class="bi bi-arrow-repeat text-emerald-600"></i> Deposit automatically refunded within 24h</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SIMULATED BOOKING RECEIPT MODAL -->
+  <div id="receiptModal" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-[#151518] w-full max-w-lg rounded-3xl shadow-2xl border border-theme p-6 sm:p-8 space-y-6 animate-scale-up max-h-[90vh] overflow-y-auto">
+      
+      <div class="text-center space-y-2">
+        <div class="w-14 h-14 rounded-full bg-emerald-100 dark:bg-emerald-950/40 text-emerald-600 flex items-center justify-center text-3xl mx-auto">
+          <i class="bi bi-check2-circle"></i>
+        </div>
+        <h3 class="text-xl font-bold text-theme-main dark:text-white">Rental Booking Confirmed!</h3>
+        <p class="text-xs text-gray-500" id="receiptBookingId">Booking Reference: #RNT-9982</p>
+      </div>
+
+      <div class="p-5 rounded-2xl bg-[#FDFBF9] dark:bg-[#202025] border border-theme space-y-3 text-xs">
+        <div class="flex justify-between">
+          <span class="text-gray-500">Status:</span>
+          <span class="font-bold text-emerald-600">Reserved & Queue Locked</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-gray-500">Delivery / Start Date:</span>
+          <span class="font-bold" id="receiptStartDate">2026-09-10</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-gray-500">Total Charged:</span>
+          <span class="font-bold" id="receiptTotalCharged">$0.00</span>
+        </div>
+        <div class="flex justify-between text-theme-accent">
+          <span>Security Deposit (Refundable):</span>
+          <span class="font-bold" id="receiptDepositRefundable">$0.00</span>
+        </div>
+      </div>
+
+      <p class="text-xs text-theme-muted dark:text-gray-400 text-center leading-relaxed">
+        A confirmation email with garment tracking details and prepaid return label has been generated.
+      </p>
+
+      <div class="pt-2">
+        <button onclick="document.getElementById('receiptModal').classList.add('hidden'); window.location.href='index.html';" class="w-full btn-primary-theme text-xs py-3.5 text-center rounded-xl font-bold shadow-md">
+          Close
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/styles-switcher.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    let discountMultiplier = 1;
+
+    function renderCart() {
+      const items = window.store.getCart();
+      const container = document.getElementById('cartItemsContainer');
+      const emptyState = document.getElementById('emptyCartState');
+      const titleCount = document.getElementById('cartCountTitle');
+
+      if (!container || !window.db) return;
+
+      if (items.length === 0) {
+        container.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        titleCount.textContent = 'Reserved Costumes (0)';
+        updateSummaryCalculations();
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+      titleCount.textContent = `Reserved Costumes (${items.length})`;
+
+      container.innerHTML = items.map(item => {
+        const costume = window.db.costumes.find(c => c.id === item.costumeId);
+        if (!costume) return '';
+
+        let ratePerItem = costume.dailyRate;
+        let durationText = `${item.duration} Day${item.duration > 1 ? 's' : ''}`;
+        if (item.duration === 1) ratePerItem = costume.dailyRate;
+        else if (item.duration === 3) ratePerItem = costume.weekendRate;
+        else if (item.duration === 7) ratePerItem = Math.round(costume.dailyRate * 5);
+
+        const totalItemHire = ratePerItem * item.quantity;
+        const totalItemDeposit = costume.deposit * item.quantity;
+
+        return `
+          <div class="theme-card p-5 flex flex-col sm:flex-row items-center gap-5 relative">
+            <img src="${costume.image}" alt="${costume.name}" class="w-24 h-28 rounded-2xl object-cover flex-shrink-0 shadow">
+            
+            <div class="flex-1 min-w-0 space-y-1 text-center sm:text-left">
+              <span class="text-[9px] font-bold text-theme-accent uppercase tracking-widest">${costume.occasion}</span>
+              <h4 class="font-bold text-theme-main dark:text-white text-sm truncate">
+                <a href="costume-details.html?id=${costume.id}" class="hover:text-theme-accent">${costume.name}</a>
+              </h4>
+              <p class="text-xs text-gray-500">Size: <strong>${item.size}</strong> • Duration: <strong>${durationText}</strong></p>
+              <p class="text-[11px] text-theme-accent">Refundable Deposit: $${totalItemDeposit}</p>
+            </div>
+
+            <div class="flex sm:flex-col items-center sm:items-end justify-between w-full sm:w-auto gap-4">
+              <div class="text-right">
+                <span class="text-sm font-black text-theme-main dark:text-white">$${totalItemHire}</span>
+                <span class="text-[10px] text-gray-400 block">Hire Rate</span>
+              </div>
+
+              <!-- Quantity Controls -->
+              <div class="flex items-center gap-2 border border-theme rounded-xl p-1 bg-theme-subtle dark:bg-[#202025]">
+                <button onclick="changeQty('${item.costumeId}', '${item.size}', ${item.duration}, ${item.quantity - 1})" class="w-6 h-6 rounded-lg bg-white dark:bg-[#151518] flex items-center justify-center text-xs font-bold shadow-sm">
+                  -
+                </button>
+                <span class="text-xs font-bold px-2">${item.quantity}</span>
+                <button onclick="changeQty('${item.costumeId}', '${item.size}', ${item.duration}, ${item.quantity + 1})" class="w-6 h-6 rounded-lg bg-white dark:bg-[#151518] flex items-center justify-center text-xs font-bold shadow-sm">
+                  +
+                </button>
+              </div>
+
+              <button onclick="window.store.removeFromCart('${item.costumeId}', '${item.size}', ${item.duration}); renderCart();" class="text-xs text-red-600 hover:text-red-700">
+                <i class="bi bi-trash"></i> Remove
+              </button>
+            </div>
+
+          </div>
+        `;
+      }).join('');
+
+      updateSummaryCalculations();
+    }
+
+    function changeQty(costumeId, size, duration, newQty) {
+      window.store.updateQuantity(costumeId, size, duration, newQty);
+      renderCart();
+    }
+
+    function updateSummaryCalculations() {
+      const items = window.store.getCart();
+      let hireSubtotal = 0;
+      let depositTotal = 0;
+
+      items.forEach(item => {
+        const c = window.db.costumes.find(x => x.id === item.costumeId);
+        if (!c) return;
+
+        let rate = c.dailyRate;
+        if (item.duration === 3) rate = c.weekendRate;
+        else if (item.duration === 7) rate = Math.round(c.dailyRate * 5);
+
+        hireSubtotal += rate * item.quantity;
+        depositTotal += c.deposit * item.quantity;
+      });
+
+      const isCourier = document.querySelector('input[name="deliveryMethod"]:checked')?.value === 'courier';
+      const shipping = items.length > 0 && isCourier ? 15 : 0;
+      const discount = hireSubtotal * (1 - discountMultiplier);
+      const discountedHire = hireSubtotal * discountMultiplier;
+      const grandTotal = discountedHire + shipping + depositTotal;
+
+      document.getElementById('summarySubtotal').textContent = `$${hireSubtotal.toFixed(2)}`;
+      document.getElementById('summaryShipping').textContent = isCourier ? '$15.00' : '$0.00 (In-Store)';
+      document.getElementById('summaryDeposit').textContent = `$${depositTotal.toFixed(2)}`;
+      document.getElementById('summaryGrandTotal').textContent = `$${grandTotal.toFixed(2)}`;
+
+      if (discount > 0) {
+        document.getElementById('discountRow').classList.remove('hidden');
+        document.getElementById('summaryDiscount').textContent = `-$${discount.toFixed(2)}`;
+      } else {
+        document.getElementById('discountRow').classList.add('hidden');
+      }
+
+      const checkoutBtn = document.getElementById('checkoutBtn');
+      if (checkoutBtn) {
+        checkoutBtn.disabled = items.length === 0;
+        checkoutBtn.classList.toggle('opacity-50', items.length === 0);
+      }
+    }
+
+    function applyCoupon() {
+      const code = document.getElementById('couponCodeInput').value.trim().toUpperCase();
+      const feedback = document.getElementById('couponFeedbackMsg');
+      if (code === 'GALA10' || code === 'FANCY10') {
+        discountMultiplier = 0.90;
+        feedback.innerHTML = '<span class="text-emerald-600 font-bold"><i class="bi bi-check-circle"></i> 10% Gala Discount Applied!</span>';
+        window.showToast('10% Gala Discount applied!', 'success');
+        updateSummaryCalculations();
+      } else {
+        feedback.innerHTML = '<span class="text-red-500 font-semibold">Invalid code. Try GALA10</span>';
+      }
+    }
+
+    function simulateCheckout() {
+      const items = window.store.getCart();
+      if (items.length === 0) {
+        if (window.showToast) {
+          window.showToast('Your rental cart is currently empty! Please browse the catalog to add a costume.', 'info');
+        }
+        return;
+      }
+
+      const user = window.auth.getUser() || { name: "Guest Renter", email: "guest@fancyverse.com" };
+      const subtotal = document.getElementById('summaryGrandTotal').textContent;
+      const deposit = document.getElementById('summaryDeposit').textContent;
+
+      const newBooking = window.store.addRentalBooking({
+        customer: user.name,
+        costume: `${items.length} Costume Item${items.length > 1 ? 's' : ''}`,
+        costumeId: items[0].costumeId,
+        dates: `From ${items[0].startDate} (${items[0].duration} Days)`,
+        totalAmount: parseFloat(subtotal.replace(/[^0-9.]/g, '')) || 0,
+        deposit: parseFloat(deposit.replace(/[^0-9.]/g, '')) || 0,
+        pickupType: (document.querySelector('input[name="deliveryMethod"]:checked') && document.querySelector('input[name="deliveryMethod"]:checked').value === 'courier') ? 'Express Courier' : 'In-Store Pickup'
+      });
+
+      // Show receipt modal
+      document.getElementById('receiptBookingId').textContent = `Booking Reference: #${newBooking.id}`;
+      document.getElementById('receiptStartDate').textContent = items[0].startDate;
+      document.getElementById('receiptTotalCharged').textContent = subtotal;
+      document.getElementById('receiptDepositRefundable').textContent = deposit;
+      document.getElementById('receiptModal').classList.remove('hidden');
+
+      // Clear cart
+      window.store.clearCart();
+      renderCart();
+    }
+
+    renderCart();
+  </script>
+</body>
+</html>

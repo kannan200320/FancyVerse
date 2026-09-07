@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FancyVerse - Luxury Costume & Fancy Dress Rental Shop</title>
+  <meta name="description" content="Discover premium costume and fancy dress rentals for masquerade balls, theatrical productions, cosplay, themed parties, and kids events. Sanitized, tailored, and delivered to your door.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  
+  <!-- Theme, Dir, Palette & Font Head Bootstrap to Prevent Bright Flash / FOUC -->
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('fancy_theme');
+        if (t === 'dark' || (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+        var d = localStorage.getItem('fancy_dir');
+        if (d) document.documentElement.setAttribute('dir', d);
+        var p = localStorage.getItem('fancy_palette');
+        if (p && p !== 'default') document.documentElement.setAttribute('data-palette', p);
+        var f = localStorage.getItem('fancy_font');
+        if (f && f !== 'sans') document.documentElement.setAttribute('data-font', f);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+          },
+          colors: {
+            theme: {
+              main: 'var(--color-primary)',
+              secondary: 'var(--color-secondary)',
+              accent: 'var(--color-accent)',
+              subtle: 'var(--color-bg-subtle)',
+              light: 'var(--color-bg-light)',
+              card: 'var(--color-bg-card)',
+              gold: 'var(--color-gold)',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/styles-switcher.css">
+</head>
+
+<body class="font-sans antialiased text-[#18181B] dark:text-white bg-[#FDFBF7] dark:bg-[#0B0B0E] transition-colors duration-300">
+  
+  <!-- Dynamic Top Navbar -->
+  <div id="navbar"></div>
+
+  <!-- HERO BANNER -->
+  <section class="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-theme-subtle/50 via-transparent to-transparent">
+    
+    <!-- Ambient Pulse Glows -->
+    <div class="absolute top-10 right-10 w-[500px] h-[500px] bg-theme-accent/15 rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
+    <div class="absolute -bottom-24 -left-24 w-[450px] h-[450px] bg-theme-secondary/15 rounded-full blur-3xl pointer-events-none animate-pulse-glow" style="animation-delay: 2.5s;"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      
+      <!-- Text Column -->
+      <div class="lg:col-span-7 space-y-8 reveal-up">
+        
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 dark:bg-amber-500/20 border border-amber-500/20 text-xs font-black uppercase tracking-widest shadow-sm badge-interactive">
+          <span class="animate-pulse">✨</span>
+          <span class="text-amber-800 dark:text-amber-200">The Ultimate Costume Rental Vault</span>
+        </div>
+
+        <div class="space-y-4">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.12]">
+            <span class="text-brand-terracotta dark:text-white block">Dress Up,</span>
+            <span class="font-serif italic font-normal text-theme-accent block my-1">
+              Stand Out,
+            </span>
+            <span class="text-brand-terracotta dark:text-white block">Celebrate In Style!</span>
+          </h1>
+          <p class="text-base sm:text-lg text-theme-muted dark:text-gray-300 max-w-xl leading-relaxed">
+            Curated high-definition costumes across 4 iconic worlds: <strong>Kids Fairytales</strong>, <strong>Themed Parties</strong> (Gatsby & Disco), <strong>Cultural Silk & Heritage</strong>, and <strong>Historical Period Armor</strong>. Sanitized, tailored, and delivered with fit guarantee.
+          </p>
+
+          <!-- 4 Quick Category Launchpad Badges -->
+          <div class="flex flex-wrap gap-2 pt-2">
+            <a href="catalog.html?occasion=Kids" class="px-3.5 py-1.5 rounded-full text-xs font-bold badge-kids shadow hover:scale-105 transition transform flex items-center gap-1.5">
+              <span>🎈</span> Kids Costumes
+            </a>
+            <a href="catalog.html?occasion=Themed+Parties" class="px-3.5 py-1.5 rounded-full text-xs font-bold badge-party shadow hover:scale-105 transition transform flex items-center gap-1.5">
+              <span>✨</span> Themed Parties
+            </a>
+            <a href="catalog.html?occasion=Cultural" class="px-3.5 py-1.5 rounded-full text-xs font-bold badge-cultural shadow hover:scale-105 transition transform flex items-center gap-1.5">
+              <span>🌸</span> Cultural Attire
+            </a>
+            <a href="catalog.html?occasion=Historical" class="px-3.5 py-1.5 rounded-full text-xs font-bold badge-historical shadow hover:scale-105 transition transform flex items-center gap-1.5">
+              <span>⚔️</span> Historical & Armor
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Filter Finder Bar -->
+        <div class="p-2.5 rounded-2xl bg-white dark:bg-[#131317] border border-theme shadow-xl max-w-xl grid grid-cols-1 sm:grid-cols-12 gap-2 items-center hover:border-theme-accent transition-colors">
+          <div class="sm:col-span-5 px-3 py-1">
+            <span class="text-[9px] font-bold text-gray-400 uppercase tracking-wider block">Occasion Category</span>
+            <select id="heroOccasionQuick" class="w-full bg-transparent text-xs font-bold text-theme-main dark:text-white focus:outline-none cursor-pointer">
+              <option value="all">All 4 Costume Worlds</option>
+              <option value="Kids">🎈 Kids Fairytales & Heroes</option>
+              <option value="Themed Parties">✨ Themed Parties (Gatsby, 70s)</option>
+              <option value="Cultural">🌸 Cultural Silk & Heritage</option>
+              <option value="Historical">⚔️ Historical Period & Armor</option>
+            </select>
+          </div>
+
+          <div class="sm:col-span-4 px-3 py-1 border-t sm:border-t-0 sm:border-l border-theme">
+            <span class="text-[9px] font-bold text-gray-400 uppercase tracking-wider block">Event Date</span>
+            <input type="date" id="heroDateQuick" class="w-full bg-transparent text-xs font-bold text-theme-main dark:text-white focus:outline-none">
+          </div>
+
+          <div class="sm:col-span-3">
+            <button onclick="handleHeroSearch()" class="w-full btn-primary-theme text-xs py-3 rounded-xl font-black shadow-md bg-gradient-to-r from-[#7C3AED] to-[#EC4899] hover:opacity-90 transform hover:scale-[1.03] transition-transform">
+              Explore Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Trust Stats Badges with Counter Animation -->
+        <div class="grid grid-cols-3 gap-6 pt-4 border-t border-theme max-w-lg">
+          <div>
+            <p class="text-2xl sm:text-3xl font-black text-theme-main dark:text-white" data-counter="2500" data-suffix="+">2,500+</p>
+            <p class="text-[11px] text-gray-500 font-semibold uppercase tracking-wider mt-0.5">Bespoke Costumes</p>
+          </div>
+          <div>
+            <p class="text-2xl sm:text-3xl font-black text-theme-main dark:text-white" data-counter="100" data-suffix="%">100%</p>
+            <p class="text-[11px] text-gray-500 font-semibold uppercase tracking-wider mt-0.5">Ozone Eco-Clean</p>
+          </div>
+          <div>
+            <p class="text-2xl sm:text-3xl font-black text-theme-main dark:text-white" data-counter="4.9" data-suffix="/5">4.9/5</p>
+            <p class="text-[11px] text-gray-500 font-semibold uppercase tracking-wider mt-0.5">Gala Ratings</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Hero Visual Showcase -->
+      <div class="lg:col-span-5 relative reveal-right delay-200">
+        <div class="relative mx-auto max-w-md lg:max-w-none">
+          
+          <!-- Frame with Modern Luxury Border & 3D Tilt -->
+          <div class="tilt-card rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white dark:border-[#1C1C22] relative group">
+            <img src="https://i.pinimg.com/736x/67/87/bc/6787bc9cc029a0c017baf40c8b088f53.jpg" alt="Venetian Masquerade Ballgown" class="w-full h-[540px] object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent pointer-events-none"></div>
+            
+            <!-- Sleek Glassmorphic Floating Caption Card -->
+            <div class="absolute bottom-5 left-5 right-5 p-4 sm:p-5 rounded-2xl bg-black/65 backdrop-blur-md border border-white/15 text-white space-y-1.5 shadow-2xl z-10">
+              <span class="theme-badge-gold text-[10px] font-black px-3 py-1 rounded-full inline-block">
+                Most Rented This Week
+              </span>
+              <h3 class="text-lg sm:text-xl font-extrabold text-white leading-snug">Venetian Gold Brocade Ballgown</h3>
+              <p class="text-xs text-white/85 flex items-center gap-2">
+                <span class="font-bold text-amber-400">$65/day</span>
+                <span class="text-white/40">•</span>
+                <span>Handcrafted Corset & Gilded Mask Included</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Floating Badges with Gentle Float Keyframes (Repositioned to Avoid Overlap) -->
+          <div class="absolute top-1/2 -translate-y-1/2 -left-4 sm:-left-8 bg-white/95 dark:bg-[#131317]/95 backdrop-blur-md p-4 sm:p-5 rounded-2xl shadow-2xl border border-theme flex items-center gap-3.5 animate-float z-20">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl shadow-sm">
+              <i class="bi bi-shield-fill-check"></i>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-wider font-extrabold text-amber-600 dark:text-amber-400">Hygiene Assured</p>
+              <p class="text-xs font-black text-theme-main dark:text-white">Medical Ozone Cleaned</p>
+            </div>
+          </div>
+
+          <div class="absolute -top-6 -right-4 sm:-right-6 bg-white/95 dark:bg-[#131317]/95 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-theme flex items-center gap-3 animate-float-delayed z-20">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center text-xl">
+              <i class="bi bi-award-fill"></i>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-wider font-extrabold text-gray-400">Award Winner</p>
+              <p class="text-xs font-black text-theme-main dark:text-white">Top Theatrical Hire</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- SECTION 1: THE RENTAL EXPERIENCE (3-STEP WORKFLOW) -->
+  <section class="py-24 bg-white dark:bg-[#101014]" id="how-it-works">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-theme-accent font-black tracking-[0.25em] text-xs uppercase">
+          The Experience
+        </span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-theme-main dark:text-white">
+          Costume Hire <br>
+          <span class="font-serif italic font-normal text-theme-accent">Perfected For You</span>
+        </h2>
+        <p class="text-sm text-theme-muted dark:text-gray-300 leading-relaxed">
+          Reserve your look with complete peace of mind. We handle custom sizing adjustments, security deposit processing, and eco-friendly post-wear sanitization.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Step 1 -->
+        <div class="tilt-card reveal-up group p-8 rounded-[2rem] bg-white dark:bg-[#151518] hover:border-[#B7410E]/60 border border-theme transition-all duration-300 shadow-md hover:shadow-2xl">
+          <div class="w-14 h-14 bg-amber-500/10 dark:bg-amber-500/20 border border-amber-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#B7410E] text-[#B7410E] group-hover:text-white transition-all shadow-sm">
+            <i class="bi bi-calendar-check text-2xl transition-colors"></i>
+          </div>
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-theme-subtle dark:bg-[#202025] text-[10px] font-bold text-theme-accent uppercase tracking-wider mb-3">
+            <span>Step 01</span>
+          </div>
+          <h3 class="text-xl font-black text-theme-main dark:text-white mb-2 leading-snug">
+            Select & Reserve
+          </h3>
+          <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+            Browse our curated collections, choose 1-Day, 3-Day Weekend, or Weekly hire duration, and lock in your refundable security deposit online with one click.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="tilt-card reveal-up delay-100 group p-8 rounded-[2rem] bg-white dark:bg-[#151518] hover:border-[#B7410E]/60 border border-theme transition-all duration-300 shadow-md hover:shadow-2xl">
+          <div class="w-14 h-14 bg-purple-500/10 dark:bg-purple-500/20 border border-purple-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#B7410E] text-[#7C3AED] dark:text-[#A78BFA] group-hover:text-white transition-all shadow-sm">
+            <i class="bi bi-scissors text-2xl transition-colors"></i>
+          </div>
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-theme-subtle dark:bg-[#202025] text-[10px] font-bold text-theme-accent uppercase tracking-wider mb-3">
+            <span>Step 02</span>
+          </div>
+          <h3 class="text-xl font-black text-theme-main dark:text-white mb-2 leading-snug">
+            Fit Guarantee & Wear
+          </h3>
+          <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+            Visit our Broadway fitting suites or receive your garment pressed and ready-to-wear with our complimentary size adjustment kit and styling accessories.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="tilt-card reveal-up delay-200 group p-8 rounded-[2rem] bg-white dark:bg-[#151518] hover:border-[#B7410E]/60 border border-theme transition-all duration-300 shadow-md hover:shadow-2xl">
+          <div class="w-14 h-14 bg-emerald-500/10 dark:bg-emerald-500/20 border border-emerald-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#B7410E] text-emerald-600 dark:text-emerald-400 group-hover:text-white transition-all shadow-sm">
+            <i class="bi bi-arrow-clockwise text-2xl transition-colors"></i>
+          </div>
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-theme-subtle dark:bg-[#202025] text-[10px] font-bold text-theme-accent uppercase tracking-wider mb-3">
+            <span>Step 03</span>
+          </div>
+          <h3 class="text-xl font-black text-theme-main dark:text-white mb-2 leading-snug">
+            Return & Deposit Refund
+          </h3>
+          <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+            Drop your costume in the prepaid courier return box. No need to wash — dry cleaning is completely on us! Your security deposit is refunded automatically within 24 hours.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Action Prompt Bar -->
+      <div class="mt-16 p-2 rounded-full bg-theme-subtle dark:bg-[#1C1C22] max-w-xl mx-auto flex items-center justify-between pl-6 pr-2 border border-theme">
+        <span class="text-xs font-bold text-theme-main dark:text-white">Planning for a stage show or troupe?</span>
+        <a href="#bulk-enquiry" class="btn-primary-theme text-xs py-2.5 px-5 rounded-full shadow-sm whitespace-nowrap">
+          Get Studio Quote
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2: TARGET AUDIENCE (WHO WE SERVE) -->
+  <section class="py-24 bg-[#FDFBF7] dark:bg-[#0B0B0E]" id="who-we-serve">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-theme-accent font-black tracking-[0.25em] text-xs uppercase">
+          Who We Serve
+        </span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-theme-main dark:text-white">
+          Who Is FancyVerse For?
+        </h2>
+        <p class="text-sm text-theme-muted dark:text-gray-300 leading-relaxed">
+          From solo masquerade show-stoppers to 50-actor Shakespearean cast suites.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        
+        <!-- Audience 1: Kids -->
+        <div class="theme-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mb-5 text-amber-600 text-2xl shadow-sm">
+              <i class="bi bi-balloon-heart-fill"></i>
+            </div>
+            <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2">Kids & School Events</h3>
+            <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed mb-4">
+              Fairytale princesses, heroic capes, and plush storybook animals tailored with soft, non-scratch cotton linings for birthdays and pageants.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-theme">
+            <span class="text-[10px] text-theme-accent uppercase font-black tracking-widest">
+              Ages 3-11 • Hypoallergenic
+            </span>
+          </div>
+        </div>
+
+        <!-- Audience 2: Themed Parties -->
+        <div class="theme-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-5 text-purple-600 text-2xl shadow-sm">
+              <i class="bi bi-disc-fill"></i>
+            </div>
+            <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2">Themed Parties & Galas</h3>
+            <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed mb-4">
+              Turn heads with 1920s Gatsby beaded flapper gowns, shimmering 70s disco bell-bottom jumpsuits, and eccentric Mad Hatter suits.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-theme">
+            <span class="text-[10px] text-theme-accent uppercase font-black tracking-widest">
+              Includes Wigs & Props
+            </span>
+          </div>
+        </div>
+
+        <!-- Audience 3: Cultural -->
+        <div class="theme-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center mb-5 text-rose-600 text-2xl shadow-sm">
+              <i class="bi bi-flower1"></i>
+            </div>
+            <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2">Cultural Celebrations</h3>
+            <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed mb-4">
+              Authentic Kyoto silk-embroidered kimonos, Venetian Carnivale masquerade ballgowns, Scottish tartan kilts, and Bavarian festival dirndls.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-theme">
+            <span class="text-[10px] text-theme-accent uppercase font-black tracking-widest">
+              Artisan Silk & Handcrafted
+            </span>
+          </div>
+        </div>
+
+        <!-- Audience 4: Historical -->
+        <div class="theme-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-5 text-blue-600 text-2xl shadow-sm">
+              <i class="bi bi-shield-fill-check"></i>
+            </div>
+            <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2">Historical Re-enactments</h3>
+            <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed mb-4">
+              Victorian steampunk tailored coats, medieval crusader chainmail plate armor, Renaissance monarch robes, and Roman centurion armor.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-theme">
+            <span class="text-[10px] text-theme-accent uppercase font-black tracking-widest">
+              Steel & Leather Accurate
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: CURATED OCCASION COLLECTIONS -->
+  <section class="py-24 bg-white dark:bg-[#101014]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="flex flex-col sm:flex-row items-center justify-between mb-14 gap-4">
+        <div>
+          <span class="text-theme-accent font-black tracking-[0.25em] text-xs uppercase mb-1 block">Curated Wardrobes</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-theme-main dark:text-white">Explore By Occasion</h2>
+        </div>
+        <a href="catalog.html" class="text-xs font-bold text-theme-main dark:text-white border-b-2 border-theme-main dark:border-white pb-1 hover:text-theme-accent hover:border-theme-accent transition">
+          View All Collections →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Occasion 1: Kids -->
+        <a href="catalog.html?occasion=Kids" class="group relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-xl">
+          <img src="https://images.unsplash.com/photo-1737257218703-9cb7e8504901?auto=format&fit=crop&q=80&w=1200" alt="Kids Fairytale Costumes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-6">
+            <span class="text-[10px] text-amber-200 uppercase tracking-widest font-extrabold">🎈 4 Ensembles (Ages 3-11)</span>
+            <p class="text-white font-bold text-lg leading-snug mt-1">Kids Fairytale & Heroes</p>
+            <span class="text-xs text-theme-gold font-bold mt-2 group-hover:translate-x-1.5 transition-transform inline-flex items-center gap-1">
+              Explore Kids Hire →
+            </span>
+          </div>
+        </a>
+
+        <!-- Occasion 2: Themed Parties -->
+        <a href="catalog.html?occasion=Themed+Parties" class="group relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-xl">
+          <img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&q=80&w=1200" alt="Themed Parties & Gatsby" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-6">
+            <span class="text-[10px] text-amber-200 uppercase tracking-widest font-extrabold">✨ 4 Ensembles (Gatsby, 70s)</span>
+            <p class="text-white font-bold text-lg leading-snug mt-1">Themed Parties & Galas</p>
+            <span class="text-xs text-theme-gold font-bold mt-2 group-hover:translate-x-1.5 transition-transform inline-flex items-center gap-1">
+              Explore Party Hire →
+            </span>
+          </div>
+        </a>
+
+        <!-- Occasion 3: Cultural -->
+        <a href="catalog.html?occasion=Cultural" class="group relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-xl">
+          <img src="https://images.unsplash.com/photo-1671730785203-44897ceef05f?auto=format&fit=crop&q=80&w=1200" alt="Cultural Kimono & Masquerade" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-6">
+            <span class="text-[10px] text-amber-200 uppercase tracking-widest font-extrabold">🌸 4 Ensembles (Silk & Venice)</span>
+            <p class="text-white font-bold text-lg leading-snug mt-1">Cultural & Traditional</p>
+            <span class="text-xs text-theme-gold font-bold mt-2 group-hover:translate-x-1.5 transition-transform inline-flex items-center gap-1">
+              Explore Cultural Hire →
+            </span>
+          </div>
+        </a>
+
+        <!-- Occasion 4: Historical -->
+        <a href="catalog.html?occasion=Historical" class="group relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-xl">
+          <img src="https://i.pinimg.com/736x/3b/ea/ba/3beaba2305e78954ff103897e5a1dafb.jpg" alt="Historical Knight Plate Armor" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-6">
+            <span class="text-[10px] text-amber-200 uppercase tracking-widest font-extrabold">⚔️ 4 Ensembles (Knight & Victorian)</span>
+            <p class="text-white font-bold text-lg leading-snug mt-1">Historical & Armor</p>
+            <span class="text-xs text-theme-gold font-bold mt-2 group-hover:translate-x-1.5 transition-transform inline-flex items-center gap-1">
+              Explore Historical Hire →
+            </span>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 4: THE CRAFTSMANSHIP SPOTLIGHT -->
+  <section class="py-24 bg-[#FDFBF7] dark:bg-[#0B0B0E] overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        
+        <!-- Left Image Showcase with Left-To-Right Reveal, 3D Tilt & Continuous Light Beam -->
+        <div class="relative reveal-left">
+          <div class="absolute -top-10 -left-10 w-64 h-64 bg-theme-accent/20 rounded-full blur-3xl opacity-70 pointer-events-none"></div>
+          <div class="relative bg-theme-main p-3 rounded-[2.5rem] shadow-2xl overflow-hidden group tilt-card">
+            <img src="https://images.unsplash.com/photo-1741183392566-6691041a231f?auto=format&fit=crop&q=80&w=1200" alt="Artisan Tailoring & Fit Studio" class="rounded-[2rem] w-full h-[480px] object-cover transition-transform duration-700 group-hover:scale-105">
+            
+            <!-- Continuous Left-To-Right Light Beam Shimmer Sweep -->
+            <div class="scan-beam-ltr"></div>
+
+            <!-- Animated Inspection Floating Badge with Left-to-Right Horizontal Drift -->
+            <div class="absolute top-8 right-8 bg-white/95 dark:bg-[#131317]/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-theme animate-float-ltr z-20">
+              <p class="text-[10px] font-black text-theme-accent uppercase tracking-wider">Quality Inspection</p>
+              <div class="flex items-center gap-2 mt-1.5">
+                <span class="relative flex h-2.5 w-2.5">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+                <span class="text-xs font-black text-theme-main dark:text-white">100% Sanitized & Approved</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Content List with Staggered Left-To-Right Cascade & Hover Slide -->
+        <div class="space-y-8">
+          <div class="reveal-left delay-100">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-theme-subtle dark:bg-[#1C1C22] border border-theme text-[10px] font-black text-theme-accent tracking-[0.25em] uppercase mb-3">
+              <i class="bi bi-patch-check-fill text-amber-500"></i>
+              <span>Couture Standards</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-theme-main dark:text-white leading-tight">
+              Hospitality Grade Care, <br>
+              <span class="text-theme-accent font-serif italic font-normal">Theatrical Grade Brilliance</span>
+            </h2>
+          </div>
+
+          <div class="space-y-4">
+            
+            <!-- Item 1: Slides Left-To-Right on Reveal & Slides Right on Hover -->
+            <div class="reveal-left delay-200">
+              <div class="group flex items-start gap-4 p-4 rounded-2xl bg-white dark:bg-[#131317] border border-theme hover:border-theme-accent/60 shadow-sm hover:shadow-xl transition-all duration-300 hover:translate-x-3 cursor-default">
+                <div class="w-10 h-10 rounded-xl bg-theme-main text-white flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 group-hover:bg-[#B7410E] transition-all">
+                  <i class="bi bi-check2 text-xl"></i>
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-theme-main dark:text-white text-base group-hover:text-[#B7410E] dark:group-hover:text-amber-400 transition-colors flex items-center justify-between">
+                    <span>Ozone & Eco-Solvent Deep Sterilization</span>
+                    <i class="bi bi-arrow-right text-xs opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-amber-500"></i>
+                  </h3>
+                  <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-400 mt-1 leading-relaxed">
+                    Every gown, wig, armor plate, and accessory undergoes hospital-grade ozone sterilization and tailored eco dry-cleaning before and after every rental.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 2: Slides Left-To-Right on Reveal & Slides Right on Hover -->
+            <div class="reveal-left delay-300">
+              <div class="group flex items-start gap-4 p-4 rounded-2xl bg-white dark:bg-[#131317] border border-theme hover:border-theme-accent/60 shadow-sm hover:shadow-xl transition-all duration-300 hover:translate-x-3 cursor-default">
+                <div class="w-10 h-10 rounded-xl bg-theme-main text-white flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 group-hover:bg-[#B7410E] transition-all">
+                  <i class="bi bi-check2 text-xl"></i>
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-theme-main dark:text-white text-base group-hover:text-[#B7410E] dark:group-hover:text-amber-400 transition-colors flex items-center justify-between">
+                    <span>Complimentary Size Adaptation Kit</span>
+                    <i class="bi bi-arrow-right text-xs opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-amber-500"></i>
+                  </h3>
+                  <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-400 mt-1 leading-relaxed">
+                    All rentals arrive with matching corset laces, discrete fashion clips, and adjustable hemming tape to ensure you feel custom-tailored on the night.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 3: Slides Left-To-Right on Reveal & Slides Right on Hover -->
+            <div class="reveal-left delay-400">
+              <div class="group flex items-start gap-4 p-4 rounded-2xl bg-white dark:bg-[#131317] border border-theme hover:border-theme-accent/60 shadow-sm hover:shadow-xl transition-all duration-300 hover:translate-x-3 cursor-default">
+                <div class="w-10 h-10 rounded-xl bg-theme-main text-white flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 group-hover:bg-[#B7410E] transition-all">
+                  <i class="bi bi-check2 text-xl"></i>
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-theme-main dark:text-white text-base group-hover:text-[#B7410E] dark:group-hover:text-amber-400 transition-colors flex items-center justify-between">
+                    <span>Automated Security Deposit Return</span>
+                    <i class="bi bi-arrow-right text-xs opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-amber-500"></i>
+                  </h3>
+                  <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-400 mt-1 leading-relaxed">
+                    No awkward disputes. As soon as your return package scans at our intake facility, your deposit refund is processed automatically within 24 hours.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pt-2 reveal-left delay-500">
+            <a href="service-details.html" class="btn-primary-theme text-xs py-3.5 px-7 inline-flex items-center gap-2 group hover:shadow-xl transition-all">
+              <span>Learn About Sizing & Care</span>
+              <span class="inline-block transition-transform duration-300 group-hover:translate-x-2">→</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: TRENDING COSTUMES GRID -->
+  <section class="py-24 bg-white dark:bg-[#101014]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="flex flex-col sm:flex-row items-center justify-between mb-12 gap-4">
+        <div>
+          <span class="text-theme-accent font-black tracking-[0.25em] text-xs uppercase mb-1 block">In High Demand</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-theme-main dark:text-white">Trending Costumes This Season</h2>
+        </div>
+        
+        <!-- Category Filter Pills -->
+        <div class="flex flex-wrap gap-2" id="homeFilterPills">
+          <button class="filter-pill active px-4 py-2 rounded-full text-xs font-black bg-theme-main text-white shadow-sm" data-cat="All">All Costumes</button>
+          <button class="filter-pill px-4 py-2 rounded-full text-xs font-black border border-theme hover:bg-theme-subtle" data-cat="Kids">🎈 Kids</button>
+          <button class="filter-pill px-4 py-2 rounded-full text-xs font-black border border-theme hover:bg-theme-subtle" data-cat="Themed Parties">✨ Themed Parties</button>
+          <button class="filter-pill px-4 py-2 rounded-full text-xs font-black border border-theme hover:bg-theme-subtle" data-cat="Cultural">🌸 Cultural</button>
+          <button class="filter-pill px-4 py-2 rounded-full text-xs font-black border border-theme hover:bg-theme-subtle" data-cat="Historical">⚔️ Historical</button>
+        </div>
+      </div>
+
+      <!-- Grid Container populated by JS -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="trending-costumes-container">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div class="mt-14 text-center">
+        <a href="catalog.html" class="inline-block btn-outline-theme text-xs py-3.5 px-8 shadow-sm">
+          View Complete 16+ Wardrobe Catalog →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 6: VERIFIED REVIEWS & TESTIMONIALS -->
+  <section class="py-24 bg-[#FDFBF7] dark:bg-[#0B0B0E]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-theme-accent font-black tracking-[0.25em] text-xs uppercase">Rave Reviews</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-theme-main dark:text-white">Loved by Gala Hosts & Directors</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Review 1 -->
+        <div class="theme-card p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-500 text-sm mb-4">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-300 italic leading-relaxed mb-6">
+              "The Venetian ballgown was nothing short of breathtaking. The fabric quality and real corset boning made me feel like royalty at the charity gala. Deposit was refunded the next morning!"
+            </p>
+          </div>
+          <div class="flex items-center gap-3.5 pt-4 border-t border-theme">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200" alt="Genevieve Moreau" class="w-11 h-11 rounded-full object-cover shadow-sm">
+            <div>
+              <p class="text-xs font-black text-theme-main dark:text-white">Genevieve Moreau</p>
+              <p class="text-[10px] text-theme-accent font-bold uppercase tracking-wider">Annual Opera Gala Chair</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="theme-card p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-500 text-sm mb-4">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-300 italic leading-relaxed mb-6">
+              "FancyVerse outfitted our entire Shakespearean production on a tight 4-week timeline. All 18 Renaissance costumes were pristine, perfectly tagged by actor name, and smelled fresh."
+            </p>
+          </div>
+          <div class="flex items-center gap-3.5 pt-4 border-t border-theme">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200" alt="Julian Sterling" class="w-11 h-11 rounded-full object-cover shadow-sm">
+            <div>
+              <p class="text-xs font-black text-theme-main dark:text-white">Julian Sterling</p>
+              <p class="text-[10px] text-theme-accent font-bold uppercase tracking-wider">Theatrical Stage Director</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="theme-card p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-500 text-sm mb-4">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-300 italic leading-relaxed mb-6">
+              "Won 1st place in the cosplay showcase! The armor was so lightweight yet looked like heavy titanium under convention lighting. Best rental experience hands down."
+            </p>
+          </div>
+          <div class="flex items-center gap-3.5 pt-4 border-t border-theme">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200" alt="Samantha K." class="w-11 h-11 rounded-full object-cover shadow-sm">
+            <div>
+              <p class="text-xs font-black text-theme-main dark:text-white">Samantha K.</p>
+              <p class="text-[10px] text-theme-accent font-bold uppercase tracking-wider">Comic-Con Attendee</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 7: BULK & STUDIO ORDER ENQUIRY -->
+  <section class="py-24 bg-theme-subtle dark:bg-[#131317] relative overflow-hidden" id="bulk-enquiry">
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-theme-accent/15 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/3"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        
+        <!-- Left Explainer with Right-To-Left Staggered Entrance & Hover Slide -->
+        <div class="space-y-6">
+          <div class="reveal-right delay-100">
+            <span class="text-theme-accent font-black uppercase tracking-widest text-xs">Production & Corporate Solutions</span>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-theme-main dark:text-white leading-tight mt-2">
+              Schools, Theatres & <br>
+              <span class="text-theme-accent font-serif italic font-normal">Studio Bulk Hire Hub</span>
+            </h2>
+          </div>
+
+          <p class="text-sm sm:text-base text-theme-muted dark:text-gray-300 leading-relaxed reveal-right delay-200">
+            Need 10 to 100+ matching costumes for your school pageant, corporate masquerade, or film production? Get bulk package pricing, dedicated fitting stylists, and priority courier logistics.
+          </p>
+
+          <div class="space-y-3 pt-1">
+            
+            <!-- Bullet 1: Enters RTL & Slides Left on Hover -->
+            <div class="reveal-right delay-300">
+              <div class="group flex items-center gap-3.5 p-3 rounded-2xl bg-white/70 dark:bg-[#1C1C22]/70 border border-theme/60 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-x-2 cursor-default">
+                <div class="w-8 h-8 rounded-xl bg-theme-main text-white flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-[#B7410E] transition-all shadow-sm">
+                  <i class="bi bi-check2 text-base"></i>
+                </div>
+                <span class="text-xs sm:text-sm text-theme-main dark:text-white font-bold group-hover:text-[#B7410E] dark:group-hover:text-amber-400 transition-colors">
+                  Up to 45% discount on commercial group hires
+                </span>
+              </div>
+            </div>
+
+            <!-- Bullet 2: Enters RTL & Slides Left on Hover -->
+            <div class="reveal-right delay-400">
+              <div class="group flex items-center gap-3.5 p-3 rounded-2xl bg-white/70 dark:bg-[#1C1C22]/70 border border-theme/60 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-x-2 cursor-default">
+                <div class="w-8 h-8 rounded-xl bg-theme-main text-white flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-[#B7410E] transition-all shadow-sm">
+                  <i class="bi bi-check2 text-base"></i>
+                </div>
+                <span class="text-xs sm:text-sm text-theme-main dark:text-white font-bold group-hover:text-[#B7410E] dark:group-hover:text-amber-400 transition-colors">
+                  Free actor sizing coordination & labeled garment bags
+                </span>
+              </div>
+            </div>
+
+            <!-- Bullet 3: Enters RTL & Slides Left on Hover -->
+            <div class="reveal-right delay-500">
+              <div class="group flex items-center gap-3.5 p-3 rounded-2xl bg-white/70 dark:bg-[#1C1C22]/70 border border-theme/60 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-x-2 cursor-default">
+                <div class="w-8 h-8 rounded-xl bg-theme-main text-white flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-[#B7410E] transition-all shadow-sm">
+                  <i class="bi bi-check2 text-base"></i>
+                </div>
+                <span class="text-xs sm:text-sm text-theme-main dark:text-white font-bold group-hover:text-[#B7410E] dark:group-hover:text-amber-400 transition-colors">
+                  Dedicated master wardrobe consultant assigned to your event
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Form Card with Right-To-Left Reveal, 3D Tilt & Continuous Light Beam -->
+        <div class="reveal-right tilt-card bg-white dark:bg-[#1C1C22] p-8 sm:p-10 rounded-[2.5rem] shadow-2xl border border-theme relative overflow-hidden group">
+          
+          <!-- Continuous Right-To-Left Light Beam Shimmer Sweep -->
+          <div class="scan-beam-rtl"></div>
+
+          <!-- Floating Priority Badge with Right-to-Left Drift -->
+          <div class="hidden sm:inline-flex absolute top-7 right-7 items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-500/10 dark:bg-amber-500/20 border border-amber-500/30 text-[10px] font-black text-amber-600 dark:text-amber-400 animate-float-rtl z-20">
+            <i class="bi bi-lightning-charge-fill text-amber-500"></i>
+            <span>24h Response Guarantee</span>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-black text-theme-main dark:text-white mb-2">Request a Studio Quote</h3>
+          <p class="text-xs text-gray-500 mb-6">Receive a custom quote & fitting schedule within 24 business hours.</p>
+
+          <form id="studioBulkForm" onsubmit="handleBulkQuoteSubmit(event)" class="space-y-4 relative z-10">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Company / Troupe Name</label>
+                <input type="text" id="bulkOrgName" required class="theme-input text-xs" placeholder="e.g. Royal Academy of Arts">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Contact Coordinator</label>
+                <input type="text" id="bulkContactName" required class="theme-input text-xs" placeholder="Coordinator Name">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Email Address</label>
+                <input type="email" id="bulkEmail" required class="theme-input text-xs" placeholder="contact@studio.org">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Primary Occasion</label>
+                <select id="bulkOccasion" class="theme-input text-xs cursor-pointer">
+                  <option value="Kids">🎈 Kids Birthday & School Pageants</option>
+                  <option value="Themed Parties">✨ Themed Parties & Galas</option>
+                  <option value="Cultural">🌸 Cultural Festivals & Carnivale</option>
+                  <option value="Historical">⚔️ Historical Re-enactments & Productions</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Expected Costume Volume</label>
+              <div class="grid grid-cols-3 gap-2">
+                <label class="cursor-pointer">
+                  <input type="radio" name="bulkVolume" value="5-15 Costumes" class="peer sr-only" checked>
+                  <div class="selection-pill text-xs py-2.5 px-2 shadow-sm">
+                    5–15 Sets
+                  </div>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="radio" name="bulkVolume" value="15-50 Costumes" class="peer sr-only">
+                  <div class="selection-pill text-xs py-2.5 px-2 shadow-sm">
+                    15–50 Sets
+                  </div>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="radio" name="bulkVolume" value="50+ Costumes" class="peer sr-only">
+                  <div class="selection-pill text-xs py-2.5 px-2 shadow-sm">
+                    50+ Sets
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Project Details & Dates</label>
+              <textarea id="bulkMessage" rows="3" class="theme-input text-xs" placeholder="Tell us your performance dates, theme details, and sizing requirements..."></textarea>
+            </div>
+
+            <button type="submit" class="w-full btn-primary-theme text-xs py-3.5 rounded-xl font-bold shadow-lg flex items-center justify-center gap-2 group hover:shadow-2xl transition-all">
+              <span class="inline-block transition-transform duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1">
+                <i class="bi bi-send-fill"></i>
+              </span>
+              <span>Submit Studio Enquiry</span>
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: VIP CALL TO ACTION BANNER -->
+  <section class="py-20 bg-white dark:bg-[#101014]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="text-white rounded-[3rem] p-10 sm:p-14 text-center relative overflow-hidden shadow-2xl bg-[#7E513B]" style="background-color: #7E513B !important;">
+        
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+          <div class="w-full h-full bg-[radial-gradient(circle,white_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        </div>
+
+        <span class="theme-badge-gold text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest mb-4 inline-block">
+          VIP Fitting Concierge
+        </span>
+
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 relative z-10 leading-tight text-white">
+          Don't Just Attend. <br>
+          <span class="font-serif italic font-normal text-amber-200">Own The Spotlight.</span>
+        </h2>
+
+        <p class="text-white/90 text-sm sm:text-base max-w-xl mx-auto mb-8 relative z-10 leading-relaxed">
+          Reserve early for peak gala and festival weekends. Receive our fitting kit, complimentary accessories, and eco dry-cleaning assurance with every costume.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
+          <a href="catalog.html" class="px-8 py-3.5 rounded-xl bg-white text-zinc-950 font-black text-xs hover:bg-zinc-100 transition-all transform hover:scale-105 shadow-xl">
+            Browse Entire Catalog
+          </a>
+          <a href="pricing.html" class="px-8 py-3.5 rounded-xl border border-white/40 text-white font-bold text-xs hover:bg-white/10 transition-all">
+            Review Pricing & Deposit Terms
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic Footer -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/styles-switcher.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    // Hero quick search handler
+    function handleHeroSearch() {
+      const occasion = document.getElementById('heroOccasionQuick').value;
+      if (occasion !== 'all') {
+        window.location.href = `catalog.html?occasion=${encodeURIComponent(occasion)}`;
+      } else {
+        window.location.href = 'catalog.html';
+      }
+    }
+
+    // Set tomorrow's date for hero date picker
+    const heroDateInput = document.getElementById('heroDateQuick');
+    if (heroDateInput) {
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      heroDateInput.min = tomorrow.toISOString().split('T')[0];
+      heroDateInput.value = tomorrow.toISOString().split('T')[0];
+    }
+
+    // Populate Trending Costumes
+    const renderTrending = (category = "All") => {
+      const container = document.getElementById('trending-costumes-container');
+      if (!container || !window.db) return;
+
+      let list = window.db.costumes;
+      if (category !== "All") {
+        list = list.filter(c => c.category === category);
+      }
+      list = list.slice(0, 4);
+
+      container.innerHTML = list.map(c => `
+        <div class="theme-card flex flex-col h-full p-4 group relative overflow-hidden">
+          
+          <!-- Image Showcase -->
+          <div class="aspect-[4/5] bg-gray-100 dark:bg-black/30 rounded-2xl mb-4 relative overflow-hidden">
+            <span class="absolute top-2.5 left-2.5 badge theme-badge-gold text-[9px] font-bold px-2 py-0.5 rounded-full z-10 shadow">
+              ${c.badge || c.category}
+            </span>
+
+            <button onclick="window.store.toggleWishlist('${c.id}'); this.classList.toggle('text-red-500');" class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white/90 dark:bg-black/70 backdrop-blur text-gray-700 dark:text-white flex items-center justify-center text-xs z-10 hover:text-red-500 transition shadow">
+              <i class="bi bi-heart-fill ${window.store.isInWishlist(c.id) ? 'text-red-500' : ''}"></i>
+            </button>
+
+            <a href="costume-details.html?id=${c.id}" class="w-full h-full block">
+              <img src="${c.image}" alt="${c.name}" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500">
+            </a>
+
+            <!-- Quick View Hover Overlay -->
+            <button onclick="window.openQuickView('${c.id}')" class="absolute bottom-3 left-3 right-3 py-2.5 bg-black/80 hover:bg-black text-white text-[11px] font-bold rounded-xl opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1.5 shadow-lg">
+              <i class="bi bi-eye"></i> Quick View
+            </button>
+          </div>
+
+          <!-- Info -->
+          <div class="px-1 flex flex-col flex-grow">
+            <span class="text-[9px] text-theme-accent uppercase tracking-widest font-bold block">${c.occasion}</span>
+            <h4 class="font-bold text-theme-main dark:text-white text-sm mb-1 mt-0.5 truncate">
+              <a href="costume-details.html?id=${c.id}" class="hover:text-theme-accent transition-colors">${c.name}</a>
+            </h4>
+
+            <div class="flex items-center justify-between mt-2 pt-2 border-t border-theme mb-4">
+              <div class="flex items-center gap-1 text-amber-500 text-xs">
+                <i class="bi bi-star-fill"></i>
+                <span class="text-theme-main dark:text-white font-bold text-xs">${c.rating}</span>
+                <span class="text-gray-400 text-[10px]">(${c.reviewsCount})</span>
+              </div>
+              <div class="text-right">
+                <span class="text-xs font-black text-theme-main dark:text-white">$${c.dailyRate}</span>
+                <span class="text-[10px] text-gray-400">/day</span>
+              </div>
+            </div>
+
+            <div class="flex gap-2 mt-auto">
+              <button onclick="window.store.addToCart('${c.id}'); window.showToast('Added to Rental Cart', 'success');" class="flex-1 btn-primary-theme text-[11px] py-2.5 rounded-xl font-bold shadow-sm">
+                <i class="bi bi-bag-plus"></i> Rent Now
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+      `).join('');
+    };
+
+    renderTrending();
+
+    // Filter Buttons
+    document.querySelectorAll('#homeFilterPills .filter-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('#homeFilterPills .filter-pill').forEach(p => {
+          p.classList.remove('bg-theme-main', 'text-white', 'shadow-sm');
+          p.classList.add('border', 'border-theme');
+        });
+        pill.classList.remove('border', 'border-theme');
+        pill.classList.add('bg-theme-main', 'text-white', 'shadow-sm');
+        renderTrending(pill.getAttribute('data-cat'));
+      });
+    });
+
+    // Handle Bulk Quote Form Submission
+    function handleBulkQuoteSubmit(e) {
+      e.preventDefault();
+
+      const newOrder = {
+        name: document.getElementById('bulkOrgName').value,
+        contactName: document.getElementById('bulkContactName').value,
+        email: document.getElementById('bulkEmail').value,
+        occasion: document.getElementById('bulkOccasion').value,
+        volume: document.querySelector('input[name="bulkVolume"]:checked').value,
+        message: document.getElementById('bulkMessage').value
+      };
+
+      if (window.store && window.store.addEnquiry) {
+        window.store.addEnquiry(newOrder);
+      }
+
+      window.showToast('Studio enquiry submitted! Our wardrobe consultant will contact you within 24 hours.', 'success');
+      document.getElementById('studioBulkForm').reset();
+    }
+  </script>
+
+</body>
+</html>

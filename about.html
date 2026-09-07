@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - FancyVerse Costume Archive & Theatrical Studio</title>
+  <meta name="description" content="Learn about FancyVerse's heritage, master tailors, sustainable costume rental philosophy, and award-winning theatrical archive.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  
+  <!-- Theme, Dir, Palette & Font Head Bootstrap to Prevent Bright Flash / FOUC -->
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('fancy_theme');
+        if (t === 'dark' || (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+        var d = localStorage.getItem('fancy_dir');
+        if (d) document.documentElement.setAttribute('dir', d);
+        var p = localStorage.getItem('fancy_palette');
+        if (p && p !== 'default') document.documentElement.setAttribute('data-palette', p);
+        var f = localStorage.getItem('fancy_font');
+        if (f && f !== 'sans') document.documentElement.setAttribute('data-font', f);
+      } catch (e) {}
+    })();
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          colors: {
+            theme: {
+              main: 'var(--color-primary)',
+              secondary: 'var(--color-secondary)',
+              accent: 'var(--color-accent)',
+              subtle: 'var(--color-bg-subtle)',
+              light: 'var(--color-bg-light)',
+              card: 'var(--color-bg-card)',
+              gold: 'var(--color-gold)',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/styles-switcher.css">
+</head>
+
+<body class="font-sans antialiased text-[#271E1A] dark:text-white bg-[#FDFBF9] dark:bg-[#0D0D0E] transition-colors duration-300">
+  
+  <div id="navbar"></div>
+
+  <!-- ABOUT HERO -->
+  <section class="pt-32 pb-20 bg-theme-subtle dark:bg-[#151518] relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center max-w-3xl">
+      <span class="text-theme-accent font-bold tracking-[0.2em] text-xs uppercase block mb-3">Our Heritage & Story</span>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight">
+        <span class="text-brand-terracotta dark:text-white">Bringing Imagination to Life,</span> <br>
+        <span class="font-serif italic font-normal text-theme-accent inline-block my-1">One Stitch At A Time.</span>
+      </h1>
+      <p class="text-sm sm:text-base text-theme-muted dark:text-gray-300 mt-6 leading-relaxed">
+        Founded in 2012 by theatrical wardrobe directors and master corsetières, FancyVerse was born from a simple belief: high-society galas, theatre productions, and passionate cosplayers deserve museum-grade costuming without the prohibitive cost of single-wear ownership.
+      </p>
+    </div>
+  </section>
+
+  <!-- MISSION & STATS -->
+  <section class="py-24 bg-white dark:bg-[#121215]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="relative reveal-left">
+          <div class="tilt-card rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-[#2A2A33]">
+            <img src="https://images.unsplash.com/photo-1741183392566-6691041a231f?auto=format&fit=crop&q=80&w=1200" alt="FancyVerse Archive & Tailoring Atelier" class="w-full h-[460px] object-cover">
+          </div>
+          <div class="absolute -bottom-8 -right-4 sm:-right-8 bg-theme-main text-white p-6 rounded-3xl shadow-2xl max-w-xs border border-white/20 animate-float pointer-events-none">
+            <p class="text-3xl font-black text-theme-accent" data-counter="14" data-suffix="+ Years">14+ Years</p>
+            <p class="text-xs text-white/80 mt-1">Preserving historic textile traditions and sustainable circular costuming.</p>
+          </div>
+        </div>
+
+        <div class="space-y-6 reveal-right">
+          <span class="text-theme-accent font-bold tracking-[0.2em] text-xs uppercase">Our Core Mission</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-theme-main dark:text-white">
+            Eco-Conscious Circular Luxury
+          </h2>
+          <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-400 leading-relaxed">
+            Fast-fashion costumes end up in landfills after a single Halloween night. We counter that waste by curating durable, hand-stitched heirlooms designed for dozens of magical evenings.
+          </p>
+          
+          <div class="grid grid-cols-2 gap-4 pt-4">
+            <div class="p-4 rounded-2xl bg-[#FDFBF9] dark:bg-[#151518] border border-theme tilt-card">
+              <p class="text-2xl font-black text-theme-main dark:text-white" data-counter="2500" data-suffix="+">2,500+</p>
+              <p class="text-xs font-semibold text-gray-500 mt-0.5">Costumes in Vault</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-[#FDFBF9] dark:bg-[#151518] border border-theme tilt-card">
+              <p class="text-2xl font-black text-theme-main dark:text-white" data-counter="18000" data-suffix="+">18,000+</p>
+              <p class="text-xs font-semibold text-gray-500 mt-0.5">Rentals Delivered</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-[#FDFBF9] dark:bg-[#151518] border border-theme tilt-card">
+              <p class="text-2xl font-black text-theme-main dark:text-white" data-counter="100" data-suffix="%">100%</p>
+              <p class="text-xs font-semibold text-gray-500 mt-0.5">Eco-Solvent Cleaning</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-[#FDFBF9] dark:bg-[#151518] border border-theme tilt-card">
+              <p class="text-2xl font-black text-theme-main dark:text-white" data-counter="4.9" data-suffix=" ★">4.9 ★</p>
+              <p class="text-xs font-semibold text-gray-500 mt-0.5">Client Satisfaction</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HISTORY TIMELINE -->
+  <section class="py-24 bg-[#FDFBF9] dark:bg-[#0D0D0E]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-xl mx-auto mb-16 space-y-2">
+        <span class="text-theme-accent font-bold tracking-[0.2em] text-xs uppercase">Milestones</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-theme-main dark:text-white">Our Journey Through Time</h2>
+      </div>
+
+      <div class="space-y-8 relative before:absolute before:inset-0 before:left-1/2 before:w-0.5 before:-translate-x-1/2 before:bg-[#EFEBE9] dark:before:bg-[#2A2A33]">
+        
+        <!-- 2012 -->
+        <div class="relative flex flex-col md:flex-row items-center justify-between gap-8 reveal-up">
+          <div class="md:w-1/2 md:text-right md:pr-10">
+            <span class="text-xs font-bold text-theme-accent uppercase tracking-wider">2012 • The Beginning</span>
+            <h4 class="text-lg font-bold text-theme-main dark:text-white mt-1">Broadway Tailoring Suite</h4>
+            <p class="text-xs text-theme-muted dark:text-gray-400 mt-1 leading-relaxed">
+              Started as an underground costume hire for regional theatre productions in NYC with 80 handcrafted Victorian pieces.
+            </p>
+          </div>
+          <div class="w-8 h-8 rounded-full bg-theme-main text-white flex items-center justify-center font-bold text-xs z-10 shadow-lg border-4 border-white dark:border-[#0D0D0E]">
+            1
+          </div>
+          <div class="md:w-1/2 md:pl-10">
+            <span class="text-xs text-gray-400 font-semibold">80 Costumes • 3 Master Tailors</span>
+          </div>
+        </div>
+
+        <!-- 2017 -->
+        <div class="relative flex flex-col md:flex-row items-center justify-between gap-8 reveal-up delay-100">
+          <div class="md:w-1/2 md:text-right md:pr-10 order-1 md:order-1">
+            <span class="text-xs text-gray-400 font-semibold">National Courier Fleet Launched</span>
+          </div>
+          <div class="w-8 h-8 rounded-full bg-theme-main text-white flex items-center justify-center font-bold text-xs z-10 shadow-lg border-4 border-white dark:border-[#0D0D0E] order-2">
+            2
+          </div>
+          <div class="md:w-1/2 md:pl-10 order-3 md:order-3">
+            <span class="text-xs font-bold text-theme-accent uppercase tracking-wider">2017 • Expansion</span>
+            <h4 class="text-lg font-bold text-theme-main dark:text-white mt-1">Masquerade & Gala Division</h4>
+            <p class="text-xs text-theme-muted dark:text-gray-400 mt-1 leading-relaxed">
+              Opened our flagship showroom on Broadway with private fitting salons and full Venetian filigree mask collections.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2022 -->
+        <div class="relative flex flex-col md:flex-row items-center justify-between gap-8 reveal-up delay-200">
+          <div class="md:w-1/2 md:text-right md:pr-10">
+            <span class="text-xs font-bold text-theme-accent uppercase tracking-wider">2022 • Cultural & Kids Expansion</span>
+            <h4 class="text-lg font-bold text-theme-main dark:text-white mt-1">Kids Fairytale & Cultural Archive</h4>
+            <p class="text-xs text-theme-muted dark:text-gray-400 mt-1 leading-relaxed">
+              Curated authentic Japanese silk kimonos, Venetian masquerades, and hypoallergenic children's fairytale and hero wardrobes with soft cotton linings.
+            </p>
+          </div>
+          <div class="w-8 h-8 rounded-full bg-theme-main text-white flex items-center justify-center font-bold text-xs z-10 shadow-lg border-4 border-white dark:border-[#0D0D0E]">
+            3
+          </div>
+          <div class="md:w-1/2 md:pl-10">
+            <span class="text-xs text-gray-400 font-semibold">Award for Technical Craftsmanship</span>
+          </div>
+        </div>
+
+        <!-- Today -->
+        <div class="relative flex flex-col md:flex-row items-center justify-between gap-8 reveal-up delay-300">
+          <div class="md:w-1/2 md:text-right md:pr-10 order-1 md:order-1">
+            <span class="text-xs text-gray-400 font-semibold">Over 2,500 active costumes</span>
+          </div>
+          <div class="w-8 h-8 rounded-full bg-theme-accent text-white flex items-center justify-center font-bold text-xs z-10 shadow-lg border-4 border-white dark:border-[#0D0D0E] order-2">
+            ★
+          </div>
+          <div class="md:w-1/2 md:pl-10 order-3 md:order-3">
+            <span class="text-xs font-bold text-theme-accent uppercase tracking-wider">Today & Tomorrow</span>
+            <h4 class="text-lg font-bold text-theme-main dark:text-white mt-1">Global Studio Logistics</h4>
+            <p class="text-xs text-theme-muted dark:text-gray-400 mt-1 leading-relaxed">
+              Serving productions and private clients worldwide with digital size profiling and express 24-hour delivery.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MASTER ARTISANS & TEAM -->
+  <section class="py-24 bg-white dark:bg-[#121215]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-2">
+        <span class="text-theme-accent font-bold tracking-[0.2em] text-xs uppercase">The Masters Behind The Magic</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-theme-main dark:text-white">Meet Our Curators</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Member 1 -->
+        <div class="theme-card tilt-card reveal-up delay-100 overflow-hidden group">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" alt="Isabelle Sinclair" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500">
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-base text-theme-main dark:text-white">Isabelle Sinclair</h4>
+            <p class="text-xs text-theme-accent font-semibold uppercase tracking-wider mt-0.5">Head Costume Curator</p>
+            <p class="text-xs text-theme-muted dark:text-gray-400 mt-3 leading-relaxed">
+              Former Royal Opera House costume supervisor with 20 years specializing in Renaissance boning and silk brocade.
+            </p>
+          </div>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="theme-card tilt-card reveal-up delay-200 overflow-hidden group">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600" alt="Marcus Vance" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500">
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-base text-theme-main dark:text-white">Marcus Vance</h4>
+            <p class="text-xs text-theme-accent font-semibold uppercase tracking-wider mt-0.5">Master Armorer & Prop Designer</p>
+            <p class="text-xs text-theme-muted dark:text-gray-400 mt-3 leading-relaxed">
+              Award-winning prop master crafting high-density foam sci-fi armors, articulated gauntlets, and lightweight weaponry.
+            </p>
+          </div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="theme-card tilt-card reveal-up delay-300 overflow-hidden group">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" alt="Elena Rostova" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500">
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-base text-theme-main dark:text-white">Elena Rostova</h4>
+            <p class="text-xs text-theme-accent font-semibold uppercase tracking-wider mt-0.5">Wig & Theatrical Makeup Lead</p>
+            <p class="text-xs text-theme-muted dark:text-gray-400 mt-3 leading-relaxed">
+              Specializes in custom-styled lace-front wigs, period Marie Antoinette pompadours, and character styling accessories.
+            </p>
+          </div>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="theme-card tilt-card reveal-up delay-400 overflow-hidden group">
+          <div class="aspect-square overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=600" alt="Darius Thorne" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500">
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-base text-theme-main dark:text-white">Darius Thorne</h4>
+            <p class="text-xs text-theme-accent font-semibold uppercase tracking-wider mt-0.5">Head of Hygiene & Preservation</p>
+            <p class="text-xs text-theme-muted dark:text-gray-400 mt-3 leading-relaxed">
+              Chemical engineer overseeing our medical-grade ozone sanitization chambers and textile fiber conservation.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-theme-main text-white reveal-scale">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6">
+      <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight text-white">
+        Experience The Craftsmanship Firsthand
+      </h2>
+      <p class="text-sm text-white/80 max-w-lg mx-auto">
+        Schedule a private consultation at our Broadway showroom or order a try-on fitting kit directly to your doorstep.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+        <a href="contact.html#fitting" class="text-xs py-3 px-8 rounded-xl bg-white text-zinc-950 font-black hover:bg-zinc-100 transition shadow-lg inline-flex items-center justify-center">
+          Book In-Store Fitting
+        </a>
+        <a href="catalog.html" class="btn-outline-theme text-xs py-3 px-8 border-white text-white hover:bg-white/10">
+          Explore Our Archive
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/styles-switcher.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

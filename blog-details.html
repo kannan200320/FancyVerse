@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Style & Secure an 18th-Century Venetian Masquerade Gown - FancyVerse Blog</title>
+  <meta name="description" content="Master the art of 18th-century corsetry, petticoat management, and mask securing with our head costume curator's step-by-step masterclass.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  
+  <!-- Theme, Dir, Palette & Font Head Bootstrap to Prevent Bright Flash / FOUC -->
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('fancy_theme');
+        if (t === 'dark' || (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+        var d = localStorage.getItem('fancy_dir');
+        if (d) document.documentElement.setAttribute('dir', d);
+        var p = localStorage.getItem('fancy_palette');
+        if (p && p !== 'default') document.documentElement.setAttribute('data-palette', p);
+        var f = localStorage.getItem('fancy_font');
+        if (f && f !== 'sans') document.documentElement.setAttribute('data-font', f);
+      } catch (e) {}
+    })();
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          colors: {
+            theme: {
+              main: 'var(--color-primary)',
+              secondary: 'var(--color-secondary)',
+              accent: 'var(--color-accent)',
+              subtle: 'var(--color-bg-subtle)',
+              light: 'var(--color-bg-light)',
+              card: 'var(--color-bg-card)',
+              gold: 'var(--color-gold)',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/styles-switcher.css">
+</head>
+
+<body class="font-sans antialiased text-[#271E1A] dark:text-white bg-[#FDFBF9] dark:bg-[#0D0D0E] transition-colors duration-300">
+  
+  <div id="navbar"></div>
+
+  <!-- HEADER -->
+  <section class="pt-32 pb-12 bg-theme-subtle dark:bg-[#151518] border-b border-theme">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl space-y-3">
+        <span class="theme-badge-gold text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+          Gala Masterclass
+        </span>
+        <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-theme-main dark:text-white leading-tight">
+          How to Style & Secure an 18th-Century Venetian Masquerade Gown
+        </h1>
+        <div class="flex flex-wrap items-center gap-4 text-xs text-gray-500 pt-2">
+          <div class="flex items-center gap-2">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150" alt="Isabelle Sinclair" class="w-7 h-7 rounded-full object-cover">
+            <span class="font-bold text-theme-main dark:text-white">Isabelle Sinclair</span>
+          </div>
+          <span>•</span>
+          <span>September 4, 2026</span>
+          <span>•</span>
+          <span>5 Min Read</span>
+          <span>•</span>
+          <span class="text-theme-accent font-semibold"><i class="bi bi-chat-left-text"></i> 24 Comments</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE & SIDEBAR SECTION -->
+  <section class="py-16 bg-white dark:bg-[#121215]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <!-- Left: Article Content -->
+      <main class="lg:col-span-8 space-y-8">
+        
+        <!-- Featured Hero Image -->
+        <div class="rounded-3xl overflow-hidden shadow-2xl aspect-video relative">
+          <img src="https://images.unsplash.com/photo-1768229934730-5dc189e39ddf?auto=format&fit=crop&q=80&w=1200" alt="Venetian Gown Dressing" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Social Share Bar -->
+        <div class="flex items-center justify-between py-3 border-y border-theme text-xs">
+          <span class="font-bold uppercase tracking-wider text-theme-muted">Share This Guide:</span>
+          <div class="flex items-center gap-2">
+            <button onclick="shareArticle('twitter')" aria-label="Share on X / Twitter" class="w-8 h-8 rounded-full bg-theme-subtle dark:bg-[#202025] text-theme-main dark:text-white hover:bg-theme-main hover:text-white transition flex items-center justify-center" title="Share on Twitter / X">
+              <i class="bi bi-twitter-x"></i>
+            </button>
+            <button onclick="shareArticle('facebook')" aria-label="Share on Facebook" class="w-8 h-8 rounded-full bg-theme-subtle dark:bg-[#202025] text-theme-main dark:text-white hover:bg-theme-main hover:text-white transition flex items-center justify-center" title="Share on Facebook">
+              <i class="bi bi-facebook"></i>
+            </button>
+            <button onclick="shareArticle('linkedin')" aria-label="Share on LinkedIn" class="w-8 h-8 rounded-full bg-theme-subtle dark:bg-[#202025] text-theme-main dark:text-white hover:bg-theme-main hover:text-white transition flex items-center justify-center" title="Share on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </button>
+            <button onclick="shareArticle('pinterest')" aria-label="Share on Pinterest" class="w-8 h-8 rounded-full bg-theme-subtle dark:bg-[#202025] text-theme-main dark:text-white hover:bg-theme-main hover:text-white transition flex items-center justify-center" title="Share on Pinterest">
+              <i class="bi bi-pinterest"></i>
+            </button>
+            <button onclick="copyArticleLink()" class="px-3 py-1.5 rounded-full border border-theme text-[11px] font-bold hover:bg-theme-subtle transition flex items-center gap-1">
+              <i class="bi bi-link-45deg text-sm"></i> Copy Link
+            </button>
+          </div>
+        </div>
+
+        <!-- Rich Text Article Body -->
+        <div class="space-y-6 text-sm text-theme-muted dark:text-gray-300 leading-relaxed font-normal">
+          
+          <p class="text-base sm:text-lg font-medium text-theme-main dark:text-white leading-relaxed">
+            There is an undeniable, spine-tingling magic in fastening the laces of a gilded Venetian brocade ballgown. But as any seasoned gala chairwoman will confess, wearing 18th-century court attire requires more than simply slipping into a dress — it is an art of structural balance and effortless poise.
+          </p>
+
+          <h2 class="text-2xl font-bold text-theme-main dark:text-white pt-4">1. The Foundation: Hoop Petticoats & Under-Lining</h2>
+          <p>
+            Never step directly into a ballgown without testing your petticoat expansion first. Our rental packages arrive with collapsible flexible-steel crinoline hoops. Before securing the waist drawstrings, shake the petticoat gently to allow the tiers to drop evenly. The lowest hoop should sit approximately 3 inches above your shoe soles to ensure you do not step on your hem when climbing grand marble staircases.
+          </p>
+
+          <!-- Highlight Blockquote -->
+          <blockquote class="p-6 rounded-2xl bg-[#FDFBF9] dark:bg-[#151518] border-l-4 border-theme-accent italic text-xs sm:text-sm text-theme-main dark:text-white my-6">
+            "A properly laced corset should feel like a firm, comforting embrace across the thoracic ribs — never sharp or constricting at the lower diaphragm. If you cannot laugh comfortably, the bottom eyelets are pulled too tight."
+            <footer class="mt-2 text-[11px] font-bold text-theme-accent not-italic">— Isabelle Sinclair, Head Curator</footer>
+          </blockquote>
+
+          <h2 class="text-2xl font-bold text-theme-main dark:text-white pt-4">2. The Corset Lacing Technique</h2>
+          <p>
+            Our gowns feature dual-direction spiral lacing. Begin by loosening the back laces completely until you can fasten the front concealed hook-and-eye placket. Once the front closure is secure, have a companion gently pull the top laces outward and down in an 'X' crossing pattern.
+          </p>
+          <p>
+            Always tie the final knot into a double bow tucked discreetly underneath the matching velvet peplum fold.
+          </p>
+
+          <h2 class="text-2xl font-bold text-theme-main dark:text-white pt-4">3. Securing Your Venetian Mask All Night</h2>
+          <p>
+            The secret to keeping a heavy papier-mâché or metal filigree mask in place without ruining your styled wig lies in cross-pinning. Tie the satin ribbons firmly at the crown of your head (not the nape of your neck), then slide two crisscrossed bobby pins directly over the ribbon knot into your hair base.
+          </p>
+
+        </div>
+
+        <!-- Author Bio Card -->
+        <div class="p-6 rounded-3xl bg-[#FDFBF9] dark:bg-[#151518] border border-theme flex flex-col sm:flex-row items-center gap-5">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200" alt="Isabelle Sinclair" class="w-16 h-16 rounded-full object-cover flex-shrink-0">
+          <div>
+            <h4 class="font-bold text-sm text-theme-main dark:text-white">Written by Isabelle Sinclair</h4>
+            <p class="text-[11px] text-theme-accent uppercase font-semibold">Head Costume Curator & Master Corsetière</p>
+            <p class="text-xs text-gray-500 mt-1.5 leading-relaxed">
+              With two decades dressing opera soloists and gala patrons in London and New York, Isabelle oversees FancyVerse's historical preservation archive.
+            </p>
+          </div>
+        </div>
+
+        <!-- COMMENTS SECTION -->
+        <div class="space-y-6 pt-6 border-t border-theme">
+          <h3 class="text-xl font-bold text-theme-main dark:text-white flex items-center justify-between">
+            <span>Renter Discussions</span>
+            <span class="text-xs text-theme-accent" id="commentCountHeader">2 Comments</span>
+          </h3>
+
+          <!-- Existing Comments Container -->
+          <div class="space-y-4" id="commentsList">
+            
+            <div class="p-5 rounded-2xl bg-[#FDFBF9] dark:bg-[#151518] border border-theme space-y-1.5">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold text-theme-main dark:text-white">Lady Cassandra Sterling</span>
+                <span class="text-[10px] text-gray-400">2 days ago</span>
+              </div>
+              <p class="text-xs text-theme-muted dark:text-gray-300 leading-relaxed">
+                "The bobby-pin mask trick saved my evening at the Venetian Ball! My mask stayed perfectly anchored even during the waltz."
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-[#FDFBF9] dark:bg-[#151518] border border-theme space-y-1.5">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold text-theme-main dark:text-white">Henri Dubois</span>
+                <span class="text-[10px] text-gray-400">1 week ago</span>
+              </div>
+              <p class="text-xs text-theme-muted dark:text-gray-300 leading-relaxed">
+                "Fantastic explanation of the steel hoop skirt tiers. We ordered the try-on kit and our lead actress was ready in 10 minutes."
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Add Comment Form -->
+          <div class="p-6 rounded-3xl bg-[#EFEBE9]/50 dark:bg-[#1C1C22] border border-theme space-y-4">
+            <h4 class="text-sm font-bold text-theme-main dark:text-white">Leave a Comment or Question</h4>
+            
+            <form id="commentForm" onsubmit="handlePostComment(event)" class="space-y-3">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <input type="text" id="commentAuthor" required placeholder="Your name..." class="theme-input text-xs">
+                <input type="email" id="commentEmail" required placeholder="Your email (kept private)..." class="theme-input text-xs">
+              </div>
+              <textarea id="commentText" required rows="3" placeholder="Share your styling experience or ask our curators..." class="theme-input text-xs"></textarea>
+              <button type="submit" class="btn-primary-theme text-xs py-2.5 px-5 rounded-xl font-bold shadow">
+                Post Comment
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </main>
+
+      <!-- Right: Interactive Sidebar -->
+      <aside class="lg:col-span-4 space-y-8">
+        
+        <!-- Search -->
+        <div class="theme-card p-6 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-theme-muted">Search Journal</h4>
+          <div class="relative">
+            <i class="bi bi-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+            <input type="text" placeholder="Search topics, themes..." class="theme-input text-xs pl-8 py-2">
+          </div>
+        </div>
+
+        <!-- Featured Costume Rental Promo -->
+        <div class="theme-card overflow-hidden shadow-xl border-2 border-theme-accent">
+          <div class="relative aspect-square">
+            <img src="https://images.unsplash.com/photo-1768229934730-5dc189e39ddf?auto=format&fit=crop&q=80&w=800" alt="Venetian Gown" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 badge theme-badge-gold text-[9px] font-bold px-2 py-0.5 rounded-full">Featured Look</span>
+          </div>
+          <div class="p-5 space-y-3">
+            <span class="text-[10px] text-theme-accent font-bold uppercase tracking-widest">Rent This Exact Outfit</span>
+            <h4 class="text-sm font-bold text-theme-main dark:text-white leading-snug">Venetian Gold Brocade Ballgown</h4>
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-extrabold text-theme-main dark:text-white">$65 / day</span>
+              <span class="text-emerald-600 font-bold">Sanitized & Ready</span>
+            </div>
+            <a href="costume-details.html?id=CST-CLT-302" class="w-full btn-primary-theme text-xs py-2.5 text-center block rounded-xl font-bold shadow-sm">
+              Reserve This Look
+            </a>
+          </div>
+        </div>
+
+        <!-- Categories List -->
+        <div class="theme-card p-6 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-theme-muted">Categories</h4>
+          <ul class="space-y-2 text-xs">
+            <li class="flex items-center justify-between pb-1.5 border-b border-theme">
+              <a href="blog.html" class="hover:text-theme-accent">🎈 Kids Costumes</a>
+              <span class="text-gray-400 font-bold">4</span>
+            </li>
+            <li class="flex items-center justify-between pb-1.5 border-b border-theme">
+              <a href="blog.html" class="hover:text-theme-accent">✨ Themed Parties & Galas</a>
+              <span class="text-gray-400 font-bold">4</span>
+            </li>
+            <li class="flex items-center justify-between pb-1.5 border-b border-theme">
+              <a href="blog.html" class="hover:text-theme-accent">🌸 Cultural & Traditional Silk</a>
+              <span class="text-gray-400 font-bold">4</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <a href="blog.html" class="hover:text-theme-accent">⚔️ Historical & Armor</a>
+              <span class="text-gray-400 font-bold">4</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Recent Articles -->
+        <div class="theme-card p-6 space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-theme-muted">Recent Guides</h4>
+          <div class="space-y-3 text-xs">
+            <a href="blog-details.html" class="flex gap-3 group">
+              <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=200" class="w-12 h-12 rounded-xl object-cover flex-shrink-0" alt="Steampunk">
+              <div>
+                <p class="font-bold text-theme-main dark:text-white group-hover:text-theme-accent transition truncate leading-snug">Victorian Steampunk: Brass & Clockwork</p>
+                <span class="text-[10px] text-gray-400">Aug 2026</span>
+              </div>
+            </a>
+            <a href="blog-details.html" class="flex gap-3 group">
+              <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&q=80&w=200" class="w-12 h-12 rounded-xl object-cover flex-shrink-0" alt="Cosplay Armor">
+              <div>
+                <p class="font-bold text-theme-main dark:text-white group-hover:text-theme-accent transition truncate leading-snug">Convention Survival for Armor Suits</p>
+                <span class="text-[10px] text-gray-400">Aug 2026</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/styles-switcher.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    // Social Sharing
+    function shareArticle(platform) {
+      const url = encodeURIComponent(window.location.href);
+      const title = encodeURIComponent(document.title);
+      let shareUrl = '';
+      if (platform === 'twitter') {
+        shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+      } else if (platform === 'facebook') {
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+      } else if (platform === 'linkedin') {
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+      } else if (platform === 'pinterest') {
+        shareUrl = `https://pinterest.com/pin/create/button/?url=${url}&description=${title}`;
+      }
+      if (shareUrl) {
+        window.open(shareUrl, '_blank', 'width=620,height=520,noopener,noreferrer');
+      }
+      window.showToast(`Opening ${platform.charAt(0).toUpperCase() + platform.slice(1)} share...`, 'info');
+    }
+
+    function copyArticleLink() {
+      navigator.clipboard.writeText(window.location.href);
+      window.showToast('Article link copied to clipboard!', 'success');
+    }
+
+    // Comment Post Handler
+    function handlePostComment(e) {
+      e.preventDefault();
+      const author = document.getElementById('commentAuthor').value;
+      const text = document.getElementById('commentText').value;
+
+      const commentsList = document.getElementById('commentsList');
+      const newComment = document.createElement('div');
+      newComment.className = 'p-5 rounded-2xl bg-[#FDFBF9] dark:bg-[#151518] border border-theme space-y-1.5 animate-scale-up';
+      newComment.innerHTML = `
+        <div class="flex items-center justify-between text-xs">
+          <span class="font-bold text-theme-main dark:text-white">${author}</span>
+          <span class="text-[10px] text-theme-accent font-bold">Just Now</span>
+        </div>
+        <p class="text-xs text-theme-muted dark:text-gray-300 leading-relaxed">${text}</p>
+      `;
+
+      commentsList.prepend(newComment);
+      window.showToast('Your comment was posted!', 'success');
+      document.getElementById('commentForm').reset();
+    }
+  </script>
+</body>
+</html>

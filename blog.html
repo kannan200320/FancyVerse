@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wardrobe & Costume Styling Blog - FancyVerse</title>
+  <meta name="description" content="Expert styling guides, historical wardrobe curation tips, cosplay crafting tutorials, and gala party dress codes from FancyVerse master tailors.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  
+  <!-- Theme, Dir, Palette & Font Head Bootstrap to Prevent Bright Flash / FOUC -->
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('fancy_theme');
+        if (t === 'dark' || (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+        var d = localStorage.getItem('fancy_dir');
+        if (d) document.documentElement.setAttribute('dir', d);
+        var p = localStorage.getItem('fancy_palette');
+        if (p && p !== 'default') document.documentElement.setAttribute('data-palette', p);
+        var f = localStorage.getItem('fancy_font');
+        if (f && f !== 'sans') document.documentElement.setAttribute('data-font', f);
+      } catch (e) {}
+    })();
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          colors: {
+            theme: {
+              main: 'var(--color-primary)',
+              secondary: 'var(--color-secondary)',
+              accent: 'var(--color-accent)',
+              subtle: 'var(--color-bg-subtle)',
+              light: 'var(--color-bg-light)',
+              card: 'var(--color-bg-card)',
+              gold: 'var(--color-gold)',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/styles-switcher.css">
+</head>
+
+<body class="font-sans antialiased text-[#271E1A] dark:text-white bg-[#FDFBF9] dark:bg-[#0D0D0E] transition-colors duration-300">
+  
+  <div id="navbar"></div>
+
+  <!-- BREADCRUMB & HEADER -->
+  <section class="pt-32 pb-12 bg-theme-subtle dark:bg-[#151518] border-b border-theme">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center max-w-2xl">
+      <span class="text-theme-accent font-bold tracking-[0.2em] text-xs uppercase block mb-2">The Costume Atelier Journal</span>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-theme-main dark:text-white">
+        Styling Guides & Trends
+      </h1>
+      <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-300 mt-3 leading-relaxed">
+        Expert advice on corset fitting, period dress codes, cosplay armor maintenance, and masquerade gala etiquette.
+      </p>
+    </div>
+  </section>
+
+  <!-- SEARCH & FILTER BAR -->
+  <section class="py-12 bg-white dark:bg-[#121215]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 pb-8 mb-10 border-b border-theme">
+        <div class="relative w-full md:w-80">
+          <i class="bi bi-search absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+          <input type="text" id="blogSearchInput" placeholder="Search styling articles..." class="theme-input text-xs pl-9 py-2.5">
+        </div>
+
+        <div class="flex flex-wrap gap-2 w-full md:w-auto" id="blogFilterTags">
+          <button class="blog-tag active px-4 py-2 rounded-full text-xs font-bold bg-theme-main text-white" data-tag="All">All Topics</button>
+          <button class="blog-tag px-4 py-2 rounded-full text-xs font-bold border border-theme hover:bg-theme-subtle" data-tag="Kids">🎈 Kids Costumes</button>
+          <button class="blog-tag px-4 py-2 rounded-full text-xs font-bold border border-theme hover:bg-theme-subtle" data-tag="Themed Parties">✨ Themed Parties</button>
+          <button class="blog-tag px-4 py-2 rounded-full text-xs font-bold border border-theme hover:bg-theme-subtle" data-tag="Cultural">🌸 Cultural Silk</button>
+          <button class="blog-tag px-4 py-2 rounded-full text-xs font-bold border border-theme hover:bg-theme-subtle" data-tag="Historical">⚔️ Historical & Armor</button>
+        </div>
+      </div>
+
+      <!-- BLOG POSTS GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blogPostsGrid">
+        
+        <!-- Article 1: Cultural -->
+        <article class="blog-card theme-card overflow-hidden flex flex-col justify-between" data-tag="Cultural">
+          <div>
+            <a href="blog-details.html" class="block aspect-video overflow-hidden relative group">
+              <img src="https://images.unsplash.com/photo-1768229934730-5dc189e39ddf?auto=format&fit=crop&q=80&w=800" alt="Venetian Masquerade Styling" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500">
+              <span class="absolute top-3 left-3 badge theme-badge-gold text-[10px] font-bold px-2.5 py-0.5 rounded-full">Cultural Silk</span>
+            </a>
+            <div class="p-6 space-y-2.5">
+              <div class="flex items-center gap-3 text-[11px] text-gray-400">
+                <span>By Isabelle Sinclair</span>
+                <span>•</span>
+                <span>5 Min Read</span>
+                <span>•</span>
+                <span>Sep 2026</span>
+              </div>
+              <h3 class="text-base font-bold text-theme-main dark:text-white leading-snug">
+                <a href="blog-details.html" class="hover:text-theme-accent transition">
+                  How to Style and Secure an 18th-Century Venetian Masquerade Gown
+                </a>
+              </h3>
+              <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed">
+                Step-by-step masterclass on corset lacing tension, under-petticoat hoop placement, and mask ribbon fastening for all-night gala comfort.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 flex items-center justify-between border-t border-theme/50 mt-4">
+            <a href="blog-details.html" class="text-xs font-bold text-theme-accent hover:underline flex items-center gap-1">
+              Read Full Article <i class="bi bi-arrow-right"></i>
+            </a>
+            <span class="text-[11px] text-gray-400">24 Comments</span>
+          </div>
+        </article>
+
+        <!-- Article 2: Historical -->
+        <article class="blog-card theme-card overflow-hidden flex flex-col justify-between" data-tag="Historical">
+          <div>
+            <a href="blog-details.html" class="block aspect-video overflow-hidden relative group">
+              <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800" alt="Steampunk Aristocrat Guide" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500">
+              <span class="absolute top-3 left-3 badge theme-badge-gold text-[10px] font-bold px-2.5 py-0.5 rounded-full">Historical</span>
+            </a>
+            <div class="p-6 space-y-2.5">
+              <div class="flex items-center gap-3 text-[11px] text-gray-400">
+                <span>By Julian Sterling</span>
+                <span>•</span>
+                <span>7 Min Read</span>
+                <span>•</span>
+                <span>Aug 2026</span>
+              </div>
+              <h3 class="text-base font-bold text-theme-main dark:text-white leading-snug">
+                <a href="blog-details.html" class="hover:text-theme-accent transition">
+                  The Evolution of Victorian Steampunk: Brass, Tailcoats & Clockwork
+                </a>
+              </h3>
+              <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed">
+                Discover how 19th-century industrial revolution fashion merged with retro-futuristic fantasy to create one of the most popular party themes.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 flex items-center justify-between border-t border-theme/50 mt-4">
+            <a href="blog-details.html" class="text-xs font-bold text-theme-accent hover:underline flex items-center gap-1">
+              Read Full Article <i class="bi bi-arrow-right"></i>
+            </a>
+            <span class="text-[11px] text-gray-400">18 Comments</span>
+          </div>
+        </article>
+
+        <!-- Article 3: Kids -->
+        <article class="blog-card theme-card overflow-hidden flex flex-col justify-between" data-tag="Kids">
+          <div>
+            <a href="blog-details.html" class="block aspect-video overflow-hidden relative group">
+              <img src="https://images.unsplash.com/photo-1737257218703-9cb7e8504901?auto=format&fit=crop&q=80&w=800" alt="Kids Costume Sizing" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500">
+              <span class="absolute top-3 left-3 badge theme-badge-gold text-[10px] font-bold px-2.5 py-0.5 rounded-full">Kids Costumes</span>
+            </a>
+            <div class="p-6 space-y-2.5">
+              <div class="flex items-center gap-3 text-[11px] text-gray-400">
+                <span>By Clara Higgins</span>
+                <span>•</span>
+                <span>4 Min Read</span>
+                <span>•</span>
+                <span>Aug 2026</span>
+              </div>
+              <h3 class="text-base font-bold text-theme-main dark:text-white leading-snug">
+                <a href="blog-details.html" class="hover:text-theme-accent transition">
+                  Kids Costume Care: Non-Scratch Linings & School Pageant Prep
+                </a>
+              </h3>
+              <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed">
+                Essential fitting advice for parents renting princess dresses, capes, and animal mascots: comfort elastic, cotton linings, and quick fastenings.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 flex items-center justify-between border-t border-theme/50 mt-4">
+            <a href="blog-details.html" class="text-xs font-bold text-theme-accent hover:underline flex items-center gap-1">
+              Read Full Article <i class="bi bi-arrow-right"></i>
+            </a>
+            <span class="text-[11px] text-gray-400">31 Comments</span>
+          </div>
+        </article>
+
+        <!-- Article 4: Historical -->
+        <article class="blog-card theme-card overflow-hidden flex flex-col justify-between" data-tag="Historical">
+          <div>
+            <a href="blog-details.html" class="block aspect-video overflow-hidden relative group">
+              <img src="https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?auto=format&fit=crop&q=80&w=800" alt="Crusader Knight Armor" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500">
+              <span class="absolute top-3 left-3 badge theme-badge-gold text-[10px] font-bold px-2.5 py-0.5 rounded-full">Historical Armor</span>
+            </a>
+            <div class="p-6 space-y-2.5">
+              <div class="flex items-center gap-3 text-[11px] text-gray-400">
+                <span>By Elena Rostova</span>
+                <span>•</span>
+                <span>4 Min Read</span>
+                <span>•</span>
+                <span>Jul 2026</span>
+              </div>
+              <h3 class="text-base font-bold text-theme-main dark:text-white leading-snug">
+                <a href="blog-details.html" class="hover:text-theme-accent transition">
+                  Medieval Crusader & Roman Armor: Wearability and Harness Fitting
+                </a>
+              </h3>
+              <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed">
+                How our theatrical steel armor sets balance visual authenticity with lightweight articulated harness distribution for comfortable movement.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 flex items-center justify-between border-t border-theme/50 mt-4">
+            <a href="blog-details.html" class="text-xs font-bold text-theme-accent hover:underline flex items-center gap-1">
+              Read Full Article <i class="bi bi-arrow-right"></i>
+            </a>
+            <span class="text-[11px] text-gray-400">12 Comments</span>
+          </div>
+        </article>
+
+        <!-- Article 5: Themed Parties -->
+        <article class="blog-card theme-card overflow-hidden flex flex-col justify-between" data-tag="Themed Parties">
+          <div>
+            <a href="blog-details.html" class="block aspect-video overflow-hidden relative group">
+              <img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&q=80&w=800" alt="1920s Great Gatsby Dressing" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500">
+              <span class="absolute top-3 left-3 badge theme-badge-gold text-[10px] font-bold px-2.5 py-0.5 rounded-full">Themed Parties</span>
+            </a>
+            <div class="p-6 space-y-2.5">
+              <div class="flex items-center gap-3 text-[11px] text-gray-400">
+                <span>By Isabelle Sinclair</span>
+                <span>•</span>
+                <span>5 Min Read</span>
+                <span>•</span>
+                <span>Jul 2026</span>
+              </div>
+              <h3 class="text-base font-bold text-theme-main dark:text-white leading-snug">
+                <a href="blog-details.html" class="hover:text-theme-accent transition">
+                  Decoding Great Gatsby: Accessories That Define Roaring 20s Glamour
+                </a>
+              </h3>
+              <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed">
+                Learn how feather boas, crystal headbands, and cigarette holders transform a simple fringe dress into a Jazz Age masterpiece.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 flex items-center justify-between border-t border-theme/50 mt-4">
+            <a href="blog-details.html" class="text-xs font-bold text-theme-accent hover:underline flex items-center gap-1">
+              Read Full Article <i class="bi bi-arrow-right"></i>
+            </a>
+            <span class="text-[11px] text-gray-400">19 Comments</span>
+          </div>
+        </article>
+
+        <!-- Article 6: Cultural -->
+        <article class="blog-card theme-card overflow-hidden flex flex-col justify-between" data-tag="Cultural">
+          <div>
+            <a href="blog-details.html" class="block aspect-video overflow-hidden relative group">
+              <img src="https://images.unsplash.com/photo-1671730785203-44897ceef05f?auto=format&fit=crop&q=80&w=800" alt="Traditional Japanese Silk Furisode Kimono" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500">
+              <span class="absolute top-3 left-3 badge theme-badge-gold text-[10px] font-bold px-2.5 py-0.5 rounded-full">Cultural Silk</span>
+            </a>
+            <div class="p-6 space-y-2.5">
+              <div class="flex items-center gap-3 text-[11px] text-gray-400">
+                <span>By Darius Thorne</span>
+                <span>•</span>
+                <span>6 Min Read</span>
+                <span>•</span>
+                <span>Jun 2026</span>
+              </div>
+              <h3 class="text-base font-bold text-theme-main dark:text-white leading-snug">
+                <a href="blog-details.html" class="hover:text-theme-accent transition">
+                  Textile Alchemy: How We Preserve Century-Old Gold Leaf Brocades
+                </a>
+              </h3>
+              <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed">
+                Behind the scenes of our Broadway archive: ultrasonic cleaning, climate-controlled vaults, and museum-grade conservation science.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 flex items-center justify-between border-t border-theme/50 mt-4">
+            <a href="blog-details.html" class="text-xs font-bold text-theme-accent hover:underline flex items-center gap-1">
+              Read Full Article <i class="bi bi-arrow-right"></i>
+            </a>
+            <span class="text-[11px] text-gray-400">27 Comments</span>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/styles-switcher.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    // Search and Topic Filtering
+    const searchInput = document.getElementById('blogSearchInput');
+    const tags = document.querySelectorAll('#blogFilterTags .blog-tag');
+    let activeTag = 'All';
+
+    function filterBlog() {
+      const q = searchInput.value.toLowerCase().trim();
+
+      document.querySelectorAll('.blog-card').forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const cardTag = card.getAttribute('data-tag');
+
+        const matchesQuery = !q || text.includes(q);
+        const matchesTag = activeTag === 'All' || cardTag === activeTag;
+
+        if (matchesQuery && matchesTag) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    searchInput.addEventListener('input', filterBlog);
+
+    tags.forEach(tagBtn => {
+      tagBtn.addEventListener('click', () => {
+        tags.forEach(t => {
+          t.classList.remove('bg-theme-main', 'text-white');
+          t.classList.add('border', 'border-theme');
+        });
+        tagBtn.classList.remove('border', 'border-theme');
+        tagBtn.classList.add('bg-theme-main', 'text-white');
+
+        activeTag = tagBtn.getAttribute('data-tag');
+        filterBlog();
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Fitting Studio & Master Tailoring - FancyVerse</title>
+  <meta name="description" content="Book a private 1-on-1 fitting salon appointment in our Broadway atelier. Enjoy custom pin-and-baste alterations, corsetry adjustments, and champagne styling.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  
+  <!-- Theme, Dir, Palette & Font Head Bootstrap to Prevent Bright Flash / FOUC -->
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('fancy_theme');
+        if (t === 'dark' || (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+        var d = localStorage.getItem('fancy_dir');
+        if (d) document.documentElement.setAttribute('dir', d);
+        var p = localStorage.getItem('fancy_palette');
+        if (p && p !== 'default') document.documentElement.setAttribute('data-palette', p);
+        var f = localStorage.getItem('fancy_font');
+        if (f && f !== 'sans') document.documentElement.setAttribute('data-font', f);
+      } catch (e) {}
+    })();
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          colors: {
+            theme: {
+              main: 'var(--color-primary)',
+              secondary: 'var(--color-secondary)',
+              accent: 'var(--color-accent)',
+              subtle: 'var(--color-bg-subtle)',
+              light: 'var(--color-bg-light)',
+              card: 'var(--color-bg-card)',
+              gold: 'var(--color-gold)',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/styles-switcher.css">
+</head>
+
+<body class="font-sans antialiased text-[#271E1A] dark:text-white bg-[#FDFBF9] dark:bg-[#0D0D0E] transition-colors duration-300">
+  
+  <div id="navbar"></div>
+
+  <!-- HEADER -->
+  <section class="pt-32 pb-16 bg-theme-subtle dark:bg-[#151518] border-b border-theme">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center max-w-3xl">
+      <span class="text-theme-accent font-bold tracking-[0.2em] text-xs uppercase block mb-2">Flagship Broadway Atelier & Concierge</span>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-theme-main dark:text-white">
+        Private Fitting Studio & Custom Tailoring
+      </h1>
+      <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-300 mt-4 leading-relaxed">
+        Step inside our private Manhattan fitting suites. Enjoy personalized corsetry consultations, custom pin-and-baste adjustments, and champagne wardrobe styling for gala patrons, stage soloists, and discerning revelers.
+      </p>
+      
+      <div class="flex flex-wrap items-center justify-center gap-3 pt-6">
+        <a href="#book-fitting" class="btn-primary-theme text-xs py-3 px-7 rounded-xl font-bold shadow-lg">
+          <i class="bi bi-calendar-check-fill"></i> Reserve Fitting Suite
+        </a>
+        <a href="services.html" class="btn-outline-theme text-xs py-3 px-6 rounded-xl font-bold">
+          Explore All Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY STUDIO HIGHLIGHTS -->
+  <section class="py-12 bg-white dark:bg-[#121215] border-b border-theme">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <div class="theme-card p-6 space-y-2">
+        <div class="w-10 h-10 rounded-xl bg-theme-subtle dark:bg-[#202025] flex items-center justify-center text-theme-accent text-lg">
+          <i class="bi bi-scissors"></i>
+        </div>
+        <h4 class="font-bold text-sm text-theme-main dark:text-white">Pin & Baste Adjustments</h4>
+        <p class="text-xs text-theme-muted dark:text-gray-400">Same-day temporary hemline raising, bust cinching, and shoulder adjustments without damaging vintage silks.</p>
+      </div>
+
+      <div class="theme-card p-6 space-y-2">
+        <div class="w-10 h-10 rounded-xl bg-theme-subtle dark:bg-[#202025] flex items-center justify-center text-theme-accent text-lg">
+          <i class="bi bi-cup-hot-fill"></i>
+        </div>
+        <h4 class="font-bold text-sm text-theme-main dark:text-white">Private Salon Hospitality</h4>
+        <p class="text-xs text-theme-muted dark:text-gray-400">Complimentary artisanal espresso or champagne service in our 4 private fitting chambers.</p>
+      </div>
+
+      <div class="theme-card p-6 space-y-2">
+        <div class="w-10 h-10 rounded-xl bg-theme-subtle dark:bg-[#202025] flex items-center justify-center text-theme-accent text-lg">
+          <i class="bi bi-shield-check"></i>
+        </div>
+        <h4 class="font-bold text-sm text-theme-main dark:text-white">Emergency Fitting Kit</h4>
+        <p class="text-xs text-theme-muted dark:text-gray-400">Every garment rental includes backup laces, invisible clips, body adhesive, and seamstress tape.</p>
+      </div>
+
+      <div class="theme-card p-6 space-y-2">
+        <div class="w-10 h-10 rounded-xl bg-theme-subtle dark:bg-[#202025] flex items-center justify-center text-theme-accent text-lg">
+          <i class="bi bi-award-fill"></i>
+        </div>
+        <h4 class="font-bold text-sm text-theme-main dark:text-white">100% Fee Credited</h4>
+        <p class="text-xs text-theme-muted dark:text-gray-400">The standard $45 studio booking fee is applied as an instant credit toward your final costume rental.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FITTING TIERS -->
+  <section class="py-20 bg-[#FDFBF9] dark:bg-[#0D0D0E]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-12">
+      
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-theme-accent font-bold uppercase tracking-widest text-xs">Curated Fitting Experiences</span>
+        <h2 class="text-3xl font-extrabold text-theme-main dark:text-white">Choose Your Tailoring Session</h2>
+        <p class="text-xs text-gray-500">From private Broadway showroom suites to white-glove hotel dispatch.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- Tier 1 -->
+        <div class="theme-card p-8 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <span class="theme-badge-gold text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">In-Salon Classic</span>
+            <h3 class="text-xl font-black text-theme-main dark:text-white">Private Atelier Fitting</h3>
+            <div class="flex items-baseline gap-1">
+              <span class="text-3xl font-extrabold text-theme-main dark:text-white">$45</span>
+              <span class="text-xs text-theme-muted dark:text-gray-400">/ 60-min session</span>
+            </div>
+            <p class="text-xs text-emerald-600 font-semibold bg-emerald-50 dark:bg-emerald-950/40 px-2.5 py-1 rounded-lg inline-block">
+              ✓ 100% credited toward rental fee
+            </p>
+            <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed">
+              Ideal for solo wearers, masquerade galas, or couple ensemble matching with one of our master corsetières.
+            </p>
+            <ul class="space-y-2 text-xs text-theme-muted dark:text-gray-300 pt-2 border-t border-theme">
+              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-theme-accent"></i> Up to 5 costume try-on trials</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-theme-accent"></i> Baste pinning and waist cinching</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-theme-accent"></i> Accessory & jewelry matching</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-theme-accent"></i> Espresso or champagne service</li>
+            </ul>
+          </div>
+          <a href="#book-fitting" onclick="preselectTier('Private Atelier Fitting')" class="btn-outline-theme w-full text-center py-3 rounded-xl text-xs font-bold block">
+            Book Atelier Session
+          </a>
+        </div>
+
+        <!-- Tier 2: Featured -->
+        <div class="theme-card p-8 flex flex-col justify-between space-y-6 border-2 border-theme-accent relative shadow-2xl bg-white dark:bg-[#151518]">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-theme-main text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow">
+            Most Popular
+          </div>
+          <div class="space-y-4">
+            <span class="theme-badge-gold text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">At-Home Convenience</span>
+            <h3 class="text-xl font-black text-theme-main dark:text-white">Try-On Courier Fitting Box</h3>
+            <div class="flex items-baseline gap-1">
+              <span class="text-3xl font-extrabold text-theme-main dark:text-white">$35</span>
+              <span class="text-xs text-theme-muted dark:text-gray-400">/ tri-size courier</span>
+            </div>
+            <p class="text-xs text-emerald-600 font-semibold bg-emerald-50 dark:bg-emerald-950/40 px-2.5 py-1 rounded-lg inline-block">
+              ✓ Includes return shipping box
+            </p>
+            <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed">
+              Receive 3 consecutive size variations couriered to your Manhattan or Brooklyn doorstep for a 48-hour home fitting trial.
+            </p>
+            <ul class="space-y-2 text-xs text-theme-muted dark:text-gray-300 pt-2 border-t border-theme">
+              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-theme-accent"></i> 3 adjacent sizes delivered</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-theme-accent"></i> Emergency seamstress kit included</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-theme-accent"></i> 48-hour in-home mirror trial</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-theme-accent"></i> Pre-printed courier return label</li>
+            </ul>
+          </div>
+          <a href="#book-fitting" onclick="preselectTier('Try-On Courier Box')" class="btn-primary-theme w-full text-center py-3 rounded-xl text-xs font-bold block shadow-md">
+            Order Courier Fitting Kit
+          </a>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="theme-card p-8 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <span class="theme-badge-gold text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">VIP White Glove</span>
+            <h3 class="text-xl font-black text-theme-main dark:text-white">On-Site Master Dresser</h3>
+            <div class="flex items-baseline gap-1">
+              <span class="text-3xl font-extrabold text-theme-main dark:text-white">$195</span>
+              <span class="text-xs text-theme-muted dark:text-gray-400">/ 2-hour call-out</span>
+            </div>
+            <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed">
+              A professional theatrical dresser arrives at your hotel, residence, or venue with steam presses, styling tools, and emergency supplies.
+            </p>
+            <ul class="space-y-2 text-xs text-theme-muted dark:text-gray-300 pt-2 border-t border-theme">
+              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-theme-accent"></i> Hotel or backstage arrival 2h prior</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-theme-accent"></i> Full corsetry lacing & corset boning</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-theme-accent"></i> Professional vertical garment steaming</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-theme-accent"></i> Quick-change assistance if required</li>
+            </ul>
+          </div>
+          <a href="#book-fitting" onclick="preselectTier('On-Site Master Dresser')" class="btn-outline-theme w-full text-center py-3 rounded-xl text-xs font-bold block">
+            Reserve Master Dresser
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- THE ATELIER PROCESS -->
+  <section class="py-20 bg-white dark:bg-[#121215] border-y border-theme">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-2">
+        <span class="text-theme-accent font-bold uppercase tracking-widest text-xs">Precision Fitting Protocol</span>
+        <h2 class="text-3xl font-extrabold text-theme-main dark:text-white">The FancyVerse Atelier Process</h2>
+        <p class="text-xs text-gray-500">Every garment is tailored to feel made specifically for you.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        
+        <div class="text-center space-y-3">
+          <div class="w-16 h-16 rounded-2xl bg-theme-subtle dark:bg-[#202025] border border-theme flex items-center justify-center text-theme-accent text-2xl mx-auto font-black shadow-sm">
+            01
+          </div>
+          <h4 class="font-bold text-sm text-theme-main dark:text-white">Body Profiling</h4>
+          <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed">
+            Submit basic height, bust, waist, and hip dimensions or bring personal undergarments for caliper measurements.
+          </p>
+        </div>
+
+        <div class="text-center space-y-3">
+          <div class="w-16 h-16 rounded-2xl bg-theme-subtle dark:bg-[#202025] border border-theme flex items-center justify-center text-theme-accent text-2xl mx-auto font-black shadow-sm">
+            02
+          </div>
+          <h4 class="font-bold text-sm text-theme-main dark:text-white">Pre-Staging Outfits</h4>
+          <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed">
+            Our corsetière pre-pulls up to 5 curated costumes with matching jewelry, crowns, wigs, and period accessories.
+          </p>
+        </div>
+
+        <div class="text-center space-y-3">
+          <div class="w-16 h-16 rounded-2xl bg-theme-subtle dark:bg-[#202025] border border-theme flex items-center justify-center text-theme-accent text-2xl mx-auto font-black shadow-sm">
+            03
+          </div>
+          <h4 class="font-bold text-sm text-theme-main dark:text-white">Pin & Micro-Basting</h4>
+          <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed">
+            We insert discreet invisible snaps, take up hems with heat-release tape, and adjust lace tension for posture support.
+          </p>
+        </div>
+
+        <div class="text-center space-y-3">
+          <div class="w-16 h-16 rounded-2xl bg-theme-subtle dark:bg-[#202025] border border-theme flex items-center justify-center text-theme-accent text-2xl mx-auto font-black shadow-sm">
+            04
+          </div>
+          <h4 class="font-bold text-sm text-theme-main dark:text-white">Sealed Wardrobe Bag</h4>
+          <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed">
+            Your fitted ensemble is freshly sanitized, steamed, and sealed into a breathable luxury travel garment bag.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE BOOKING FORM & SUITE PREVIEW -->
+  <section class="py-20 bg-[#FDFBF9] dark:bg-[#0D0D0E]" id="book-fitting">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <!-- Left: Form -->
+      <div class="lg:col-span-7 bg-white dark:bg-[#151518] p-8 sm:p-12 rounded-[2.5rem] border border-theme shadow-xl space-y-6">
+        <div>
+          <span class="text-theme-accent font-bold uppercase tracking-widest text-xs">Online Salon Schedule</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-theme-main dark:text-white mt-1">
+            Reserve Your Private Fitting Suite
+          </h2>
+          <p class="text-xs text-gray-500 mt-1">Broadway Showroom • 480 Broadway Ave, Suite 120, New York</p>
+        </div>
+
+        <form id="fittingStudioForm" onsubmit="handleFittingStudioSubmit(event)" class="space-y-4">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Your Full Name</label>
+              <input type="text" id="fittingName" required placeholder="Claire Beaumont" class="theme-input text-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Email Address</label>
+              <input type="email" id="fittingEmail" required placeholder="claire@example.com" class="theme-input text-xs">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Phone Number</label>
+              <input type="tel" id="fittingPhone" placeholder="+1 (555) 019-2834" class="theme-input text-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Fitting Experience Tier</label>
+              <select id="fittingTier" class="theme-input text-xs">
+                <option value="Private Atelier Fitting">Private Atelier Fitting ($45 - Credited to Rental)</option>
+                <option value="Try-On Courier Box">Try-On Courier Box ($35 at-home)</option>
+                <option value="On-Site Master Dresser">On-Site Master Dresser ($195 hotel call-out)</option>
+                <option value="Troupe Cast Sizing">Troupe Cast Production Sizing (5+ sets)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Preferred Suite</label>
+              <select id="fittingSuite" class="theme-input text-xs">
+                <option value="The Rose Brocade Salon">The Rose Brocade Salon (Victorian & Venetian)</option>
+                <option value="The Obsidian Armor Chamber">The Obsidian Chamber (Armor & Steampunk)</option>
+                <option value="The Grand Gala Suite">The Grand Gala Suite (1920s & Black-Tie)</option>
+                <option value="Family Fitting Lounge">Family Lounge (Kids & Group Matching)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Primary Costume Occasion</label>
+              <select id="fittingOccasion" class="theme-input text-xs">
+                <option value="Themed Parties">Themed Parties & Galas</option>
+                <option value="Cultural">Cultural & Traditional Silk</option>
+                <option value="Historical">Historical Re-enactment & Armor</option>
+                <option value="Kids">Kids Birthday & School Shows</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Desired Appointment Date</label>
+              <input type="date" id="fittingDate" required class="theme-input text-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Preferred Time Window</label>
+              <select id="fittingTime" class="theme-input text-xs">
+                <option>10:00 AM - 11:30 AM (Morning Salon)</option>
+                <option selected>01:00 PM - 02:30 PM (Midday Session)</option>
+                <option>03:30 PM - 05:00 PM (Afternoon Tea)</option>
+                <option>05:30 PM - 07:00 PM (Sunset Fitting)</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Measurements & Styling Goals</label>
+            <textarea id="fittingNotes" rows="3" placeholder="Tell us your approximate size, specific costume ID of interest, or character role..." class="theme-input text-xs"></textarea>
+          </div>
+
+          <button type="submit" class="w-full btn-primary-theme text-xs py-3.5 rounded-xl font-bold shadow-lg">
+            <i class="bi bi-send-check-fill"></i> Confirm Salon Fitting Reservation
+          </button>
+          <p class="text-[10px] text-center text-gray-500">
+            <i class="bi bi-shield-check text-emerald-600"></i> Free rescheduling up to 12 hours prior. No cancellation penalties.
+          </p>
+        </form>
+      </div>
+
+      <!-- Right: Atelier Suites & Master Costumiers -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <div class="theme-card p-6 space-y-4 shadow-xl">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-theme-accent">Meet Our Master Corsetières</h4>
+          
+          <div class="flex items-center gap-4 border-b border-theme pb-4">
+            <div class="w-12 h-12 rounded-2xl bg-theme-subtle dark:bg-[#202025] flex items-center justify-center font-bold text-theme-accent text-lg flex-shrink-0">
+              ID
+            </div>
+            <div>
+              <h5 class="font-bold text-sm text-theme-main dark:text-white">Isabelle DuPont</h5>
+              <p class="text-[10px] text-theme-accent font-semibold">Head of Corsetry & Haute Couture</p>
+              <p class="text-xs text-theme-muted dark:text-gray-400 mt-1">18 years crafting period stays for London's West End and New York opera companies.</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-theme-subtle dark:bg-[#202025] flex items-center justify-center font-bold text-theme-accent text-lg flex-shrink-0">
+              AP
+            </div>
+            <div>
+              <h5 class="font-bold text-sm text-theme-main dark:text-white">Arthur Pendelton</h5>
+              <p class="text-[10px] text-theme-accent font-semibold">Armorer & Theatrical Tailor</p>
+              <p class="text-xs text-theme-muted dark:text-gray-400 mt-1">Specializes in articulated plate armor harnessing, doublet tailoring, and leatherwork.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Salon Location Card -->
+        <div class="p-6 rounded-3xl bg-theme-main text-white space-y-3 shadow-xl">
+          <span class="theme-badge-gold text-[10px] font-bold px-2.5 py-0.5 rounded-full">Broadway Showroom</span>
+          <h4 class="text-lg font-bold text-white">Need Same-Day Gala Dressing?</h4>
+          <p class="text-xs text-white/90 leading-relaxed">
+            Walk-in fittings are welcomed pending daily suite availability. Call our Salon Host at <strong>+1 (212) 555-0199</strong> to reserve an expedited 30-minute express trial.
+          </p>
+          <div class="pt-2 flex items-center gap-3 text-xs text-white/80">
+            <span><i class="bi bi-clock-fill text-amber-300"></i> Open Mon-Sat: 10AM - 7PM</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ ACCORDION -->
+  <section class="py-20 bg-white dark:bg-[#121215] border-t border-theme">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-8">
+      
+      <div class="text-center space-y-2">
+        <span class="text-theme-accent font-bold uppercase tracking-widest text-xs">Everything You Need To Know</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-theme-main dark:text-white">Fitting Studio FAQs</h2>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        
+        <div class="theme-card p-4 rounded-2xl">
+          <button class="faq-btn w-full flex items-center justify-between text-left font-bold text-sm text-theme-main dark:text-white py-1">
+            <span>How does the $45 fitting session credit work?</span>
+            <i class="bi bi-chevron-down text-theme-accent transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden mt-3 text-theme-muted dark:text-gray-400 leading-relaxed border-t border-theme pt-3">
+            When you reserve an in-salon session, you pay a $45 appointment retainer. When you choose your costume, $45 is automatically deducted from your rental charge on your checkout receipt. If you don't book on the day, the credit remains valid in your account for 6 months.
+          </div>
+        </div>
+
+        <div class="theme-card p-4 rounded-2xl">
+          <button class="faq-btn w-full flex items-center justify-between text-left font-bold text-sm text-theme-main dark:text-white py-1">
+            <span>Can historical corsets and plate armor be altered permanently?</span>
+            <i class="bi bi-chevron-down text-theme-accent transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden mt-3 text-theme-muted dark:text-gray-400 leading-relaxed border-t border-theme pt-3">
+            To preserve the archival integrity of our period garments, we do not perform permanent cut alterations. Instead, our corsetières utilize specialized basting pins, temporary blind-stitching, padded inserts, and flexible spiral lacing to achieve an immaculate bespoke fit without cutting the fabric.
+          </div>
+        </div>
+
+        <div class="theme-card p-4 rounded-2xl">
+          <button class="faq-btn w-full flex items-center justify-between text-left font-bold text-sm text-theme-main dark:text-white py-1">
+            <span>What should I wear or bring to my fitting session?</span>
+            <i class="bi bi-chevron-down text-theme-accent transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden mt-3 text-theme-muted dark:text-gray-400 leading-relaxed border-t border-theme pt-3">
+            We recommend wearing seamless neutral undergarments and bringing the shoes or heel height you plan to wear at your event so we can align hemline lengths accurately.
+          </div>
+        </div>
+
+        <div class="theme-card p-4 rounded-2xl">
+          <button class="faq-btn w-full flex items-center justify-between text-left font-bold text-sm text-theme-main dark:text-white py-1">
+            <span>How does the At-Home Try-On Courier Box work?</span>
+            <i class="bi bi-chevron-down text-theme-accent transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden mt-3 text-theme-muted dark:text-gray-400 leading-relaxed border-t border-theme pt-3">
+            We dispatch your selected costume in 3 consecutive size variations (e.g. S, M, L) in a reinforced travel case. You have 48 hours to try them on in the comfort of your home. Keep the perfect size, pack the remaining pieces back into the case, and leave it with your doorman or schedule a free courier pickup with our prepaid label.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/styles-switcher.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    // Set minimum date to tomorrow
+    const dateInput = document.getElementById('fittingDate');
+    if (dateInput) {
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      dateInput.min = tomorrow.toISOString().split('T')[0];
+      dateInput.value = tomorrow.toISOString().split('T')[0];
+    }
+
+    // Preselect tier helper
+    function preselectTier(tierName) {
+      const select = document.getElementById('fittingTier');
+      if (select) {
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].text.includes(tierName) || select.options[i].value === tierName) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    }
+
+    // FAQ Accordion Toggle
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('i');
+        const isOpen = !content.classList.contains('hidden');
+
+        document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('.faq-btn i').forEach(i => i.classList.remove('rotate-180'));
+
+        if (!isOpen) {
+          content.classList.remove('hidden');
+          icon.classList.add('rotate-180');
+        }
+      });
+    });
+
+    // Handle Form Submit
+    function handleFittingStudioSubmit(e) {
+      e.preventDefault();
+
+      const form = document.getElementById('fittingStudioForm');
+      const btn = form.querySelector('button[type="submit"]');
+      const originalBtnHtml = btn ? btn.innerHTML : '';
+
+      const newBooking = {
+        name: document.getElementById('fittingName').value,
+        email: document.getElementById('fittingEmail').value,
+        phone: document.getElementById('fittingPhone').value,
+        type: document.getElementById('fittingTier').value,
+        suite: document.getElementById('fittingSuite').value,
+        occasion: document.getElementById('fittingOccasion').value,
+        date: document.getElementById('fittingDate').value,
+        timeSlot: document.getElementById('fittingTime').value,
+        message: document.getElementById('fittingNotes').value
+      };
+
+      try {
+        if (window.store && window.store.addEnquiry) {
+          window.store.addEnquiry(newBooking);
+        }
+      } catch (err) {
+        console.error('Error saving fitting appointment:', err);
+      }
+
+      if (window.showToast) {
+        window.showToast(`Fitting suite reserved for ${newBooking.name}! Our salon host will confirm via email.`, 'success');
+      }
+
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '<i class="bi bi-check-circle-fill"></i> Suite Reserved!';
+        btn.classList.add('bg-emerald-600', 'hover:bg-emerald-600');
+        setTimeout(() => {
+          btn.disabled = false;
+          btn.innerHTML = originalBtnHtml;
+          btn.classList.remove('bg-emerald-600', 'hover:bg-emerald-600');
+        }, 3500);
+      }
+
+      form.reset();
+    }
+  </script>
+</body>
+</html>

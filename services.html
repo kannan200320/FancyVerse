@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - FancyVerse Costume Rental & Wardrobe Concierge</title>
+  <meta name="description" content="Explore our complete suite of costume rental services: private fitting suites, full theatrical cast hire, cosplay props, and eco dry-cleaning.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  
+  <!-- Theme, Dir, Palette & Font Head Bootstrap to Prevent Bright Flash / FOUC -->
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('fancy_theme');
+        if (t === 'dark' || (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+        var d = localStorage.getItem('fancy_dir');
+        if (d) document.documentElement.setAttribute('dir', d);
+        var p = localStorage.getItem('fancy_palette');
+        if (p && p !== 'default') document.documentElement.setAttribute('data-palette', p);
+        var f = localStorage.getItem('fancy_font');
+        if (f && f !== 'sans') document.documentElement.setAttribute('data-font', f);
+      } catch (e) {}
+    })();
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          colors: {
+            theme: {
+              main: 'var(--color-primary)',
+              secondary: 'var(--color-secondary)',
+              accent: 'var(--color-accent)',
+              subtle: 'var(--color-bg-subtle)',
+              light: 'var(--color-bg-light)',
+              card: 'var(--color-bg-card)',
+              gold: 'var(--color-gold)',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/styles-switcher.css">
+</head>
+
+<body class="font-sans antialiased text-[#271E1A] dark:text-white bg-[#FDFBF9] dark:bg-[#0D0D0E] transition-colors duration-300">
+  
+  <div id="navbar"></div>
+
+  <!-- HEADER BANNER -->
+  <section class="pt-32 pb-16 bg-theme-subtle dark:bg-[#151518] border-b border-theme">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center max-w-2xl">
+      <span class="text-theme-accent font-bold tracking-[0.2em] text-xs uppercase block mb-2">Full-Spectrum Costuming</span>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-theme-main dark:text-white">
+        Our Rental & Wardrobe Services
+      </h1>
+      <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-300 mt-4 leading-relaxed">
+        From single red carpet hires to 50-actor theatrical ensembles and bespoke cosplay fabrication.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTROLS & SERVICES SECTION -->
+  <section class="py-16 bg-white dark:bg-[#121215]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <!-- Filter & View Switcher Bar -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 pb-8 mb-10 border-b border-theme">
+        
+        <!-- Search & Category Filters -->
+        <div class="flex flex-wrap items-center gap-3 w-full md:w-auto">
+          <div class="relative flex-1 sm:w-64">
+            <i class="bi bi-search absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+            <input type="text" id="serviceSearchInput" placeholder="Search services..." class="theme-input text-xs pl-9 py-2">
+          </div>
+
+          <select id="serviceCategorySelect" class="theme-input text-xs py-2 w-auto">
+            <option value="All">All Categories</option>
+            <option value="Kids">🎈 Kids Fairytale & Heroes</option>
+            <option value="Themed Parties">✨ Themed Parties & Galas</option>
+            <option value="Cultural">🌸 Cultural & Traditional</option>
+            <option value="Historical">⚔️ Historical & Troupe</option>
+            <option value="Care">🧼 Care & Tailoring</option>
+          </select>
+        </div>
+
+        <!-- Grid vs List Toggle -->
+        <div class="flex items-center gap-2 self-end md:self-auto">
+          <span class="text-xs text-gray-400 font-semibold mr-1">View:</span>
+          <button id="viewGridBtn" aria-label="Grid View" class="p-2 rounded-lg bg-theme-main text-white text-sm shadow">
+            <i class="bi bi-grid-fill"></i>
+          </button>
+          <button id="viewListBtn" aria-label="List View" class="p-2 rounded-lg border border-theme text-theme-main dark:text-white text-sm hover:bg-theme-subtle">
+            <i class="bi bi-view-list"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Services Container -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="servicesContainer">
+        
+        <!-- Service 1 -->
+        <div class="service-card theme-card p-6 flex flex-col justify-between" data-cat="Cultural">
+          <div>
+            <div class="aspect-video rounded-2xl overflow-hidden mb-6 relative">
+              <img src="https://images.unsplash.com/photo-1768229934730-5dc189e39ddf?auto=format&fit=crop&q=80&w=800" alt="Venetian Masquerade Ball Hire" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 badge theme-badge-gold text-[10px] font-bold px-2.5 py-0.5 rounded-full">Cultural & Traditional</span>
+            </div>
+            <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2">Venetian Masquerade & Ball Hire</h3>
+            <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed mb-4">
+              Complete high-society masquerade packages featuring corset gowns, silk brocades, hand-carved Venetian masks, and satin capes.
+            </p>
+            <ul class="space-y-1.5 text-xs text-theme-muted dark:text-gray-300 mb-6">
+              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-theme-accent"></i> Real internal boning & petticoats</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-theme-accent"></i> Authentic Venetian mask included</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-theme-accent"></i> Flexible 1-day to 7-day rentals</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-theme flex items-center justify-between">
+            <span class="text-xs font-black text-theme-main dark:text-white">From $65 / day</span>
+            <a href="catalog.html?occasion=Cultural" class="text-xs font-bold text-theme-accent hover:underline flex items-center gap-1">
+              Explore Cultural Hire <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card theme-card p-6 flex flex-col justify-between" data-cat="Historical">
+          <div>
+            <div class="aspect-video rounded-2xl overflow-hidden mb-6 relative">
+              <img src="https://i.pinimg.com/1200x/7c/ee/09/7cee09752c1a955cc016a818d8ace9cf.jpg" alt="Theatrical Stage Wardrobe" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 badge theme-badge-gold text-[10px] font-bold px-2.5 py-0.5 rounded-full">Historical & Troupe</span>
+            </div>
+            <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2">Film & Stage Cast Wardrobe</h3>
+            <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed mb-4">
+              Comprehensive theatrical outfitting for Broadway shows, historical period films, and regional productions with actor-named tagging.
+            </p>
+            <ul class="space-y-1.5 text-xs text-theme-muted dark:text-gray-300 mb-6">
+              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-theme-accent"></i> Up to 45% bulk cast discounts</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-theme-accent"></i> Multi-week production billing</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-theme-accent"></i> Backups & duplicate costumes available</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-theme flex items-center justify-between">
+            <span class="text-xs font-black text-theme-main dark:text-white">Custom Troupe Quote</span>
+            <a href="catalog.html?occasion=Historical" class="text-xs font-bold text-theme-accent hover:underline flex items-center gap-1">
+              Explore Historical Hire <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card theme-card p-6 flex flex-col justify-between" data-cat="Kids">
+          <div>
+            <div class="aspect-video rounded-2xl overflow-hidden mb-6 relative">
+              <img src="https://i.pinimg.com/736x/ae/16/a8/ae16a8633798987bd215a68d9f9ba0cd.jpg" alt="Kids Fairytale Princess Costumes" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 badge theme-badge-gold text-[10px] font-bold px-2.5 py-0.5 rounded-full">Kids Fairytale & Heroes</span>
+            </div>
+            <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2">Kids Birthday & School Pageants</h3>
+            <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed mb-4">
+              Fairytale royalty gowns, superhero capes, and plush storybook animal mascots tailored with hypoallergenic breathable cotton linings.
+            </p>
+            <ul class="space-y-1.5 text-xs text-theme-muted dark:text-gray-300 mb-6">
+              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-theme-accent"></i> Ages 3 to 11 with elasticated stretch</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-theme-accent"></i> Includes crowns, wands, masks & capes</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-theme-accent"></i> 100% gentle ozone dry-cleaned</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-theme flex items-center justify-between">
+            <span class="text-xs font-black text-theme-main dark:text-white">From $35 / day</span>
+            <a href="catalog.html?occasion=Kids" class="text-xs font-bold text-theme-accent hover:underline flex items-center gap-1">
+              Explore Kids Hire <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card theme-card p-6 flex flex-col justify-between" data-cat="Care">
+          <div>
+            <div class="aspect-video rounded-2xl overflow-hidden mb-6 relative">
+              <img src="https://images.unsplash.com/photo-1741183392566-6691041a231f?auto=format&fit=crop&q=80&w=800" alt="Private Fitting Salon & Tailoring" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 badge theme-badge-gold text-[10px] font-bold px-2.5 py-0.5 rounded-full">Care & Tailoring</span>
+            </div>
+            <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2">Private Fitting Studio & Concierge</h3>
+            <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed mb-4">
+              Visit our Broadway salon for a 60-minute champagne fitting with our master corsetière. We adjust hemlines and customize accessories on the spot.
+            </p>
+            <ul class="space-y-1.5 text-xs text-theme-muted dark:text-gray-300 mb-6">
+              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-theme-accent"></i> 1-on-1 dedicated master stylist</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-theme-accent"></i> Same-day pin-and-baste adjustments</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-theme-accent"></i> Try on up to 5 costume options</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-theme flex items-center justify-between">
+            <span class="text-xs font-black text-theme-main dark:text-white">$45 (Waived with rental)</span>
+            <a href="fitting-studio.html" class="text-xs font-bold text-theme-accent hover:underline flex items-center gap-1">
+              Explore Fitting Studio <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card theme-card p-6 flex flex-col justify-between" data-cat="Care">
+          <div>
+            <div class="aspect-video rounded-2xl overflow-hidden mb-6 relative">
+              <img src="https://i.pinimg.com/736x/c0/2d/c0/c02dc0c42940ca2cefcee0bc38efdcaf.jpg" alt="Hospitality Eco-Solvent Steam Cleaning" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 badge theme-badge-gold text-[10px] font-bold px-2.5 py-0.5 rounded-full">Care & Tailoring</span>
+            </div>
+            <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2">Hospitality Eco-Solvent Sanitization</h3>
+            <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed mb-4">
+              Don't worry about party spills or makeup stains. All rentals include our proprietary ozone antibacterial sanitization and gentle silk steaming.
+            </p>
+            <ul class="space-y-1.5 text-xs text-theme-muted dark:text-gray-300 mb-6">
+              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-theme-accent"></i> 100% included in all rental rates</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-theme-accent"></i> Non-allergenic, odor-neutral formulas</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-theme-accent"></i> Safe for antique silks and brocades</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-theme flex items-center justify-between">
+            <span class="text-xs font-black text-emerald-600">Included In Every Hire</span>
+            <a href="service-details.html?service=sanitization" class="text-xs font-bold text-theme-accent hover:underline flex items-center gap-1">
+              Details & FAQs <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card theme-card p-6 flex flex-col justify-between" data-cat="Themed Parties">
+          <div>
+            <div class="aspect-video rounded-2xl overflow-hidden mb-6 relative">
+              <img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&q=80&w=800" alt="Vintage 1920s Gatsby Flapper Party" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 badge theme-badge-gold text-[10px] font-bold px-2.5 py-0.5 rounded-full">Themed Parties & Galas</span>
+            </div>
+            <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2">Vintage & Themed Party Ensembles</h3>
+            <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed mb-4">
+              Authentic hand-beaded glass fringe flapper dresses, 70s disco bell-bottom jumpsuits, Mad Hatter attire, and Harlequin suits.
+            </p>
+            <ul class="space-y-1.5 text-xs text-theme-muted dark:text-gray-300 mb-6">
+              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-theme-accent"></i> Hand-strung glass beadwork & sequins</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-theme-accent"></i> Wigs, pearls, hats and gloves included</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-theme-accent"></i> Complete couple ensemble matching</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-theme flex items-center justify-between">
+            <span class="text-xs font-black text-theme-main dark:text-white">From $48 / day</span>
+            <a href="catalog.html?occasion=Themed+Parties" class="text-xs font-bold text-theme-accent hover:underline flex items-center gap-1">
+              Explore Party Hire <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/styles-switcher.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    // Grid vs List View Toggle
+    const viewGridBtn = document.getElementById('viewGridBtn');
+    const viewListBtn = document.getElementById('viewListBtn');
+    const servicesContainer = document.getElementById('servicesContainer');
+
+    viewGridBtn.addEventListener('click', () => {
+      servicesContainer.classList.remove('grid-cols-1');
+      servicesContainer.classList.add('grid-cols-1', 'md:grid-cols-2', 'lg:grid-cols-3');
+      viewGridBtn.classList.add('bg-theme-main', 'text-white');
+      viewGridBtn.classList.remove('border', 'border-theme');
+      viewListBtn.classList.remove('bg-theme-main', 'text-white');
+      viewListBtn.classList.add('border', 'border-theme');
+    });
+
+    viewListBtn.addEventListener('click', () => {
+      servicesContainer.classList.remove('md:grid-cols-2', 'lg:grid-cols-3');
+      servicesContainer.classList.add('grid-cols-1');
+      viewListBtn.classList.add('bg-theme-main', 'text-white');
+      viewListBtn.classList.remove('border', 'border-theme');
+      viewGridBtn.classList.remove('bg-theme-main', 'text-white');
+      viewGridBtn.classList.add('border', 'border-theme');
+    });
+
+    // Filtering & Search
+    const searchInput = document.getElementById('serviceSearchInput');
+    const categorySelect = document.getElementById('serviceCategorySelect');
+
+    function filterServices() {
+      const q = searchInput.value.toLowerCase().trim();
+      const cat = categorySelect.value;
+
+      document.querySelectorAll('.service-card').forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const cardCat = card.getAttribute('data-cat');
+
+        const matchesQuery = !q || text.includes(q);
+        const matchesCat = cat === 'All' || cardCat === cat;
+
+        if (matchesQuery && matchesCat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    searchInput.addEventListener('input', filterServices);
+    categorySelect.addEventListener('change', filterServices);
+  </script>
+</body>
+</html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us & Book In-Store Fitting - FancyVerse</title>
+  <meta name="description" content="Visit our flagship Broadway showroom, book a private corsetière fitting, or submit an inquiry for theatrical troupe costuming.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  
+  <!-- Theme, Dir, Palette & Font Head Bootstrap to Prevent Bright Flash / FOUC -->
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('fancy_theme');
+        if (t === 'dark' || (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+        var d = localStorage.getItem('fancy_dir');
+        if (d) document.documentElement.setAttribute('dir', d);
+        var p = localStorage.getItem('fancy_palette');
+        if (p && p !== 'default') document.documentElement.setAttribute('data-palette', p);
+        var f = localStorage.getItem('fancy_font');
+        if (f && f !== 'sans') document.documentElement.setAttribute('data-font', f);
+      } catch (e) {}
+    })();
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          colors: {
+            theme: {
+              main: 'var(--color-primary)',
+              secondary: 'var(--color-secondary)',
+              accent: 'var(--color-accent)',
+              subtle: 'var(--color-bg-subtle)',
+              light: 'var(--color-bg-light)',
+              card: 'var(--color-bg-card)',
+              gold: 'var(--color-gold)',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/styles-switcher.css">
+</head>
+
+<body class="font-sans antialiased text-[#271E1A] dark:text-white bg-[#FDFBF9] dark:bg-[#0D0D0E] transition-colors duration-300">
+  
+  <div id="navbar"></div>
+
+  <!-- BREADCRUMB & HEADER -->
+  <section class="pt-32 pb-12 bg-theme-subtle dark:bg-[#151518] border-b border-theme">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center max-w-2xl">
+      <span class="text-theme-accent font-bold tracking-[0.2em] text-xs uppercase block mb-2">Broadway Flagship & Salon</span>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-theme-main dark:text-white">
+        Contact & Fitting Studio
+      </h1>
+      <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-300 mt-3 leading-relaxed">
+        Have questions about custom sizing, theatrical production hires, or want to schedule a private fitting salon appointment? We are here to assist.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT INFO CARDS -->
+  <section class="py-12 bg-white dark:bg-[#121215]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <div class="theme-card p-6 space-y-2">
+        <div class="w-10 h-10 rounded-xl bg-theme-subtle dark:bg-[#202025] flex items-center justify-center text-theme-accent text-lg">
+          <i class="bi bi-geo-alt-fill"></i>
+        </div>
+        <h4 class="font-bold text-sm text-theme-main dark:text-white">Broadway Showroom</h4>
+        <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed">
+          480 Broadway Ave, Theatrical District, Suite 120, New York, NY 10013
+        </p>
+      </div>
+
+      <div class="theme-card p-6 space-y-2">
+        <div class="w-10 h-10 rounded-xl bg-theme-subtle dark:bg-[#202025] flex items-center justify-center text-theme-accent text-lg">
+          <i class="bi bi-telephone-fill"></i>
+        </div>
+        <h4 class="font-bold text-sm text-theme-main dark:text-white">Telephone & Hotline</h4>
+        <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed">
+          Toll-Free: +1 (800) 555-FANCY<br>
+          Emergency Gala Line: +1 (212) 555-0199
+        </p>
+      </div>
+
+      <div class="theme-card p-6 space-y-2">
+        <div class="w-10 h-10 rounded-xl bg-theme-subtle dark:bg-[#202025] flex items-center justify-center text-theme-accent text-lg">
+          <i class="bi bi-envelope-fill"></i>
+        </div>
+        <h4 class="font-bold text-sm text-theme-main dark:text-white">Concierge Inquiries</h4>
+        <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed">
+          General: rentals@fancyverse.com<br>
+          Productions: studios@fancyverse.com
+        </p>
+      </div>
+
+      <div class="theme-card p-6 space-y-2">
+        <div class="w-10 h-10 rounded-xl bg-theme-subtle dark:bg-[#202025] flex items-center justify-center text-theme-accent text-lg">
+          <i class="bi bi-clock-fill"></i>
+        </div>
+        <h4 class="font-bold text-sm text-theme-main dark:text-white">Showroom Hours</h4>
+        <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed">
+          Mon - Fri: 10:00 AM - 7:00 PM<br>
+          Saturday: 11:00 AM - 6:00 PM (Fitting by Appt)
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MAIN CONTACT & FITTING FORM -->
+  <section class="py-16 bg-[#FDFBF9] dark:bg-[#0D0D0E]" id="fitting">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <!-- Left: Interactive Form -->
+      <div class="lg:col-span-7 bg-white dark:bg-[#151518] p-8 sm:p-12 rounded-[2.5rem] border border-theme shadow-xl space-y-6">
+        <div>
+          <span class="text-theme-accent font-bold uppercase tracking-widest text-xs">Direct Reservation Enquiry</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-theme-main dark:text-white mt-1">
+            Book Fitting or Submit Enquiry
+          </h2>
+          <p class="text-xs text-gray-500 mt-1">Our master stylists respond within 24 business hours.</p>
+        </div>
+
+        <form id="contactEnquiryForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Your Full Name</label>
+              <input type="text" id="contactName" required placeholder="Lady Eleanor Vance" class="theme-input text-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Email Address</label>
+              <input type="email" id="contactEmail" required placeholder="eleanor@example.com" class="theme-input text-xs">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Phone Number</label>
+              <input type="tel" id="contactPhone" placeholder="+1 (555) 019-2834" class="theme-input text-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Inquiry Type</label>
+              <select id="contactType" class="theme-input text-xs">
+                <option value="Fitting Appointment">Private Salon Fitting Appointment ($45 credited)</option>
+                <option value="General Rental Inquiry">General Costume Rental Inquiry</option>
+                <option value="Troupe Production">Theatrical / Troupe Production Hire (5+ Sets)</option>
+                <option value="Deposit Query">Security Deposit & Refund Support</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Costume Category & Occasion</label>
+              <select id="contactOccasion" class="theme-input text-xs">
+                <option value="Kids">🎈 Kids Birthday & School Shows</option>
+                <option value="Themed Parties" selected>✨ Themed Parties & Galas (Gatsby, 70s, Mad Hatter)</option>
+                <option value="Cultural">🌸 Cultural & Traditional (Kimono, Venice, Kilt, Dirndl)</option>
+                <option value="Historical">⚔️ Historical Re-enactments (Steampunk, Knight, Roman)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Estimated Number of Costumes</label>
+              <select id="contactVolume" class="theme-input text-xs">
+                <option>1 Costume (Solo Wearer)</option>
+                <option>2 Costumes (Couples Matching)</option>
+                <option>3-10 Costumes (Group / Troupe)</option>
+                <option>10+ Costumes (Production / School)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Event or Fitting Date</label>
+              <input type="date" id="contactDate" class="theme-input text-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Preferred Time Slot</label>
+              <select id="contactTimeSlot" class="theme-input text-xs">
+                <option>Morning (10:00 AM - 1:00 PM)</option>
+                <option>Afternoon (1:00 PM - 4:00 PM)</option>
+                <option>Evening (4:00 PM - 7:00 PM)</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Your Vision & Message</label>
+            <textarea id="contactMessage" rows="4" required placeholder="Mention specific costumes of interest, size measurements, or performance details..." class="theme-input text-xs"></textarea>
+          </div>
+
+          <button type="submit" class="w-full btn-primary-theme text-xs py-3.5 rounded-xl font-bold shadow-lg">
+            <i class="bi bi-send-fill"></i> Submit Reservation Request
+          </button>
+        </form>
+      </div>
+
+      <!-- Right: Map & Location Card -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <!-- Stylized Map Container -->
+        <div class="theme-card overflow-hidden shadow-xl">
+          <div class="p-5 border-b border-theme bg-theme-subtle dark:bg-[#151518] flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <i class="bi bi-geo-alt-fill text-theme-accent"></i>
+              <h4 class="text-xs font-bold uppercase tracking-wider text-theme-main dark:text-white">Flagship Salon Map</h4>
+            </div>
+            <span class="text-[10px] text-emerald-600 font-bold bg-emerald-100 dark:bg-emerald-950/40 px-2 py-0.5 rounded-full">Open Today</span>
+          </div>
+
+          <!-- Interactive Google Maps Iframe -->
+          <div class="aspect-square sm:aspect-video lg:aspect-[4/3] w-full bg-gray-200 dark:bg-gray-800">
+            <iframe 
+              title="FancyVerse Showroom Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.639739506692!2d-74.00185962344795!3d40.72084797139227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2598858296245%3A0xe9f7988365ec8d86!2sBroadway%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+              class="w-full h-full border-0" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <div class="p-5 text-xs space-y-2 text-theme-muted dark:text-gray-300">
+            <p class="font-bold text-theme-main dark:text-white">Subway Directions:</p>
+            <p>Take the N, Q, R, W to Canal St or the 6 train to Spring St. Our private entrance is located between Grand and Broome.</p>
+          </div>
+        </div>
+
+        <!-- Emergency Hotline Callout -->
+        <div class="p-6 rounded-3xl bg-theme-main text-white space-y-3 shadow-xl">
+          <span class="theme-badge-gold text-[10px] font-bold px-2.5 py-0.5 rounded-full">Emergency Hotline</span>
+          <h4 class="text-lg font-bold text-white">Have a Last-Minute Gala Emergency?</h4>
+          <p class="text-xs text-white/90 leading-relaxed">
+            Did a zipper fail or an event invite arrive unexpectedly? Call our 24/7 Wardrobe Dispatch at <strong>+1 (212) 555-0199</strong> for same-day Manhattan courier service.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FREQUENTLY ASKED QUESTIONS (FAQ) -->
+  <section class="py-16 sm:py-20 bg-white dark:bg-[#121215] border-t border-theme" id="faq">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-10">
+      
+      <!-- Section Header -->
+      <div class="text-center space-y-3">
+        <span class="text-theme-accent font-bold tracking-[0.2em] text-xs uppercase block">Curator Answers & Support</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-theme-main dark:text-white">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-300 max-w-xl mx-auto leading-relaxed">
+          Find instant answers regarding security deposits, fitting salon bookings, fit assurance, courier boxes, and theatrical production rentals.
+        </p>
+      </div>
+
+      <!-- FAQ Accordion List -->
+      <div class="space-y-4" id="faqAccordion">
+        
+        <!-- FAQ 1 -->
+        <details class="group p-5 sm:p-6 rounded-2xl bg-[#FDFBF9] dark:bg-[#18181D] border border-theme transition-all duration-200 open:shadow-md hover:border-theme-accent" open>
+          <summary class="flex items-center justify-between font-bold text-sm sm:text-base text-theme-main dark:text-white cursor-pointer list-none select-none">
+            <span class="flex items-center gap-2.5">
+              <i class="bi bi-shield-check text-theme-accent text-base"></i>
+              <span>How does the refundable security deposit work?</span>
+            </span>
+            <span class="w-8 h-8 rounded-full bg-theme-subtle dark:bg-[#22222A] flex items-center justify-center text-theme-accent text-xs group-open:rotate-180 transition-transform duration-200 flex-shrink-0">
+              <i class="bi bi-chevron-down"></i>
+            </span>
+          </summary>
+          <p class="mt-4 text-xs sm:text-sm text-theme-muted dark:text-gray-300 leading-relaxed pt-3 border-t border-theme/60">
+            Every luxury rental includes a transparent, fully refundable security deposit authorized at checkout. Once your costume is returned to our Broadway salon or scanned into our courier return stream, our conservators inspect the piece within 48 hours. If the garment is free from permanent structural damage, unrecoverable tears, or missing ornate jewels, your deposit is automatically released back to your original payment method.
+          </p>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details class="group p-5 sm:p-6 rounded-2xl bg-[#FDFBF9] dark:bg-[#18181D] border border-theme transition-all duration-200 open:shadow-md hover:border-theme-accent">
+          <summary class="flex items-center justify-between font-bold text-sm sm:text-base text-theme-main dark:text-white cursor-pointer list-none select-none">
+            <span class="flex items-center gap-2.5">
+              <i class="bi bi-person-check-fill text-theme-accent text-base"></i>
+              <span>What happens if my costume does not fit upon delivery? (Fit Assurance)</span>
+            </span>
+            <span class="w-8 h-8 rounded-full bg-theme-subtle dark:bg-[#22222A] flex items-center justify-center text-theme-accent text-xs group-open:rotate-180 transition-transform duration-200 flex-shrink-0">
+              <i class="bi bi-chevron-down"></i>
+            </span>
+          </summary>
+          <p class="mt-4 text-xs sm:text-sm text-theme-muted dark:text-gray-300 leading-relaxed pt-3 border-t border-theme/60">
+            We understand that gala and theatrical attire demands precision. Every courier rental arrives with backup corset laces, discreet seamstress clips, and body-adhesion tape. If an outfit does not fit comfortably, contact our emergency stylist line within 4 hours of delivery. We will dispatch an alternate size via expedited courier or issue an immediate 100% store credit.
+          </p>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details class="group p-5 sm:p-6 rounded-2xl bg-[#FDFBF9] dark:bg-[#18181D] border border-theme transition-all duration-200 open:shadow-md hover:border-theme-accent">
+          <summary class="flex items-center justify-between font-bold text-sm sm:text-base text-theme-main dark:text-white cursor-pointer list-none select-none">
+            <span class="flex items-center gap-2.5">
+              <i class="bi bi-gem text-theme-accent text-base"></i>
+              <span>How do private Broadway Salon fittings work? ($45 Credited to Rental)</span>
+            </span>
+            <span class="w-8 h-8 rounded-full bg-theme-subtle dark:bg-[#22222A] flex items-center justify-center text-theme-accent text-xs group-open:rotate-180 transition-transform duration-200 flex-shrink-0">
+              <i class="bi bi-chevron-down"></i>
+            </span>
+          </summary>
+          <p class="mt-4 text-xs sm:text-sm text-theme-muted dark:text-gray-300 leading-relaxed pt-3 border-t border-theme/60">
+            Private 60-minute fitting sessions are conducted in our 4 private salon chambers at 480 Broadway Ave. For $45, our master corsetières and stylists measure your silhouette, provide temporary hemline adjustments, and serve artisanal espresso or champagne. Best of all, your entire $45 appointment fee is instantly credited toward your final costume rental!
+          </p>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details class="group p-5 sm:p-6 rounded-2xl bg-[#FDFBF9] dark:bg-[#18181D] border border-theme transition-all duration-200 open:shadow-md hover:border-theme-accent">
+          <summary class="flex items-center justify-between font-bold text-sm sm:text-base text-theme-main dark:text-white cursor-pointer list-none select-none">
+            <span class="flex items-center gap-2.5">
+              <i class="bi bi-box-seam-fill text-theme-accent text-base"></i>
+              <span>How does courier delivery and prepaid return work?</span>
+            </span>
+            <span class="w-8 h-8 rounded-full bg-theme-subtle dark:bg-[#22222A] flex items-center justify-center text-theme-accent text-xs group-open:rotate-180 transition-transform duration-200 flex-shrink-0">
+              <i class="bi bi-chevron-down"></i>
+            </span>
+          </summary>
+          <p class="mt-4 text-xs sm:text-sm text-theme-muted dark:text-gray-300 leading-relaxed pt-3 border-t border-theme/60">
+            Your ensemble arrives in a signature breathable garment carrier box with protective garment bags and a pre-printed, prepaid return label. When your rental window concludes, simply pack the garments back into the box, affix the included peel-and-stick label, and hand it to any UPS/FedEx courier or return it directly to our Broadway salon desk. Dry cleaning is handled entirely by us!
+          </p>
+        </details>
+
+        <!-- FAQ 5 -->
+        <details class="group p-5 sm:p-6 rounded-2xl bg-[#FDFBF9] dark:bg-[#18181D] border border-theme transition-all duration-200 open:shadow-md hover:border-theme-accent">
+          <summary class="flex items-center justify-between font-bold text-sm sm:text-base text-theme-main dark:text-white cursor-pointer list-none select-none">
+            <span class="flex items-center gap-2.5">
+              <i class="bi bi-people-fill text-theme-accent text-base"></i>
+              <span>Can FancyVerse supply costumes for theatrical troupes and school productions?</span>
+            </span>
+            <span class="w-8 h-8 rounded-full bg-theme-subtle dark:bg-[#22222A] flex items-center justify-center text-theme-accent text-xs group-open:rotate-180 transition-transform duration-200 flex-shrink-0">
+              <i class="bi bi-chevron-down"></i>
+            </span>
+          </summary>
+          <p class="mt-4 text-xs sm:text-sm text-theme-muted dark:text-gray-300 leading-relaxed pt-3 border-t border-theme/60">
+            Absolutely. We regularly outfit regional theater companies, high school drama departments, and corporate galas with bulk costume packages ranging from 5 to 50+ sets. We offer dedicated production managers, tiered volume discounts, flexible dress rehearsal extensions, and coordinated size-sorting crates.
+          </p>
+        </details>
+
+      </div>
+
+      <!-- Still have questions callout -->
+      <div class="text-center pt-4">
+        <p class="text-xs text-theme-muted dark:text-gray-400">
+          Still have a specific question about your event? 
+          <a href="#fitting" class="text-theme-accent font-bold hover:underline ml-1">Send us an enquiry above</a> or call <span class="font-bold text-theme-main dark:text-white">+1 (800) 555-FANCY</span>.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/styles-switcher.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    // Pre-fill type from URL query if available
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const typeParam = params.get('type');
+      if (typeParam) {
+        const typeSelect = document.getElementById('contactType');
+        if (typeSelect) {
+          if (typeParam.toLowerCase().includes('troupe') || typeParam.toLowerCase().includes('studio')) {
+            typeSelect.value = 'Troupe Production';
+          } else if (typeParam.toLowerCase().includes('fitting')) {
+            typeSelect.value = 'Fitting Appointment';
+          }
+        }
+      }
+    });
+
+    // Handle form submit
+    function handleContactSubmit(e) {
+      e.preventDefault();
+
+      const form = document.getElementById('contactEnquiryForm');
+      const btn = form.querySelector('button[type="submit"]');
+      const originalBtnHtml = btn ? btn.innerHTML : '';
+
+      const newEnquiry = {
+        name: document.getElementById('contactName').value,
+        email: document.getElementById('contactEmail').value,
+        phone: document.getElementById('contactPhone').value,
+        occasion: document.getElementById('contactOccasion').value,
+        type: document.getElementById('contactType').value,
+        volume: document.getElementById('contactVolume').value,
+        date: document.getElementById('contactDate').value,
+        timeSlot: document.getElementById('contactTimeSlot') ? document.getElementById('contactTimeSlot').value : '',
+        message: document.getElementById('contactMessage').value
+      };
+
+      try {
+        if (window.store && window.store.addEnquiry) {
+          window.store.addEnquiry(newEnquiry);
+        }
+      } catch (err) {
+        console.error('Error saving reservation enquiry:', err);
+      }
+
+      if (window.showToast) {
+        window.showToast('Reservation enquiry submitted! Our master stylist will contact you within 24h.', 'success');
+      }
+
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '<i class="bi bi-check-circle-fill"></i> Request Submitted!';
+        btn.classList.add('bg-emerald-600', 'hover:bg-emerald-600');
+        setTimeout(() => {
+          btn.disabled = false;
+          btn.innerHTML = originalBtnHtml;
+          btn.classList.remove('bg-emerald-600', 'hover:bg-emerald-600');
+        }, 3500);
+      }
+
+      form.reset();
+    }
+  </script>
+</body>
+</html>

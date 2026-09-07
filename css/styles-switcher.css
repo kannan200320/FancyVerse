@@ -1,0 +1,169 @@
+/* ==========================================================================
+   Site Styles Switcher Widget CSS
+   Replicates the exact "Site Styles" palette & typography customizer
+   ========================================================================== */
+
+#style-switcher-panel {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%) translateX(100%);
+  width: 340px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  box-shadow: -12px 24px 48px rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 1.75rem;
+  border-bottom-left-radius: 1.75rem;
+  z-index: 999;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+[dir="rtl"] #style-switcher-panel {
+  right: auto;
+  left: 0;
+  transform: translateY(-50%) translateX(-100%);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 1.75rem;
+  border-bottom-right-radius: 1.75rem;
+  box-shadow: 12px 24px 48px rgba(0, 0, 0, 0.2);
+}
+
+#style-switcher-panel.open {
+  transform: translateY(-50%) translateX(0);
+}
+
+#style-switcher-toggle {
+  position: absolute;
+  top: 50%;
+  left: -52px;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  background: var(--color-primary);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  box-shadow: -6px 8px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-right: none;
+  font-size: 1.35rem;
+  transition: all 0.25s ease;
+}
+
+[dir="rtl"] #style-switcher-toggle {
+  left: auto;
+  right: -52px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  box-shadow: 6px 8px 20px rgba(0, 0, 0, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: none;
+}
+
+#style-switcher-toggle:hover {
+  background: var(--color-secondary);
+  color: var(--color-gold);
+}
+
+.style-switcher-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-bg-subtle);
+}
+
+.style-switcher-body {
+  padding: 1.25rem;
+  max-height: 82vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Site Styles Mockup Card matching screenshot */
+.site-styles-preview-card {
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.site-styles-swatches {
+  display: flex;
+  height: 36px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.site-styles-swatches span {
+  width: 14px;
+}
+
+/* Palette Card */
+.palette-card {
+  border: 1px solid var(--color-border);
+  border-radius: 1.25rem;
+  padding: 0.85rem;
+  cursor: pointer;
+  background: var(--color-bg-card);
+  transition: all 0.25s ease;
+}
+
+.palette-card:hover, .palette-card.active {
+  border-color: var(--color-accent);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.palette-card.active {
+  ring: 2px solid var(--color-accent);
+}
+
+.palette-swatches {
+  display: flex;
+  height: 24px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.palette-swatches span {
+  flex: 1;
+}
+
+/* Fonts Selector */
+.font-opt-btn {
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  background: var(--color-bg-light);
+  color: var(--color-text-main);
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.font-opt-btn.active, .font-opt-btn:hover {
+  border-color: var(--color-accent);
+  background: var(--color-bg-subtle);
+}
+
+[dir="rtl"] .font-opt-btn {
+  text-align: right;
+}
