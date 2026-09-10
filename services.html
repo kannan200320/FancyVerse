@@ -63,21 +63,85 @@
   
   <div id="navbar"></div>
 
-  <!-- HEADER BANNER -->
-  <section class="pt-32 pb-16 bg-theme-subtle dark:bg-[#151518] border-b border-theme">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center max-w-2xl">
-      <span class="text-theme-accent font-bold tracking-[0.2em] text-xs uppercase block mb-2">Full-Spectrum Costuming</span>
-      <h1 class="text-3xl sm:text-5xl font-extrabold text-theme-main dark:text-white">
-        Our Rental & Wardrobe Services
-      </h1>
-      <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-300 mt-4 leading-relaxed">
-        From single red carpet hires to 50-actor theatrical ensembles and bespoke cosplay fabrication.
-      </p>
+  <!-- SERVICES HERO BANNER -->
+  <section class="relative pt-32 pb-16 overflow-hidden bg-theme-subtle dark:bg-[#151518] border-b border-theme">
+    <!-- Ambient Pulse Glows -->
+    <div class="absolute top-10 right-10 w-[450px] h-[450px] bg-theme-accent/10 rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
+    <div class="absolute -bottom-24 -left-24 w-[400px] h-[400px] bg-theme-secondary/10 rounded-full blur-3xl pointer-events-none animate-pulse-glow" style="animation-delay: 2s;"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      
+      <!-- Text Column -->
+      <div class="lg:col-span-7 space-y-6 reveal-up">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 dark:bg-amber-500/20 border border-amber-500/20 text-xs font-black uppercase tracking-widest text-amber-800 dark:text-amber-200 shadow-sm badge-interactive">
+          <span>✨</span>
+          <span>Full-Spectrum Costuming</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight text-theme-main dark:text-white">
+          Our Rental & <br>
+          <span class="font-serif italic font-normal text-theme-accent">Wardrobe Services.</span>
+        </h1>
+
+        <p class="text-sm sm:text-base text-theme-muted dark:text-gray-300 max-w-xl leading-relaxed">
+          From single red carpet hires to 50-actor theatrical ensembles and bespoke cosplay fabrication. Sanitized with medical ozone, custom pinned and basted, and backed by our Broadway fit assurance.
+        </p>
+
+        <!-- Quick Badges -->
+        <div class="flex flex-wrap gap-2 pt-1">
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-white dark:bg-[#202025] border border-theme text-theme-main dark:text-white shadow-sm flex items-center gap-1.5">
+            <i class="bi bi-mask text-amber-500"></i> Venetian Masquerade
+          </span>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-white dark:bg-[#202025] border border-theme text-theme-main dark:text-white shadow-sm flex items-center gap-1.5">
+            <i class="bi bi-scissors text-purple-500"></i> Private Fitting Suites
+          </span>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-white dark:bg-[#202025] border border-theme text-theme-main dark:text-white shadow-sm flex items-center gap-1.5">
+            <i class="bi bi-people-fill text-blue-500"></i> Troupe Ensembles
+          </span>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-white dark:bg-[#202025] border border-theme text-theme-main dark:text-white shadow-sm flex items-center gap-1.5">
+            <i class="bi bi-shield-check text-emerald-500"></i> Medical Ozone Cleaning
+          </span>
+        </div>
+
+        <div class="flex items-center gap-4 pt-2">
+          <a href="#servicesList" class="btn-primary-theme text-xs py-3 px-6 rounded-xl font-bold shadow-lg inline-flex items-center gap-2">
+            <i class="bi bi-grid-fill"></i> Browse All Services
+          </a>
+          <a href="contact.html#fitting" class="btn-outline-theme text-xs py-3 px-6 rounded-xl font-bold inline-flex items-center gap-2">
+            <i class="bi bi-calendar-event"></i> Book Fitting Suite
+          </a>
+        </div>
+      </div>
+
+      <!-- Image Column -->
+      <div class="lg:col-span-5 relative reveal-right">
+        <div class="relative mx-auto max-w-md lg:max-w-none">
+          <div class="tilt-card rounded-[2.5rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white dark:border-[#1C1C22] relative group">
+            <img src="https://i.pinimg.com/1200x/7a/8e/41/7a8e41798b2b0d07a3830b2ad487fe10.jpg" alt="FancyVerse Master Wardrobe Atelier" class="w-full h-[380px] sm:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none"></div>
+            
+            <!-- Glassmorphic Floating Caption Card -->
+            <div class="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-black/65 backdrop-blur-md border border-white/15 text-white space-y-1 shadow-xl">
+              <div class="flex items-center justify-between">
+                <span class="theme-badge-gold text-[10px] font-black px-2.5 py-0.5 rounded-full inline-block">
+                  Atelier & Tailoring
+                </span>
+                <span class="text-xs text-amber-300 font-bold flex items-center gap-1">
+                  <i class="bi bi-star-fill text-[10px]"></i> 5.0 Rating
+                </span>
+              </div>
+              <h3 class="text-base font-extrabold text-white">Full-Spectrum Costume Atelier</h3>
+              <p class="text-xs text-white/80">Every garment steam-sanitized, fitted & hand-inspected before delivery.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- CONTROLS & SERVICES SECTION -->
-  <section class="py-16 bg-white dark:bg-[#121215]">
+  <section class="py-16 bg-white dark:bg-[#121215]" id="servicesList">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       
       <!-- Filter & View Switcher Bar -->

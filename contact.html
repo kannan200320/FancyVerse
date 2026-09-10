@@ -63,16 +63,77 @@
   
   <div id="navbar"></div>
 
-  <!-- BREADCRUMB & HEADER -->
-  <section class="pt-32 pb-12 bg-theme-subtle dark:bg-[#151518] border-b border-theme">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center max-w-2xl">
-      <span class="text-theme-accent font-bold tracking-[0.2em] text-xs uppercase block mb-2">Broadway Flagship & Salon</span>
-      <h1 class="text-3xl sm:text-5xl font-extrabold text-theme-main dark:text-white">
-        Contact & Fitting Studio
-      </h1>
-      <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-300 mt-3 leading-relaxed">
-        Have questions about custom sizing, theatrical production hires, or want to schedule a private fitting salon appointment? We are here to assist.
-      </p>
+  <!-- CONTACT HERO BANNER -->
+  <section class="relative pt-32 pb-16 overflow-hidden bg-theme-subtle dark:bg-[#151518] border-b border-theme">
+    <!-- Ambient Pulse Glows -->
+    <div class="absolute top-10 right-10 w-[450px] h-[450px] bg-theme-accent/10 rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
+    <div class="absolute -bottom-24 -left-24 w-[400px] h-[400px] bg-theme-secondary/10 rounded-full blur-3xl pointer-events-none animate-pulse-glow" style="animation-delay: 2s;"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      
+      <!-- Text Column -->
+      <div class="lg:col-span-7 space-y-6 reveal-up">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 dark:bg-amber-500/20 border border-amber-500/20 text-xs font-black uppercase tracking-widest text-amber-800 dark:text-amber-200 shadow-sm badge-interactive">
+          <span>📍</span>
+          <span>Broadway Flagship Showroom & Atelier</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight text-theme-main dark:text-white">
+          Contact & <br>
+          <span class="font-serif italic font-normal text-theme-accent">Private Fitting Salon.</span>
+        </h1>
+
+        <p class="text-sm sm:text-base text-theme-muted dark:text-gray-300 max-w-xl leading-relaxed">
+          Step into our flagship Manhattan salon at 480 Broadway Ave. Book private 1-on-1 corsetière fitting sessions, coordinate 50+ costume theatrical productions, or speak with our 24/7 emergency gala wardrobe dispatch.
+        </p>
+
+        <!-- Direct Contact Badges -->
+        <div class="flex flex-wrap gap-2 pt-1">
+          <a href="tel:+18005553262" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-white dark:bg-[#202025] border border-theme text-theme-main dark:text-white shadow-sm hover:border-theme-accent transition flex items-center gap-1.5">
+            <i class="bi bi-telephone-fill text-amber-500"></i> +1 (800) 555-FANCY
+          </a>
+          <a href="tel:+12125550199" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-white dark:bg-[#202025] border border-theme text-theme-main dark:text-white shadow-sm hover:border-theme-accent transition flex items-center gap-1.5">
+            <i class="bi bi-lightning-charge-fill text-red-500"></i> Emergency Line: +1 (212) 555-0199
+          </a>
+          <a href="mailto:rentals@fancyverse.com" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-white dark:bg-[#202025] border border-theme text-theme-main dark:text-white shadow-sm hover:border-theme-accent transition flex items-center gap-1.5">
+            <i class="bi bi-envelope-fill text-purple-500"></i> rentals@fancyverse.com
+          </a>
+        </div>
+
+        <div class="flex items-center gap-4 pt-2">
+          <a href="#fitting" class="btn-primary-theme text-xs py-3 px-6 rounded-xl font-bold shadow-lg inline-flex items-center gap-2">
+            <i class="bi bi-calendar-check-fill"></i> Book Salon Fitting
+          </a>
+          <a href="#faq" class="btn-outline-theme text-xs py-3 px-6 rounded-xl font-bold inline-flex items-center gap-2">
+            <i class="bi bi-question-circle"></i> View Top 5 FAQs
+          </a>
+        </div>
+      </div>
+
+      <!-- Image Column -->
+      <div class="lg:col-span-5 relative reveal-right">
+        <div class="relative mx-auto max-w-md lg:max-w-none">
+          <div class="tilt-card rounded-[2.5rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white dark:border-[#1C1C22] relative group">
+            <img src="https://i.pinimg.com/1200x/dc/fc/70/dcfc7007de512c2e5f693168a84ac0b0.jpg" alt="FancyVerse Flagship Fitting Salon Interior" class="w-full h-[380px] sm:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none"></div>
+            
+            <!-- Glassmorphic Floating Caption Card -->
+            <div class="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-black/65 backdrop-blur-md border border-white/15 text-white space-y-1 shadow-xl">
+              <div class="flex items-center justify-between">
+                <span class="theme-badge-gold text-[10px] font-black px-2.5 py-0.5 rounded-full inline-block">
+                  Broadway Flagship
+                </span>
+                <span class="text-xs text-amber-300 font-bold flex items-center gap-1">
+                  <i class="bi bi-geo-alt-fill text-[11px]"></i> Soho / Broadway
+                </span>
+              </div>
+              <h3 class="text-base font-extrabold text-white">Private Fitting Chambers</h3>
+              <p class="text-xs text-white/80">4 private suites with artisanal espresso & champagne hospitality.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -358,14 +419,6 @@
           </p>
         </details>
 
-      </div>
-
-      <!-- Still have questions callout -->
-      <div class="text-center pt-4">
-        <p class="text-xs text-theme-muted dark:text-gray-400">
-          Still have a specific question about your event? 
-          <a href="#fitting" class="text-theme-accent font-bold hover:underline ml-1">Send us an enquiry above</a> or call <span class="font-bold text-theme-main dark:text-white">+1 (800) 555-FANCY</span>.
-        </p>
       </div>
 
     </div>

@@ -63,16 +63,80 @@
   
   <div id="navbar"></div>
 
-  <!-- BREADCRUMB & HEADER -->
-  <section class="pt-32 pb-12 bg-theme-subtle dark:bg-[#151518] border-b border-theme">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center max-w-2xl">
-      <span class="text-theme-accent font-bold tracking-[0.2em] text-xs uppercase block mb-2">Precision Tailoring</span>
-      <h1 class="text-3xl sm:text-5xl font-extrabold text-theme-main dark:text-white">
-        Size Guide & Fit Guarantee
-      </h1>
-      <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-300 mt-3 leading-relaxed">
-        Because true elegance begins with an immaculate fit. Measure yourself in minutes or let our Broadway corsetières guide you.
-      </p>
+  <!-- SIZE GUIDE HERO BANNER -->
+  <section class="relative pt-32 pb-16 overflow-hidden bg-theme-subtle dark:bg-[#151518] border-b border-theme">
+    <!-- Ambient Pulse Glows -->
+    <div class="absolute top-10 right-10 w-[450px] h-[450px] bg-theme-accent/10 rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
+    <div class="absolute -bottom-24 -left-24 w-[400px] h-[400px] bg-theme-secondary/10 rounded-full blur-3xl pointer-events-none animate-pulse-glow" style="animation-delay: 2s;"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      
+      <!-- Text Column -->
+      <div class="lg:col-span-7 space-y-6 reveal-up">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 dark:bg-amber-500/20 border border-amber-500/20 text-xs font-black uppercase tracking-widest text-amber-800 dark:text-amber-200 shadow-sm badge-interactive">
+          <span>📏</span>
+          <span>Master Tailor Atelier</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight text-theme-main dark:text-white">
+          Size Guide & <br>
+          <span class="font-serif italic font-normal text-theme-accent">Fit Assurance Guarantee.</span>
+        </h1>
+
+        <p class="text-sm sm:text-base text-theme-muted dark:text-gray-300 max-w-xl leading-relaxed">
+          Because true elegance begins with an immaculate fit. Take your measurements in minutes using our master sizing tables, or schedule a private consultation in our Broadway fitting salon chambers.
+        </p>
+
+        <!-- Key Tailoring Highlights -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+          <div class="p-3 rounded-2xl bg-white dark:bg-[#202025] border border-theme shadow-sm">
+            <span class="text-theme-accent font-black text-xs block">01. Emergency Kit</span>
+            <p class="text-[11px] text-theme-muted dark:text-gray-400 mt-0.5">Backup laces, hem tape & hidden dressmaker clips.</p>
+          </div>
+          <div class="p-3 rounded-2xl bg-white dark:bg-[#202025] border border-theme shadow-sm">
+            <span class="text-theme-accent font-black text-xs block">02. Same-Day Swap</span>
+            <p class="text-[11px] text-theme-muted dark:text-gray-400 mt-0.5">Courier size exchange delivered before 12 PM.</p>
+          </div>
+          <div class="p-3 rounded-2xl bg-white dark:bg-[#202025] border border-theme shadow-sm">
+            <span class="text-theme-accent font-black text-xs block">03. $45 Studio Credit</span>
+            <p class="text-[11px] text-theme-muted dark:text-gray-400 mt-0.5">Fitting booking fee 100% credited to rental.</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 pt-2">
+          <a href="#sizeTables" class="btn-primary-theme text-xs py-3 px-6 rounded-xl font-bold shadow-lg inline-flex items-center gap-2">
+            <i class="bi bi-rulers"></i> View Sizing Charts
+          </a>
+          <a href="contact.html#fitting" class="btn-outline-theme text-xs py-3 px-6 rounded-xl font-bold inline-flex items-center gap-2">
+            <i class="bi bi-calendar-check"></i> Book In-Store Fitting
+          </a>
+        </div>
+      </div>
+
+      <!-- Image Column -->
+      <div class="lg:col-span-5 relative reveal-right">
+        <div class="relative mx-auto max-w-md lg:max-w-none">
+          <div class="tilt-card rounded-[2.5rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white dark:border-[#1C1C22] relative group">
+            <img src="https://i.pinimg.com/1200x/4e/04/bc/4e04bc76f9f1a1f17f5c6920a32a1611.jpg" alt="Master Tailor Measuring & Corset Fitting" class="w-full h-[380px] sm:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none"></div>
+            
+            <!-- Glassmorphic Floating Caption Card -->
+            <div class="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-black/65 backdrop-blur-md border border-white/15 text-white space-y-1 shadow-xl">
+              <div class="flex items-center justify-between">
+                <span class="theme-badge-gold text-[10px] font-black px-2.5 py-0.5 rounded-full inline-block">
+                  Atelier Fitting
+                </span>
+                <span class="text-xs text-amber-300 font-bold flex items-center gap-1">
+                  <i class="bi bi-patch-check-fill text-[11px]"></i> 100% Fit Guarantee
+                </span>
+              </div>
+              <h3 class="text-base font-extrabold text-white">Precision Silhouette Tailoring</h3>
+              <p class="text-xs text-white/80">Every corset, tailcoat, and kimono tailored with pin-and-baste adjustments.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -99,7 +163,7 @@
   </section>
 
   <!-- MEASURING INSTRUCTIONS -->
-  <section class="py-12 bg-[#FDFBF9] dark:bg-[#0D0D0E]">
+  <section class="py-12 bg-[#FDFBF9] dark:bg-[#0D0D0E]" id="sizeTables">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       
       <div class="text-center max-w-xl mx-auto mb-12">

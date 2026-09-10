@@ -63,15 +63,80 @@
   
   <div id="navbar"></div>
 
-  <!-- HEADER -->
-  <section class="pt-32 pb-12 bg-theme-subtle dark:bg-[#151518] border-b border-theme">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-theme-main dark:text-white">
-        Venetian Masquerade & Gala Ball Hire
-      </h1>
-      <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-300 mt-2 max-w-2xl">
-        Complete high-society attire service including handcrafted brocade ballgowns, filigree masks, hoop petticoats, and professional sanitization.
-      </p>
+  <!-- SERVICE DETAILS & PRICING HERO BANNER -->
+  <section class="relative pt-32 pb-16 overflow-hidden bg-theme-subtle dark:bg-[#151518] border-b border-theme">
+    <!-- Ambient Pulse Glows -->
+    <div class="absolute top-10 right-10 w-[450px] h-[450px] bg-theme-accent/10 rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
+    <div class="absolute -bottom-24 -left-24 w-[400px] h-[400px] bg-theme-secondary/10 rounded-full blur-3xl pointer-events-none animate-pulse-glow" style="animation-delay: 2s;"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      
+      <!-- Text Column -->
+      <div class="lg:col-span-7 space-y-6 reveal-up">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 dark:bg-amber-500/20 border border-amber-500/20 text-xs font-black uppercase tracking-widest text-amber-800 dark:text-amber-200 shadow-sm badge-interactive">
+          <span>🎭</span>
+          <span>Signature Wardrobe Service</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight text-theme-main dark:text-white">
+          Venetian Masquerade & <br>
+          <span class="font-serif italic font-normal text-theme-accent">Gala Ball Hire.</span>
+        </h1>
+
+        <p class="text-sm sm:text-base text-theme-muted dark:text-gray-300 max-w-xl leading-relaxed">
+          Complete high-society attire service including handcrafted brocade ballgowns, filigree masks, hoop petticoats, and medical-grade sanitization. Transparent daily and weekend hire tiers with guaranteed automated deposit returns.
+        </p>
+
+        <!-- Service Inclusions Badges -->
+        <div class="flex flex-wrap gap-2 pt-1">
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-white dark:bg-[#202025] border border-theme text-theme-main dark:text-white shadow-sm flex items-center gap-1.5">
+            <i class="bi bi-tag-fill text-amber-500"></i> $65 Gala Day Pass
+          </span>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-white dark:bg-[#202025] border border-theme text-theme-main dark:text-white shadow-sm flex items-center gap-1.5">
+            <i class="bi bi-shield-check text-emerald-500"></i> $150 Escrow Deposit
+          </span>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-white dark:bg-[#202025] border border-theme text-theme-main dark:text-white shadow-sm flex items-center gap-1.5">
+            <i class="bi bi-sparkles text-purple-500"></i> Hand-Carved Mask Included
+          </span>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-white dark:bg-[#202025] border border-theme text-theme-main dark:text-white shadow-sm flex items-center gap-1.5">
+            <i class="bi bi-water text-blue-500"></i> Eco-Clean Included
+          </span>
+        </div>
+
+        <div class="flex items-center gap-4 pt-2">
+          <a href="#pricingTable" class="btn-primary-theme text-xs py-3 px-6 rounded-xl font-bold shadow-lg inline-flex items-center gap-2">
+            <i class="bi bi-table"></i> View Pricing Table
+          </a>
+          <a href="contact.html#fitting" class="btn-outline-theme text-xs py-3 px-6 rounded-xl font-bold inline-flex items-center gap-2">
+            <i class="bi bi-calendar-event"></i> Book Fitting Suite
+          </a>
+        </div>
+      </div>
+
+      <!-- Image Column -->
+      <div class="lg:col-span-5 relative reveal-right">
+        <div class="relative mx-auto max-w-md lg:max-w-none">
+          <div class="tilt-card rounded-[2.5rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white dark:border-[#1C1C22] relative group">
+            <img src="https://images.unsplash.com/photo-1768229934730-5dc189e39ddf?auto=format&fit=crop&q=80&w=1200" alt="Venetian Masquerade Gala Gown & Filigree Mask" class="w-full h-[380px] sm:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none"></div>
+            
+            <!-- Glassmorphic Floating Caption Card -->
+            <div class="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-black/65 backdrop-blur-md border border-white/15 text-white space-y-1 shadow-xl">
+              <div class="flex items-center justify-between">
+                <span class="theme-badge-gold text-[10px] font-black px-2.5 py-0.5 rounded-full inline-block">
+                  Couture Gala Hire
+                </span>
+                <span class="text-xs text-amber-300 font-bold flex items-center gap-1">
+                  <i class="bi bi-patch-check-fill text-[11px]"></i> All-Inclusive Hire
+                </span>
+              </div>
+              <h3 class="text-base font-extrabold text-white">Authentic Italian Silk Brocade</h3>
+              <p class="text-xs text-white/80">Includes corseted gown, hoop petticoat, mask & complimentary eco-cleaning.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -84,7 +149,7 @@
         
         <!-- Showcase Image Banner -->
         <div class="rounded-3xl overflow-hidden shadow-xl aspect-video relative">
-          <img src="https://images.unsplash.com/photo-1768229934730-5dc189e39ddf?auto=format&fit=crop&q=80&w=1200" alt="Venetian Masquerade Gala Gown" class="w-full h-full object-cover">
+          <img src="https://images.unsplash.com/photo-1655951578974-48cd5e87db02?auto=format&fit=crop&q=80&w=1200" alt="Hand-Carved Venetian Filigree Mask & Brocade" class="w-full h-full object-cover">
           <div class="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 bg-black/60 backdrop-blur-md px-4 py-2 rounded-xl text-white text-xs font-semibold">
             Authentic Italian Silk Brocade & Gilded Venetian Mask
           </div>
@@ -138,7 +203,7 @@
         </div>
 
         <!-- PRICING & DEPOSIT TABLE -->
-        <div class="space-y-4">
+        <div class="space-y-4" id="pricingTable">
           <h2 class="text-2xl font-bold text-theme-main dark:text-white">Rental Duration & Security Deposit</h2>
           <p class="text-xs text-gray-500">All prices include complimentary dry cleaning and prepaid return shipping box.</p>
 

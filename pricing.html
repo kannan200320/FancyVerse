@@ -63,21 +63,88 @@
   
   <div id="navbar"></div>
 
-  <!-- BREADCRUMB & HEADER -->
-  <section class="pt-32 pb-12 bg-theme-subtle dark:bg-[#151518] border-b border-theme">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center max-w-2xl">
-      <span class="text-theme-accent font-bold tracking-[0.2em] text-xs uppercase block mb-2">Honest & Transparent</span>
-      <h1 class="text-3xl sm:text-5xl font-extrabold text-theme-main dark:text-white">
-        Pricing & Deposit Policy
-      </h1>
-      <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-300 mt-3 leading-relaxed">
-        No hidden dry-cleaning charges, no surprise fees. Learn how our simple daily rates and automated security deposit refunds work.
-      </p>
+  <!-- PRICING HERO BANNER -->
+  <section class="relative pt-32 pb-16 overflow-hidden bg-theme-subtle dark:bg-[#151518] border-b border-theme">
+    <!-- Ambient Pulse Glows -->
+    <div class="absolute top-10 right-10 w-[450px] h-[450px] bg-theme-accent/10 rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
+    <div class="absolute -bottom-24 -left-24 w-[400px] h-[400px] bg-theme-secondary/10 rounded-full blur-3xl pointer-events-none animate-pulse-glow" style="animation-delay: 2s;"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      
+      <!-- Text Column -->
+      <div class="lg:col-span-7 space-y-6 reveal-up">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 dark:bg-amber-500/20 border border-amber-500/20 text-xs font-black uppercase tracking-widest text-amber-800 dark:text-amber-200 shadow-sm badge-interactive">
+          <span>💎</span>
+          <span>Honest & Transparent Rates</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight text-theme-main dark:text-white">
+          Pricing & <br>
+          <span class="font-serif italic font-normal text-theme-accent">Deposit Assurance Policy.</span>
+        </h1>
+
+        <p class="text-sm sm:text-base text-theme-muted dark:text-gray-300 max-w-xl leading-relaxed">
+          Zero hidden dry-cleaning charges, no unexpected fees. Enjoy straightforward 1-day gala rentals, 3-day weekend packages, and full escrow deposit refunds automatically processed within 48 hours.
+        </p>
+
+        <!-- Rate Quick Overview Cards -->
+        <div class="grid grid-cols-3 gap-3 pt-1">
+          <div class="p-3 rounded-2xl bg-white dark:bg-[#202025] border border-theme shadow-sm">
+            <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider block">Kids Costumes</span>
+            <p class="text-lg font-black text-theme-main dark:text-white mt-0.5">$35 <span class="text-[10px] font-normal text-gray-400">/day</span></p>
+            <span class="text-[10px] text-theme-accent font-semibold">$50 deposit</span>
+          </div>
+          <div class="p-3 rounded-2xl bg-white dark:bg-[#202025] border border-theme shadow-sm">
+            <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider block">Themed Galas</span>
+            <p class="text-lg font-black text-theme-main dark:text-white mt-0.5">$48 <span class="text-[10px] font-normal text-gray-400">/day</span></p>
+            <span class="text-[10px] text-theme-accent font-semibold">$100 deposit</span>
+          </div>
+          <div class="p-3 rounded-2xl bg-white dark:bg-[#202025] border border-theme shadow-sm">
+            <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider block">Silk & Armor</span>
+            <p class="text-lg font-black text-theme-main dark:text-white mt-0.5">$65 <span class="text-[10px] font-normal text-gray-400">/day</span></p>
+            <span class="text-[10px] text-theme-accent font-semibold">$150 deposit</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 pt-2">
+          <a href="#pricingTiers" class="btn-primary-theme text-xs py-3 px-6 rounded-xl font-bold shadow-lg inline-flex items-center gap-2">
+            <i class="bi bi-tags-fill"></i> View All Rental Tiers
+          </a>
+          <a href="#depositExplainer" class="btn-outline-theme text-xs py-3 px-6 rounded-xl font-bold inline-flex items-center gap-2">
+            <i class="bi bi-shield-lock"></i> How Deposits Work
+          </a>
+        </div>
+      </div>
+
+      <!-- Image Column -->
+      <div class="lg:col-span-5 relative reveal-right">
+        <div class="relative mx-auto max-w-md lg:max-w-none">
+          <div class="tilt-card rounded-[2.5rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white dark:border-[#1C1C22] relative group">
+            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&q=80&w=1200" alt="Curated Wardrobe Collection & Garment Preservation" class="w-full h-[380px] sm:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none"></div>
+            
+            <!-- Glassmorphic Floating Caption Card -->
+            <div class="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-black/65 backdrop-blur-md border border-white/15 text-white space-y-1 shadow-xl">
+              <div class="flex items-center justify-between">
+                <span class="theme-badge-gold text-[10px] font-black px-2.5 py-0.5 rounded-full inline-block">
+                  Escrow Guarantee
+                </span>
+                <span class="text-xs text-amber-300 font-bold flex items-center gap-1">
+                  <i class="bi bi-check-circle-fill text-[11px]"></i> 100% Release
+                </span>
+              </div>
+              <h3 class="text-base font-extrabold text-white">White-Glove Garment Protection</h3>
+              <p class="text-xs text-white/80">Security deposits held in escrow & automatically refunded upon return.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- RENTAL TIERS CARDS -->
-  <section class="py-16 bg-white dark:bg-[#121215]">
+  <section class="py-16 bg-white dark:bg-[#121215]" id="pricingTiers">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -226,7 +293,7 @@
   </section>
 
   <!-- DEPOSIT & REFUND BREAKDOWN -->
-  <section class="py-16 bg-[#FDFBF9] dark:bg-[#0D0D0E]">
+  <section class="py-16 bg-[#FDFBF9] dark:bg-[#0D0D0E]" id="depositExplainer">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-12">
       
       <div class="text-center max-w-xl mx-auto space-y-2">

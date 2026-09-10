@@ -63,20 +63,69 @@
   
   <div id="navbar"></div>
 
-  <!-- BANNER -->
-  <section class="pt-32 pb-12 bg-theme-subtle dark:bg-[#151518] border-b border-theme">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-theme-main dark:text-white">
-        Costume Catalog by Occasion
-      </h1>
-      <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-300 mt-2">
-        Over 2,500 handcrafted costumes. Filter by event occasion, sizing measurements, or budget.
-      </p>
+  <!-- CATALOG HERO BANNER -->
+  <section class="relative pt-32 pb-16 overflow-hidden bg-theme-subtle dark:bg-[#151518] border-b border-theme">
+    <!-- Ambient Pulse Glows -->
+    <div class="absolute top-10 right-10 w-[450px] h-[450px] bg-theme-accent/10 rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
+    <div class="absolute -bottom-24 -left-24 w-[400px] h-[400px] bg-theme-secondary/10 rounded-full blur-3xl pointer-events-none animate-pulse-glow" style="animation-delay: 2s;"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      
+      <!-- Text Column -->
+      <div class="lg:col-span-7 space-y-6 reveal-up">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 dark:bg-amber-500/20 border border-amber-500/20 text-xs font-black uppercase tracking-widest text-amber-800 dark:text-amber-200 shadow-sm badge-interactive">
+          <span>✨</span>
+          <span>2,500+ Handcrafted Ensembles</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight text-theme-main dark:text-white">
+          Costume Catalog <br>
+          <span class="font-serif italic font-normal text-theme-accent">By Curated Occasion.</span>
+        </h1>
+
+        <p class="text-sm sm:text-base text-theme-muted dark:text-gray-300 max-w-xl leading-relaxed">
+          Explore our premier rental vault. Filter by theme occasion, custom sizing measurements, or budget tier. Sanitized with medical ozone, tailored to your silhouette, and delivered with our 100% fit assurance guarantee.
+        </p>
+
+        <div class="flex items-center gap-4 pt-2">
+          <a href="#catalogResultsSection" class="btn-primary-theme text-xs py-3 px-6 rounded-xl font-bold shadow-lg inline-flex items-center gap-2">
+            <i class="bi bi-grid-fill"></i> Explore All Costumes
+          </a>
+          <a href="size-guide.html" class="btn-outline-theme text-xs py-3 px-6 rounded-xl font-bold inline-flex items-center gap-2">
+            <i class="bi bi-rulers"></i> Sizing & Fit Guide
+          </a>
+        </div>
+      </div>
+
+      <!-- Image Column -->
+      <div class="lg:col-span-5 relative reveal-right">
+        <div class="relative mx-auto max-w-md lg:max-w-none">
+          <div class="tilt-card rounded-[2.5rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white dark:border-[#1C1C22] relative group">
+            <img src="https://images.unsplash.com/photo-1768229934730-5dc189e39ddf?auto=format&fit=crop&q=80&w=1200" alt="Venetian Masquerade Costume Collection" class="w-full h-[380px] sm:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none"></div>
+            
+            <!-- Glassmorphic Floating Caption Card -->
+            <div class="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-black/65 backdrop-blur-md border border-white/15 text-white space-y-1 shadow-xl">
+              <div class="flex items-center justify-between">
+                <span class="theme-badge-gold text-[10px] font-black px-2.5 py-0.5 rounded-full inline-block">
+                  Vault Collection
+                </span>
+                <span class="text-xs text-amber-300 font-bold flex items-center gap-1">
+                  <i class="bi bi-sparkles"></i> 4 Curated Worlds
+                </span>
+              </div>
+              <h3 class="text-base font-extrabold text-white">Handcrafted Theatrical Wardrobe</h3>
+              <p class="text-xs text-white/80">Every costume sanitized, custom tailored, and delivered with backup laces.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- MAIN CATALOG AREA -->
-  <section class="py-12 bg-white dark:bg-[#121215]">
+  <section class="py-12 bg-white dark:bg-[#121215]" id="catalogResultsSection">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       
       <!-- Top Bar with Active Count, Search, and Mobile Filter Toggle -->
@@ -504,6 +553,16 @@
       document.querySelector('#sizeSelectorPills [data-size="All"]')?.classList.add('bg-theme-main', 'text-white');
 
       renderCatalog();
+    };
+
+    window.filterByOccasion = (occ) => {
+      activeOccasion = occ;
+      occasionCheckboxes.forEach(cb => {
+        cb.checked = (cb.value === occ);
+      });
+      currentPage = 1;
+      renderCatalog();
+      document.getElementById('catalogResultsSection')?.scrollIntoView({ behavior: 'smooth' });
     };
 
     document.getElementById('resetFiltersBtn')?.addEventListener('click', resetFilters);
