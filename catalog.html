@@ -101,21 +101,21 @@
       <div class="lg:col-span-5 relative reveal-right">
         <div class="relative mx-auto max-w-md lg:max-w-none">
           <div class="tilt-card rounded-[2.5rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white dark:border-[#1C1C22] relative group">
-            <img src="https://images.unsplash.com/photo-1768229934730-5dc189e39ddf?auto=format&fit=crop&q=80&w=1200" alt="Venetian Masquerade Costume Collection" class="w-full h-[380px] sm:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105">
+            <img id="catalogHeroImg" src="https://i.pinimg.com/1200x/d6/d3/bc/d6d3bc869a553db1b2efcc9aaeb9b8b6.jpg" alt="Venetian Masquerade Costume Collection" class="w-full h-[380px] sm:h-[440px] object-cover transition-all duration-500 group-hover:scale-105">
             <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none"></div>
             
             <!-- Glassmorphic Floating Caption Card -->
             <div class="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-black/65 backdrop-blur-md border border-white/15 text-white space-y-1 shadow-xl">
               <div class="flex items-center justify-between">
-                <span class="theme-badge-gold text-[10px] font-black px-2.5 py-0.5 rounded-full inline-block">
-                  Vault Collection
+                <span id="catalogHeroBadge" class="theme-badge-gold text-[10px] font-black px-2.5 py-0.5 rounded-full inline-block">
+                  Page 1 • Gala & Masquerade
                 </span>
-                <span class="text-xs text-amber-300 font-bold flex items-center gap-1">
+                <span id="catalogHeroSubtitle" class="text-xs text-amber-300 font-bold flex items-center gap-1">
                   <i class="bi bi-sparkles"></i> 4 Curated Worlds
                 </span>
               </div>
-              <h3 class="text-base font-extrabold text-white">Handcrafted Theatrical Wardrobe</h3>
-              <p class="text-xs text-white/80">Every costume sanitized, custom tailored, and delivered with backup laces.</p>
+              <h3 id="catalogHeroTitle" class="text-base font-extrabold text-white">Curated Theatrical & Gala Wardrobe</h3>
+              <p id="catalogHeroDesc" class="text-xs text-white/80">Every costume sanitized, custom tailored, and delivered with backup laces.</p>
             </div>
           </div>
         </div>
@@ -281,8 +281,77 @@
     let currentPage = 1;
     const itemsPerPage = 6;
 
+    // Issue 4: Dynamic Hero Showcase Data per Catalog Page (no repeated image)
+    const catalogHeroData = {
+      1: {
+        img: "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&q=80&w=1200",
+        badge: "Page 1 • Gala & Masquerade",
+        subtitle: "4 Curated Worlds",
+        title: "Curated Theatrical & Gala Wardrobe",
+        desc: "Every costume sanitized, custom tailored, and delivered with backup laces."
+      },
+      2: {
+        img: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&q=80&w=1200",
+        badge: "Page 2 • Cultural & Traditional",
+        subtitle: "Artisan Silk Heirlooms",
+        title: "Artisan Silk & Cultural Heritage Attire",
+        desc: "Authentic Kyoto silks, Bavarian embroidery, and regal ceremonial ensembles."
+      },
+      3: {
+        img: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=1200",
+        badge: "Page 3 • Historical & Troupes",
+        subtitle: "Steel & Leather Certified",
+        title: "Stage-Accurate Historical & Armor Suites",
+        desc: "Medieval crusader armor, Victorian tailoring, and complete film cast packages."
+      }
+    };
+
+    function updateCatalogHero(page) {
+      const data = catalogHeroData[page] || catalogHeroData[1];
+      const imgEl = document.getElementById('catalogHeroImg');
+      const badgeEl = document.getElementById('catalogHeroBadge');
+      const subEl = document.getElementById('catalogHeroSubtitle');
+      const titleEl = document.getElementById('catalogHeroTitle');
+      const descEl = document.getElementById('catalogHeroDesc');
+
+      if (imgEl && data) {
+        imgEl.style.opacity = '0.3';
+        setTimeout(() => {
+          imgEl.src = data.img;
+          imgEl.style.opacity = '1';
+        }, 150);
+      }
+      if (badgeEl && data) badgeEl.textContent = data.badge;
+      if (subEl && data) subEl.innerHTML = `<i class="bi bi-sparkles"></i> ${data.subtitle}`;
+      if (titleEl && data) titleEl.textContent = data.title;
+      if (descEl && data) descEl.textContent = data.desc;
+    }
+
+    // Issue 5: Card Size Selection Tracking
+    window.selectedCardSizes = {};
+    window.selectCardSize = (costumeId, size, btn) => {
+      window.selectedCardSizes[costumeId] = size;
+      const container = document.getElementById(`sizes-${costumeId}`);
+      if (container) {
+        container.querySelectorAll('.size-card-btn').forEach(b => {
+          b.classList.remove('bg-theme-main', 'text-white', 'font-bold', 'shadow-xs');
+          b.classList.add('bg-theme-subtle', 'dark:bg-[#202025]', 'text-theme-muted');
+        });
+        btn.classList.remove('bg-theme-subtle', 'dark:bg-[#202025]', 'text-theme-muted');
+        btn.classList.add('bg-theme-main', 'text-white', 'font-bold', 'shadow-xs');
+      }
+    };
+
+    window.rentCostumeFromCard = (costumeId) => {
+      const costume = window.db.costumes.find(c => c.id === costumeId);
+      const chosenSize = window.selectedCardSizes[costumeId] || (costume && costume.sizes ? costume.sizes[0] : "Standard");
+      window.store.addToCart(costumeId, { size: chosenSize });
+      window.showToast(`Added ${costume ? costume.name : 'Costume'} (${chosenSize}) to Rental Cart`, 'success');
+    };
+
     window.changePage = (page) => {
       currentPage = page;
+      updateCatalogHero(page);
       renderCatalog();
       document.getElementById('catalogGrid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
@@ -343,7 +412,13 @@
 
       countEl.textContent = `Showing ${startIdx + 1}–${endIdx} of ${totalItems} luxury costume${totalItems !== 1 ? 's' : ''}`;
 
-      grid.innerHTML = paginatedItems.map(c => `
+      grid.innerHTML = paginatedItems.map(c => {
+        const defaultSize = c.sizes && c.sizes.length > 0 ? c.sizes[0] : "Standard";
+        if (!window.selectedCardSizes[c.id]) {
+          window.selectedCardSizes[c.id] = defaultSize;
+        }
+
+        return `
         <div class="theme-card tilt-card flex flex-col h-full p-4 group relative overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl">
           
           <div class="aspect-[4/5] bg-gray-100 dark:bg-black/40 rounded-2xl mb-4 relative overflow-hidden">
@@ -376,9 +451,16 @@
               <a href="costume-details.html?id=${c.id}" class="hover:text-theme-accent transition-colors">${c.name}</a>
             </h4>
 
-            <!-- Size pills available -->
-            <div class="flex items-center gap-1 my-2 flex-wrap">
-              ${c.sizes.map(s => `<span class="text-[9px] font-semibold px-1.5 py-0.5 rounded bg-theme-subtle dark:bg-[#202025] text-theme-muted">${s}</span>`).join('')}
+            <!-- Interactive Size Selection on Card -->
+            <div class="flex items-center gap-1 my-2 flex-wrap" id="sizes-${c.id}">
+              ${c.sizes.map((s) => {
+                const isSelected = window.selectedCardSizes[c.id] === s;
+                return `
+                  <button type="button" onclick="selectCardSize('${c.id}', '${s}', this)" class="size-card-btn text-[9px] font-semibold px-2 py-0.5 rounded transition ${isSelected ? 'bg-theme-main text-white font-bold shadow-xs' : 'bg-theme-subtle dark:bg-[#202025] text-theme-muted hover:text-theme-main'}" title="Select Size ${s}">
+                    ${s}
+                  </button>
+                `;
+              }).join('')}
             </div>
 
             <div class="flex items-center justify-between mt-auto pt-2.5 border-t border-theme mb-3.5">
@@ -394,7 +476,7 @@
             </div>
 
             <div class="flex gap-2">
-              <button onclick="window.store.addToCart('${c.id}'); window.showToast('Added ${c.name} to Rental Cart', 'success');" class="flex-1 btn-primary-theme text-[11px] py-2.5 rounded-xl font-bold shadow-sm">
+              <button onclick="rentCostumeFromCard('${c.id}')" class="flex-1 btn-primary-theme text-[11px] py-2.5 rounded-xl font-bold shadow-sm">
                 <i class="bi bi-bag-plus"></i> Rent Now
               </button>
             </div>
@@ -402,7 +484,8 @@
           </div>
 
         </div>
-      `).join('');
+        `;
+      }).join('');
 
       // Render Dynamic Interactive Pagination with symbols only (no RTL/LTR/text words)
       if (paginationContainer) {

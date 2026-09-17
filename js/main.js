@@ -2,6 +2,51 @@
    FancyVerse - Global Core JavaScript (Auth, Toasts, Modals, Interactions)
    ========================================================================== */
 
+// ==========================================================================
+// Global Direction (LTR / RTL) & Alignment Manager
+// Ensures proper LTR default alignment and unified toggling across all pages
+// ==========================================================================
+window.applySiteDirection = function(dir) {
+  const validDir = dir === 'rtl' ? 'rtl' : 'ltr';
+  document.documentElement.setAttribute('dir', validDir);
+  if (document.body) {
+    document.body.setAttribute('dir', validDir);
+  }
+  localStorage.setItem('fancy_dir', validDir);
+
+  // Sync state & tooltips across all toggle buttons
+  const isRtl = validDir === 'rtl';
+  const label = isRtl ? 'Switch to LTR Layout' : 'Switch to RTL Layout';
+  document.querySelectorAll('#rtlToggleBtn, #mobileRtlToggle, #switcherRtlBtn').forEach(btn => {
+    btn.setAttribute('title', label);
+    btn.setAttribute('aria-label', label);
+    if (isRtl) {
+      btn.classList.add('text-theme-accent', 'border-theme-accent');
+    } else {
+      btn.classList.remove('text-theme-accent', 'border-theme-accent');
+    }
+  });
+
+  window.dispatchEvent(new CustomEvent('directionChanged', { detail: { dir: validDir } }));
+};
+
+window.toggleSiteDirection = function() {
+  const current = document.documentElement.getAttribute('dir') || 'ltr';
+  const target = current === 'rtl' ? 'ltr' : 'rtl';
+  window.applySiteDirection(target);
+  return target;
+};
+
+// Immediate execution to set direction before paint
+(function() {
+  const stored = localStorage.getItem('fancy_dir');
+  const initialDir = stored === 'rtl' ? 'rtl' : 'ltr';
+  document.documentElement.setAttribute('dir', initialDir);
+  document.addEventListener('DOMContentLoaded', () => {
+    window.applySiteDirection(initialDir);
+  });
+})();
+
 // Auth Manager
 window.auth = {
   login: (email, password) => {
@@ -228,11 +273,23 @@ document.addEventListener("DOMContentLoaded", () => {
               <span class="font-bold">$${costume.deposit}</span>
             </div>
           </div>
+
+          <!-- Interactive Size Selector in Quick View (Issue 5) -->
+          <div class="mb-4">
+            <span class="text-xs font-bold block text-theme-main dark:text-white mb-1.5">Select Size</span>
+            <div class="flex flex-wrap gap-1.5" id="quickViewSizes">
+              ${costume.sizes.map((s, idx) => `
+                <button type="button" onclick="selectQuickViewSize('${s}', this)" class="qv-size-btn text-[10px] font-semibold px-2.5 py-1 rounded-lg border transition ${idx === 0 ? 'bg-theme-main text-white font-bold border-theme-main shadow-xs' : 'border-theme bg-theme-subtle dark:bg-[#202025] text-theme-muted hover:text-theme-main dark:hover:text-white'}" data-size="${s}">
+                  ${s}
+                </button>
+              `).join('')}
+            </div>
+          </div>
         </div>
 
         <div class="space-y-3 pt-2">
           <div class="flex gap-3">
-            <button onclick="window.store.addToCart('${costume.id}'); window.showToast('Added to Rental Cart', 'success'); window.closeQuickView();" class="flex-1 btn-primary-theme text-xs py-3 rounded-xl font-bold">
+            <button onclick="window.store.addToCart('${costume.id}', {size: window.quickViewSelectedSize || '${costume.sizes[0]}'}); window.showToast('Added ${costume.name.replace(/'/g, "\\'")} (' + (window.quickViewSelectedSize || '${costume.sizes[0]}') + ') to Rental Cart', 'success'); window.closeQuickView();" class="flex-1 btn-primary-theme text-xs py-3 rounded-xl font-bold">
               <i class="bi bi-bag-plus"></i> Add to Cart
             </button>
             <a href="costume-details.html?id=${costume.id}" onclick="window.closeQuickView()" class="px-4 py-3 rounded-xl border border-theme text-xs font-bold hover:bg-theme-subtle flex items-center justify-center">
@@ -245,6 +302,17 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     `;
+
+    window.quickViewSelectedSize = costume.sizes && costume.sizes.length > 0 ? costume.sizes[0] : "Standard";
+    window.selectQuickViewSize = (s, btn) => {
+      window.quickViewSelectedSize = s;
+      document.querySelectorAll('.qv-size-btn').forEach(b => {
+        b.classList.remove('bg-theme-main', 'text-white', 'font-bold', 'border-theme-main', 'shadow-xs');
+        b.classList.add('border-theme', 'bg-theme-subtle', 'dark:bg-[#202025]', 'text-theme-muted');
+      });
+      btn.classList.remove('border-theme', 'bg-theme-subtle', 'dark:bg-[#202025]', 'text-theme-muted');
+      btn.classList.add('bg-theme-main', 'text-white', 'font-bold', 'border-theme-main', 'shadow-xs');
+    };
 
     quickViewModal.classList.remove("hidden");
     window.lockScroll();

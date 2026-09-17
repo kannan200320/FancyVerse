@@ -352,35 +352,35 @@
           
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Your Full Name</label>
-              <input type="text" id="fittingName" required placeholder="Claire Beaumont" class="theme-input text-xs">
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Your Full Name <span class="text-rose-500">*</span></label>
+              <input type="text" id="fittingName" required minlength="2" pattern="^[A-Za-z\s'.-]{2,}$" title="Please enter at least 2 characters (letters only)" placeholder="Claire Beaumont" class="theme-input text-xs">
             </div>
             <div>
-              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Email Address</label>
-              <input type="email" id="fittingEmail" required placeholder="claire@example.com" class="theme-input text-xs">
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Email Address <span class="text-rose-500">*</span></label>
+              <input type="email" id="fittingEmail" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Email address must contain only lowercase letters and special characters (no uppercase)." placeholder="claire@example.com" class="theme-input text-xs">
             </div>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Phone Number</label>
-              <input type="tel" id="fittingPhone" placeholder="+1 (555) 019-2834" class="theme-input text-xs">
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Phone Number <span class="text-rose-500">*</span></label>
+              <input type="tel" id="fittingPhone" required pattern="^\d{10}$" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)" title="Please enter a valid 10-digit phone number" placeholder="10-digit phone number (e.g. 9876543210)" class="theme-input text-xs">
             </div>
             <div>
-              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Fitting Experience Tier</label>
-              <select id="fittingTier" class="theme-input text-xs">
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Fitting Experience Tier <span class="text-rose-500">*</span></label>
+              <select id="fittingTier" required class="theme-input text-xs">
                 <option value="Private Atelier Fitting">Private Atelier Fitting ($45 - Credited to Rental)</option>
                 <option value="Try-On Courier Box">Try-On Courier Box ($35 at-home)</option>
                 <option value="On-Site Master Dresser">On-Site Master Dresser ($195 hotel call-out)</option>
-                <option value="Troupe Cast Sizing">Troupe Cast Production Sizing (5+ sets)</option>
+                <option value="Troupe Cast Production Sizing">Troupe Cast Production Sizing (5+ sets)</option>
               </select>
             </div>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Preferred Suite</label>
-              <select id="fittingSuite" class="theme-input text-xs">
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Preferred Suite <span class="text-rose-500">*</span></label>
+              <select id="fittingSuite" required class="theme-input text-xs">
                 <option value="The Rose Brocade Salon">The Rose Brocade Salon (Victorian & Venetian)</option>
                 <option value="The Obsidian Armor Chamber">The Obsidian Chamber (Armor & Steampunk)</option>
                 <option value="The Grand Gala Suite">The Grand Gala Suite (1920s & Black-Tie)</option>
@@ -388,8 +388,8 @@
               </select>
             </div>
             <div>
-              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Primary Costume Occasion</label>
-              <select id="fittingOccasion" class="theme-input text-xs">
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Primary Costume Occasion <span class="text-rose-500">*</span></label>
+              <select id="fittingOccasion" required class="theme-input text-xs">
                 <option value="Themed Parties">Themed Parties & Galas</option>
                 <option value="Cultural">Cultural & Traditional Silk</option>
                 <option value="Historical">Historical Re-enactment & Armor</option>
@@ -400,12 +400,12 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Desired Appointment Date</label>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Desired Appointment Date <span class="text-rose-500">*</span></label>
               <input type="date" id="fittingDate" required class="theme-input text-xs">
             </div>
             <div>
-              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Preferred Time Window</label>
-              <select id="fittingTime" class="theme-input text-xs">
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Preferred Time Window <span class="text-rose-500">*</span></label>
+              <select id="fittingTime" required class="theme-input text-xs">
                 <option>10:00 AM - 11:30 AM (Morning Salon)</option>
                 <option selected>01:00 PM - 02:30 PM (Midday Session)</option>
                 <option>03:30 PM - 05:00 PM (Afternoon Tea)</option>
@@ -415,8 +415,8 @@
           </div>
 
           <div>
-            <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Measurements & Styling Goals</label>
-            <textarea id="fittingNotes" rows="3" placeholder="Tell us your approximate size, specific costume ID of interest, or character role..." class="theme-input text-xs"></textarea>
+            <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Measurements & Styling Goals <span class="text-rose-500">*</span></label>
+            <textarea id="fittingNotes" rows="3" required placeholder="Tell us your approximate size, specific costume ID of interest, or character role..." class="theme-input text-xs"></textarea>
           </div>
 
           <button type="submit" class="w-full btn-primary-theme text-xs py-3.5 rounded-xl font-bold shadow-lg">
@@ -584,13 +584,50 @@
       e.preventDefault();
 
       const form = document.getElementById('fittingStudioForm');
+      const name = document.getElementById('fittingName').value.trim();
+      const email = document.getElementById('fittingEmail').value.trim();
+      const phone = document.getElementById('fittingPhone').value.trim();
+      const tier = document.getElementById('fittingTier').value;
+      const suite = document.getElementById('fittingSuite').value;
+      const occasion = document.getElementById('fittingOccasion').value;
+      const date = document.getElementById('fittingDate').value;
+      const timeSlot = document.getElementById('fittingTime').value;
+      const notes = document.getElementById('fittingNotes').value.trim();
+
+      // Ensure all details are filled by user
+      if (!name || !email || !phone || !tier || !suite || !occasion || !date || !timeSlot || !notes) {
+        if (window.showToast) window.showToast('Please fill in all details before submitting.', 'warning');
+        return;
+      }
+
+      // Reject single letter names
+      if (name.length < 2 || !/^[A-Za-z\s'.-]{2,}$/.test(name)) {
+        if (window.showToast) window.showToast('Please enter a valid full name (at least 2 characters, letters only).', 'warning');
+        document.getElementById('fittingName').focus();
+        return;
+      }
+
+      // Email address should have only lowercase letters and with special character otherwise it will be invalid
+      if (/[A-Z]/.test(email) || !/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(email)) {
+        if (window.showToast) window.showToast('Email address must contain only lowercase letters and special characters (no uppercase).', 'warning');
+        document.getElementById('fittingEmail').focus();
+        return;
+      }
+
+      // Phone number should contain a 10 digit number then only it should be valid
+      if (!/^\d{10}$/.test(phone)) {
+        if (window.showToast) window.showToast('Phone number must contain exactly a 10-digit number.', 'warning');
+        document.getElementById('fittingPhone').focus();
+        return;
+      }
+
       const btn = form.querySelector('button[type="submit"]');
       const originalBtnHtml = btn ? btn.innerHTML : '';
 
       const newBooking = {
-        name: document.getElementById('fittingName').value,
-        email: document.getElementById('fittingEmail').value,
-        phone: document.getElementById('fittingPhone').value,
+        name: name,
+        email: email,
+        phone: phone,
         type: document.getElementById('fittingTier').value,
         suite: document.getElementById('fittingSuite').value,
         occasion: document.getElementById('fittingOccasion').value,

@@ -255,10 +255,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("switcherRtlBtn")?.addEventListener("click", () => {
-    const isRtl = document.documentElement.getAttribute("dir") === "rtl";
-    const target = isRtl ? "ltr" : "rtl";
-    document.documentElement.setAttribute("dir", target);
-    localStorage.setItem("fancy_dir", target);
+    if (window.toggleSiteDirection) {
+      window.toggleSiteDirection();
+    } else {
+      const isRtl = document.documentElement.getAttribute("dir") === "rtl";
+      const target = isRtl ? "ltr" : "rtl";
+      document.documentElement.setAttribute("dir", target);
+      localStorage.setItem("fancy_dir", target);
+    }
   });
 
 });

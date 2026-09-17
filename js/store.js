@@ -11,7 +11,16 @@ window.store = {
   addToCart: (costumeId, options = {}) => {
     const cart = window.store.getCart();
     const duration = options.duration || 3; // default 3-day rental
-    const size = options.size || "M";
+
+    // Issue 5: Do not hardcode "M" size by default; dynamically use costume's first available size
+    let defaultSize = "Standard";
+    if (window.db && Array.isArray(window.db.costumes)) {
+      const matched = window.db.costumes.find(c => c.id === costumeId);
+      if (matched && Array.isArray(matched.sizes) && matched.sizes.length > 0) {
+        defaultSize = matched.sizes[0];
+      }
+    }
+    const size = options.size || defaultSize;
     const startDate = options.startDate || new Date().toISOString().split('T')[0];
     
     // Check if same costume + duration + size already in cart

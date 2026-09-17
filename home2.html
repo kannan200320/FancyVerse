@@ -190,13 +190,13 @@
           <!-- Controls -->
           <div class="space-y-6">
             
-            <!-- Number of Costumes -->
+            <!-- Number of Costumes (Issue 7: Bright slider thumb and badge in dark mode) -->
             <div>
               <div class="flex justify-between items-center mb-2">
                 <label class="text-xs font-bold text-theme-main dark:text-white">Number of Costumes Needed</label>
-                <span id="calcCostumeDisplay" class="text-xs font-black px-2.5 py-1 rounded-md bg-theme-main text-white">10 Outfits</span>
+                <span id="calcCostumeDisplay" class="text-xs font-black px-2.5 py-1 rounded-md bg-amber-600 dark:bg-amber-500 text-white shadow-sm">10 Outfits</span>
               </div>
-              <input type="range" id="calcCostumeInput" min="1" max="50" value="10" class="w-full accent-theme-main">
+              <input type="range" id="calcCostumeInput" min="1" max="50" value="10" class="w-full accent-amber-500 dark:accent-amber-400 cursor-pointer">
               <div class="flex justify-between text-[10px] text-gray-400 mt-1">
                 <span>1 Costume</span>
                 <span>25 Costumes</span>
@@ -208,9 +208,9 @@
             <div>
               <div class="flex justify-between items-center mb-2">
                 <label class="text-xs font-bold text-theme-main dark:text-white">Rental Duration</label>
-                <span id="calcDurationDisplay" class="text-xs font-black px-2.5 py-1 rounded-md bg-theme-accent text-white">3-Day Weekend</span>
+                <span id="calcDurationDisplay" class="text-xs font-black px-2.5 py-1 rounded-md bg-theme-accent text-white shadow-sm">3-Day Weekend</span>
               </div>
-              <input type="range" id="calcDurationInput" min="1" max="30" value="3" class="w-full accent-theme-accent">
+              <input type="range" id="calcDurationInput" min="1" max="30" value="3" class="w-full accent-theme-accent cursor-pointer">
               <div class="flex justify-between text-[10px] text-gray-400 mt-1">
                 <span>1 Day</span>
                 <span>7 Days (Week)</span>
@@ -218,15 +218,20 @@
               </div>
             </div>
 
-            <!-- Wardrobe Tier -->
+            <!-- Wardrobe Tier Grade (Issue 8: Flawlessly aligned select and Search button) -->
             <div>
               <label class="block text-xs font-bold text-theme-main dark:text-white mb-2">Wardrobe Tier Grade</label>
-              <select id="calcTierSelect" class="theme-input text-xs">
-                <option value="35">🎈 Kids Fairytales & Heroes ($35/day avg)</option>
-                <option value="48" selected>✨ Themed Parties & Galas ($48/day avg)</option>
-                <option value="65">🌸 Cultural & Traditional Silk ($65/day avg)</option>
-                <option value="75">⚔️ Historical Re-enactments & Armor ($75/day avg)</option>
-              </select>
+              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+                <select id="calcTierSelect" class="theme-input text-xs flex-1 cursor-pointer">
+                  <option value="35" data-category="Kids">Kids Fairytales & Heroes ($35/day avg)</option>
+                  <option value="48" data-category="Themed Parties" selected>Themed Parties & Galas ($48/day avg)</option>
+                  <option value="65" data-category="Cultural">Cultural & Traditional Silk ($65/day avg)</option>
+                  <option value="75" data-category="Historical">Historical Victorian & Armor ($75/day avg)</option>
+                </select>
+                <a id="calcTierSearchBtn" href="catalog.html?category=Themed+Parties" class="btn-outline-theme px-4 py-3 rounded-2xl text-xs font-bold inline-flex items-center justify-center gap-1.5 whitespace-nowrap hover:bg-theme-main hover:text-white transition shadow-sm" title="Search catalog for costumes in this tier">
+                  <i class="bi bi-search"></i> <span>Search</span>
+                </a>
+              </div>
             </div>
 
           </div>
@@ -520,6 +525,18 @@
       rentalTotal.textContent = `$${finalHire.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
       depositTotal.textContent = `$${deposit.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
       grandTotal.textContent = `$${total.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+      // Sync Tier Search Button (Issue 8)
+      const tierMap = {
+        "35": "catalog.html?category=Kids",
+        "48": "catalog.html?category=Themed+Parties",
+        "65": "catalog.html?category=Cultural",
+        "75": "catalog.html?category=Historical"
+      };
+      const searchBtn = document.getElementById('calcTierSearchBtn');
+      if (searchBtn) {
+        searchBtn.href = tierMap[tierSelect.value] || "catalog.html";
+      }
     }
 
     costumeInput.addEventListener('input', updateCalculations);

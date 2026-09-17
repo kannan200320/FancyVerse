@@ -17,11 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
       
       <!-- Brand Logo -->
-      <a href="index.html" class="flex items-center gap-2.5 group flex-shrink-0">
+      <a href="index.html" class="flex items-center gap-2.5 group flex-shrink-0 h-10">
         <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#7C3AED] to-[#EC4899] text-white flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
           <i class="bi bi-mask text-xl text-white"></i>
         </div>
-        <div class="flex flex-col">
+        <div class="flex flex-col justify-center">
           <span class="text-xl font-black tracking-tight text-theme-main dark:text-white leading-none">
             Fancy<span class="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] to-[#EC4899]">Verse</span>
           </span>
@@ -31,12 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </a>
 
-      <!-- Desktop Navigation Menu -->
-      <nav class="hidden lg:flex items-center gap-6 text-xs font-bold" id="desktopNavLinks">
+      <!-- Desktop Navigation Menu (Issue 9: Perfect vertical centering and responsive spacing at 1024px) -->
+      <nav class="hidden lg:flex items-center lg:gap-3.5 xl:gap-6 text-xs font-bold whitespace-nowrap h-10" id="desktopNavLinks">
         
         <!-- Home Dropdown -->
-        <div class="relative nav-dropdown py-2 group">
-          <button type="button" class="nav-dropdown-btn flex items-center gap-1.5 hover:text-theme-accent transition cursor-pointer py-1" aria-expanded="false">
+        <div class="relative nav-dropdown flex items-center h-10 group">
+          <button type="button" class="nav-dropdown-btn flex items-center gap-1 hover:text-theme-accent transition cursor-pointer py-1" aria-expanded="false">
             <span>Home</span>
             <i class="bi bi-chevron-down text-[10px] transition-transform duration-200 dropdown-arrow"></i>
           </button>
@@ -59,8 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
 
         <!-- Services Dropdown -->
-        <div class="relative nav-dropdown py-2 group">
-          <button type="button" class="nav-dropdown-btn flex items-center gap-1.5 hover:text-theme-accent transition cursor-pointer py-1" aria-expanded="false">
+        <div class="relative nav-dropdown flex items-center h-10 group">
+          <button type="button" class="nav-dropdown-btn flex items-center gap-1 hover:text-theme-accent transition cursor-pointer py-1" aria-expanded="false">
             <span>Services</span>
             <i class="bi bi-chevron-down text-[10px] transition-transform duration-200 dropdown-arrow"></i>
           </button>
@@ -73,32 +73,32 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
 
-        <a href="catalog.html" class="hover:text-theme-accent transition py-2">Catalog</a>
-        <a href="size-guide.html" class="hover:text-theme-accent transition py-2">Size Guide</a>
-        <a href="pricing.html" class="hover:text-theme-accent transition py-2">Pricing & Deposit</a>
-        <a href="contact.html" class="hover:text-theme-accent transition py-2">Contact</a>
+        <a href="catalog.html" class="hover:text-theme-accent transition flex items-center h-10">Catalog</a>
+        <a href="size-guide.html" class="hover:text-theme-accent transition flex items-center h-10">Size Guide</a>
+        <a href="pricing.html" class="hover:text-theme-accent transition flex items-center h-10">Pricing & Deposit</a>
+        <a href="contact.html" class="hover:text-theme-accent transition flex items-center h-10">Contact</a>
       </nav>
 
-      <!-- Desktop Right Controls -->
-      <div class="hidden lg:flex items-center gap-3">
+      <!-- Desktop Right Controls (Issue 9: Responsive spacing and h-10 vertical centering) -->
+      <div class="hidden lg:flex items-center lg:gap-1.5 xl:gap-3 flex-shrink-0 h-10">
         
         <!-- Search Trigger -->
-        <button id="searchModalBtn" aria-label="Search Catalog" class="p-2 rounded-xl text-base hover:text-theme-accent hover:bg-theme-subtle transition" title="Search Costumes">
+        <button id="searchModalBtn" aria-label="Search Catalog" class="w-9 h-9 flex items-center justify-center rounded-xl text-base hover:text-theme-accent hover:bg-theme-subtle transition" title="Search Costumes">
           <i class="bi bi-search"></i>
         </button>
 
         <!-- Theme Toggle -->
-        <button id="themeToggleBtn" aria-label="Toggle Dark Mode" class="p-2 rounded-xl text-base hover:text-theme-accent hover:bg-theme-subtle transition" title="Toggle Theme">
+        <button id="themeToggleBtn" aria-label="Toggle Dark Mode" class="w-9 h-9 flex items-center justify-center rounded-xl text-base hover:text-theme-accent hover:bg-theme-subtle transition" title="Toggle Theme">
           <i class="bi bi-moon-fill"></i>
         </button>
 
         <!-- Direction Toggle (Symbol Only) -->
-        <button id="rtlToggleBtn" aria-label="Toggle Direction" class="p-2 rounded-xl text-base hover:text-theme-accent hover:bg-theme-subtle transition" title="Toggle Direction">
+        <button id="rtlToggleBtn" aria-label="Toggle Direction" class="w-9 h-9 flex items-center justify-center rounded-xl text-base hover:text-theme-accent hover:bg-theme-subtle transition" title="Toggle Direction">
           <i class="bi bi-arrow-left-right"></i>
         </button>
 
         <!-- Wishlist Badge -->
-        <a href="wishlist.html" aria-label="Saved Wishlist" class="relative p-2 rounded-xl text-base hover:text-theme-accent hover:bg-theme-subtle transition" title="Saved Wishlist">
+        <a href="wishlist.html" aria-label="Saved Wishlist" class="relative w-9 h-9 flex items-center justify-center rounded-xl text-base hover:text-theme-accent hover:bg-theme-subtle transition" title="Saved Wishlist">
           <i class="bi bi-heart"></i>
           <span class="wishlist-count absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 rounded-full bg-red-600 text-white text-[9px] font-black flex items-center justify-center shadow">
             0
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </a>
 
         <!-- Cart Badge -->
-        <a href="cart.html" aria-label="Rental Cart" class="relative p-2 rounded-xl text-base hover:text-theme-accent hover:bg-theme-subtle transition" title="Rental Cart">
+        <a href="cart.html" aria-label="Rental Cart" class="relative w-9 h-9 flex items-center justify-center rounded-xl text-base hover:text-theme-accent hover:bg-theme-subtle transition" title="Rental Cart">
           <i class="bi bi-bag"></i>
           <span class="cart-count absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#EC4899] text-white text-[9px] font-black flex items-center justify-center shadow">
             0
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </a>
 
         <!-- Book Fitting CTA -->
-        <a href="contact.html#fitting" class="btn-primary-theme text-xs py-2 px-4 shadow-sm whitespace-nowrap ml-1 bg-gradient-to-r from-[#7C3AED] to-[#EC4899] hover:opacity-90">
+        <a href="contact.html#fitting" class="btn-primary-theme text-xs py-2 px-3 xl:px-4 shadow-sm whitespace-nowrap ml-1 bg-gradient-to-r from-[#7C3AED] to-[#EC4899] hover:opacity-90 flex items-center gap-1.5">
           <i class="bi bi-calendar-heart"></i> Book Fitting
         </a>
       </div>
@@ -416,25 +416,29 @@ document.addEventListener("DOMContentLoaded", () => {
   themeToggleBtn?.addEventListener('click', toggleTheme);
   mobileThemeToggle?.addEventListener('click', toggleTheme);
 
-  // RTL management
+  // RTL / LTR Direction Management (Issue 12: Ensure default LTR alignment)
   const rtlToggleBtn = document.getElementById('rtlToggleBtn');
   const mobileRtlToggle = document.getElementById('mobileRtlToggle');
 
-  const applyDir = (dir) => {
-    document.documentElement.setAttribute('dir', dir);
-    localStorage.setItem('fancy_dir', dir);
+  const storedDir = localStorage.getItem('fancy_dir');
+  const currentDir = (storedDir === 'rtl') ? 'rtl' : 'ltr';
+  if (window.applySiteDirection) {
+    window.applySiteDirection(currentDir, false);
+  }
+
+  const handleDirToggle = () => {
+    if (window.toggleSiteDirection) {
+      window.toggleSiteDirection();
+    } else {
+      const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+      const target = isRtl ? 'ltr' : 'rtl';
+      document.documentElement.setAttribute('dir', target);
+      localStorage.setItem('fancy_dir', target);
+    }
   };
 
-  const currentDir = localStorage.getItem('fancy_dir') || 'ltr';
-  applyDir(currentDir);
-
-  const toggleDir = () => {
-    const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
-    applyDir(isRtl ? 'ltr' : 'rtl');
-  };
-
-  rtlToggleBtn?.addEventListener('click', toggleDir);
-  mobileRtlToggle?.addEventListener('click', toggleDir);
+  rtlToggleBtn?.addEventListener('click', handleDirToggle);
+  mobileRtlToggle?.addEventListener('click', handleDirToggle);
 
   // Sync Badges
   const updateBadges = () => {

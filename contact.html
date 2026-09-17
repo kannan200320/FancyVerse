@@ -205,23 +205,23 @@
           
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Your Full Name</label>
-              <input type="text" id="contactName" required placeholder="Lady Eleanor Vance" class="theme-input text-xs">
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Your Full Name <span class="text-rose-500">*</span></label>
+              <input type="text" id="contactName" required minlength="2" pattern="^[A-Za-z\s'.-]{2,}$" title="Please enter at least 2 characters (letters only)" placeholder="Lady Eleanor Vance" class="theme-input text-xs">
             </div>
             <div>
-              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Email Address</label>
-              <input type="email" id="contactEmail" required placeholder="eleanor@example.com" class="theme-input text-xs">
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Email Address <span class="text-rose-500">*</span></label>
+              <input type="email" id="contactEmail" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Email address must contain only lowercase letters and special characters (no uppercase)." placeholder="eleanor@example.com" class="theme-input text-xs">
             </div>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Phone Number</label>
-              <input type="tel" id="contactPhone" placeholder="+1 (555) 019-2834" class="theme-input text-xs">
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Phone Number <span class="text-rose-500">*</span></label>
+              <input type="tel" id="contactPhone" required pattern="^\d{10}$" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)" title="Please enter a valid 10-digit phone number" placeholder="10-digit phone number (e.g. 9876543210)" class="theme-input text-xs">
             </div>
             <div>
-              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Inquiry Type</label>
-              <select id="contactType" class="theme-input text-xs">
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Inquiry Type <span class="text-rose-500">*</span></label>
+              <select id="contactType" required class="theme-input text-xs">
                 <option value="Fitting Appointment">Private Salon Fitting Appointment ($45 credited)</option>
                 <option value="General Rental Inquiry">General Costume Rental Inquiry</option>
                 <option value="Troupe Production">Theatrical / Troupe Production Hire (5+ Sets)</option>
@@ -232,17 +232,17 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Costume Category & Occasion</label>
-              <select id="contactOccasion" class="theme-input text-xs">
-                <option value="Kids">🎈 Kids Birthday & School Shows</option>
-                <option value="Themed Parties" selected>✨ Themed Parties & Galas (Gatsby, 70s, Mad Hatter)</option>
-                <option value="Cultural">🌸 Cultural & Traditional (Kimono, Venice, Kilt, Dirndl)</option>
-                <option value="Historical">⚔️ Historical Re-enactments (Steampunk, Knight, Roman)</option>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Costume Category & Occasion <span class="text-rose-500">*</span></label>
+              <select id="contactOccasion" required class="theme-input text-xs">
+                <option value="Kids">Kids Birthday & School Shows</option>
+                <option value="Themed Parties" selected>Themed Parties & Galas (Gatsby, 70s, Mad Hatter)</option>
+                <option value="Cultural">Cultural & Traditional (Kimono, Venice, Kilt, Dirndl)</option>
+                <option value="Historical">Historical Re-enactments (Steampunk, Knight, Roman)</option>
               </select>
             </div>
             <div>
-              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Estimated Number of Costumes</label>
-              <select id="contactVolume" class="theme-input text-xs">
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Estimated Number of Costumes <span class="text-rose-500">*</span></label>
+              <select id="contactVolume" required class="theme-input text-xs">
                 <option>1 Costume (Solo Wearer)</option>
                 <option>2 Costumes (Couples Matching)</option>
                 <option>3-10 Costumes (Group / Troupe)</option>
@@ -253,12 +253,12 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Event or Fitting Date</label>
-              <input type="date" id="contactDate" class="theme-input text-xs">
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Event or Fitting Date <span class="text-rose-500">*</span></label>
+              <input type="date" id="contactDate" required class="theme-input text-xs">
             </div>
             <div>
-              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Preferred Time Slot</label>
-              <select id="contactTimeSlot" class="theme-input text-xs">
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Preferred Time Slot <span class="text-rose-500">*</span></label>
+              <select id="contactTimeSlot" required class="theme-input text-xs">
                 <option>Morning (10:00 AM - 1:00 PM)</option>
                 <option>Afternoon (1:00 PM - 4:00 PM)</option>
                 <option>Evening (4:00 PM - 7:00 PM)</option>
@@ -455,13 +455,50 @@
       e.preventDefault();
 
       const form = document.getElementById('contactEnquiryForm');
+      const name = document.getElementById('contactName').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const phone = document.getElementById('contactPhone').value.trim();
+      const occasion = document.getElementById('contactOccasion').value;
+      const type = document.getElementById('contactType').value;
+      const volume = document.getElementById('contactVolume').value;
+      const date = document.getElementById('contactDate').value;
+      const timeSlot = document.getElementById('contactTimeSlot') ? document.getElementById('contactTimeSlot').value : '';
+      const message = document.getElementById('contactMessage').value.trim();
+
+      // Ensure all the details are filled by user
+      if (!name || !email || !phone || !type || !occasion || !volume || !date || !timeSlot || !message) {
+        if (window.showToast) window.showToast('Please fill in all details before submitting.', 'warning');
+        return;
+      }
+
+      // Reject single letter names
+      if (name.length < 2 || !/^[A-Za-z\s'.-]{2,}$/.test(name)) {
+        if (window.showToast) window.showToast('Please enter a valid full name (at least 2 characters, letters only).', 'warning');
+        document.getElementById('contactName').focus();
+        return;
+      }
+
+      // Email must contain only lowercase letters and special characters (no uppercase)
+      if (/[A-Z]/.test(email) || !/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(email)) {
+        if (window.showToast) window.showToast('Email address must contain lowercase letters and special characters only (no uppercase).', 'warning');
+        document.getElementById('contactEmail').focus();
+        return;
+      }
+
+      // Phone number should contain a 10 digit number then only it should be valid
+      if (!/^\d{10}$/.test(phone)) {
+        if (window.showToast) window.showToast('Phone number must contain exactly a 10-digit number.', 'warning');
+        document.getElementById('contactPhone').focus();
+        return;
+      }
+
       const btn = form.querySelector('button[type="submit"]');
       const originalBtnHtml = btn ? btn.innerHTML : '';
 
       const newEnquiry = {
-        name: document.getElementById('contactName').value,
-        email: document.getElementById('contactEmail').value,
-        phone: document.getElementById('contactPhone').value,
+        name: name,
+        email: email,
+        phone: phone,
         occasion: document.getElementById('contactOccasion').value,
         type: document.getElementById('contactType').value,
         volume: document.getElementById('contactVolume').value,

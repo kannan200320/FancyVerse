@@ -1009,10 +1009,230 @@ button.bg-white:hover,
   }
 }
 
-/* RTL Support */
+/* ==========================================================================
+   Comprehensive RTL & LTR Direction, Header Nav, Content, & Footer Rules
+   ========================================================================== */
+
+/* LTR Baseline (Default) */
+html,
+html[dir="ltr"],
+html:not([dir="rtl"]),
+[dir="ltr"] {
+  direction: ltr !important;
+  text-align: left;
+}
+
+body,
+[dir="ltr"] body,
+html:not([dir="rtl"]) body {
+  direction: ltr !important;
+  text-align: left;
+}
+
+/* LTR Form Controls & Tables */
+[dir="ltr"] input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+[dir="ltr"] select,
+[dir="ltr"] textarea,
+html:not([dir="rtl"]) input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+html:not([dir="rtl"]) select,
+html:not([dir="rtl"]) textarea {
+  direction: ltr !important;
+  text-align: left;
+}
+
+[dir="ltr"] table,
+html:not([dir="rtl"]) table {
+  direction: ltr !important;
+  text-align: left;
+}
+
+[dir="ltr"] table th,
+[dir="ltr"] table td:not(.text-center):not(.text-right),
+html:not([dir="rtl"]) table th,
+html:not([dir="rtl"]) table td:not(.text-center):not(.text-right) {
+  text-align: left;
+}
+
+/* LTR Header Navigation */
+[dir="ltr"] .nav-dropdown-menu,
+html:not([dir="rtl"]) .nav-dropdown-menu {
+  left: 0 !important;
+  right: auto !important;
+  text-align: left !important;
+}
+
+[dir="ltr"] #mobileDrawer,
+html:not([dir="rtl"]) #mobileDrawer {
+  right: 0 !important;
+  left: auto !important;
+  text-align: left !important;
+}
+
+/* LTR Content & Footer */
+[dir="ltr"] footer,
+[dir="ltr"] footer h4,
+[dir="ltr"] footer h5,
+[dir="ltr"] footer p,
+[dir="ltr"] footer ul,
+[dir="ltr"] footer li,
+html:not([dir="rtl"]) footer,
+html:not([dir="rtl"]) footer h4,
+html:not([dir="rtl"]) footer h5,
+html:not([dir="rtl"]) footer p,
+html:not([dir="rtl"]) footer ul,
+html:not([dir="rtl"]) footer li {
+  text-align: left;
+}
+
+/* ================= RTL Comprehensive Layout Rules ================= */
+html[dir="rtl"],
 [dir="rtl"] {
+  direction: rtl !important;
+  text-align: right;
+}
+
+html[dir="rtl"] body,
+[dir="rtl"] body {
+  direction: rtl !important;
+  text-align: right;
+}
+
+/* RTL Header Nav */
+[dir="rtl"] header,
+[dir="rtl"] #mainNavbar {
+  direction: rtl !important;
+}
+
+[dir="rtl"] .nav-dropdown-menu {
+  right: 0 !important;
+  left: auto !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] .nav-dropdown-menu ul,
+[dir="rtl"] .nav-dropdown-menu li,
+[dir="rtl"] .nav-dropdown-menu a {
+  text-align: right !important;
+}
+
+[dir="rtl"] #mobileDrawer {
+  right: auto !important;
+  left: 0 !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] #mobileDrawer.translate-x-full {
+  transform: translateX(-100%) !important;
+}
+
+[dir="rtl"] #mobileDrawer:not(.translate-x-full) {
+  transform: translateX(0) !important;
+}
+
+[dir="rtl"] #mobileDrawer .pl-4 {
+  padding-left: 0 !important;
+  padding-right: 1rem !important;
+}
+
+/* RTL Content Sections */
+[dir="rtl"] main,
+[dir="rtl"] section,
+[dir="rtl"] article,
+[dir="rtl"] .theme-card {
   direction: rtl;
   text-align: right;
+}
+
+[dir="rtl"] p:not(.text-center):not([class*="text-center"]),
+[dir="rtl"] h1:not(.text-center):not([class*="text-center"]),
+[dir="rtl"] h2:not(.text-center):not([class*="text-center"]),
+[dir="rtl"] h3:not(.text-center):not([class*="text-center"]),
+[dir="rtl"] h4:not(.text-center):not([class*="text-center"]),
+[dir="rtl"] h5:not(.text-center):not([class*="text-center"]),
+[dir="rtl"] h6:not(.text-center):not([class*="text-center"]),
+[dir="rtl"] ul:not(.text-center),
+[dir="rtl"] ol:not(.text-center),
+[dir="rtl"] li:not(.text-center) {
+  text-align: right;
+}
+
+/* RTL Form Controls */
+html[dir="rtl"] input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+html[dir="rtl"] select,
+html[dir="rtl"] textarea,
+[dir="rtl"] input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+[dir="rtl"] select,
+[dir="rtl"] textarea {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* RTL Tables */
+html[dir="rtl"] table,
+[dir="rtl"] table {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] table th,
+[dir="rtl"] table td:not(.text-center):not(.text-right) {
+  text-align: right !important;
+}
+
+/* RTL Footer */
+[dir="rtl"] footer,
+[dir="rtl"] footer h4,
+[dir="rtl"] footer h5,
+[dir="rtl"] footer p,
+[dir="rtl"] footer ul,
+[dir="rtl"] footer li,
+[dir="rtl"] footer a:not(.btn-primary-theme) {
+  text-align: right !important;
+}
+
+/* RTL Icon & Margin Flips */
+[dir="rtl"] .mr-1 {
+  margin-right: 0 !important;
+  margin-left: 0.25rem !important;
+}
+[dir="rtl"] .mr-1\.5 {
+  margin-right: 0 !important;
+  margin-left: 0.375rem !important;
+}
+[dir="rtl"] .mr-2 {
+  margin-right: 0 !important;
+  margin-left: 0.5rem !important;
+}
+[dir="rtl"] .mr-2\.5 {
+  margin-right: 0 !important;
+  margin-left: 0.625rem !important;
+}
+[dir="rtl"] .mr-3 {
+  margin-right: 0 !important;
+  margin-left: 0.75rem !important;
+}
+[dir="rtl"] .ml-1 {
+  margin-left: 0 !important;
+  margin-right: 0.25rem !important;
+}
+[dir="rtl"] .ml-1\.5 {
+  margin-left: 0 !important;
+  margin-right: 0.375rem !important;
+}
+[dir="rtl"] .ml-2 {
+  margin-left: 0 !important;
+  margin-right: 0.5rem !important;
+}
+[dir="rtl"] .ml-3 {
+  margin-left: 0 !important;
+  margin-right: 0.75rem !important;
+}
+
+/* Preserve Center Alignments in Both Modes */
+.text-center,
+[dir="rtl"] .text-center,
+[dir="ltr"] .text-center {
+  text-align: center !important;
 }
 
 [dir="rtl"] .animate-marquee {
@@ -1047,6 +1267,28 @@ button.bg-white:hover,
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-secondary);
+}
+
+/* Range Slider Enhancements for Light & Dark Mode (Issue 7) */
+input[type="range"] {
+  accent-color: #D97706;
+}
+
+[data-theme="dark"] input[type="range"],
+.dark input[type="range"] {
+  accent-color: #F59E0B !important;
+}
+
+[data-theme="dark"] input[type="range"]::-webkit-slider-thumb,
+.dark input[type="range"]::-webkit-slider-thumb {
+  background: #F59E0B !important;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.75), 0 2px 5px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] input[type="range"]::-moz-range-thumb,
+.dark input[type="range"]::-moz-range-thumb {
+  background: #F59E0B !important;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.75), 0 2px 5px rgba(0, 0, 0, 0.5) !important;
 }
 
 /* ================= NAV DROPDOWNS BULLETPROOF DISPLAY ================= */

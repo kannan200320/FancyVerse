@@ -93,12 +93,12 @@
       
       <div>
         <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1" id="nameLabel">Full Name</label>
-        <input type="text" id="regName" required placeholder="Lady Eleanor Vance" class="theme-input text-xs">
+        <input type="text" id="regName" required minlength="2" pattern="^[A-Za-z\s'.-]{2,}$" title="Please enter at least 2 characters (letters only)" placeholder="Lady Eleanor Vance" class="theme-input text-xs">
       </div>
 
       <div>
         <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Email Address</label>
-        <input type="email" id="regEmail" required placeholder="eleanor@example.com" class="theme-input text-xs">
+        <input type="email" id="regEmail" required pattern="^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Email domain must contain lowercase letters only (e.g. name@example.com)" placeholder="eleanor@example.com" class="theme-input text-xs">
       </div>
 
       <div>
@@ -187,6 +187,21 @@
       e.preventDefault();
       const name = document.getElementById('regName').value.trim();
       const email = document.getElementById('regEmail').value.trim();
+
+      // Issue 1: Reject single letter names
+      if (name.length < 2 || !/^[A-Za-z\s'.-]{2,}$/.test(name)) {
+        if (window.showToast) window.showToast('Please enter a valid full name (at least 2 characters, letters only).', 'warning');
+        document.getElementById('regName').focus();
+        return;
+      }
+
+      // Issue 2: Reject uppercase letters in email domain
+      const emailParts = email.split('@');
+      if (emailParts.length !== 2 || /[A-Z]/.test(emailParts[1]) || !/^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(email)) {
+        if (window.showToast) window.showToast('Email domain must contain lowercase letters only (e.g. name@gmail.com).', 'warning');
+        document.getElementById('regEmail').focus();
+        return;
+      }
 
       const newUser = {
         name: name,
