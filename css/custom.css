@@ -395,16 +395,26 @@ h6.text-white {
 /* Badges */
 .theme-badge-gold {
   background: linear-gradient(135deg, #FBF6E9 0%, #F5E8C8 100%);
-  color: #785208;
+  color: #785208 !important;
   border: 1px solid #DFCB97;
   font-weight: 800;
   letter-spacing: 0.05em;
 }
 
+.theme-badge-gold i,
+.theme-badge-gold span {
+  color: inherit !important;
+}
+
 [data-theme="dark"] .theme-badge-gold {
   background: linear-gradient(135deg, #2B1E0A 0%, #3D2B0E 100%);
-  color: #E8CA7A;
+  color: #E8CA7A !important;
   border-color: #634718;
+}
+
+[data-theme="dark"] .theme-badge-gold i,
+[data-theme="dark"] .theme-badge-gold span {
+  color: inherit !important;
 }
 
 /* Utility Theme Classes */
