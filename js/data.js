@@ -32,10 +32,10 @@ const mockCostumes = [
     reviewsCount: 52,
     stock: 8,
     sizes: ["Age 3-5", "Age 6-8", "Age 9-11"],
-    image: "https://images.unsplash.com/photo-1737257218703-9cb7e8504901?auto=format&fit=crop&q=80&w=1200",
+    image: "https://i.pinimg.com/1200x/c6/37/f0/c637f082878991940e3c665d1cc580c7.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1737257218703-9cb7e8504901?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&q=80&w=1200"
+      "https://i.pinimg.com/1200x/c6/37/f0/c637f082878991940e3c665d1cc580c7.jpg",
+      "https://i.pinimg.com/736x/1f/06/f7/1f06f73e7ee3cd90aafa9b97b88d974b.jpg"
     ],
     badge: "Kids Bestseller",
     isFeatured: true,
@@ -62,7 +62,8 @@ const mockCostumes = [
     sizes: ["Age 3-5", "Age 6-8", "Age 9-11"],
     image: "https://i.pinimg.com/736x/ff/f3/8a/fff38a70b9ac2bb716ad8ac3549ba5e0.jpg",
     gallery: [
-      "https://i.pinimg.com/736x/c3/9a/d7/c39ad77f078edd56a2728683f6294352.jpg"
+      "https://i.pinimg.com/736x/ff/f3/8a/fff38a70b9ac2bb716ad8ac3549ba5e0.jpg",
+      "https://i.pinimg.com/736x/6a/e9/69/6ae9691f9eb3d9ab90cfafd0accbd916.jpg"
     ],
     badge: "Birthday Hit",
     isFeatured: true,
@@ -87,9 +88,10 @@ const mockCostumes = [
     reviewsCount: 44,
     stock: 7,
     sizes: ["Age 4-6", "Age 7-9", "Age 10-12"],
-    image: "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?auto=format&fit=crop&q=80&w=1200",
+    image: "https://i.pinimg.com/736x/00/ff/d7/00ffd7a60bf1b598a157499a04a18842.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?auto=format&fit=crop&q=80&w=1200"
+      "https://i.pinimg.com/736x/00/ff/d7/00ffd7a60bf1b598a157499a04a18842.jpg",
+      "https://i.pinimg.com/736x/97/30/46/973046d58f5b10177b0728d25b4a9b8f.jpg"
     ],
     badge: "Action Hero",
     isFeatured: false,
@@ -114,8 +116,9 @@ const mockCostumes = [
     reviewsCount: 31,
     stock: 10,
     sizes: ["Age 3-5", "Age 6-8", "Age 9-11"],
-    image: "https://i.pinimg.com/1200x/bc/f0/4c/bcf04c46d3ef769ef62540b2c1fceeea.jpg",
+    image: "https://i.pinimg.com/1200x/7b/93/49/7b9349dac917aca4da4dbfd7250ffd0b.jpg",
     gallery: [
+      "https://i.pinimg.com/1200x/7b/93/49/7b9349dac917aca4da4dbfd7250ffd0b.jpg",
       "https://i.pinimg.com/1200x/55/77/fb/5577fbc7a2be7fcc989c3e236ae539bf.jpg"
     ],
     badge: "School Plays #1",
@@ -143,9 +146,10 @@ const mockCostumes = [
     reviewsCount: 68,
     stock: 12,
     sizes: ["XS", "S", "M", "L", "XL"],
-    image: "https://i.pinimg.com/736x/4b/68/d4/4b68d40f449bd2d4801adc8255a4530e.jpg",
+    image: "https://img.dorriswedding.com/image/1200x0/90/1/3c737c17565ceef7/d3d824f66f20329c9b92e028667db17d.jpg?format=webp",
     gallery: [
-      "https://i.pinimg.com/1200x/e0/c7/f9/e0c7f9e0cd32b83d5954c1dbefb7c44a.jpg"
+      "https://img.dorriswedding.com/image/1200x0/90/1/3c737c17565ceef7/d3d824f66f20329c9b92e028667db17d.jpg?format=webp",
+      "https://img.dorriswedding.com/image/1200x0/90/1/b070f26acd6aaca1/04aa4da0edb2976f3f6ad8ed750e0485.jpg?format=webp"
     ],
     badge: "Party Legend",
     isFeatured: true,
@@ -170,9 +174,11 @@ const mockCostumes = [
     reviewsCount: 54,
     stock: 9,
     sizes: ["S", "M", "L", "XL"],
-    image: "https://i.pinimg.com/1200x/f2/3b/9f/f23b9f2fe2033ff1fe820b5a8f5c8bdf.jpg",
+    image: "https://i.pinimg.com/1200x/f1/ca/b3/f1cab3b298f9fa74b473a8401a1b1d70.jpg",
     gallery: [
-      "https://i.pinimg.com/1200x/4f/ff/a8/4fffa84711e02074e48d985c8f53272f.jpg"
+      
+      "https://i.pinimg.com/1200x/f1/ca/b3/f1cab3b298f9fa74b473a8401a1b1d70.jpg",
+      "https://i.pinimg.com/736x/fd/a6/05/fda605ba14433e20aa093ac91a0082c7.jpg"
     ],
     badge: "Dance Floor Hit",
     isFeatured: true,
@@ -197,9 +203,10 @@ const mockCostumes = [
     reviewsCount: 61,
     stock: 8,
     sizes: ["S", "M", "L", "XL"],
-    image: "https://i.pinimg.com/1200x/25/83/40/258340b374895f53b307199fb169fb13.jpg",
+    image: "https://i.pinimg.com/1200x/11/73/1f/11731f6635a83b71d8a56fc20882152b.jpg",
     gallery: [
-      "https://i.pinimg.com/736x/9d/0b/f1/9d0bf16d8cea902c815911bb8a5f9e1f.jpg"
+      "https://i.pinimg.com/1200x/11/73/1f/11731f6635a83b71d8a56fc20882152b.jpg",
+      "https://i.pinimg.com/1200x/2f/0f/1e/2f0f1ecd99ead178911be0aff3365e64.jpg"
     ],
     badge: "Fan Favorite",
     isFeatured: true,
@@ -253,9 +260,10 @@ const mockCostumes = [
     reviewsCount: 36,
     stock: 5,
     sizes: ["One Size (Adjustable)"],
-    image: "https://i.pinimg.com/736x/a0/3e/86/a03e86c3ddae57346a230aeda4441cb4.jpg",
+    image: "https://i.pinimg.com/1200x/55/01/05/550105db94d2bef38c2d9d269fb4bd90.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1671730785203-44897ceef05f?auto=format&fit=crop&q=80&w=1200"
+      "https://i.pinimg.com/1200x/55/01/05/550105db94d2bef38c2d9d269fb4bd90.jpg",
+      "https://i.pinimg.com/736x/5d/51/28/5d512843a1295723c61a4e7fcb47fb90.jpg"
     ],
     badge: "Authentic Silk",
     isFeatured: true,
@@ -280,10 +288,10 @@ const mockCostumes = [
     reviewsCount: 58,
     stock: 7,
     sizes: ["S", "M", "L", "XL"],
-    image: "https://images.unsplash.com/photo-1768229934730-5dc189e39ddf?auto=format&fit=crop&q=80&w=1200",
+    image: "https://i.pinimg.com/1200x/f2/03/1d/f2031ddb8bc3404d662d589e182a8a42.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1768229934730-5dc189e39ddf?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1655951578974-48cd5e87db02?auto=format&fit=crop&q=80&w=1200"
+      "https://i.pinimg.com/1200x/f2/03/1d/f2031ddb8bc3404d662d589e182a8a42.jpg",
+      "https://i.pinimg.com/736x/c8/0f/a3/c80fa3300afeb2fceb1888e3ba8067d6.jpg"
     ],
     badge: "Venice Heritage",
     isFeatured: true,
@@ -364,9 +372,10 @@ const mockCostumes = [
     reviewsCount: 73,
     stock: 8,
     sizes: ["S", "M", "L", "XL"],
-    image: "https://i.pinimg.com/1200x/e1/ef/55/e1ef55f0df76e70d329ac1e60a179c91.jpg",
+    image: "https://i.pinimg.com/1200x/42/1c/39/421c394b56b1db0b4e3750e9c0489c93.jpg",
     gallery: [
-      "https://i.pinimg.com/736x/9e/d3/77/9ed377fb85d54328e830daaf665177c3.jpg"
+      "https://i.pinimg.com/1200x/42/1c/39/421c394b56b1db0b4e3750e9c0489c93.jpg",
+      "https://i.pinimg.com/736x/a8/8c/af/a88caf3d4a122450be0713c0261bca49.jpg"
     ],
     badge: "Staff Pick",
     isFeatured: true,

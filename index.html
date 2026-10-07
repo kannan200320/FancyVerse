@@ -135,11 +135,11 @@
           <div class="sm:col-span-5 px-3 py-1">
             <span class="text-[9px] font-bold text-gray-400 uppercase tracking-wider block">Occasion Category</span>
             <select id="heroOccasionQuick" class="w-full bg-transparent text-xs font-bold text-theme-main dark:text-white focus:outline-none cursor-pointer">
-              <option value="all">All 4 Costume Worlds</option>
-              <option value="Kids">Kids Fairytales & Heroes</option>
-              <option value="Themed Parties">Themed Parties (Gatsby, 70s)</option>
-              <option value="Cultural">Cultural Silk & Heritage</option>
-              <option value="Historical">Historical Period & Armor</option>
+              <option value="all" class="bg-white text-gray-900 dark:bg-[#17171C] dark:text-white">All 4 Costume Worlds</option>
+              <option value="Kids" class="bg-white text-gray-900 dark:bg-[#17171C] dark:text-white">Kids Fairytales & Heroes</option>
+              <option value="Themed Parties" class="bg-white text-gray-900 dark:bg-[#17171C] dark:text-white">Themed Parties (Gatsby, 70s)</option>
+              <option value="Cultural" class="bg-white text-gray-900 dark:bg-[#17171C] dark:text-white">Cultural Silk & Heritage</option>
+              <option value="Historical" class="bg-white text-gray-900 dark:bg-[#17171C] dark:text-white">Historical Period & Armor</option>
             </select>
           </div>
 
@@ -149,7 +149,7 @@
           </div>
 
           <div class="sm:col-span-3">
-            <button onclick="handleHeroSearch()" class="w-full btn-primary-theme text-xs py-3 rounded-xl font-black shadow-md bg-gradient-to-r from-[#7C3AED] to-[#EC4899] hover:opacity-90 transform hover:scale-[1.03] transition-transform">
+            <button onclick="handleHeroSearch()" class="w-full btn-primary-theme text-xs py-3 rounded-xl font-black shadow-md bg-gradient-to-r from-[#B7410E] to-[#C5A059] hover:opacity-90 transform hover:scale-[1.03] transition-transform text-white">
               Explore Now
             </button>
           </div>
@@ -222,81 +222,131 @@
 
     </div>
   </section>
-  <!-- SECTION 1: THE RENTAL EXPERIENCE (3-STEP WORKFLOW) -->
+  <!-- SECTION 1: THE RENTAL EXPERIENCE & SERVICES -->
   <section class="py-24 bg-white dark:bg-[#101014]" id="how-it-works">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       
-      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
         <span class="text-theme-accent font-black tracking-[0.25em] text-xs uppercase">
-          The Experience
+          The Experience & Services
         </span>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-theme-main dark:text-white">
-          Costume Hire <br>
-          <span class="font-serif italic font-normal text-theme-accent">Perfected For You</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-theme-main dark:text-white text-center">
+          Full-Spectrum Costume Hire <br>
+          <span class="font-serif italic font-normal text-theme-accent">Crafted, Fitted & Delivered</span>
         </h2>
-        <p class="text-sm text-theme-muted dark:text-gray-300 leading-relaxed">
-          Reserve your look with complete peace of mind. We handle custom sizing adjustments, security deposit processing, and eco-friendly post-wear sanitization.
+        <p class="text-sm text-theme-muted dark:text-gray-300 leading-relaxed text-center">
+          Whether you need a single showstopping gala gown or 40 coordinated costumes for a theatrical production, FancyVerse provides an effortless end-to-end luxury experience. From master fittings to medical-grade dry cleaning, every detail is handled with precision.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- 4-Stage Experience Journey -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
         
         <!-- Step 1 -->
-        <div class="tilt-card reveal-up group p-8 rounded-[2rem] bg-white dark:bg-[#151518] hover:border-[#B7410E]/60 border border-theme transition-all duration-300 shadow-md hover:shadow-2xl">
-          <div class="w-14 h-14 bg-amber-500/10 dark:bg-amber-500/20 border border-amber-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#B7410E] text-[#B7410E] group-hover:text-white transition-all shadow-sm">
-            <i class="bi bi-calendar-check text-2xl transition-colors"></i>
+        <div class="tilt-card reveal-up group p-6 sm:p-7 rounded-[2rem] bg-white dark:bg-[#151518] hover:border-[#B7410E]/60 border border-theme transition-all duration-300 shadow-md hover:shadow-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 bg-amber-500/10 dark:bg-amber-500/20 border border-amber-500/20 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-[#B7410E] text-[#B7410E] group-hover:text-white transition-all shadow-sm">
+              <i class="bi bi-collection-play text-2xl transition-colors"></i>
+            </div>
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-theme-subtle dark:bg-[#202025] text-[10px] font-bold text-theme-accent uppercase tracking-wider mb-3">
+              <span>01. Selection</span>
+            </div>
+            <h3 class="text-lg font-black text-theme-main dark:text-white mb-2 leading-snug">
+              Curated Wardrobe & Escrow
+            </h3>
+            <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed">
+              Explore 500+ authentic costumes across Kids, Themed Parties, Cultural, and Historical genres. Select your 1-Day, 3-Day Weekend, or Weekly pass with upfront pricing and transparent refundable deposit protection.
+            </p>
           </div>
-          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-theme-subtle dark:bg-[#202025] text-[10px] font-bold text-theme-accent uppercase tracking-wider mb-3">
-            <span>Step 01</span>
+          <div class="mt-4 pt-3 border-t border-theme text-[11px] text-theme-accent font-semibold flex items-center gap-1">
+            <i class="bi bi-shield-check text-emerald-600"></i> Escrow Protection
           </div>
-          <h3 class="text-xl font-black text-theme-main dark:text-white mb-2 leading-snug">
-            Select & Reserve
-          </h3>
-          <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-            Browse our curated collections, choose 1-Day, 3-Day Weekend, or Weekly hire duration, and lock in your refundable security deposit online with one click.
-          </p>
         </div>
 
         <!-- Step 2 -->
-        <div class="tilt-card reveal-up delay-100 group p-8 rounded-[2rem] bg-white dark:bg-[#151518] hover:border-[#B7410E]/60 border border-theme transition-all duration-300 shadow-md hover:shadow-2xl">
-          <div class="w-14 h-14 bg-purple-500/10 dark:bg-purple-500/20 border border-purple-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#B7410E] text-[#7C3AED] dark:text-[#A78BFA] group-hover:text-white transition-all shadow-sm">
-            <i class="bi bi-scissors text-2xl transition-colors"></i>
+        <div class="tilt-card reveal-up delay-100 group p-6 sm:p-7 rounded-[2rem] bg-white dark:bg-[#151518] hover:border-[#B7410E]/60 border border-theme transition-all duration-300 shadow-md hover:shadow-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 bg-purple-500/10 dark:bg-purple-500/20 border border-purple-500/20 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-[#B7410E] text-[#7C3AED] dark:text-[#A78BFA] group-hover:text-white transition-all shadow-sm">
+              <i class="bi bi-scissors text-2xl transition-colors"></i>
+            </div>
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-theme-subtle dark:bg-[#202025] text-[10px] font-bold text-theme-accent uppercase tracking-wider mb-3">
+              <span>02. Fitting</span>
+            </div>
+            <h3 class="text-lg font-black text-theme-main dark:text-white mb-2 leading-snug">
+              Salon Fitting & Adaptation
+            </h3>
+            <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed">
+              Visit our private Broadway fitting studio with a personal corsetière or receive our 3-size home courier trial box. We perform zero-cut non-destructive basting alterations and provide an emergency fit kit in every trunk.
+            </p>
           </div>
-          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-theme-subtle dark:bg-[#202025] text-[10px] font-bold text-theme-accent uppercase tracking-wider mb-3">
-            <span>Step 02</span>
+          <div class="mt-4 pt-3 border-t border-theme text-[11px] text-theme-accent font-semibold flex items-center gap-1">
+            <i class="bi bi-check-circle-fill text-purple-600"></i> Zero-Cut Tailoring
           </div>
-          <h3 class="text-xl font-black text-theme-main dark:text-white mb-2 leading-snug">
-            Fit Guarantee & Wear
-          </h3>
-          <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-            Visit our Broadway fitting suites or receive your garment pressed and ready-to-wear with our complimentary size adjustment kit and styling accessories.
-          </p>
         </div>
 
         <!-- Step 3 -->
-        <div class="tilt-card reveal-up delay-200 group p-8 rounded-[2rem] bg-white dark:bg-[#151518] hover:border-[#B7410E]/60 border border-theme transition-all duration-300 shadow-md hover:shadow-2xl">
-          <div class="w-14 h-14 bg-emerald-500/10 dark:bg-emerald-500/20 border border-emerald-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#B7410E] text-emerald-600 dark:text-emerald-400 group-hover:text-white transition-all shadow-sm">
-            <i class="bi bi-arrow-clockwise text-2xl transition-colors"></i>
+        <div class="tilt-card reveal-up delay-200 group p-6 sm:p-7 rounded-[2rem] bg-white dark:bg-[#151518] hover:border-[#B7410E]/60 border border-theme transition-all duration-300 shadow-md hover:shadow-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 bg-emerald-500/10 dark:bg-emerald-500/20 border border-emerald-500/20 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-[#B7410E] text-emerald-600 dark:text-emerald-400 group-hover:text-white transition-all shadow-sm">
+              <i class="bi bi-box-seam text-2xl transition-colors"></i>
+            </div>
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-theme-subtle dark:bg-[#202025] text-[10px] font-bold text-theme-accent uppercase tracking-wider mb-3">
+              <span>03. Logistics</span>
+            </div>
+            <h3 class="text-lg font-black text-theme-main dark:text-white mb-2 leading-snug">
+              White-Glove Delivery
+            </h3>
+            <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed">
+              Costumes arrive steam-pressed, sanitized, and neatly suspended in garment travel trunks. Each order includes a numbered accessory checklist (masks, wigs, belts, jewelry) ready to wear straight out of the box.
+            </p>
           </div>
-          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-theme-subtle dark:bg-[#202025] text-[10px] font-bold text-theme-accent uppercase tracking-wider mb-3">
-            <span>Step 03</span>
+          <div class="mt-4 pt-3 border-t border-theme text-[11px] text-theme-accent font-semibold flex items-center gap-1">
+            <i class="bi bi-truck text-emerald-600"></i> Express 24h Dispatch
           </div>
-          <h3 class="text-xl font-black text-theme-main dark:text-white mb-2 leading-snug">
-            Return & Deposit Refund
-          </h3>
-          <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-            Drop your costume in the prepaid courier return box. No need to wash — dry cleaning is completely on us! Your security deposit is refunded automatically within 24 hours.
-          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="tilt-card reveal-up delay-300 group p-6 sm:p-7 rounded-[2rem] bg-white dark:bg-[#151518] hover:border-[#B7410E]/60 border border-theme transition-all duration-300 shadow-md hover:shadow-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 bg-blue-500/10 dark:bg-blue-500/20 border border-blue-500/20 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-[#B7410E] text-blue-600 dark:text-blue-400 group-hover:text-white transition-all shadow-sm">
+              <i class="bi bi-arrow-repeat text-2xl transition-colors"></i>
+            </div>
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-theme-subtle dark:bg-[#202025] text-[10px] font-bold text-theme-accent uppercase tracking-wider mb-3">
+              <span>04. Return</span>
+            </div>
+            <h3 class="text-lg font-black text-theme-main dark:text-white mb-2 leading-snug">
+              Zero-Wash & Escrow Refund
+            </h3>
+            <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed">
+              No need to clean or press! Drop your garments into the prepaid return box. Medical ozone disinfection and gentle dry cleaning are 100% on us. Your deposit is refunded automatically within 24 hours of return.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-theme text-[11px] text-theme-accent font-semibold flex items-center gap-1">
+            <i class="bi bi-sparkles text-blue-600"></i> Free Eco Dry Cleaning
+          </div>
         </div>
 
       </div>
 
-      <!-- Action Prompt Bar -->
-      <div class="mt-16 p-2 rounded-full bg-theme-subtle dark:bg-[#1C1C22] max-w-xl mx-auto flex items-center justify-between pl-6 pr-2 border border-theme">
-        <span class="text-xs font-bold text-theme-main dark:text-white">Planning for a stage show or troupe?</span>
-        <a href="#bulk-enquiry" class="btn-primary-theme text-xs py-2.5 px-5 rounded-full shadow-sm whitespace-nowrap">
-          Get Studio Quote
-        </a>
+      <!-- Comprehensive Services Guarantee Banner -->
+      <div class="rounded-3xl p-6 sm:p-8 bg-theme-subtle dark:bg-[#16161B] border border-theme flex flex-col lg:flex-row items-center justify-between gap-6 shadow-sm">
+        <div class="space-y-1.5 text-center lg:text-left">
+          <span class="text-[10px] font-extrabold uppercase tracking-widest text-[#B7410E] dark:text-[#E5A87B]">Complete Business Offerings</span>
+          <h4 class="text-lg sm:text-xl font-bold text-theme-main dark:text-white">
+            Solo Hire, Troupe Productions, Bespoke Fittings & Sanitization
+          </h4>
+          <p class="text-xs text-gray-700 dark:text-gray-300">
+            Backed by our 100% Fit Guarantee, same-day emergency replacements, and dedicated cast wardrobe masters.
+          </p>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <a href="fitting-studio.html" class="px-5 py-2.5 rounded-xl border border-theme text-xs font-bold text-theme-main dark:text-white hover:bg-white dark:hover:bg-[#222228] transition shadow-xs">
+            Fitting Studio Details
+          </a>
+          <a href="#bulk-enquiry" class="btn-primary-theme text-xs py-2.5 px-6 rounded-xl shadow-md whitespace-nowrap">
+            Request Troupe Quote
+          </a>
+        </div>
       </div>
 
     </div>
@@ -310,85 +360,101 @@
         <span class="text-theme-accent font-black tracking-[0.25em] text-xs uppercase">
           Who We Serve
         </span>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-theme-main dark:text-white">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-theme-main dark:text-white text-center">
           Who Is FancyVerse For?
         </h2>
-        <p class="text-sm text-theme-muted dark:text-gray-300 leading-relaxed">
+        <p class="text-sm text-theme-muted dark:text-gray-300 leading-relaxed text-center">
           From solo masquerade show-stoppers to 50-actor Shakespearean cast suites.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
         
         <!-- Audience 1: Kids -->
-        <div class="theme-card p-6 flex flex-col justify-between h-full">
+        <div class="theme-card p-5 flex flex-col justify-between h-full group overflow-hidden hover:-translate-y-1 transition-all duration-300 shadow-md hover:shadow-xl">
           <div class="flex flex-col flex-1">
-            <div class="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mb-5 text-amber-600 text-2xl shadow-sm flex-shrink-0">
-              <i class="bi bi-balloon-heart-fill"></i>
+            <div class="h-44 w-full rounded-2xl overflow-hidden mb-4 relative bg-gray-100 dark:bg-black/30 flex-shrink-0">
+              <img src="https://i.pinimg.com/736x/8c/57/5e/8c575e1aa175617722639bfd3b29a306.jpg" alt="Kids Fairytale and Superhero Costumes" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500">
+              <span class="absolute top-2.5 left-2.5 badge theme-badge-gold text-[9px] font-bold px-2.5 py-0.5 rounded-full shadow">
+                Kids & Pageants
+              </span>
             </div>
-            <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2 min-h-[3.5rem] flex items-start">Kids & School Events</h3>
-            <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed mb-4 flex-1 min-h-[8.5rem] lg:min-h-[9.5rem]">
-              Fairytale princesses, heroic capes, and plush storybook animals tailored with soft, non-scratch cotton linings for birthdays and pageants.
+            <h3 class="text-base font-bold text-theme-main dark:text-white mb-1.5 flex items-start min-h-[3rem]">Kids & School Events</h3>
+            <p class="text-xs text-theme-muted dark:text-gray-300 leading-relaxed mb-4 flex-1 min-h-[4.75rem]">
+              Fairytale princesses, heroic capes, and plush storybook animals tailored with soft, non-scratch breathable cotton linings for birthdays and school plays.
             </p>
           </div>
-          <div class="pt-3.5 mt-auto border-t border-theme min-h-[3.75rem] flex items-center">
-            <span class="text-[10px] text-theme-accent uppercase font-black tracking-widest">
-              Ages 3-11 • Hypoallergenic
+          <div class="pt-3 mt-auto border-t border-theme flex items-center justify-between h-11 flex-shrink-0">
+            <span class="text-[10px] text-theme-accent uppercase font-black tracking-wider">
+              Ages 3-11 • Cotton Lined
             </span>
+            <a href="catalog.html?occasion=Kids" class="text-xs font-bold text-theme-main dark:text-white hover:text-theme-accent transition">Hire →</a>
           </div>
         </div>
 
         <!-- Audience 2: Themed Parties -->
-        <div class="theme-card p-6 flex flex-col justify-between h-full">
+        <div class="theme-card p-5 flex flex-col justify-between h-full group overflow-hidden hover:-translate-y-1 transition-all duration-300 shadow-md hover:shadow-xl">
           <div class="flex flex-col flex-1">
-            <div class="w-12 h-12 rounded-2xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-5 text-purple-600 text-2xl shadow-sm flex-shrink-0">
-              <i class="bi bi-disc-fill"></i>
+            <div class="h-44 w-full rounded-2xl overflow-hidden mb-4 relative bg-gray-100 dark:bg-black/30 flex-shrink-0">
+              <img src="https://i.pinimg.com/1200x/50/e3/9a/50e39ad163ee62cb733493ad4b598433.jpg" alt="Themed Parties, Gatsby and Retro Costumes" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500">
+              <span class="absolute top-2.5 left-2.5 badge theme-badge-gold text-[9px] font-bold px-2.5 py-0.5 rounded-full shadow">
+                Galas & Parties
+              </span>
             </div>
-            <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2 min-h-[3.5rem] flex items-start">Themed Parties & Galas</h3>
-            <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed mb-4 flex-1 min-h-[8.5rem] lg:min-h-[9.5rem]">
-              Turn heads with 1920s Gatsby beaded flapper gowns, shimmering 70s disco bell-bottom jumpsuits, and eccentric Mad Hatter suits.
+            <h3 class="text-base font-bold text-theme-main dark:text-white mb-1.5 flex items-start min-h-[3rem]">Themed Parties & Galas</h3>
+            <p class="text-xs text-theme-muted dark:text-gray-300 leading-relaxed mb-4 flex-1 min-h-[4.75rem]">
+              Turn heads with 1920s Gatsby beaded flapper gowns, shimmering 70s disco bell-bottom jumpsuits, and eccentric fantasy ball attire with accessories.
             </p>
           </div>
-          <div class="pt-3.5 mt-auto border-t border-theme min-h-[3.75rem] flex items-center">
-            <span class="text-[10px] text-theme-accent uppercase font-black tracking-widest">
-              Includes Wigs & Props
+          <div class="pt-3 mt-auto border-t border-theme flex items-center justify-between h-11 flex-shrink-0">
+            <span class="text-[10px] text-theme-accent uppercase font-black tracking-wider">
+              Wigs, Beads & Masks
             </span>
+            <a href="catalog.html?occasion=Themed+Parties" class="text-xs font-bold text-theme-main dark:text-white hover:text-theme-accent transition">Hire →</a>
           </div>
         </div>
 
         <!-- Audience 3: Cultural -->
-        <div class="theme-card p-6 flex flex-col justify-between h-full">
+        <div class="theme-card p-5 flex flex-col justify-between h-full group overflow-hidden hover:-translate-y-1 transition-all duration-300 shadow-md hover:shadow-xl">
           <div class="flex flex-col flex-1">
-            <div class="w-12 h-12 rounded-2xl bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center mb-5 text-rose-600 text-2xl shadow-sm flex-shrink-0">
-              <i class="bi bi-flower1"></i>
+            <div class="h-44 w-full rounded-2xl overflow-hidden mb-4 relative bg-gray-100 dark:bg-black/30 flex-shrink-0">
+              <img src="https://i.pinimg.com/1200x/64/8b/f0/648bf08313e9f111efff22aa5e20b708.jpg" alt="Cultural Celebrations & Silk Kimono Gowns" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500">
+              <span class="absolute top-2.5 left-2.5 badge theme-badge-gold text-[9px] font-bold px-2.5 py-0.5 rounded-full shadow">
+                Heritage Silk
+              </span>
             </div>
-            <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2 min-h-[3.5rem] flex items-start">Cultural Celebrations</h3>
-            <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed mb-4 flex-1 min-h-[8.5rem] lg:min-h-[9.5rem]">
+            <h3 class="text-base font-bold text-theme-main dark:text-white mb-1.5 flex items-start min-h-[3rem]">Cultural Celebrations</h3>
+            <p class="text-xs text-theme-muted dark:text-gray-300 leading-relaxed mb-4 flex-1 min-h-[4.75rem]">
               Authentic Kyoto silk-embroidered kimonos, Venetian Carnivale masquerade ballgowns, Scottish tartan kilts, and Bavarian festival dirndls.
             </p>
           </div>
-          <div class="pt-3.5 mt-auto border-t border-theme min-h-[3.75rem] flex items-center">
-            <span class="text-[10px] text-theme-accent uppercase font-black tracking-widest">
-              Artisan Silk & Handcrafted
+          <div class="pt-3 mt-auto border-t border-theme flex items-center justify-between h-11 flex-shrink-0">
+            <span class="text-[10px] text-theme-accent uppercase font-black tracking-wider">
+              Artisan Silk Brocades
             </span>
+            <a href="catalog.html?occasion=Cultural" class="text-xs font-bold text-theme-main dark:text-white hover:text-theme-accent transition">Hire →</a>
           </div>
         </div>
 
         <!-- Audience 4: Historical -->
-        <div class="theme-card p-6 flex flex-col justify-between h-full">
+        <div class="theme-card p-5 flex flex-col justify-between h-full group overflow-hidden hover:-translate-y-1 transition-all duration-300 shadow-md hover:shadow-xl">
           <div class="flex flex-col flex-1">
-            <div class="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-5 text-blue-600 text-2xl shadow-sm flex-shrink-0">
-              <i class="bi bi-shield-fill-check"></i>
+            <div class="h-44 w-full rounded-2xl overflow-hidden mb-4 relative bg-gray-100 dark:bg-black/30 flex-shrink-0">
+              <img src="https://i.pinimg.com/736x/1d/c0/56/1dc05698911bbf47d7cebb6cbeb101f3.jpg" alt="Historical Knight Plate Armor & Victorian Attire" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500">
+              <span class="absolute top-2.5 left-2.5 badge theme-badge-gold text-[9px] font-bold px-2.5 py-0.5 rounded-full shadow">
+                Period Armor
+              </span>
             </div>
-            <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2 min-h-[3.5rem] flex items-start">Historical Re-enactments</h3>
-            <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed mb-4 flex-1 min-h-[8.5rem] lg:min-h-[9.5rem]">
-              Victorian steampunk tailored coats, medieval crusader chainmail plate armor, Renaissance monarch robes, and Roman centurion armor.
+            <h3 class="text-base font-bold text-theme-main dark:text-white mb-1.5 flex items-start min-h-[3rem]">Historical Re-enactments</h3>
+            <p class="text-xs text-theme-muted dark:text-gray-300 leading-relaxed mb-4 flex-1 min-h-[4.75rem]">
+              Victorian steampunk tailored coats, medieval crusader plate armor, Renaissance monarch robes, and Roman centurion armor for productions.
             </p>
           </div>
-          <div class="pt-3.5 mt-auto border-t border-theme min-h-[3.75rem] flex items-center">
-            <span class="text-[10px] text-theme-accent uppercase font-black tracking-widest">
-              Steel & Leather Accurate
+          <div class="pt-3 mt-auto border-t border-theme flex items-center justify-between h-11 flex-shrink-0">
+            <span class="text-[10px] text-theme-accent uppercase font-black tracking-wider">
+              Forged Steel & Leather
             </span>
+            <a href="catalog.html?occasion=Historical" class="text-xs font-bold text-theme-main dark:text-white hover:text-theme-accent transition">Hire →</a>
           </div>
         </div>
 
@@ -405,8 +471,11 @@
         <div>
           <span class="text-theme-accent font-black tracking-[0.25em] text-xs uppercase mb-1 block">Curated Wardrobes</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-theme-main dark:text-white">Explore By Occasion</h2>
+          <p class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 mt-1">
+            Browse our signature rental universes tailored for specific celebration types, stage performances, and heritage galas.
+          </p>
         </div>
-        <a href="catalog.html" class="text-xs font-bold text-theme-main dark:text-white border-b-2 border-theme-main dark:border-white pb-1 hover:text-theme-accent hover:border-theme-accent transition">
+        <a href="catalog.html" class="text-xs font-bold text-theme-main dark:text-white border-b-2 border-theme-main dark:border-white pb-1 hover:text-theme-accent hover:border-theme-accent transition whitespace-nowrap">
           View All Collections →
         </a>
       </div>
@@ -414,52 +483,192 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
         <!-- Occasion 1: Kids -->
-        <a href="catalog.html?occasion=Kids" class="group relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-xl">
-          <img src="https://images.unsplash.com/photo-1737257218703-9cb7e8504901?auto=format&fit=crop&q=80&w=1200" alt="Kids Fairytale Costumes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-6">
-            <span class="text-[10px] text-amber-200 uppercase tracking-widest font-extrabold">🎈 4 Ensembles (Ages 3-11)</span>
-            <p class="text-white font-bold text-lg leading-snug mt-1">Kids Fairytale & Heroes</p>
-            <span class="text-xs text-theme-gold font-bold mt-2 group-hover:translate-x-1.5 transition-transform inline-flex items-center gap-1">
-              Explore Kids Hire →
-            </span>
+        <div class="theme-card flex flex-col justify-between overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 group h-full">
+          <div class="flex flex-col flex-grow">
+            <div class="h-64 sm:h-72 relative overflow-hidden bg-gray-100 dark:bg-black/30">
+              <img src="https://i.pinimg.com/1200x/c6/37/f0/c637f082878991940e3c665d1cc580c7.jpg" alt="Kids Fairytale Princess and Prince Costumes" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+              <span class="absolute top-3 left-3 badge theme-badge-gold text-[9px] font-bold px-2.5 py-0.5 rounded-full shadow">
+                Ages 3-11 • Hypoallergenic
+              </span>
+              <span class="absolute top-3 right-3 text-[10px] font-black bg-black/75 backdrop-blur text-white px-2.5 py-0.5 rounded-full shadow">
+                From $32/day
+              </span>
+            </div>
+            
+            <div class="p-5 flex flex-col flex-grow">
+              <span class="text-[10px] font-bold text-[#B7410E] dark:text-[#E5A87B] uppercase tracking-wider block mb-1">Youth & Fantasy Universe</span>
+              <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2">Kids Fairytale & Heroes</h3>
+              
+              <div class="mb-3">
+                <span class="text-[11px] font-bold text-gray-900 dark:text-gray-200 flex items-center gap-1.5 mb-1">
+                  <i class="bi bi-calendar-event text-theme-main dark:text-[#E5A87B]"></i> Key Occasions:
+                </span>
+                <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed min-h-[2.8rem]">
+                  Birthday Galas, School Pageants, Storybook Days & Themed Family Fairs.
+                </p>
+              </div>
+
+              <div>
+                <span class="text-[11px] font-bold text-gray-900 dark:text-gray-200 flex items-center gap-1.5 mb-1.5">
+                  <i class="bi bi-tag text-theme-main dark:text-[#E5A87B]"></i> Signature Outfits:
+                </span>
+                <div class="grid grid-cols-2 gap-1.5">
+                  <span class="text-[10px] font-semibold py-1 px-1.5 rounded-md bg-theme-subtle dark:bg-[#1E1E24] text-gray-900 dark:text-gray-200 border border-theme text-center truncate" title="Light-Up Princess Gown">Princess Gown</span>
+                  <span class="text-[10px] font-semibold py-1 px-1.5 rounded-md bg-theme-subtle dark:bg-[#1E1E24] text-gray-900 dark:text-gray-200 border border-theme text-center truncate" title="Prince Charming Suit">Prince Charming</span>
+                  <span class="text-[10px] font-semibold py-1 px-1.5 rounded-md bg-theme-subtle dark:bg-[#1E1E24] text-gray-900 dark:text-gray-200 border border-theme text-center truncate" title="Storybook Lion Onesie">Storybook Lion</span>
+                  <span class="text-[10px] font-semibold py-1 px-1.5 rounded-md bg-theme-subtle dark:bg-[#1E1E24] text-gray-900 dark:text-gray-200 border border-theme text-center truncate" title="Galaxy Superhero Suit">Galaxy Hero</span>
+                </div>
+              </div>
+            </div>
           </div>
-        </a>
+
+          <div class="p-5 pt-0 mt-auto">
+            <a href="catalog.html?occasion=Kids" class="w-full btn-outline-theme text-xs py-2.5 rounded-xl font-bold text-center block group-hover:bg-theme-main group-hover:text-white transition">
+              Explore Kids Collection →
+            </a>
+          </div>
+        </div>
 
         <!-- Occasion 2: Themed Parties -->
-        <a href="catalog.html?occasion=Themed+Parties" class="group relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-xl">
-          <img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&q=80&w=1200" alt="Themed Parties & Gatsby" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-6">
-            <span class="text-[10px] text-amber-200 uppercase tracking-widest font-extrabold">✨ 4 Ensembles (Gatsby, 70s)</span>
-            <p class="text-white font-bold text-lg leading-snug mt-1">Themed Parties & Galas</p>
-            <span class="text-xs text-theme-gold font-bold mt-2 group-hover:translate-x-1.5 transition-transform inline-flex items-center gap-1">
-              Explore Party Hire →
-            </span>
+        <div class="theme-card flex flex-col justify-between overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 group h-full">
+          <div class="flex flex-col flex-grow">
+            <div class="h-64 sm:h-72 relative overflow-hidden bg-gray-100 dark:bg-black/30">
+              <img src="https://i.pinimg.com/736x/1d/76/df/1d76df0d8ef291aeb0543962aec26606.jpg" alt="1920s Great Gatsby Beaded Flapper Gown with Feather Headband" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+              <span class="absolute top-3 left-3 badge theme-badge-gold text-[9px] font-bold px-2.5 py-0.5 rounded-full shadow">
+                Adult S-XL • Complete Props
+              </span>
+              <span class="absolute top-3 right-3 text-[10px] font-black bg-black/75 backdrop-blur text-white px-2.5 py-0.5 rounded-full shadow">
+                From $46/day
+              </span>
+            </div>
+            
+            <div class="p-5 flex flex-col flex-grow">
+              <span class="text-[10px] font-bold text-[#B7410E] dark:text-[#E5A87B] uppercase tracking-wider block mb-1">Vintage & Gala Glamour</span>
+              <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2">Themed Parties & Galas</h3>
+              
+              <div class="mb-3">
+                <span class="text-[11px] font-bold text-gray-900 dark:text-gray-200 flex items-center gap-1.5 mb-1">
+                  <i class="bi bi-calendar-event text-theme-main dark:text-[#E5A87B]"></i> Key Occasions:
+                </span>
+                <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed min-h-[2.8rem]">
+                  Gatsby Speakeasies, 70s Disco Nights, Themed Galas & Festivals.
+                </p>
+              </div>
+
+              <div>
+                <span class="text-[11px] font-bold text-gray-900 dark:text-gray-200 flex items-center gap-1.5 mb-1.5">
+                  <i class="bi bi-tag text-theme-main dark:text-[#E5A87B]"></i> Signature Outfits:
+                </span>
+                <div class="grid grid-cols-2 gap-1.5">
+                  <span class="text-[10px] font-semibold py-1 px-1.5 rounded-md bg-theme-subtle dark:bg-[#1E1E24] text-gray-900 dark:text-gray-200 border border-theme text-center truncate" title="Gatsby Beaded Flapper">Beaded Flapper</span>
+                  <span class="text-[10px] font-semibold py-1 px-1.5 rounded-md bg-theme-subtle dark:bg-[#1E1E24] text-gray-900 dark:text-gray-200 border border-theme text-center truncate" title="70s Disco Bell-Bottom">70s Disco Suit</span>
+                  <span class="text-[10px] font-semibold py-1 px-1.5 rounded-md bg-theme-subtle dark:bg-[#1E1E24] text-gray-900 dark:text-gray-200 border border-theme text-center truncate" title="Mad Hatter Frock Suit">Mad Hatter Suit</span>
+                  <span class="text-[10px] font-semibold py-1 px-1.5 rounded-md bg-theme-subtle dark:bg-[#1E1E24] text-gray-900 dark:text-gray-200 border border-theme text-center truncate" title="Vintage Masquerade Suit">Masquerade Suit</span>
+                </div>
+              </div>
+            </div>
           </div>
-        </a>
+
+          <div class="p-5 pt-0 mt-auto">
+            <a href="catalog.html?occasion=Themed+Parties" class="w-full btn-outline-theme text-xs py-2.5 rounded-xl font-bold text-center block group-hover:bg-theme-main group-hover:text-white transition">
+              Explore Party Collection →
+            </a>
+          </div>
+        </div>
 
         <!-- Occasion 3: Cultural -->
-        <a href="catalog.html?occasion=Cultural" class="group relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-xl">
-          <img src="https://images.unsplash.com/photo-1671730785203-44897ceef05f?auto=format&fit=crop&q=80&w=1200" alt="Cultural Kimono & Masquerade" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-6">
-            <span class="text-[10px] text-amber-200 uppercase tracking-widest font-extrabold">🌸 4 Ensembles (Silk & Venice)</span>
-            <p class="text-white font-bold text-lg leading-snug mt-1">Cultural & Traditional</p>
-            <span class="text-xs text-theme-gold font-bold mt-2 group-hover:translate-x-1.5 transition-transform inline-flex items-center gap-1">
-              Explore Cultural Hire →
-            </span>
+        <div class="theme-card flex flex-col justify-between overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 group h-full">
+          <div class="flex flex-col flex-grow">
+            <div class="h-64 sm:h-72 relative overflow-hidden bg-gray-100 dark:bg-black/30">
+              <img src="https://i.pinimg.com/1200x/55/01/05/550105db94d2bef38c2d9d269fb4bd90.jpg" alt="Kyoto Hand-Dyed Silk Furisode Kimono" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+              <span class="absolute top-3 left-3 badge theme-badge-gold text-[9px] font-bold px-2.5 py-0.5 rounded-full shadow">
+                Museum-Grade Heritage
+              </span>
+              <span class="absolute top-3 right-3 text-[10px] font-black bg-black/75 backdrop-blur text-white px-2.5 py-0.5 rounded-full shadow">
+                From $50/day
+              </span>
+            </div>
+            
+            <div class="p-5 flex flex-col flex-grow">
+              <span class="text-[10px] font-bold text-[#B7410E] dark:text-[#E5A87B] uppercase tracking-wider block mb-1">Global Heritage & Elegance</span>
+              <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2">Cultural & Traditional</h3>
+              
+              <div class="mb-3">
+                <span class="text-[11px] font-bold text-gray-900 dark:text-gray-200 flex items-center gap-1.5 mb-1">
+                  <i class="bi bi-calendar-event text-theme-main dark:text-[#E5A87B]"></i> Key Occasions:
+                </span>
+                <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed min-h-[2.8rem]">
+                  Traditional Weddings, Heritage Galas, Venice Carnivals & Festivals.
+                </p>
+              </div>
+
+              <div>
+                <span class="text-[11px] font-bold text-gray-900 dark:text-gray-200 flex items-center gap-1.5 mb-1.5">
+                  <i class="bi bi-tag text-theme-main dark:text-[#E5A87B]"></i> Signature Outfits:
+                </span>
+                <div class="grid grid-cols-2 gap-1.5">
+                  <span class="text-[10px] font-semibold py-1 px-1.5 rounded-md bg-theme-subtle dark:bg-[#1E1E24] text-gray-900 dark:text-gray-200 border border-theme text-center truncate" title="Kyoto Silk Furisode">Silk Furisode</span>
+                  <span class="text-[10px] font-semibold py-1 px-1.5 rounded-md bg-theme-subtle dark:bg-[#1E1E24] text-gray-900 dark:text-gray-200 border border-theme text-center truncate" title="Venetian Masquerade Gown">Venetian Ballgown</span>
+                  <span class="text-[10px] font-semibold py-1 px-1.5 rounded-md bg-theme-subtle dark:bg-[#1E1E24] text-gray-900 dark:text-gray-200 border border-theme text-center truncate" title="Traditional Silk Kimono">Silk Kimono</span>
+                  <span class="text-[10px] font-semibold py-1 px-1.5 rounded-md bg-theme-subtle dark:bg-[#1E1E24] text-gray-900 dark:text-gray-200 border border-theme text-center truncate" title="Alpine Dirndl & Lederhosen">Alpine Dirndl</span>
+                </div>
+              </div>
+            </div>
           </div>
-        </a>
+
+          <div class="p-5 pt-0 mt-auto">
+            <a href="catalog.html?occasion=Cultural" class="w-full btn-outline-theme text-xs py-2.5 rounded-xl font-bold text-center block group-hover:bg-theme-main group-hover:text-white transition">
+              Explore Cultural Collection →
+            </a>
+          </div>
+        </div>
 
         <!-- Occasion 4: Historical -->
-        <a href="catalog.html?occasion=Historical" class="group relative overflow-hidden rounded-[2rem] aspect-[4/5] shadow-xl">
-          <img src="https://i.pinimg.com/736x/3b/ea/ba/3beaba2305e78954ff103897e5a1dafb.jpg" alt="Historical Knight Plate Armor" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-6">
-            <span class="text-[10px] text-amber-200 uppercase tracking-widest font-extrabold">⚔️ 4 Ensembles (Knight & Victorian)</span>
-            <p class="text-white font-bold text-lg leading-snug mt-1">Historical & Armor</p>
-            <span class="text-xs text-theme-gold font-bold mt-2 group-hover:translate-x-1.5 transition-transform inline-flex items-center gap-1">
-              Explore Historical Hire →
-            </span>
+        <div class="theme-card flex flex-col justify-between overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 group h-full">
+          <div class="flex flex-col flex-grow">
+            <div class="h-64 sm:h-72 relative overflow-hidden bg-gray-100 dark:bg-black/30">
+              <img src="https://i.pinimg.com/736x/44/ef/8a/44ef8afa357e77fe4dd2516606482734.jpg" alt="Medieval Knight Silver Plate Armor" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+              <span class="absolute top-3 left-3 badge theme-badge-gold text-[9px] font-bold px-2.5 py-0.5 rounded-full shadow">
+                Screen & Stage Accurate
+              </span>
+              <span class="absolute top-3 right-3 text-[10px] font-black bg-black/75 backdrop-blur text-white px-2.5 py-0.5 rounded-full shadow">
+                From $55/day
+              </span>
+            </div>
+            
+            <div class="p-5 flex flex-col flex-grow">
+              <span class="text-[10px] font-bold text-[#B7410E] dark:text-[#E5A87B] uppercase tracking-wider block mb-1">Armory & Period Reenactment</span>
+              <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2">Historical & Armor</h3>
+              
+              <div class="mb-3">
+                <span class="text-[11px] font-bold text-gray-900 dark:text-gray-200 flex items-center gap-1.5 mb-1">
+                  <i class="bi bi-calendar-event text-theme-main dark:text-[#E5A87B]"></i> Key Occasions:
+                </span>
+                <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed min-h-[2.8rem]">
+                  Renaissance Faires, Period Drama, Stage Productions & Pageants.
+                </p>
+              </div>
+
+              <div>
+                <span class="text-[11px] font-bold text-gray-900 dark:text-gray-200 flex items-center gap-1.5 mb-1.5">
+                  <i class="bi bi-tag text-theme-main dark:text-[#E5A87B]"></i> Signature Outfits:
+                </span>
+                <div class="grid grid-cols-2 gap-1.5">
+                  <span class="text-[10px] font-semibold py-1 px-1.5 rounded-md bg-theme-subtle dark:bg-[#1E1E24] text-gray-900 dark:text-gray-200 border border-theme text-center truncate" title="Roman Centurion Armor">Centurion Armor</span>
+                  <span class="text-[10px] font-semibold py-1 px-1.5 rounded-md bg-theme-subtle dark:bg-[#1E1E24] text-gray-900 dark:text-gray-200 border border-theme text-center truncate" title="Victorian Steampunk Coat">Steampunk Coat</span>
+                  <span class="text-[10px] font-semibold py-1 px-1.5 rounded-md bg-theme-subtle dark:bg-[#1E1E24] text-gray-900 dark:text-gray-200 border border-theme text-center truncate" title="Renaissance Monarch Robe">Monarch Robe</span>
+                  <span class="text-[10px] font-semibold py-1 px-1.5 rounded-md bg-theme-subtle dark:bg-[#1E1E24] text-gray-900 dark:text-gray-200 border border-theme text-center truncate" title="Baroque Aristocrat Gown">Baroque Gown</span>
+                </div>
+              </div>
+            </div>
           </div>
-        </a>
+
+          <div class="p-5 pt-0 mt-auto">
+            <a href="catalog.html?occasion=Historical" class="w-full btn-outline-theme text-xs py-2.5 rounded-xl font-bold text-center block group-hover:bg-theme-main group-hover:text-white transition">
+              Explore Historical Collection →
+            </a>
+          </div>
+        </div>
 
       </div>
 
@@ -475,7 +684,7 @@
         <div class="relative reveal-left">
           <div class="absolute -top-10 -left-10 w-64 h-64 bg-theme-accent/20 rounded-full blur-3xl opacity-70 pointer-events-none"></div>
           <div class="relative bg-theme-main p-3 rounded-[2.5rem] shadow-2xl overflow-hidden group tilt-card">
-            <img src="https://images.unsplash.com/photo-1741183392566-6691041a231f?auto=format&fit=crop&q=80&w=1200" alt="Artisan Tailoring & Fit Studio" class="rounded-[2rem] w-full h-[480px] object-cover transition-transform duration-700 group-hover:scale-105">
+            <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&q=80&w=1200" alt="Artisan Costume Tailoring, Steaming & Care Studio" class="rounded-[2rem] w-full h-[480px] object-cover transition-transform duration-700 group-hover:scale-105">
             
             <!-- Continuous Left-To-Right Light Beam Shimmer Sweep -->
             <div class="scan-beam-ltr"></div>
@@ -488,7 +697,7 @@
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                 </span>
-                <span class="text-xs font-black text-theme-main dark:text-white">100% Sanitized & Approved</span>
+                <span class="text-xs font-black text-theme-main dark:text-white">100% Sanitized & Steam Pressed</span>
               </div>
             </div>
           </div>
@@ -502,7 +711,7 @@
               <span>Couture Standards</span>
             </div>
             <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-theme-main dark:text-white leading-tight">
-              Hospitality Grade Care, <br>
+              Couture Garment Care, <br>
               <span class="text-theme-accent font-serif italic font-normal">Theatrical Grade Brilliance</span>
             </h2>
           </div>
@@ -591,10 +800,10 @@
         <!-- Category Filter Pills -->
         <div class="flex flex-wrap gap-2" id="homeFilterPills">
           <button class="filter-pill active px-4 py-2 rounded-full text-xs font-black bg-theme-main text-white shadow-sm" data-cat="All">All Costumes</button>
-          <button class="filter-pill px-4 py-2 rounded-full text-xs font-black border border-theme hover:bg-theme-subtle" data-cat="Kids">🎈 Kids</button>
-          <button class="filter-pill px-4 py-2 rounded-full text-xs font-black border border-theme hover:bg-theme-subtle" data-cat="Themed Parties">✨ Themed Parties</button>
-          <button class="filter-pill px-4 py-2 rounded-full text-xs font-black border border-theme hover:bg-theme-subtle" data-cat="Cultural">🌸 Cultural</button>
-          <button class="filter-pill px-4 py-2 rounded-full text-xs font-black border border-theme hover:bg-theme-subtle" data-cat="Historical">⚔️ Historical</button>
+          <button class="filter-pill px-4 py-2 rounded-full text-xs font-black border border-theme text-gray-900 dark:text-white hover:bg-theme-subtle dark:hover:bg-[#1E1E24]" data-cat="Kids">Kids</button>
+          <button class="filter-pill px-4 py-2 rounded-full text-xs font-black border border-theme text-gray-900 dark:text-white hover:bg-theme-subtle dark:hover:bg-[#1E1E24]" data-cat="Themed Parties">Themed Parties</button>
+          <button class="filter-pill px-4 py-2 rounded-full text-xs font-black border border-theme text-gray-900 dark:text-white hover:bg-theme-subtle dark:hover:bg-[#1E1E24]" data-cat="Cultural">Cultural</button>
+          <button class="filter-pill px-4 py-2 rounded-full text-xs font-black border border-theme text-gray-900 dark:text-white hover:bg-theme-subtle dark:hover:bg-[#1E1E24]" data-cat="Historical">Historical</button>
         </div>
       </div>
 
@@ -605,7 +814,7 @@
 
       <div class="mt-14 text-center">
         <a href="catalog.html" class="inline-block btn-outline-theme text-xs py-3.5 px-8 shadow-sm">
-          View Complete 16+ Wardrobe Catalog →
+          View Complete 12+ Wardrobe Catalog →
         </a>
       </div>
 
@@ -618,7 +827,7 @@
       
       <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
         <span class="text-theme-accent font-black tracking-[0.25em] text-xs uppercase">Rave Reviews</span>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-theme-main dark:text-white">Loved by Gala Hosts & Directors</h2>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-theme-main dark:text-white text-center">Loved by Gala Hosts & Directors</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -848,12 +1057,12 @@
           VIP Fitting Concierge
         </span>
 
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 relative z-10 leading-tight text-white">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 relative z-10 leading-tight text-white text-center">
           Don't Just Attend. <br>
           <span class="font-serif italic font-normal text-amber-200">Own The Spotlight.</span>
         </h2>
 
-        <p class="text-white/90 text-sm sm:text-base max-w-xl mx-auto mb-8 relative z-10 leading-relaxed">
+        <p class="text-white/90 text-sm sm:text-base max-w-xl mx-auto mb-8 relative z-10 leading-relaxed text-center">
           Reserve early for peak gala and festival weekends. Receive our fitting kit, complimentary accessories, and eco dry-cleaning assurance with every costume.
         </p>
 
@@ -906,11 +1115,34 @@
       const container = document.getElementById('trending-costumes-container');
       if (!container || !window.db) return;
 
-      let list = window.db.costumes;
-      if (category !== "All") {
-        list = list.filter(c => c.category === category);
+      // Completely remove excluded cards from Trending Costumes:
+      // - Mighty Galaxy Superhero Ranger Suit (CST-KID-103)
+      // - Neon Carnival Harlequin Masquerade (CST-PTY-204)
+      // - Scottish Highland Royal Tartan Kilt & Plaid (CST-CLT-303)
+      // - Medieval Silver Crusader Knight Plate Armor (CST-HST-402)
+      const excludedTrendingIds = ['CST-KID-103', 'CST-PTY-204', 'CST-CLT-303', 'CST-HST-402'];
+      let baseList = window.db.costumes.filter(c => 
+        !excludedTrendingIds.includes(c.id) &&
+        !c.name.toLowerCase().includes('harlequin') &&
+        !c.name.toLowerCase().includes('tartan kilt') &&
+        !c.name.toLowerCase().includes('crusader knight')
+      );
+
+      let list = [];
+      if (category === "All") {
+        const categories = ['Kids', 'Themed Parties', 'Cultural', 'Historical'];
+        categories.forEach(cat => {
+          const item = baseList.find(c => c.category === cat && c.isTrending) || baseList.find(c => c.category === cat);
+          if (item) list.push(item);
+        });
+        if (list.length < 4) {
+          baseList.forEach(c => {
+            if (list.length < 4 && !list.includes(c)) list.push(c);
+          });
+        }
+      } else {
+        list = baseList.filter(c => c.category === category).slice(0, 4);
       }
-      list = list.slice(0, 4);
 
       container.innerHTML = list.map(c => `
         <div class="theme-card flex flex-col h-full p-4 group relative overflow-hidden">
@@ -921,7 +1153,7 @@
               ${c.badge || c.category}
             </span>
 
-            <button onclick="window.store.toggleWishlist('${c.id}'); this.classList.toggle('text-red-500');" class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white/90 dark:bg-black/70 backdrop-blur text-gray-700 dark:text-white flex items-center justify-center text-xs z-10 hover:text-red-500 transition shadow">
+            <button onclick="window.store.toggleWishlist('${c.id}'); this.classList.toggle('text-red-500');" class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white dark:bg-[#1E1E24] text-gray-900 dark:text-white flex items-center justify-center text-xs z-10 hover:text-red-500 transition shadow border border-theme">
               <i class="bi bi-heart-fill ${window.store.isInWishlist(c.id) ? 'text-red-500' : ''}"></i>
             </button>
 
@@ -937,21 +1169,26 @@
 
           <!-- Info -->
           <div class="px-1 flex flex-col flex-grow">
-            <span class="text-[9px] text-theme-accent uppercase tracking-widest font-bold block">${c.occasion}</span>
-            <h4 class="font-bold text-theme-main dark:text-white text-sm mb-1 mt-0.5 truncate">
-              <a href="costume-details.html?id=${c.id}" class="hover:text-theme-accent transition-colors">${c.name}</a>
+            <span class="text-[9px] text-[#B7410E] dark:text-[#E5A87B] uppercase tracking-widest font-extrabold block mb-0.5">${c.occasion}</span>
+            <h4 class="font-bold text-gray-900 dark:text-white text-sm mb-1 mt-0.5 truncate">
+              <a href="costume-details.html?id=${c.id}" class="hover:text-[#B7410E] dark:hover:text-[#E5A87B] transition-colors">${c.name}</a>
             </h4>
 
-            <div class="flex items-center justify-between mt-2 pt-2 border-t border-theme mb-4">
+            <div class="flex items-center justify-between mt-2 pt-2 border-t border-theme mb-2">
               <div class="flex items-center gap-1 text-amber-500 text-xs">
                 <i class="bi bi-star-fill"></i>
-                <span class="text-theme-main dark:text-white font-bold text-xs">${c.rating}</span>
-                <span class="text-gray-400 text-[10px]">(${c.reviewsCount})</span>
+                <span class="text-gray-900 dark:text-white font-black text-xs">${c.rating}</span>
+                <span class="text-gray-700 dark:text-gray-300 font-semibold text-[10px]">(${c.reviewsCount})</span>
               </div>
               <div class="text-right">
-                <span class="text-xs font-black text-theme-main dark:text-white">$${c.dailyRate}</span>
-                <span class="text-[10px] text-gray-400">/day</span>
+                <span class="text-xs font-black text-gray-900 dark:text-white">$${c.dailyRate}</span>
+                <span class="text-[10px] text-gray-700 dark:text-gray-300 font-semibold">/day</span>
               </div>
+            </div>
+
+            <div class="flex items-center justify-between text-[10px] text-gray-800 dark:text-gray-200 font-medium mb-3 bg-theme-subtle dark:bg-[#1E1E24] px-2.5 py-1 rounded-lg border border-theme">
+              <span>Refundable Deposit:</span>
+              <span class="font-bold text-[#B7410E] dark:text-[#E5A87B]">$${c.deposit}</span>
             </div>
 
             <div class="flex gap-2 mt-auto">
@@ -973,9 +1210,9 @@
       pill.addEventListener('click', () => {
         document.querySelectorAll('#homeFilterPills .filter-pill').forEach(p => {
           p.classList.remove('bg-theme-main', 'text-white', 'shadow-sm');
-          p.classList.add('border', 'border-theme');
+          p.classList.add('border', 'border-theme', 'text-gray-900', 'dark:text-white');
         });
-        pill.classList.remove('border', 'border-theme');
+        pill.classList.remove('border', 'border-theme', 'text-gray-900', 'dark:text-white');
         pill.classList.add('bg-theme-main', 'text-white', 'shadow-sm');
         renderTrending(pill.getAttribute('data-cat'));
       });

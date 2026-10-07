@@ -117,7 +117,7 @@
       <div class="lg:col-span-5 relative reveal-right">
         <div class="relative mx-auto max-w-md lg:max-w-none">
           <div class="tilt-card rounded-[2.5rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white dark:border-[#1C1C22] relative group">
-            <img src="https://i.pinimg.com/1200x/f0/ee/46/f0ee46de903aaa23e5b7444101956b56.jpg" alt="Venetian Masquerade Gala Gown & Filigree Mask" class="w-full h-[380px] sm:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105">
+            <img src="https://i.pinimg.com/1200x/33/66/61/336661d86c9825ca2929aa2b7065be54.jpg" alt="Venetian Masquerade Gala Gown & Filigree Mask" class="w-full h-[380px] sm:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105">
             <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none"></div>
             
             <!-- Glassmorphic Floating Caption Card -->
@@ -147,14 +147,6 @@
       <!-- Main Content Column -->
       <div class="lg:col-span-8 space-y-12">
         
-        <!-- Showcase Image Banner -->
-        <div class="rounded-3xl overflow-hidden shadow-xl aspect-video relative">
-          <img src="https://images.unsplash.com/photo-1655951578974-48cd5e87db02?auto=format&fit=crop&q=80&w=1200" alt="Hand-Carved Venetian Filigree Mask & Brocade" class="w-full h-full object-cover">
-          <div class="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 bg-black/60 backdrop-blur-md px-4 py-2 rounded-xl text-white text-xs font-semibold">
-            Authentic Italian Silk Brocade & Gilded Venetian Mask
-          </div>
-        </div>
-
         <!-- Service Deep-Dive Description -->
         <div class="space-y-4">
           <h2 class="text-2xl font-bold text-theme-main dark:text-white">Service Overview & Heritage</h2>
@@ -202,58 +194,142 @@
           </div>
         </div>
 
-        <!-- PRICING & DEPOSIT TABLE -->
+        <!-- PRICING & DEPOSIT TABLE BY DRESS & OCCASION -->
         <div class="space-y-4" id="pricingTable">
-          <h2 class="text-2xl font-bold text-theme-main dark:text-white">Rental Duration & Security Deposit</h2>
-          <p class="text-xs text-gray-500">All prices include complimentary dry cleaning and prepaid return shipping box.</p>
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+            <div>
+              <span class="text-[10px] text-theme-accent uppercase font-black tracking-wider block">Transparent Rates</span>
+              <h2 class="text-2xl font-bold text-theme-main dark:text-white">Rental Rates by Dress Type & Occasion</h2>
+            </div>
+            <p class="text-xs text-gray-500">Includes complimentary eco-cleaning, alterations kit & return box.</p>
+          </div>
 
           <div class="table-responsive rounded-2xl border border-theme overflow-x-auto shadow-sm">
-            <table class="w-full min-w-[580px] text-left text-xs border-collapse">
+            <table class="w-full min-w-[860px] text-left text-xs border-collapse">
               <thead class="bg-[#EFEBE9] dark:bg-[#202025] text-theme-main dark:text-white font-bold">
                 <tr>
-                  <th class="p-4">Rental Tier</th>
-                  <th class="p-4">Duration</th>
-                  <th class="p-4">Hire Rate</th>
-                  <th class="p-4">Refundable Deposit</th>
-                  <th class="p-4 text-center">Action</th>
+                  <th class="p-4 min-w-[260px]">Dress / Costume Ensemble</th>
+                  <th class="p-4 whitespace-nowrap min-w-[190px]">Occasion Category</th>
+                  <th class="p-4 whitespace-nowrap min-w-[100px]">1-Day Hire</th>
+                  <th class="p-4 whitespace-nowrap min-w-[110px]">3-Day Weekend</th>
+                  <th class="p-4 whitespace-nowrap min-w-[140px]">Refundable Deposit</th>
+                  <th class="p-4 text-center whitespace-nowrap min-w-[160px]">Action</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-theme">
-                <tr class="hover:bg-theme-subtle/40">
-                  <td class="p-4 font-bold text-theme-main dark:text-white">Gala Night Pass</td>
-                  <td class="p-4 text-gray-500">24 Hours (1 Day)</td>
-                  <td class="p-4 font-bold">$65.00</td>
-                  <td class="p-4 text-theme-accent font-semibold">$150.00</td>
-                  <td class="p-4 text-center">
-                    <button onclick="window.store.addToCart('CST-CLT-302', {duration: 1}); window.showToast('1-Day Rental Added to Cart', 'success');" class="btn-primary-theme text-xs !py-0 !px-3 w-36 h-10 inline-flex items-center justify-center font-bold shadow-sm whitespace-nowrap">
-                      Book 1-Day
-                    </button>
-                  </td>
-                </tr>
+                
+                <!-- Dress 1: Cultural Silk / Masquerade -->
                 <tr class="hover:bg-theme-subtle/40 bg-theme-accent/5">
-                  <td class="p-4 font-bold text-theme-main dark:text-white">
-                    Weekend Ball Pass <span class="badge theme-badge-gold text-[9px] px-1.5 py-0.5 rounded-full ml-1">Popular</span>
+                  <td class="p-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-12 h-14 rounded-xl overflow-hidden bg-gray-100 dark:bg-black/40 flex-shrink-0">
+                        <img src="https://i.pinimg.com/1200x/c6/37/f0/c637f082878991940e3c665d1cc580c7.jpg" alt="Venetian Carnivale Gilded Ballgown" class="w-full h-full object-cover">
+                      </div>
+                      <div>
+                        <strong class="text-theme-main dark:text-white block font-bold">Venetian Carnivale Gilded Gown</strong>
+                        <span class="text-[10px] text-gray-400">Corset boning, hoop skirt & filigree mask</span>
+                      </div>
+                    </div>
                   </td>
-                  <td class="p-4 text-gray-500">3 Days (Fri - Mon)</td>
-                  <td class="p-4 font-bold">$120.00</td>
-                  <td class="p-4 text-theme-accent font-semibold">$150.00</td>
-                  <td class="p-4 text-center">
-                    <button onclick="window.store.addToCart('CST-CLT-302', {duration: 3}); window.showToast('3-Day Weekend Rental Added to Cart', 'success');" class="btn-primary-theme text-xs !py-0 !px-3 w-36 h-10 inline-flex items-center justify-center font-bold shadow-sm whitespace-nowrap">
-                      Book Weekend
+                  <td class="p-4 whitespace-nowrap min-w-[190px]">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap bg-amber-100 dark:bg-amber-950/50 text-amber-800 dark:text-amber-200 border border-amber-300/40 dark:border-amber-700/50 shadow-xs">
+                      Cultural Silk
+                    </span>
+                  </td>
+                  <td class="p-4 whitespace-nowrap font-bold text-theme-main dark:text-white">$65.00</td>
+                  <td class="p-4 whitespace-nowrap font-bold text-theme-accent">$120.00</td>
+                  <td class="p-4 whitespace-nowrap text-emerald-600 font-semibold">$150.00</td>
+                  <td class="p-4 text-center whitespace-nowrap">
+                    <button onclick="window.store.addToCart('CST-CLT-302', {duration: 1}); window.showToast('Venetian Ballgown Added to Cart', 'success');" class="btn-primary-theme text-xs !py-0 !px-3 w-36 h-10 inline-flex items-center justify-center font-bold shadow-sm whitespace-nowrap">
+                      Book Outfit
                     </button>
                   </td>
                 </tr>
+
+                <!-- Dress 2: Themed Parties / Gatsby -->
                 <tr class="hover:bg-theme-subtle/40">
-                  <td class="p-4 font-bold text-theme-main dark:text-white">Venice Carnival Week</td>
-                  <td class="p-4 text-gray-500">7 Days (Full Week)</td>
-                  <td class="p-4 font-bold">$210.00</td>
-                  <td class="p-4 text-theme-accent font-semibold">$150.00</td>
-                  <td class="p-4 text-center">
-                    <button onclick="window.store.addToCart('CST-CLT-302', {duration: 7}); window.showToast('7-Day Rental Added to Cart', 'success');" class="btn-primary-theme text-xs !py-0 !px-3 w-36 h-10 inline-flex items-center justify-center font-bold shadow-sm whitespace-nowrap">
-                      Book Week
+                  <td class="p-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-12 h-14 rounded-xl overflow-hidden bg-gray-100 dark:bg-black/40 flex-shrink-0">
+                        <img src="https://img.dorriswedding.com/image/1200x0/90/1/3c737c17565ceef7/d3d824f66f20329c9b92e028667db17d.jpg?format=webp" alt="Roaring 20s Gatsby Flapper Gown" class="w-full h-full object-cover">
+                      </div>
+                      <div>
+                        <strong class="text-theme-main dark:text-white block font-bold">Roaring 20s Gatsby Flapper Gown</strong>
+                        <span class="text-[10px] text-gray-400">Hand-beaded glass fringe & feather headband</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="p-4 whitespace-nowrap min-w-[190px]">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap bg-purple-100 dark:bg-purple-950/50 text-purple-800 dark:text-purple-200 border border-purple-300/40 dark:border-purple-700/50 shadow-xs">
+                      Themed Parties
+                    </span>
+                  </td>
+                  <td class="p-4 whitespace-nowrap font-bold text-theme-main dark:text-white">$48.00</td>
+                  <td class="p-4 whitespace-nowrap font-bold text-theme-accent">$85.00</td>
+                  <td class="p-4 whitespace-nowrap text-emerald-600 font-semibold">$100.00</td>
+                  <td class="p-4 text-center whitespace-nowrap">
+                    <button onclick="window.store.addToCart('CST-PTY-201', {duration: 1}); window.showToast('Gatsby Gown Added to Cart', 'success');" class="btn-primary-theme text-xs !py-0 !px-3 w-36 h-10 inline-flex items-center justify-center font-bold shadow-sm whitespace-nowrap">
+                      Book Outfit
                     </button>
                   </td>
                 </tr>
+
+                <!-- Dress 3: Historical Armor -->
+                <tr class="hover:bg-theme-subtle/40">
+                  <td class="p-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-12 h-14 rounded-xl overflow-hidden bg-gray-100 dark:bg-black/40 flex-shrink-0">
+                        <img src="https://i.pinimg.com/736x/1d/c0/56/1dc05698911bbf47d7cebb6cbeb101f3.jpg" alt="Medieval Crusader Knight Plate Armor" class="w-full h-full object-cover">
+                      </div>
+                      <div>
+                        <strong class="text-theme-main dark:text-white block font-bold">Silver Crusader Knight Plate Armor</strong>
+                        <span class="text-[10px] text-gray-400">Lightweight aluminum cuirass, chainmail & cape</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="p-4 whitespace-nowrap min-w-[190px]">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap bg-blue-100 dark:bg-blue-950/50 text-blue-800 dark:text-blue-200 border border-blue-300/40 dark:border-blue-700/50 shadow-xs">
+                      Historical Armor
+                    </span>
+                  </td>
+                  <td class="p-4 whitespace-nowrap font-bold text-theme-main dark:text-white">$85.00</td>
+                  <td class="p-4 whitespace-nowrap font-bold text-theme-accent">$155.00</td>
+                  <td class="p-4 whitespace-nowrap text-emerald-600 font-semibold">$200.00</td>
+                  <td class="p-4 text-center whitespace-nowrap">
+                    <button onclick="window.store.addToCart('CST-HST-402', {duration: 1}); window.showToast('Knight Armor Added to Cart', 'success');" class="btn-primary-theme text-xs !py-0 !px-3 w-36 h-10 inline-flex items-center justify-center font-bold shadow-sm whitespace-nowrap">
+                      Book Outfit
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Dress 4: Kids Fairytale -->
+                <tr class="hover:bg-theme-subtle/40">
+                  <td class="p-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-12 h-14 rounded-xl overflow-hidden bg-gray-100 dark:bg-black/40 flex-shrink-0">
+                        <img src="https://i.pinimg.com/736x/04/24/56/042456fe2161aaee905f613a640b1761.jpg" alt="Enchanted Fairytale Princess Ballgown" class="w-full h-full object-cover">
+                      </div>
+                      <div>
+                        <strong class="text-theme-main dark:text-white block font-bold">Enchanted Fairytale Princess Ballgown</strong>
+                        <span class="text-[10px] text-gray-400">Cotton lining, LED sparkle hem, tiara & wand</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="p-4 whitespace-nowrap min-w-[190px]">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap bg-emerald-100 dark:bg-emerald-950/50 text-emerald-800 dark:text-emerald-200 border border-emerald-300/40 dark:border-emerald-700/50 shadow-xs">
+                      Kids Fairytale
+                    </span>
+                  </td>
+                  <td class="p-4 whitespace-nowrap font-bold text-theme-main dark:text-white">$35.00</td>
+                  <td class="p-4 whitespace-nowrap font-bold text-theme-accent">$60.00</td>
+                  <td class="p-4 whitespace-nowrap text-emerald-600 font-semibold">$50.00</td>
+                  <td class="p-4 text-center whitespace-nowrap">
+                    <button onclick="window.store.addToCart('CST-KID-101', {duration: 1}); window.showToast('Princess Gown Added to Cart', 'success');" class="btn-primary-theme text-xs !py-0 !px-3 w-36 h-10 inline-flex items-center justify-center font-bold shadow-sm whitespace-nowrap">
+                      Book Outfit
+                    </button>
+                  </td>
+                </tr>
+
               </tbody>
             </table>
           </div>

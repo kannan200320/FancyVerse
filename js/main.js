@@ -164,6 +164,17 @@ window.showToast = (message, type = 'success') => {
 document.addEventListener("DOMContentLoaded", () => {
   getToastContainer();
 
+  // Global Image Error Fallback: ensures cards and images always display cleanly on mobile and desktop
+  window.addEventListener("error", (e) => {
+    if (e.target && e.target.tagName === "IMG") {
+      const img = e.target;
+      if (!img.dataset.fallbackApplied) {
+        img.dataset.fallbackApplied = "true";
+        img.src = "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&q=80&w=800";
+      }
+    }
+  }, true);
+
   // Sticky Header Scroll Effect
   const header = document.getElementById("mainNavbar");
   if (header) {
@@ -390,10 +401,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll(".reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-scale").forEach(el => {
+        el.classList.add("reveal-visible");
+      });
+      return;
+    }
+
     const observerOptions = {
       root: null,
-      rootMargin: "0px 0px -50px 0px",
-      threshold: 0.05
+      rootMargin: "0px 0px 100px 0px",
+      threshold: 0.01
     };
 
     const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -405,9 +423,22 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }, observerOptions);
 
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
     document.querySelectorAll(".reveal:not(.reveal-visible), .reveal-up:not(.reveal-visible), .reveal-left:not(.reveal-visible), .reveal-right:not(.reveal-visible), .reveal-scale:not(.reveal-visible)").forEach(el => {
-      revealObserver.observe(el);
+      const rect = el.getBoundingClientRect();
+      if (rect.top <= viewportHeight + 100) {
+        el.classList.add("reveal-visible");
+      } else {
+        revealObserver.observe(el);
+      }
     });
+
+    // Safety timeout: ensures all cards are unconditionally visible even in headless testing environments
+    setTimeout(() => {
+      document.querySelectorAll(".reveal:not(.reveal-visible), .reveal-up:not(.reveal-visible), .reveal-left:not(.reveal-visible), .reveal-right:not(.reveal-visible), .reveal-scale:not(.reveal-visible)").forEach(el => {
+        el.classList.add("reveal-visible");
+      });
+    }, 1200);
   };
 
   initScrollReveals();

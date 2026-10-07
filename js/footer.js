@@ -66,12 +66,17 @@ document.addEventListener("DOMContentLoaded", () => {
         <!-- Column 1: Brand Info -->
         <div class="space-y-5">
           <a href="index.html" class="flex items-center gap-3 group transition-transform hover:opacity-90 w-fit cursor-pointer" title="FancyVerse - Return to Home">
-            <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-400/20 to-[#B7410E]/20 border border-amber-400/30 flex items-center justify-center text-amber-400 shadow-lg shadow-amber-500/5 group-hover:scale-105 transition-transform">
-              <i class="bi bi-mask text-xl"></i>
+            <div class="w-10 h-10 rounded-2xl overflow-hidden shadow-lg group-hover:scale-105 transition-transform flex-shrink-0 bg-[#B7410E] flex items-center justify-center">
+              <img src="favicon.svg" alt="FancyVerse Custom Costume Hire" class="w-full h-full object-cover">
             </div>
-            <span class="text-2xl font-black tracking-tight text-white font-display group-hover:text-amber-300 transition-colors">
-              Fancy<span class="text-amber-400">Verse</span>
-            </span>
+            <div class="flex flex-col justify-center">
+              <span class="text-xl font-black tracking-tight text-white leading-none">
+                Fancy<span class="brand-verse">Verse</span>
+              </span>
+              <span class="text-[9px] uppercase tracking-[0.22em] font-extrabold text-[#E5A87B] mt-0.5 brand-subtitle">
+                Custom & Costume Hire
+              </span>
+            </div>
           </a>
 
           <p class="text-zinc-400 text-xs leading-relaxed">

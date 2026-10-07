@@ -140,10 +140,166 @@
     </div>
   </section>
 
-  <!-- CONTROLS & SERVICES SECTION -->
+  <!-- ALL RENTAL SERVICES & ALL CATEGORIES SECTION -->
   <section class="py-16 bg-white dark:bg-[#121215]" id="servicesList">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       
+      <!-- Section Explanatory Header -->
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+        <span class="text-theme-accent font-black tracking-[0.25em] text-xs uppercase block">
+          Comprehensive Atelier Services
+        </span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-theme-main dark:text-white">
+          All Rental Services & Signature Categories
+        </h2>
+        <p class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+          From individual gala hires to full theatrical cast wardrobes, our services are organized across 5 distinct categories. Explore the complete offerings, pricing tiers, and specialized care included with every garment.
+        </p>
+      </div>
+
+      <!-- All Categories Explanatory Cards Guide -->
+      <div class="mb-12">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-base font-bold text-gray-900 dark:text-white flex items-center gap-2">
+            <i class="bi bi-grid-3x3-gap-fill text-[#B7410E] dark:text-[#E5A87B]"></i>
+            <span>All Categories Guide</span>
+          </h3>
+          <span class="text-[11px] text-gray-700 dark:text-gray-300 font-semibold hidden sm:inline">Click any category card below to filter services</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4" id="categoryGuideCards">
+          <!-- Category 1: Kids -->
+          <div onclick="filterByCategory('Kids')" class="cat-guide-card theme-card p-5 rounded-2xl cursor-pointer hover:border-[#B7410E] transition-all duration-300 group shadow-sm hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between h-full relative overflow-hidden" data-guide-cat="Kids">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[10px] font-black uppercase tracking-wider text-[#B7410E] dark:text-[#E5A87B] bg-[#B7410E]/10 dark:bg-[#E5A87B]/15 px-2.5 py-1 rounded-lg">
+                  Ages 3–11
+                </span>
+                <span class="text-xs font-black text-gray-400 dark:text-gray-500 group-hover:text-[#B7410E] dark:group-hover:text-[#E5A87B] transition-colors">
+                  01
+                </span>
+              </div>
+              <h4 class="font-extrabold text-sm text-gray-900 dark:text-white mb-2 group-hover:text-[#B7410E] dark:group-hover:text-[#E5A87B] transition-colors">
+                Kids Fairytale & Heroes
+              </h4>
+              <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed mb-4 min-h-[4.5rem]">
+                Hypoallergenic 100% cotton linings, child-safe LED lights, wands & capes crafted for school plays and birthday celebrations.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-theme flex items-center justify-between mt-auto">
+              <span class="text-xs font-extrabold text-[#B7410E] dark:text-[#E5A87B]">From $32 / day</span>
+              <span class="text-[11px] font-bold text-[#B7410E] dark:text-[#E5A87B] flex items-center gap-1 transition-all">
+                Filter <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- Category 2: Themed Parties -->
+          <div onclick="filterByCategory('Themed Parties')" class="cat-guide-card theme-card p-5 rounded-2xl cursor-pointer hover:border-[#B7410E] transition-all duration-300 group shadow-sm hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between h-full relative overflow-hidden" data-guide-cat="Themed Parties">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[10px] font-black uppercase tracking-wider text-purple-700 dark:text-purple-300 bg-purple-100/80 dark:bg-purple-950/50 px-2.5 py-1 rounded-lg">
+                  Galas & Parties
+                </span>
+                <span class="text-xs font-black text-gray-400 dark:text-gray-500 group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
+                  02
+                </span>
+              </div>
+              <h4 class="font-extrabold text-sm text-gray-900 dark:text-white mb-2 group-hover:text-[#B7410E] dark:group-hover:text-[#E5A87B] transition-colors">
+                Themed Parties & Galas
+              </h4>
+              <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed mb-4 min-h-[4.5rem]">
+                Hand-beaded 1920s flapper gowns, 70s disco bell-bottom jumpsuits, Mad Hatter suits & Carnival Harlequin ensembles with accessories.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-theme flex items-center justify-between mt-auto">
+              <span class="text-xs font-extrabold text-[#B7410E] dark:text-[#E5A87B]">From $46 / day</span>
+              <span class="text-[11px] font-bold text-[#B7410E] dark:text-[#E5A87B] flex items-center gap-1 transition-all">
+                Filter <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- Category 3: Cultural -->
+          <div onclick="filterByCategory('Cultural')" class="cat-guide-card theme-card p-5 rounded-2xl cursor-pointer hover:border-[#B7410E] transition-all duration-300 group shadow-sm hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between h-full relative overflow-hidden" data-guide-cat="Cultural">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[10px] font-black uppercase tracking-wider text-rose-700 dark:text-rose-300 bg-rose-100/80 dark:bg-rose-950/50 px-2.5 py-1 rounded-lg">
+                  Heritage Silk
+                </span>
+                <span class="text-xs font-black text-gray-400 dark:text-gray-500 group-hover:text-rose-600 dark:group-hover:text-rose-300 transition-colors">
+                  03
+                </span>
+              </div>
+              <h4 class="font-extrabold text-sm text-gray-900 dark:text-white mb-2 group-hover:text-[#B7410E] dark:group-hover:text-[#E5A87B] transition-colors">
+                Cultural & Traditional
+              </h4>
+              <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed mb-4 min-h-[4.5rem]">
+                Kyoto raw silk kimonos, Venetian brocade masquerade gowns, Scottish pure wool kilts & Alpine dirndls complete with geta and masks.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-theme flex items-center justify-between mt-auto">
+              <span class="text-xs font-extrabold text-[#B7410E] dark:text-[#E5A87B]">From $50 / day</span>
+              <span class="text-[11px] font-bold text-[#B7410E] dark:text-[#E5A87B] flex items-center gap-1 transition-all">
+                Filter <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- Category 4: Historical -->
+          <div onclick="filterByCategory('Historical')" class="cat-guide-card theme-card p-5 rounded-2xl cursor-pointer hover:border-[#B7410E] transition-all duration-300 group shadow-sm hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between h-full relative overflow-hidden" data-guide-cat="Historical">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[10px] font-black uppercase tracking-wider text-blue-700 dark:text-blue-300 bg-blue-100/80 dark:bg-blue-950/50 px-2.5 py-1 rounded-lg">
+                  Stage & Armor
+                </span>
+                <span class="text-xs font-black text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors">
+                  04
+                </span>
+              </div>
+              <h4 class="font-extrabold text-sm text-gray-900 dark:text-white mb-2 group-hover:text-[#B7410E] dark:group-hover:text-[#E5A87B] transition-colors">
+                Historical & Troupe
+              </h4>
+              <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed mb-4 min-h-[4.5rem]">
+                Lightweight aircraft aluminum plate armor with chainmail, Victorian steampunk tailcoats & Renaissance monarch robes for stage/film.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-theme flex items-center justify-between mt-auto">
+              <span class="text-xs font-extrabold text-[#B7410E] dark:text-[#E5A87B]">From $55 / day</span>
+              <span class="text-[11px] font-bold text-[#B7410E] dark:text-[#E5A87B] flex items-center gap-1 transition-all">
+                Filter <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- Category 5: Care & Fitting -->
+          <div onclick="filterByCategory('Care')" class="cat-guide-card theme-card p-5 rounded-2xl cursor-pointer hover:border-[#B7410E] transition-all duration-300 group shadow-sm hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between h-full relative overflow-hidden" data-guide-cat="Care">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[10px] font-black uppercase tracking-wider text-emerald-700 dark:text-emerald-300 bg-emerald-100/80 dark:bg-emerald-950/50 px-2.5 py-1 rounded-lg">
+                  Atelier Care
+                </span>
+                <span class="text-xs font-black text-gray-400 dark:text-gray-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-colors">
+                  05
+                </span>
+              </div>
+              <h4 class="font-extrabold text-sm text-gray-900 dark:text-white mb-2 group-hover:text-[#B7410E] dark:group-hover:text-[#E5A87B] transition-colors">
+                Care & Tailoring
+              </h4>
+              <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed mb-4 min-h-[4.5rem]">
+                4 Private Manhattan fitting suites, tri-size courier boxes, zero-cut alterations & hospital-grade ozone sanitization included.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-theme flex items-center justify-between mt-auto">
+              <span class="text-xs font-extrabold text-emerald-600 dark:text-emerald-400">Included / Credited</span>
+              <span class="text-[11px] font-bold text-[#B7410E] dark:text-[#E5A87B] flex items-center gap-1 transition-all">
+                Filter <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Filter & View Switcher Bar -->
       <div class="flex flex-col md:flex-row items-center justify-between gap-4 pb-8 mb-10 border-b border-theme">
         
@@ -151,22 +307,26 @@
         <div class="flex flex-wrap items-center gap-3 w-full md:w-auto">
           <div class="relative flex-1 sm:w-64">
             <i class="bi bi-search absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
-            <input type="text" id="serviceSearchInput" placeholder="Search services..." class="theme-input text-xs pl-9 py-2">
+            <input type="text" id="serviceSearchInput" placeholder="Search rental services..." class="theme-input text-xs pl-9 py-2">
           </div>
 
-          <select id="serviceCategorySelect" class="theme-input text-xs py-2 w-auto">
-            <option value="All">All Categories</option>
-            <option value="Kids">🎈 Kids Fairytale & Heroes</option>
-            <option value="Themed Parties">✨ Themed Parties & Galas</option>
-            <option value="Cultural">🌸 Cultural & Traditional</option>
-            <option value="Historical">⚔️ Historical & Troupe</option>
-            <option value="Care">🧼 Care & Tailoring</option>
+          <select id="serviceCategorySelect" class="theme-input text-xs py-2 w-auto font-bold text-gray-900 dark:text-white">
+            <option value="All">All Categories (5 Universes)</option>
+            <option value="Kids">Kids Fairytales & Heroes</option>
+            <option value="Themed Parties">Themed Parties & Galas</option>
+            <option value="Cultural">Cultural & Traditional</option>
+            <option value="Historical">Historical & Troupe</option>
+            <option value="Care">Care & Tailoring</option>
           </select>
+
+          <button onclick="filterByCategory('All')" class="px-3 py-2 rounded-xl border border-theme text-xs font-bold text-gray-900 dark:text-white hover:bg-theme-subtle dark:hover:bg-[#1E1E24] transition">
+            Reset Filters
+          </button>
         </div>
 
         <!-- Grid vs List Toggle -->
         <div class="flex items-center gap-2 self-end md:self-auto">
-          <span class="text-xs text-gray-400 font-semibold mr-1">View:</span>
+          <span class="text-xs text-gray-700 dark:text-gray-300 font-semibold mr-1">View:</span>
           <button id="viewGridBtn" aria-label="Grid View" class="p-2 rounded-lg bg-theme-main text-white text-sm shadow">
             <i class="bi bi-grid-fill"></i>
           </button>
@@ -184,7 +344,7 @@
         <div class="service-card theme-card p-6 flex flex-col justify-between" data-cat="Cultural">
           <div>
             <div class="aspect-video rounded-2xl overflow-hidden mb-6 relative">
-              <img src="https://i.pinimg.com/1200x/8f/9c/b4/8f9cb4392c608b30549981794d4c6345.jpg" alt="Venetian Masquerade Ball Hire" class="w-full h-full object-cover">
+              <img src="https://i.pinimg.com/1200x/2a/87/73/2a8773acf7bc38f7e4345c625233a64d.jpg" alt="Venetian Masquerade Ball Hire" class="w-full h-full object-cover">
               <span class="absolute top-3 left-3 badge theme-badge-gold text-[10px] font-bold px-2.5 py-0.5 rounded-full">Cultural & Traditional</span>
             </div>
             <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2">Venetian Masquerade & Ball Hire</h3>
@@ -234,7 +394,7 @@
         <div class="service-card theme-card p-6 flex flex-col justify-between" data-cat="Kids">
           <div>
             <div class="aspect-video rounded-2xl overflow-hidden mb-6 relative">
-              <img src="https://i.pinimg.com/736x/ae/16/a8/ae16a8633798987bd215a68d9f9ba0cd.jpg" alt="Kids Fairytale Princess Costumes" class="w-full h-full object-cover">
+              <img src="https://i.pinimg.com/1200x/9c/6f/8e/9c6f8e5249fc80d1293a00ad5fd57498.jpg" alt="Kids Fairytale Princess Costumes" class="w-full h-full object-cover">
               <span class="absolute top-3 left-3 badge theme-badge-gold text-[10px] font-bold px-2.5 py-0.5 rounded-full">Kids Fairytale & Heroes</span>
             </div>
             <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2">Kids Birthday & School Pageants</h3>
@@ -259,21 +419,30 @@
         <div class="service-card theme-card p-6 flex flex-col justify-between" data-cat="Care">
           <div>
             <div class="aspect-video rounded-2xl overflow-hidden mb-6 relative">
-              <img src="https://images.unsplash.com/photo-1741183392566-6691041a231f?auto=format&fit=crop&q=80&w=800" alt="Private Fitting Salon & Tailoring" class="w-full h-full object-cover">
-              <span class="absolute top-3 left-3 badge theme-badge-gold text-[10px] font-bold px-2.5 py-0.5 rounded-full">Care & Tailoring</span>
+              <img src="https://i.pinimg.com/1200x/1e/1b/ae/1e1bae40ac799800446794112cd716b2.jpg" alt="Private Fitting Salon & Tailoring Atelier" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 badge theme-badge-gold text-[10px] font-bold px-2.5 py-0.5 rounded-full">Customization & Fitting</span>
             </div>
-            <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2">Private Fitting Studio & Concierge</h3>
+            <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2">Private Fitting Studio & Tailoring</h3>
             <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed mb-4">
-              Visit our Broadway salon for a 60-minute champagne fitting with our master corsetière. We adjust hemlines and customize accessories on the spot.
+              Step into our Broadway atelier for 1-on-1 corsetière consultations, bespoke silhouette adjustments, and full accessory personalization.
             </p>
-            <ul class="space-y-1.5 text-xs text-theme-muted dark:text-gray-300 mb-6">
-              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-theme-accent"></i> 1-on-1 dedicated master stylist</li>
-              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-theme-accent"></i> Same-day pin-and-baste adjustments</li>
-              <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-theme-accent"></i> Try on up to 5 costume options</li>
+            <ul class="space-y-2 text-xs text-theme-muted dark:text-gray-300 mb-6">
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-theme-accent text-xs mt-0.5"></i>
+                <span><strong>Customization:</strong> Corset boning, modular hoop volume & matching masks.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-theme-accent text-xs mt-0.5"></i>
+                <span><strong>Fitting Options:</strong> 4 Private salon suites, tri-size courier box & VIP dresser.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-theme-accent text-xs mt-0.5"></i>
+                <span><strong>Tailoring & Offerings:</strong> Zero-cut pin-and-baste alterations ($45 fee 100% credited).</span>
+              </li>
             </ul>
           </div>
           <div class="pt-4 border-t border-theme flex items-center justify-between">
-            <span class="text-xs font-black text-theme-main dark:text-white">$45 (Waived with rental)</span>
+            <span class="text-xs font-black text-theme-main dark:text-white">$45 (100% Rental Credit)</span>
             <a href="fitting-studio.html" class="text-xs font-bold text-theme-accent hover:underline flex items-center gap-1">
               Explore Fitting Studio <i class="bi bi-arrow-right"></i>
             </a>
@@ -284,7 +453,7 @@
         <div class="service-card theme-card p-6 flex flex-col justify-between" data-cat="Care">
           <div>
             <div class="aspect-video rounded-2xl overflow-hidden mb-6 relative">
-              <img src="https://i.pinimg.com/736x/c0/2d/c0/c02dc0c42940ca2cefcee0bc38efdcaf.jpg" alt="Hospitality Eco-Solvent Steam Cleaning" class="w-full h-full object-cover">
+              <img src="https://i.pinimg.com/736x/1d/15/a0/1d15a0a7c7200c943b133ae8efe7b5e2.jpg" alt="Hospitality Eco-Solvent Steam Cleaning" class="w-full h-full object-cover">
               <span class="absolute top-3 left-3 badge theme-badge-gold text-[10px] font-bold px-2.5 py-0.5 rounded-full">Care & Tailoring</span>
             </div>
             <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2">Hospitality Eco-Solvent Sanitization</h3>
@@ -309,7 +478,7 @@
         <div class="service-card theme-card p-6 flex flex-col justify-between" data-cat="Themed Parties">
           <div>
             <div class="aspect-video rounded-2xl overflow-hidden mb-6 relative">
-              <img src="https://i.pinimg.com/1200x/bc/e9/3b/bce93bc2a26f1de4b2b63b6aaaf4dc5d.jpg" alt="Vintage 1920s Gatsby Flapper Party" class="w-full h-full object-cover">
+              <img src="https://i.pinimg.com/736x/c7/04/e2/c704e2f342986b56817eb52d389e10ab.jpg" alt="Vintage 1920s Gatsby Flapper Party" class="w-full h-full object-cover">
               <span class="absolute top-3 left-3 badge theme-badge-gold text-[10px] font-bold px-2.5 py-0.5 rounded-full">Themed Parties & Galas</span>
             </div>
             <h3 class="text-lg font-bold text-theme-main dark:text-white mb-2">Vintage & Themed Party Ensembles</h3>
@@ -330,6 +499,357 @@
           </div>
         </div>
 
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMPREHENSIVE RENTAL ADVANTAGE & CLIENT GUARANTEES (Differentiated from Fitting Studio) -->
+  <section class="py-20 bg-[#FDFBF9] dark:bg-[#0D0D0E] border-b border-theme" id="rental-guarantees-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-12">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 dark:bg-amber-500/20 border border-amber-500/20 text-xs font-black uppercase tracking-widest text-amber-800 dark:text-amber-200 shadow-sm">
+          <i class="bi bi-patch-check-fill text-[#B7410E] dark:text-[#E5A87B]"></i> The FancyVerse Rental Advantage
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-theme-main dark:text-white tracking-tight">
+          Comprehensive Rental Experience & Client Guarantees
+        </h2>
+        <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-300 leading-relaxed">
+          From 100% complete head-to-toe wardrobes and transparent digital escrow to hospital-grade sanitization and priority courier trunks, discover the core guarantees backing every rental.
+        </p>
+      </div>
+
+      <!-- 4 Pillars of Rental Excellence -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+        
+        <!-- Advantage 1: Complete Wardrobes -->
+        <div class="theme-card p-6 flex flex-col justify-between space-y-6 hover:border-theme-accent transition-all duration-300 hover:shadow-xl group">
+          <div class="space-y-4 flex-grow flex flex-col">
+            <div class="w-12 h-12 rounded-2xl bg-amber-500/10 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl shadow-sm group-hover:scale-110 group-hover:bg-theme-main group-hover:text-white transition-all">
+              <i class="bi bi-stars"></i>
+            </div>
+            <div>
+              <span class="text-[10px] text-theme-accent font-black uppercase tracking-wider block">Standard In Every Hire</span>
+              <h3 class="text-lg font-bold text-theme-main dark:text-white mt-0.5">All-Inclusive Outfits</h3>
+            </div>
+            <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed min-h-[36px]">
+              Every rental is delivered as a 100% complete aesthetic wardrobe — never an incomplete base costume.
+            </p>
+            <ul class="space-y-2 text-xs text-theme-muted dark:text-gray-300 pt-3 border-t border-theme flex-grow">
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-theme-accent text-xs mt-0.5"></i>
+                <span><strong>Corsetry & Stays:</strong> Internal steel boning, hoops & petticoats included.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-theme-accent text-xs mt-0.5"></i>
+                <span><strong>Theatrical Headwear:</strong> Plumed masks, styled wigs, crowns & tiaras.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-theme-accent text-xs mt-0.5"></i>
+                <span><strong>Full Prop Suites:</strong> Color-matched sashes, brocade capes & jewelry.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-theme mt-auto">
+            <a href="catalog.html" class="w-full btn-outline-theme text-xs py-2.5 rounded-xl font-bold text-center block group-hover:bg-theme-main group-hover:text-white transition">
+              Explore Complete Outfits →
+            </a>
+          </div>
+        </div>
+
+        <!-- Advantage 2: Flexible Timelines -->
+        <div class="theme-card p-6 flex flex-col justify-between space-y-6 hover:border-theme-accent transition-all duration-300 hover:shadow-xl group">
+          <div class="space-y-4 flex-grow flex flex-col">
+            <div class="w-12 h-12 rounded-2xl bg-purple-500/10 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400 flex items-center justify-center text-2xl shadow-sm group-hover:scale-110 group-hover:bg-theme-main group-hover:text-white transition-all">
+              <i class="bi bi-calendar2-range-fill"></i>
+            </div>
+            <div>
+              <span class="text-[10px] text-purple-600 dark:text-purple-400 font-black uppercase tracking-wider block">Solo to Cast Productions</span>
+              <h3 class="text-lg font-bold text-theme-main dark:text-white mt-0.5">Flexible Hire Calendars</h3>
+            </div>
+            <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed min-h-[36px]">
+              Whether hiring one costume for a gala or 50 ensembles for a theatre production, enjoy transparent schedules.
+            </p>
+            <ul class="space-y-2 text-xs text-theme-muted dark:text-gray-300 pt-3 border-t border-theme flex-grow">
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-theme-accent text-xs mt-0.5"></i>
+                <span><strong>1-Day Solo Pass:</strong> 24h rapid-dispatch hire for evening galas.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-theme-accent text-xs mt-0.5"></i>
+                <span><strong>3-Day Weekend Hire:</strong> Pickup Friday, return Monday with zero late rush.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-theme-accent text-xs mt-0.5"></i>
+                <span><strong>Troupe Volume Discounts:</strong> Up to 45% savings for 5+ cast ensembles.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-theme mt-auto">
+            <a href="#rentalProcess" class="w-full btn-outline-theme text-xs py-2.5 rounded-xl font-bold text-center block group-hover:bg-theme-main group-hover:text-white transition">
+              Review Rental Durations →
+            </a>
+          </div>
+        </div>
+
+        <!-- Advantage 3: Hospital-Grade Sanitization -->
+        <div class="theme-card p-6 flex flex-col justify-between space-y-6 hover:border-theme-accent transition-all duration-300 hover:shadow-xl group">
+          <div class="space-y-4 flex-grow flex flex-col">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl shadow-sm group-hover:scale-110 group-hover:bg-theme-main group-hover:text-white transition-all">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <div>
+              <span class="text-[10px] text-emerald-600 dark:text-emerald-400 font-black uppercase tracking-wider block">100% Odor & Allergen Free</span>
+              <h3 class="text-lg font-bold text-theme-main dark:text-white mt-0.5">Dual Ozone & UV-C Care</h3>
+            </div>
+            <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed min-h-[36px]">
+              Textiles arrive museum-grade clean, allergy-safe, and freshly steamed with free post-event cleaning.
+            </p>
+            <ul class="space-y-2 text-xs text-theme-muted dark:text-gray-300 pt-3 border-t border-theme flex-grow">
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-theme-accent text-xs mt-0.5"></i>
+                <span><strong>Ozone Sterilization:</strong> Destroys 99.9% of bacteria without harsh solvents.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-theme-accent text-xs mt-0.5"></i>
+                <span><strong>Calibrated UV-C Sweep:</strong> Deep fiber sanitization safe on antique silks.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-theme-accent text-xs mt-0.5"></i>
+                <span><strong>Zero-Clean Return:</strong> Never wash before returning — we handle 100% of care.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-theme mt-auto">
+            <a href="service-details.html?service=sanitization" class="w-full btn-outline-theme text-xs py-2.5 rounded-xl font-bold text-center block group-hover:bg-theme-main group-hover:text-white transition">
+              View Hygiene Standards →
+            </a>
+          </div>
+        </div>
+
+        <!-- Advantage 4: Courier Dispatch & Escrow -->
+        <div class="theme-card p-6 flex flex-col justify-between space-y-6 hover:border-theme-accent transition-all duration-300 hover:shadow-xl group">
+          <div class="space-y-4 flex-grow flex flex-col">
+            <div class="w-12 h-12 rounded-2xl bg-blue-500/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 flex items-center justify-center text-2xl shadow-sm group-hover:scale-110 group-hover:bg-theme-main group-hover:text-white transition-all">
+              <i class="bi bi-truck"></i>
+            </div>
+            <div>
+              <span class="text-[10px] text-blue-600 dark:text-blue-400 font-black uppercase tracking-wider block">Protected Digital Escrow</span>
+              <h3 class="text-lg font-bold text-theme-main dark:text-white mt-0.5">Courier Trunks & Refunds</h3>
+            </div>
+            <p class="text-xs text-theme-muted dark:text-gray-400 leading-relaxed min-h-[36px]">
+              Seamless courier delivery in reinforced travel trunks, backed by automated 24-hour deposit refunds.
+            </p>
+            <ul class="space-y-2 text-xs text-theme-muted dark:text-gray-300 pt-3 border-t border-theme flex-grow">
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-theme-accent text-xs mt-0.5"></i>
+                <span><strong>Travel Trunks:</strong> Cedar-lined flight trunks with padded garment hangers.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-theme-accent text-xs mt-0.5"></i>
+                <span><strong>Emergency Sizing Kit:</strong> Invisible clips, spare laces & hem tape included.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-theme-accent text-xs mt-0.5"></i>
+                <span><strong>Instant 24h Refund:</strong> Digital escrow release processed upon return scan.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-theme mt-auto">
+            <a href="pricing.html" class="w-full btn-outline-theme text-xs py-2.5 rounded-xl font-bold text-center block group-hover:bg-theme-main group-hover:text-white transition">
+              Review Escrow Terms →
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Dedicated Central Action Button -->
+      <div class="mt-8 text-center flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="catalog.html" class="btn-primary-theme inline-flex items-center gap-2 text-xs py-3.5 px-8 rounded-xl font-bold shadow-md hover:shadow-xl transition-all">
+          <span>Explore Costume Archive & Reserve</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+        <a href="fitting-studio.html" class="btn-outline-theme inline-flex items-center gap-2 text-xs py-3.5 px-8 rounded-xl font-bold hover:bg-theme-main hover:text-white transition-all">
+          <i class="bi bi-scissors"></i>
+          <span>Prefer In-Person Fitting? Visit Studio</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ADDITIONAL INFORMATION: THE RENTAL PROCESS & OFFERINGS -->
+  <section class="py-20 bg-white dark:bg-[#121215]" id="rentalProcess">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-theme-accent font-black tracking-[0.25em] text-xs uppercase block">Step-By-Step Guidance & Offerings</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-theme-main dark:text-white">
+          The FancyVerse Rental Process & Offerings
+        </h2>
+        <p class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+          Everything you need to know about reserving, custom tailoring, wearing, and returning your luxury ensemble with complete escrow transparency.
+        </p>
+      </div>
+
+      <!-- 4 Step Process -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        
+        <div class="theme-card p-6 space-y-3 text-center flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl font-black mx-auto mb-3 shadow-sm">
+              01
+            </div>
+            <h4 class="font-bold text-base text-gray-900 dark:text-white mb-1">Select & Reserve</h4>
+            <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed">
+              Pick your outfit online or in our showroom. Select 1-Day, 3-Day Weekend, or Weekly hire with upfront pricing and transparent escrow deposit hold.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-theme text-[10px] text-theme-accent font-bold">100% Upfront Pricing</div>
+        </div>
+
+        <div class="theme-card p-6 space-y-3 text-center flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl font-black mx-auto mb-3 shadow-sm">
+              02
+            </div>
+            <h4 class="font-bold text-base text-gray-900 dark:text-white mb-1">Bespoke Fit & Styling</h4>
+            <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed">
+              Schedule a 60-min private Manhattan fitting suite session or receive your pre-steamed ensemble with our emergency fit kit (clips, laces & hem tape).
+            </p>
+          </div>
+          <div class="pt-3 border-t border-theme text-[10px] text-purple-600 dark:text-purple-400 font-bold">Zero-Cut Tailoring</div>
+        </div>
+
+        <div class="theme-card p-6 space-y-3 text-center flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl font-black mx-auto mb-3 shadow-sm">
+              03
+            </div>
+            <h4 class="font-bold text-base text-gray-900 dark:text-white mb-1">Wear & Celebrate</h4>
+            <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed">
+              Step into the spotlight at your gala, wedding, film shoot, or school pageant with 100% fit confidence, crease-free steaming, and complete props.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-theme text-[10px] text-emerald-600 dark:text-emerald-400 font-bold">Complete Accessories</div>
+        </div>
+
+        <div class="theme-card p-6 space-y-3 text-center flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl font-black mx-auto mb-3 shadow-sm">
+              04
+            </div>
+            <h4 class="font-bold text-base text-gray-900 dark:text-white mb-1">Zero-Clean Return</h4>
+            <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed">
+              Drop the outfit in our prepaid courier return box. No washing required — we handle 100% of eco-sanitization and release your deposit in 24 hours.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-theme text-[10px] text-blue-600 dark:text-blue-400 font-bold">Automated 24h Escrow Release</div>
+        </div>
+
+      </div>
+
+      <!-- Additional Information: Offerings & Policy Details -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        
+        <!-- Pillar A: Durations & Offerings -->
+        <div class="theme-card p-6 rounded-2xl flex flex-col justify-between border border-theme shadow-sm hover:shadow-xl transition-all duration-300">
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center text-lg flex-shrink-0 shadow-xs">
+                <i class="bi bi-clock-history"></i>
+              </div>
+              <div>
+                <span class="text-[10px] text-theme-accent font-bold uppercase tracking-wider block">Flexible Hire Periods</span>
+                <h4 class="text-base text-gray-900 dark:text-white font-extrabold">Rental Durations & Offerings</h4>
+              </div>
+            </div>
+            <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed min-h-[2.5rem]">
+              Choose the rental period that fits your event schedule without hidden late penalties:
+            </p>
+            <ul class="space-y-2.5 text-xs text-gray-700 dark:text-gray-300 pt-3 border-t border-theme">
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-amber-600 dark:text-amber-400 text-xs mt-0.5"></i>
+                <span><strong>1-Day Solo Pass:</strong> 24-hour hire ideal for single evening galas & corporate bashes.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-amber-600 dark:text-amber-400 text-xs mt-0.5"></i>
+                <span><strong>3-Day Weekend Pass:</strong> Pick up Friday afternoon and return Monday morning.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-amber-600 dark:text-amber-400 text-xs mt-0.5"></i>
+                <span><strong>7-Day Troupe Run:</strong> Week-long billing with full technical rehearsal & show backup.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pillar B: Escrow Policy -->
+        <div class="theme-card p-6 rounded-2xl flex flex-col justify-between border border-theme shadow-sm hover:shadow-xl transition-all duration-300">
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg flex-shrink-0 shadow-xs">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <div>
+                <span class="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wider block">Financial Safety</span>
+                <h4 class="text-base text-gray-900 dark:text-white font-extrabold">Escrow & Refund Security</h4>
+              </div>
+            </div>
+            <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed min-h-[2.5rem]">
+              Your security deposit is held in a protected digital escrow account:
+            </p>
+            <ul class="space-y-2.5 text-xs text-gray-700 dark:text-gray-300 pt-3 border-t border-theme">
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-emerald-600 text-xs mt-0.5"></i>
+                <span><strong>Transparent Holds:</strong> Low fixed deposit ($45-$50 Kids, $90-$110 Party, $120-$200 Armor).</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-emerald-600 text-xs mt-0.5"></i>
+                <span><strong>No Wear Penalties:</strong> Minor fraying or loose buttons are 100% covered by us.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-emerald-600 text-xs mt-0.5"></i>
+                <span><strong>24h Digital Release:</strong> Automated deposit refund processed the moment the return box checks in.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pillar C: Sanitization & Emergency Kit -->
+        <div class="theme-card p-6 rounded-2xl flex flex-col justify-between border border-theme shadow-sm hover:shadow-xl transition-all duration-300">
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-lg flex-shrink-0 shadow-xs">
+                <i class="bi bi-sparkles"></i>
+              </div>
+              <div>
+                <span class="text-[10px] text-blue-600 dark:text-blue-400 font-bold uppercase tracking-wider block">Couture Hygiene</span>
+                <h4 class="text-base text-gray-900 dark:text-white font-extrabold">Sanitization & Adaptation Kit</h4>
+              </div>
+            </div>
+            <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed min-h-[2.5rem]">
+              Every costume arrives fresh, sanitized, and equipped with our emergency kit:
+            </p>
+            <ul class="space-y-2.5 text-xs text-gray-700 dark:text-gray-300 pt-3 border-t border-theme">
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-blue-600 dark:text-blue-400 text-xs mt-0.5"></i>
+                <span><strong>Medical Ozone Sterilization:</strong> Destroys 99.9% of bacteria, allergens & odors.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-blue-600 dark:text-blue-400 text-xs mt-0.5"></i>
+                <span><strong>Free Emergency Kit:</strong> Discrete fashion clips, spare ribbons, adhesive & hem tape.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-blue-600 dark:text-blue-400 text-xs mt-0.5"></i>
+                <span><strong>Prepaid Return Box:</strong> Pre-labeled courier shipping box included with every order.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -389,7 +909,28 @@
           card.style.display = 'none';
         }
       });
+
+      // Update active category guide cards
+      document.querySelectorAll('.cat-guide-card').forEach(guide => {
+        const guideCat = guide.getAttribute('data-guide-cat');
+        if (cat === guideCat) {
+          guide.classList.add('border-[#B7410E]', 'dark:border-[#E5A87B]', 'bg-theme-subtle', 'dark:bg-[#1E1E24]');
+        } else {
+          guide.classList.remove('border-[#B7410E]', 'dark:border-[#E5A87B]', 'bg-theme-subtle', 'dark:bg-[#1E1E24]');
+        }
+      });
     }
+
+    window.filterByCategory = function(cat) {
+      if (categorySelect) {
+        categorySelect.value = cat;
+        filterServices();
+        const servicesSection = document.getElementById('servicesList');
+        if (servicesSection) {
+          servicesSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    };
 
     searchInput.addEventListener('input', filterServices);
     categorySelect.addEventListener('change', filterServices);

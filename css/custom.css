@@ -17,7 +17,7 @@
   --color-bg-subtle: #F4EFEB;
   --color-border: #EADBCE;
   --color-text-main: #18181B;
-  --color-text-muted: #64748B;
+  --color-text-muted: #18181B;
   --color-gold: #C5A059;
   --color-gold-light: #F2E4C4;
 
@@ -81,7 +81,8 @@
 }
 
 /* Dark Theme System Overrides */
-[data-theme="dark"] {
+[data-theme="dark"],
+.dark {
   --color-bg-light: #0B0B0E;
   --color-bg-card: #131317;
   --color-bg-subtle: #1C1C22;
@@ -423,6 +424,393 @@ h6.text-white {
 .border-theme { border-color: var(--color-border) !important; }
 .border-theme-accent { border-color: var(--color-accent) !important; }
 
+/* ==========================================================================
+   Bright Mode High-Contrast Enhancement & Button/Badge Visibility:
+   Ensure all secondary, muted, badges, and button texts render with crisp,
+   uncompromising contrast in bright (light) mode across all pages.
+   ========================================================================== */
+
+/* 1. Muted & Secondary Text in Bright Mode (Excluding dark footer and dark hero banners) */
+html:not(.dark):not([data-theme="dark"]) .text-theme-muted:not(footer *):not(#footer *):not([class*="bg-[#0D051A]"] *):not([class*="bg-[#0B0B0F]"] *),
+html:not(.dark):not([data-theme="dark"]) .text-gray-400:not(footer *):not(#footer *):not([class*="bg-[#0D051A]"] *):not([class*="bg-[#0B0B0F]"] *):not(.btn-primary-theme):not(.btn-primary-theme *):not(.bg-theme-main *):not(a.bg-white):not(a.bg-white *):not(button.bg-white):not(button.bg-white *),
+html:not(.dark):not([data-theme="dark"]) .text-gray-500:not(footer *):not(#footer *):not([class*="bg-[#0D051A]"] *):not([class*="bg-[#0B0B0F]"] *):not(.btn-primary-theme):not(.btn-primary-theme *):not(.bg-theme-main *):not(a.bg-white):not(a.bg-white *):not(button.bg-white):not(button.bg-white *),
+html:not(.dark):not([data-theme="dark"]) .text-gray-600:not(footer *):not(#footer *):not([class*="bg-[#0D051A]"] *):not([class*="bg-[#0B0B0F]"] *):not(.btn-primary-theme):not(.btn-primary-theme *):not(.bg-theme-main *):not(a.bg-white):not(a.bg-white *):not(button.bg-white):not(button.bg-white *),
+html:not(.dark):not([data-theme="dark"]) .text-zinc-400:not(footer *):not(#footer *):not([class*="bg-[#0D051A]"] *):not([class*="bg-[#0B0B0F]"] *):not(.btn-primary-theme):not(.btn-primary-theme *):not(.bg-theme-main *):not(a.bg-white):not(a.bg-white *):not(button.bg-white):not(button.bg-white *),
+html:not(.dark):not([data-theme="dark"]) .text-zinc-500:not(footer *):not(#footer *):not([class*="bg-[#0D051A]"] *):not([class*="bg-[#0B0B0F]"] *):not(.btn-primary-theme):not(.btn-primary-theme *):not(.bg-theme-main *):not(a.bg-white):not(a.bg-white *):not(button.bg-white):not(button.bg-white *),
+html:not(.dark):not([data-theme="dark"]) .text-slate-400:not(footer *):not(#footer *):not([class*="bg-[#0D051A]"] *):not([class*="bg-[#0B0B0F]"] *):not(.btn-primary-theme):not(.btn-primary-theme *):not(.bg-theme-main *):not(a.bg-white):not(a.bg-white *):not(button.bg-white):not(button.bg-white *),
+html:not(.dark):not([data-theme="dark"]) .text-slate-500:not(footer *):not(#footer *):not([class*="bg-[#0D051A]"] *):not([class*="bg-[#0B0B0F]"] *):not(.btn-primary-theme):not(.btn-primary-theme *):not(.bg-theme-main *):not(a.bg-white):not(a.bg-white *):not(button.bg-white):not(button.bg-white *) {
+  color: #18181B !important;
+}
+
+/* Ensure placeholder texts in inputs remain visible yet distinguished */
+html:not(.dark):not([data-theme="dark"]) input::placeholder,
+html:not(.dark):not([data-theme="dark"]) textarea::placeholder {
+  color: #52525B !important;
+}
+
+/* 2. Gold Badges: Rich dark amber contrast in bright mode, radiant gold in dark mode */
+html:not(.dark):not([data-theme="dark"]) .theme-badge-gold,
+html:not(.dark):not([data-theme="dark"]) .theme-badge-gold *,
+html:not(.dark):not([data-theme="dark"]) .badge.theme-badge-gold,
+html:not(.dark):not([data-theme="dark"]) .badge.theme-badge-gold * {
+  background: linear-gradient(135deg, #FDF8ED 0%, #F5E8C8 100%) !important;
+  color: #78350F !important;
+  border: 1px solid #DFCB97 !important;
+  font-weight: 800 !important;
+}
+
+[data-theme="dark"] .theme-badge-gold,
+.dark .theme-badge-gold,
+[data-theme="dark"] .theme-badge-gold *,
+.dark .theme-badge-gold *,
+[data-theme="dark"] .badge.theme-badge-gold,
+.dark .badge.theme-badge-gold,
+[data-theme="dark"] .badge.theme-badge-gold *,
+.dark .badge.theme-badge-gold * {
+  background: linear-gradient(135deg, #2B1E0A 0%, #3D2B0E 100%) !important;
+  color: #E8CA7A !important;
+  border: 1px solid #634718 !important;
+}
+
+/* 3. Wishlist Heart Buttons */
+html:not(.dark):not([data-theme="dark"]) button[onclick*="toggleWishlist"],
+html:not(.dark):not([data-theme="dark"]) button[onclick*="Wishlist"] {
+  background-color: #FFFFFF !important;
+  color: #18181B !important;
+  border-color: #E4E4E7 !important;
+}
+
+html:not(.dark):not([data-theme="dark"]) button[onclick*="toggleWishlist"] i:not(.text-red-500),
+html:not(.dark):not([data-theme="dark"]) button[onclick*="Wishlist"] i:not(.text-red-500) {
+  color: #18181B !important;
+}
+
+button[onclick*="toggleWishlist"] i.text-red-500,
+button[onclick*="toggleWishlist"] .text-red-500,
+button[onclick*="Wishlist"] i.text-red-500,
+button[onclick*="Wishlist"] .text-red-500 {
+  color: #EF4444 !important;
+}
+
+[data-theme="dark"] button[onclick*="toggleWishlist"],
+.dark button[onclick*="toggleWishlist"] {
+  background-color: #1E1E24 !important;
+  color: #FFFFFF !important;
+  border-color: #2D2D38 !important;
+}
+
+[data-theme="dark"] button[onclick*="toggleWishlist"] i:not(.text-red-500),
+.dark button[onclick*="toggleWishlist"] i:not(.text-red-500) {
+  color: #FFFFFF !important;
+}
+
+/* 4. White / Light Buttons & Pills (MUST ALWAYS have dark text in all contexts) */
+html:not(.dark):not([data-theme="dark"]) a.bg-white,
+html:not(.dark):not([data-theme="dark"]) a.bg-white *,
+html:not(.dark):not([data-theme="dark"]) button.bg-white,
+html:not(.dark):not([data-theme="dark"]) button.bg-white *,
+html:not(.dark):not([data-theme="dark"]) .btn-white,
+html:not(.dark):not([data-theme="dark"]) .btn-white * {
+  color: #18181B !important;
+}
+
+a.bg-white:hover,
+button.bg-white:hover,
+a.bg-white:hover *,
+button.bg-white:hover * {
+  color: #18181B !important;
+}
+
+/* 5. Primary Theme Buttons (Always crisp white text and white icons, in normal & hover states) */
+.btn-primary-theme,
+.btn-primary-theme *,
+a.btn-primary-theme,
+a.btn-primary-theme *,
+button.btn-primary-theme,
+button.btn-primary-theme * {
+  color: #FFFFFF !important;
+}
+
+.btn-primary-theme:hover,
+.btn-primary-theme:hover *,
+a.btn-primary-theme:hover,
+a.btn-primary-theme:hover *,
+button.btn-primary-theme:hover,
+button.btn-primary-theme:hover * {
+  color: #FFFFFF !important;
+  background-color: var(--color-secondary, #C84E18) !important;
+}
+
+/* 6. Outline Theme Buttons: Default, Direct Hover & Card/Group Hover States */
+html:not(.dark):not([data-theme="dark"]) .btn-outline-theme:not(:hover):not(.group:hover .btn-outline-theme):not(.theme-card:hover .btn-outline-theme),
+html:not(.dark):not([data-theme="dark"]) .btn-outline-theme:not(:hover):not(.group:hover .btn-outline-theme):not(.theme-card:hover .btn-outline-theme) * {
+  color: var(--color-primary, #B7410E) !important;
+  border-color: var(--color-border, #EADBCE) !important;
+}
+
+/* Whenever .btn-outline-theme is hovered, OR when its parent card/group is hovered */
+.btn-outline-theme:hover,
+.btn-outline-theme:hover *,
+a.btn-outline-theme:hover,
+a.btn-outline-theme:hover *,
+button.btn-outline-theme:hover,
+button.btn-outline-theme:hover *,
+.group:hover .btn-outline-theme,
+.group:hover .btn-outline-theme *,
+.theme-card:hover .btn-outline-theme,
+.theme-card:hover .btn-outline-theme *,
+.group:hover [class*="group-hover:bg-theme-main"],
+.group:hover [class*="group-hover:bg-theme-main"] *,
+.group:hover [class*="group-hover:bg-theme"]:not([class*="group-hover:text-"]),
+.group:hover [class*="group-hover:bg-theme"]:not([class*="group-hover:text-"]) *,
+[class*="hover:bg-theme-main"]:hover,
+[class*="hover:bg-theme-main"]:hover *,
+[class*="hover:bg-[#B7410E]"]:hover,
+[class*="hover:bg-[#B7410E]"]:hover * {
+  background-color: var(--color-primary, #B7410E) !important;
+  border-color: var(--color-primary, #B7410E) !important;
+  color: #FFFFFF !important;
+}
+
+.group:hover [class*="group-hover:text-white"]:not([class*="group-hover:bg-"]),
+.group:hover [class*="group-hover:text-white"]:not([class*="group-hover:bg-"]) * {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .btn-outline-theme:hover,
+.dark .btn-outline-theme:hover,
+[data-theme="dark"] .btn-outline-theme:hover *,
+.dark .btn-outline-theme:hover *,
+[data-theme="dark"] .group:hover .btn-outline-theme,
+.dark .group:hover .btn-outline-theme,
+[data-theme="dark"] .group:hover .btn-outline-theme *,
+.dark .group:hover .btn-outline-theme *,
+[data-theme="dark"] .theme-card:hover .btn-outline-theme,
+.dark .theme-card:hover .btn-outline-theme,
+[data-theme="dark"] .theme-card:hover .btn-outline-theme *,
+.dark .theme-card:hover .btn-outline-theme * {
+  background-color: var(--color-primary, #B7410E) !important;
+  border-color: var(--color-primary, #B7410E) !important;
+  color: #FFFFFF !important;
+}
+
+/* 6b. Outline buttons on dark or theme banners when hovered turn bright white with dark text */
+.bg-theme-main .btn-outline-theme:hover,
+.bg-theme-main .btn-outline-theme:hover *,
+[class*="bg-[#7E513B]"] .btn-outline-theme:hover,
+[class*="bg-[#7E513B]"] .btn-outline-theme:hover *,
+.btn-outline-theme.border-white:hover,
+.btn-outline-theme.border-white:hover *,
+.btn-outline-theme[class*="border-white"]:hover,
+.btn-outline-theme[class*="border-white"]:hover * {
+  background-color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+  color: #111827 !important;
+}
+
+/* 7. Quick View Hover Overlay Button on Cards */
+button[onclick*="openQuickView"],
+button[onclick*="openQuickView"] * {
+  color: #FFFFFF !important;
+}
+
+/* 8. Explicit dark price tags on image cards (e.g. "From $32/day") */
+span[class*="bg-black/"],
+span[class*="bg-black/"] * {
+  color: #FFFFFF !important;
+}
+
+/* 9. Interactive Category, Size & Filter Pills in Bright Mode */
+.cat-pill.bg-theme-main,
+.cat-pill.bg-theme-main *,
+.size-pill.bg-theme-main,
+.size-pill.bg-theme-main *,
+.filter-pill.bg-theme-main,
+.filter-pill.bg-theme-main *,
+.tab-btn.bg-theme-main,
+.tab-btn.bg-theme-main *,
+.tab-btn.active,
+.tab-btn.active *,
+.size-card-btn.bg-theme-main,
+.size-card-btn.bg-theme-main * {
+  color: #FFFFFF !important;
+}
+
+html:not(.dark):not([data-theme="dark"]) .cat-pill:not(.bg-theme-main),
+html:not(.dark):not([data-theme="dark"]) .cat-pill:not(.bg-theme-main) *,
+html:not(.dark):not([data-theme="dark"]) .size-pill:not(.bg-theme-main),
+html:not(.dark):not([data-theme="dark"]) .size-pill:not(.bg-theme-main) *,
+html:not(.dark):not([data-theme="dark"]) .filter-pill:not(.bg-theme-main),
+html:not(.dark):not([data-theme="dark"]) .filter-pill:not(.bg-theme-main) *,
+html:not(.dark):not([data-theme="dark"]) .size-card-btn:not(.bg-theme-main),
+html:not(.dark):not([data-theme="dark"]) .size-card-btn:not(.bg-theme-main) * {
+  color: #18181B !important;
+}
+
+/* 10. Explicit white text on dark cards and banners (Never block dark text on white hover) */
+.text-white:not(:hover):not([class*="hover:bg-white"]):not([class*="hover:text-zinc"]):not([class*="hover:text-black"]),
+a.text-white:not(:hover),
+a.text-white:not(:hover) *,
+button.text-white:not(:hover),
+button.text-white:not(:hover) *,
+h1.text-white,
+h2.text-white,
+h3.text-white,
+h4.text-white,
+p.text-white,
+span.text-white,
+[style*="#7E513B"] h1, [style*="#7E513B"] h2, [style*="#7E513B"] h3, [style*="#7E513B"] p,
+[class*="bg-[#7E513B]"] h1, [class*="bg-[#7E513B]"] h2, [class*="bg-[#7E513B]"] h3, [class*="bg-[#7E513B]"] p {
+  color: #FFFFFF !important;
+}
+
+/* Buttons and elements that turn white on hover MUST always have sharp dark charcoal text */
+[class*="hover:bg-white"]:hover,
+[class*="hover:bg-white"]:hover *,
+a[class*="hover:bg-white"]:hover,
+a[class*="hover:bg-white"]:hover *,
+button[class*="hover:bg-white"]:hover,
+button[class*="hover:bg-white"]:hover *,
+a.text-white:hover[class*="hover:bg-white"],
+a.text-white:hover[class*="hover:bg-white"] *,
+button.text-white:hover[class*="hover:bg-white"],
+button.text-white:hover[class*="hover:bg-white"] *,
+.group:hover [class*="group-hover:bg-white"],
+.group:hover [class*="group-hover:bg-white"] *,
+[class*="hover:text-zinc-950"]:hover,
+[class*="hover:text-zinc-950"]:hover *,
+[class*="hover:text-zinc-900"]:hover,
+[class*="hover:text-zinc-900"]:hover *,
+[class*="hover:text-black"]:hover,
+[class*="hover:text-black"]:hover * {
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+}
+
+/* 11. Home 2 Studio Hero Section Contrast & High Visibility */
+[class*="bg-[#0D051A]"] a.text-white:not(:hover),
+[class*="bg-[#0D051A]"] a.text-white:not(:hover) *,
+[class*="bg-[#0D051A]"] .text-white:not(:hover):not([class*="hover:bg-white"]),
+[class*="bg-[#0D051A]"] .text-white:not(:hover):not([class*="hover:bg-white"]) * {
+  color: #FFFFFF !important;
+}
+
+[class*="bg-[#0D051A]"] a.text-white:hover,
+[class*="bg-[#0D051A]"] a.text-white:hover *,
+[class*="bg-[#0D051A]"] a[class*="hover:bg-white"]:hover,
+[class*="bg-[#0D051A]"] a[class*="hover:bg-white"]:hover *,
+[class*="bg-[#0D051A]"] a.bg-white,
+[class*="bg-[#0D051A]"] a.bg-white * {
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+}
+
+[class*="bg-[#0D051A]"] .text-amber-200,
+[class*="bg-[#0D051A]"] .text-amber-300,
+[class*="bg-[#0D051A]"] .text-amber-400 {
+  color: #FCD34D !important;
+}
+
+/* ==========================================================================
+   Comprehensive Footer Contrast & Legibility (Bright & Dark Mode)
+   Footer is permanently an obsidian dark luxury section (#0B0B0F).
+   All text, links, and icons inside footer MUST ALWAYS be bright & legible.
+   ========================================================================== */
+footer,
+#footer footer {
+  background-color: #0B0B0F !important;
+  color: #FFFFFF !important;
+}
+
+footer h4,
+footer h5,
+#footer footer h4,
+#footer footer h5 {
+  color: #FFFFFF !important;
+}
+
+footer .text-zinc-400,
+#footer footer .text-zinc-400,
+footer .text-zinc-500,
+#footer footer .text-zinc-500,
+footer .text-zinc-300,
+#footer footer .text-zinc-300 {
+  color: #D4D4D8 !important; /* Crisp silver-gray, 100% visible on dark */
+}
+
+footer p,
+#footer footer p {
+  color: #E4E4E7 !important;
+}
+
+footer a:not(.btn-primary-theme),
+#footer footer a:not(.btn-primary-theme) {
+  color: #D4D4D8 !important;
+}
+
+footer a:not(.btn-primary-theme):hover,
+#footer footer a:not(.btn-primary-theme):hover {
+  color: #FFFFFF !important;
+}
+
+footer ul li a,
+#footer footer ul li a {
+  color: #D4D4D8 !important;
+}
+
+footer ul li a:hover,
+#footer footer ul li a:hover {
+  color: #FFFFFF !important;
+}
+
+footer a.text-amber-400,
+#footer footer a.text-amber-400 {
+  color: #FBBF24 !important;
+}
+
+/* Pre-footer assurance card text */
+footer .bg-zinc-900\/60 h5,
+#footer footer .bg-zinc-900\/60 h5 {
+  color: #FFFFFF !important;
+}
+
+footer .bg-zinc-900\/60 p,
+#footer footer .bg-zinc-900\/60 p {
+  color: #D4D4D8 !important;
+}
+
+/* Social icons in footer */
+footer a[aria-label],
+#footer footer a[aria-label] {
+  color: #E4E4E7 !important;
+  background-color: #18181B !important;
+  border-color: #27272A !important;
+}
+
+footer a[aria-label] i,
+#footer footer a[aria-label] i {
+  color: #E4E4E7 !important;
+}
+
+footer a[aria-label]:hover,
+#footer footer a[aria-label]:hover {
+  color: #FFFFFF !important;
+  border-color: #F59E0B !important;
+  background-color: #27272A !important;
+}
+
+footer a[aria-label]:hover i,
+#footer footer a[aria-label]:hover i {
+  color: #F59E0B !important;
+}
+
+/* Bottom copyright & meta line */
+footer .text-zinc-500,
+#footer footer .text-zinc-500 {
+  color: #A1A1AA !important;
+}
+
+
 /* Dark Theme Background & Footer Overrides - Gray Background in Dark Mode */
 [data-theme="dark"] .bg-theme-main,
 .dark .bg-theme-main {
@@ -463,6 +851,10 @@ h6.text-white {
 /* Any button, link or badge with a white background must ALWAYS have dark, high-contrast text in all themes */
 a.bg-white,
 button.bg-white,
+a.bg-white *,
+button.bg-white *,
+.btn-white,
+.btn-white *,
 .bg-white.text-theme-main,
 .bg-white.text-\[\#7E513B\],
 .bg-white.text-\[\#271E1A\],
@@ -470,6 +862,10 @@ button.bg-white,
 .dark a.bg-white,
 [data-theme="dark"] button.bg-white,
 .dark button.bg-white,
+[data-theme="dark"] a.bg-white *,
+.dark a.bg-white *,
+[data-theme="dark"] button.bg-white *,
+.dark button.bg-white *,
 [data-theme="dark"] .bg-white.text-theme-main,
 .dark .bg-white.text-theme-main,
 [data-theme="dark"] .bg-white.text-\[\#7E513B\],
@@ -488,28 +884,22 @@ button.bg-white,
 /* Hover state for white callout buttons */
 a.bg-white:hover,
 button.bg-white:hover,
+a.bg-white:hover *,
+button.bg-white:hover *,
 [data-theme="dark"] a.bg-white:hover,
 .dark a.bg-white:hover,
 [data-theme="dark"] button.bg-white:hover,
 .dark button.bg-white:hover,
+[data-theme="dark"] a.bg-white:hover *,
+.dark a.bg-white:hover *,
+[data-theme="dark"] button.bg-white:hover *,
+.dark button.bg-white:hover *,
 [data-theme="dark"] .bg-theme-main a.bg-white:hover,
 .dark .bg-theme-main a.bg-white:hover,
 [data-theme="dark"] .bg-theme-main button.bg-white:hover,
 .dark .bg-theme-main button.bg-white:hover {
   background-color: #F4EFEB !important;
-  color: var(--color-primary) !important;
-}
-
-[data-theme="dark"] a.bg-white:hover,
-.dark a.bg-white:hover,
-[data-theme="dark"] button.bg-white:hover,
-.dark button.bg-white:hover,
-[data-theme="dark"] .bg-theme-main a.bg-white:hover,
-.dark .bg-theme-main a.bg-white:hover,
-[data-theme="dark"] .bg-theme-main button.bg-white:hover,
-.dark .bg-theme-main button.bg-white:hover {
-  background-color: #F3F4F6 !important;
-  color: #000000 !important;
+  color: #111827 !important;
 }
 
 /* Responsive Container */
@@ -1013,7 +1403,7 @@ button.bg-white:hover,
    Comprehensive RTL & LTR Direction, Header Nav, Content, & Footer Rules
    ========================================================================== */
 
-/* LTR Baseline (Default) */
+/* LTR Baseline (Default & Toggled) */
 html,
 html[dir="ltr"],
 html:not([dir="rtl"]),
@@ -1029,35 +1419,28 @@ html:not([dir="rtl"]) body {
   text-align: left;
 }
 
-/* LTR Form Controls & Tables */
-[dir="ltr"] input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
-[dir="ltr"] select,
-[dir="ltr"] textarea,
-html:not([dir="rtl"]) input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
-html:not([dir="rtl"]) select,
-html:not([dir="rtl"]) textarea {
-  direction: ltr !important;
-  text-align: left;
-}
-
-[dir="ltr"] table,
-html:not([dir="rtl"]) table {
-  direction: ltr !important;
-  text-align: left;
-}
-
-[dir="ltr"] table th,
-[dir="ltr"] table td:not(.text-center):not(.text-right),
-html:not([dir="rtl"]) table th,
-html:not([dir="rtl"]) table td:not(.text-center):not(.text-right) {
-  text-align: left;
-}
-
 /* LTR Header Navigation */
+[dir="ltr"] header,
+[dir="ltr"] #mainNavbar,
+html:not([dir="rtl"]) header,
+html:not([dir="rtl"]) #mainNavbar {
+  direction: ltr !important;
+  text-align: left;
+}
+
 [dir="ltr"] .nav-dropdown-menu,
 html:not([dir="rtl"]) .nav-dropdown-menu {
   left: 0 !important;
   right: auto !important;
+  text-align: left !important;
+}
+
+[dir="ltr"] .nav-dropdown-menu ul,
+[dir="ltr"] .nav-dropdown-menu li,
+[dir="ltr"] .nav-dropdown-menu a,
+html:not([dir="rtl"]) .nav-dropdown-menu ul,
+html:not([dir="rtl"]) .nav-dropdown-menu li,
+html:not([dir="rtl"]) .nav-dropdown-menu a {
   text-align: left !important;
 }
 
@@ -1068,20 +1451,106 @@ html:not([dir="rtl"]) #mobileDrawer {
   text-align: left !important;
 }
 
-/* LTR Content & Footer */
+[dir="ltr"] #mobileDrawer.translate-x-full,
+html:not([dir="rtl"]) #mobileDrawer.translate-x-full {
+  transform: translateX(100%) !important;
+}
+
+[dir="ltr"] #mobileDrawer:not(.translate-x-full),
+html:not([dir="rtl"]) #mobileDrawer:not(.translate-x-full) {
+  transform: translateX(0) !important;
+}
+
+[dir="ltr"] #mobileDrawer .pl-4,
+html:not([dir="rtl"]) #mobileDrawer .pl-4 {
+  padding-left: 1rem !important;
+  padding-right: 0 !important;
+}
+
+/* LTR Content Sections */
+[dir="ltr"] main,
+[dir="ltr"] section,
+[dir="ltr"] article,
+[dir="ltr"] .theme-card,
+html:not([dir="rtl"]) main,
+html:not([dir="rtl"]) section,
+html:not([dir="rtl"]) article,
+html:not([dir="rtl"]) .theme-card {
+  direction: ltr;
+  text-align: left;
+}
+
+/* LTR Form Controls */
+html[dir="ltr"] input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+html[dir="ltr"] select,
+html[dir="ltr"] textarea,
+[dir="ltr"] input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+[dir="ltr"] select,
+[dir="ltr"] textarea,
+html:not([dir="rtl"]) input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+html:not([dir="rtl"]) select,
+html:not([dir="rtl"]) textarea {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* LTR Tables */
+html[dir="ltr"] table,
+[dir="ltr"] table,
+html:not([dir="rtl"]) table {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+[dir="ltr"] table th,
+[dir="ltr"] table td:not(.text-center):not(.text-right),
+html:not([dir="rtl"]) table th,
+html:not([dir="rtl"]) table td:not(.text-center):not(.text-right) {
+  text-align: left !important;
+}
+
+/* LTR Footer */
 [dir="ltr"] footer,
+html:not([dir="rtl"]) footer {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
 [dir="ltr"] footer h4,
 [dir="ltr"] footer h5,
 [dir="ltr"] footer p,
 [dir="ltr"] footer ul,
 [dir="ltr"] footer li,
-html:not([dir="rtl"]) footer,
+[dir="ltr"] footer a:not(.btn-primary-theme),
 html:not([dir="rtl"]) footer h4,
 html:not([dir="rtl"]) footer h5,
 html:not([dir="rtl"]) footer p,
 html:not([dir="rtl"]) footer ul,
-html:not([dir="rtl"]) footer li {
-  text-align: left;
+html:not([dir="rtl"]) footer li,
+html:not([dir="rtl"]) footer a:not(.btn-primary-theme) {
+  text-align: left !important;
+}
+
+/* LTR Icon & Margin Enforcement */
+[dir="ltr"] .mr-1, html:not([dir="rtl"]) .mr-1 { margin-right: 0.25rem !important; margin-left: 0 !important; }
+[dir="ltr"] .mr-1\.5, html:not([dir="rtl"]) .mr-1\.5 { margin-right: 0.375rem !important; margin-left: 0 !important; }
+[dir="ltr"] .mr-2, html:not([dir="rtl"]) .mr-2 { margin-right: 0.5rem !important; margin-left: 0 !important; }
+[dir="ltr"] .mr-2\.5, html:not([dir="rtl"]) .mr-2\.5 { margin-right: 0.625rem !important; margin-left: 0 !important; }
+[dir="ltr"] .mr-3, html:not([dir="rtl"]) .mr-3 { margin-right: 0.75rem !important; margin-left: 0 !important; }
+[dir="ltr"] .ml-1, html:not([dir="rtl"]) .ml-1 { margin-left: 0.25rem !important; margin-right: 0 !important; }
+[dir="ltr"] .ml-1\.5, html:not([dir="rtl"]) .ml-1\.5 { margin-left: 0.375rem !important; margin-right: 0 !important; }
+[dir="ltr"] .ml-2, html:not([dir="rtl"]) .ml-2 { margin-left: 0.5rem !important; margin-right: 0 !important; }
+[dir="ltr"] .ml-3, html:not([dir="rtl"]) .ml-3 { margin-left: 0.75rem !important; margin-right: 0 !important; }
+
+[dir="ltr"] .bi-arrow-right,
+[dir="ltr"] .bi-chevron-right,
+[dir="ltr"] .bi-arrow-left,
+[dir="ltr"] .bi-chevron-left,
+html:not([dir="rtl"]) .bi-arrow-right,
+html:not([dir="rtl"]) .bi-chevron-right,
+html:not([dir="rtl"]) .bi-arrow-left,
+html:not([dir="rtl"]) .bi-chevron-left {
+  transform: none !important;
 }
 
 /* ================= RTL Comprehensive Layout Rules ================= */
@@ -1143,19 +1612,6 @@ html[dir="rtl"] body,
   text-align: right;
 }
 
-[dir="rtl"] p:not(.text-center):not([class*="text-center"]),
-[dir="rtl"] h1:not(.text-center):not([class*="text-center"]),
-[dir="rtl"] h2:not(.text-center):not([class*="text-center"]),
-[dir="rtl"] h3:not(.text-center):not([class*="text-center"]),
-[dir="rtl"] h4:not(.text-center):not([class*="text-center"]),
-[dir="rtl"] h5:not(.text-center):not([class*="text-center"]),
-[dir="rtl"] h6:not(.text-center):not([class*="text-center"]),
-[dir="rtl"] ul:not(.text-center),
-[dir="rtl"] ol:not(.text-center),
-[dir="rtl"] li:not(.text-center) {
-  text-align: right;
-}
-
 /* RTL Form Controls */
 html[dir="rtl"] input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
 html[dir="rtl"] select,
@@ -1180,7 +1636,11 @@ html[dir="rtl"] table,
 }
 
 /* RTL Footer */
-[dir="rtl"] footer,
+[dir="rtl"] footer {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
 [dir="rtl"] footer h4,
 [dir="rtl"] footer h5,
 [dir="rtl"] footer p,
@@ -1228,11 +1688,51 @@ html[dir="rtl"] table,
   margin-right: 0.75rem !important;
 }
 
-/* Preserve Center Alignments in Both Modes */
+/* Bulletproof Center Alignment Preservation in All Modes */
 .text-center,
+.text-center > *,
+.text-center h1,
+.text-center h2,
+.text-center h3,
+.text-center h4,
+.text-center h5,
+.text-center h6,
+.text-center p,
+.text-center span,
+[class*="text-center"],
+[class*="text-center"] > *,
+[class*="text-center"] h1,
+[class*="text-center"] h2,
+[class*="text-center"] h3,
+[class*="text-center"] h4,
+[class*="text-center"] h5,
+[class*="text-center"] h6,
+[class*="text-center"] p,
+[class*="text-center"] span,
 [dir="rtl"] .text-center,
-[dir="ltr"] .text-center {
+[dir="rtl"] .text-center > *,
+[dir="rtl"] [class*="text-center"],
+[dir="rtl"] [class*="text-center"] > *,
+[dir="ltr"] .text-center,
+[dir="ltr"] .text-center > *,
+[dir="ltr"] [class*="text-center"],
+[dir="ltr"] [class*="text-center"] > * {
   text-align: center !important;
+}
+
+/* Allow explicit local overrides if child needs left or right */
+.text-center .text-left,
+.text-center [class*="text-left"],
+[class*="text-center"] .text-left,
+[class*="text-center"] [class*="text-left"] {
+  text-align: left !important;
+}
+
+.text-center .text-right,
+.text-center [class*="text-right"],
+[class*="text-center"] .text-right,
+[class*="text-center"] [class*="text-right"] {
+  text-align: right !important;
 }
 
 [dir="rtl"] .animate-marquee {
@@ -1448,5 +1948,161 @@ html[data-theme="dark"] body {
   display: inline-block;
   transform: scaleX(-1);
 }
+
+/* Proper text alignment for tables in RTL mode */
+[dir="rtl"] table {
+  text-align: right;
+}
+[dir="rtl"] th:not([class*="text-center"]),
+[dir="rtl"] td:not([class*="text-center"]) {
+  text-align: right;
+}
+
+/* Date Picker Calendar Indicator Contrast Fix for Light & Dark Mode */
+input[type="date"] {
+  color-scheme: light;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  filter: brightness(0) opacity(0.65);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  filter: brightness(0) opacity(0.95);
+}
+
+[data-theme="dark"] input[type="date"],
+.dark input[type="date"],
+[data-theme="dark"] .theme-input[type="date"],
+.dark .theme-input[type="date"] {
+  color-scheme: dark !important;
+}
+
+/* In dark mode, render calendar symbol clearly in pure white with exact size and position */
+[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator,
+.dark input[type="date"]::-webkit-calendar-picker-indicator,
+[data-theme="dark"] .theme-input[type="date"]::-webkit-calendar-picker-indicator,
+.dark .theme-input[type="date"]::-webkit-calendar-picker-indicator,
+[data-theme="dark"] #contactDate::-webkit-calendar-picker-indicator,
+.dark #contactDate::-webkit-calendar-picker-indicator {
+  cursor: pointer !important;
+  opacity: 1 !important;
+  filter: none !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='%23FFFFFF'%3E%3Cpath d='M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z'/%3E%3Crect x='7' y='12' width='2' height='2'/%3E%3Crect x='11' y='12' width='2' height='2'/%3E%3Crect x='15' y='12' width='2' height='2'/%3E%3Crect x='7' y='15' width='2' height='2'/%3E%3Crect x='11' y='15' width='2' height='2'/%3E%3Crect x='15' y='15' width='2' height='2'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 18px 18px !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+  width: 22px !important;
+  height: 22px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  transition: none !important;
+}
+
+/* In dark mode, contact calendar & date pickers have ZERO hover color, glow, or filter shift */
+[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator:hover,
+.dark input[type="date"]::-webkit-calendar-picker-indicator:hover,
+[data-theme="dark"] .theme-input[type="date"]::-webkit-calendar-picker-indicator:hover,
+.dark .theme-input[type="date"]::-webkit-calendar-picker-indicator:hover,
+[data-theme="dark"] #contactDate::-webkit-calendar-picker-indicator:hover,
+.dark #contactDate::-webkit-calendar-picker-indicator:hover {
+  cursor: pointer !important;
+  opacity: 1 !important;
+  filter: none !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='%23FFFFFF'%3E%3Cpath d='M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z'/%3E%3Crect x='7' y='12' width='2' height='2'/%3E%3Crect x='11' y='12' width='2' height='2'/%3E%3Crect x='15' y='12' width='2' height='2'/%3E%3Crect x='7' y='15' width='2' height='2'/%3E%3Crect x='11' y='15' width='2' height='2'/%3E%3Crect x='15' y='15' width='2' height='2'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 18px 18px !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+  transition: none !important;
+}
+
+/* Ensure no hover border or background change on contact calendar input in dark mode */
+[data-theme="dark"] #contactDate:hover,
+.dark #contactDate:hover {
+  background-color: #17171C !important;
+  border-color: #282833 !important;
+  box-shadow: none !important;
+}
+
+/* ================= SELECT & DROPDOWN POPUP HIGH CONTRAST FIX ================= */
+select {
+  color-scheme: light;
+}
+
+select option,
+option {
+  background-color: #FFFFFF !important;
+  color: #18181B !important;
+}
+
+[data-theme="dark"] select,
+.dark select,
+[data-theme="dark"] select.theme-input,
+.dark select.theme-input,
+[data-theme="dark"] #heroOccasionQuick,
+.dark #heroOccasionQuick {
+  color-scheme: dark !important;
+}
+
+[data-theme="dark"] select option,
+.dark select option,
+[data-theme="dark"] option,
+.dark option,
+[data-theme="dark"] #heroOccasionQuick option,
+.dark #heroOccasionQuick option {
+  background-color: #17171C !important;
+  color: #FFFFFF !important;
+}
+
+/* ================= UNIFIED BRAND IDENTITY (LOGO & BRAND COLOR EVERYWHERE) ================= */
+.brand-verse {
+  background: linear-gradient(135deg, #B7410E 0%, #D97706 50%, #C5A059 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: #B7410E;
+  font-weight: 900;
+  display: inline-block;
+}
+
+[data-theme="dark"] .brand-verse,
+.dark .brand-verse,
+footer .brand-verse,
+#footer .brand-verse {
+  background: linear-gradient(135deg, #E5A87B 0%, #F59E0B 50%, #E8CA7A 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: #E5A87B;
+  font-weight: 900;
+  display: inline-block;
+}
+
+.brand-subtitle {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-weight: 800;
+  color: #B7410E;
+}
+
+[data-theme="dark"] .brand-subtitle,
+.dark .brand-subtitle,
+footer .brand-subtitle,
+#footer .brand-subtitle {
+  color: #E5A87B !important;
+}
+
 
 

@@ -17,16 +17,16 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
       
       <!-- Brand Logo -->
-      <a href="index.html" class="flex items-center gap-2.5 group flex-shrink-0 h-10">
-        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#7C3AED] to-[#EC4899] text-white flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
-          <i class="bi bi-mask text-xl text-white"></i>
+      <a href="index.html" class="flex items-center gap-2 sm:gap-2.5 group flex-shrink-0 h-10">
+        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl overflow-hidden shadow-lg group-hover:scale-105 transition-transform flex-shrink-0 bg-[#B7410E] flex items-center justify-center">
+          <img src="favicon.svg" alt="FancyVerse Custom Costume Hire" class="w-full h-full object-cover">
         </div>
         <div class="flex flex-col justify-center">
-          <span class="text-xl font-black tracking-tight text-theme-main dark:text-white leading-none">
-            Fancy<span class="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] to-[#EC4899]">Verse</span>
+          <span class="text-base sm:text-xl font-black tracking-tight text-theme-main dark:text-white leading-none">
+            Fancy<span class="brand-verse">Verse</span>
           </span>
-          <span class="text-[9px] uppercase tracking-[0.25em] font-extrabold text-theme-accent dark:text-pink-400 mt-0.5">
-            Fun & Festive Rentals
+          <span class="hidden sm:block text-[8px] sm:text-[9px] uppercase tracking-[0.22em] font-extrabold text-[#B7410E] dark:text-[#E5A87B] mt-0.5 brand-subtitle">
+            Custom & Costume Hire
           </span>
         </div>
       </a>
@@ -108,27 +108,27 @@ document.addEventListener("DOMContentLoaded", () => {
         <!-- Cart Badge -->
         <a href="cart.html" aria-label="Rental Cart" class="relative w-9 h-9 flex items-center justify-center rounded-xl text-base hover:text-theme-accent hover:bg-theme-subtle transition" title="Rental Cart">
           <i class="bi bi-bag"></i>
-          <span class="cart-count absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#EC4899] text-white text-[9px] font-black flex items-center justify-center shadow">
+          <span class="cart-count absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 rounded-full bg-gradient-to-r from-[#B7410E] to-[#C5A059] text-white text-[9px] font-black flex items-center justify-center shadow">
             0
           </span>
         </a>
 
         <!-- Book Fitting CTA -->
-        <a href="contact.html#fitting" class="btn-primary-theme text-xs py-2 px-3 xl:px-4 shadow-sm whitespace-nowrap ml-1 bg-gradient-to-r from-[#7C3AED] to-[#EC4899] hover:opacity-90 flex items-center gap-1.5">
+        <a href="contact.html#fitting" class="btn-primary-theme text-xs py-2 px-3 xl:px-4 shadow-sm whitespace-nowrap ml-1 bg-gradient-to-r from-[#B7410E] to-[#C5A059] hover:opacity-90 flex items-center gap-1.5 text-white font-bold">
           <i class="bi bi-calendar-heart"></i> Book Fitting
         </a>
       </div>
 
-      <!-- Mobile Header Controls -->
-      <div class="flex items-center gap-2 lg:hidden">
-        <button id="mobileSearchBtn" aria-label="Search Catalog" class="p-2 text-base text-theme-main dark:text-white hover:text-theme-accent transition" title="Search">
+      <!-- Mobile & Tablet Header Controls (Search, Cart, Menu) -->
+      <div class="flex items-center gap-1.5 sm:gap-2 lg:hidden">
+        <button id="mobileSearchBtn" aria-label="Search Catalog" class="p-1 sm:p-2 text-sm sm:text-base text-theme-main dark:text-white hover:text-theme-accent transition" title="Search">
           <i class="bi bi-search"></i>
         </button>
-        <a href="cart.html" aria-label="Rental Cart" class="relative p-2 text-base text-theme-main dark:text-white">
+        <a href="cart.html" aria-label="Rental Cart" class="relative p-1 sm:p-2 text-sm sm:text-base text-theme-main dark:text-white">
           <i class="bi bi-bag"></i>
-          <span class="cart-count absolute top-0 right-0 min-w-[16px] h-[16px] rounded-full bg-[#EC4899] text-white text-[9px] font-black flex items-center justify-center">0</span>
+          <span class="cart-count absolute top-0 right-0 min-w-[15px] h-[15px] rounded-full bg-[#B7410E] text-white text-[8px] sm:text-[9px] font-black flex items-center justify-center">0</span>
         </a>
-        <button id="hamburgerBtn" aria-label="Open Menu" class="p-2 text-2xl text-theme-main dark:text-white cursor-pointer hover:text-theme-accent transition">
+        <button id="hamburgerBtn" aria-label="Open Menu" class="p-1 sm:p-2 text-xl sm:text-2xl text-theme-main dark:text-white cursor-pointer hover:text-theme-accent transition">
           <i class="bi bi-list"></i>
         </button>
       </div>
@@ -145,10 +145,17 @@ document.addEventListener("DOMContentLoaded", () => {
     <!-- Drawer Header -->
     <div class="p-5 border-b border-theme flex items-center justify-between">
       <div class="flex items-center gap-2.5">
-        <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#7C3AED] to-[#EC4899] text-white flex items-center justify-center shadow-sm">
-          <i class="bi bi-mask text-base text-white"></i>
+        <div class="w-9 h-9 rounded-xl overflow-hidden shadow-sm flex-shrink-0 bg-[#B7410E] flex items-center justify-center">
+          <img src="favicon.svg" alt="FancyVerse Custom Costume Hire" class="w-full h-full object-cover">
         </div>
-        <span class="font-black text-base">Fancy<span class="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] to-[#EC4899]">Verse</span></span>
+        <div class="flex flex-col justify-center">
+          <span class="font-black text-lg leading-none text-theme-main dark:text-white">
+            Fancy<span class="brand-verse">Verse</span>
+          </span>
+          <span class="text-[8px] uppercase tracking-[0.22em] font-extrabold text-[#B7410E] dark:text-[#E5A87B] mt-0.5 brand-subtitle">
+            Custom & Costume Hire
+          </span>
+        </div>
       </div>
       <button id="closeDrawerBtn" aria-label="Close Menu" class="p-2 text-xl hover:text-theme-accent text-gray-400 cursor-pointer">
         <i class="bi bi-x-lg"></i>
@@ -156,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 
     <!-- Drawer Body -->
-    <div class="p-6 overflow-y-auto flex-1 space-y-4">
+    <div class="p-5 overflow-y-auto flex-1 space-y-4">
       
       <div class="space-y-1">
         <div>
@@ -186,6 +193,10 @@ document.addEventListener("DOMContentLoaded", () => {
         <a href="size-guide.html" class="block py-2.5 font-bold text-xs hover:text-theme-accent">Size Guide</a>
         <a href="pricing.html" class="block py-2.5 font-bold text-xs hover:text-theme-accent">Pricing & Security Deposit</a>
         <a href="contact.html" class="block py-2.5 font-bold text-xs hover:text-theme-accent">Contact</a>
+        <a href="contact.html#fitting" class="flex items-center gap-2 py-2.5 font-bold text-xs text-[#B7410E] dark:text-[#E5A87B] hover:text-theme-main dark:hover:text-white">
+          <i class="bi bi-calendar-heart text-xs"></i>
+          <span>Book Fitting</span>
+        </a>
       </div>
 
       <div class="pt-4 border-t border-theme space-y-2">
@@ -195,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </a>
         <a href="cart.html" class="flex items-center justify-between py-2 text-xs font-bold">
           <span>Rental Cart</span>
-          <span class="cart-count min-w-[20px] h-[20px] rounded-full bg-gradient-to-r from-[#7C3AED] to-[#EC4899] text-white text-[10px] flex items-center justify-center font-black">0</span>
+          <span class="cart-count min-w-[20px] h-[20px] rounded-full bg-gradient-to-r from-[#B7410E] to-[#C5A059] text-white text-[10px] flex items-center justify-center font-black">0</span>
         </a>
       </div>
 
