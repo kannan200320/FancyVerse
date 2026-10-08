@@ -138,7 +138,12 @@
   </section>
 
   <!-- CONTACT INFO CARDS -->
-  <section class="py-12 bg-white dark:bg-[#121215]">
+  <section class="py-14 bg-white dark:bg-[#121215]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 text-center space-y-2">
+      <span class="text-theme-accent font-bold uppercase tracking-widest text-xs">Concierge & Flagship Location</span>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-theme-main dark:text-white">Our Broadway Location & Contact Channels</h2>
+      <p class="text-xs text-theme-muted dark:text-gray-400 max-w-lg mx-auto">Get in touch with our master costumiers, wardrobe dispatch, or schedule an in-person visit.</p>
+    </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       
       <div class="theme-card p-6 space-y-2">
@@ -253,7 +258,7 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1 flex items-center gap-1.5"><i class="bi bi-calendar-event text-theme-accent"></i> Event or Fitting Date <span class="text-rose-500">*</span></label>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1 flex items-center gap-1.5"><i class="bi bi-calendar-event text-theme-accent"></i> Preferred Consultation / Event Date <span class="text-rose-500">*</span></label>
               <input type="date" id="contactDate" required class="theme-input text-xs">
             </div>
             <div>
@@ -434,8 +439,15 @@
   <script src="js/main.js"></script>
 
   <script>
-    // Pre-fill type from URL query if available
+    // Pre-fill type from URL query if available & restrict past dates
     document.addEventListener('DOMContentLoaded', () => {
+      // Enforce minimum date to today (prevent selecting past dates)
+      const todayStr = new Date().toISOString().split('T')[0];
+      const contactDateInput = document.getElementById('contactDate');
+      if (contactDateInput) {
+        contactDateInput.min = todayStr;
+      }
+
       const params = new URLSearchParams(window.location.search);
       const typeParam = params.get('type');
       if (typeParam) {
@@ -468,6 +480,14 @@
       // Ensure all the details are filled by user
       if (!name || !email || !phone || !type || !occasion || !volume || !date || !timeSlot || !message) {
         if (window.showToast) window.showToast('Please fill in all details before submitting.', 'warning');
+        return;
+      }
+
+      // Validate that date is today or in the future (reject past dates)
+      const todayStr = new Date().toISOString().split('T')[0];
+      if (date < todayStr) {
+        if (window.showToast) window.showToast('Please select today or a future date for your consultation.', 'warning');
+        document.getElementById('contactDate').focus();
         return;
       }
 

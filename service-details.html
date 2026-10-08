@@ -149,6 +149,7 @@
         
         <!-- Service Deep-Dive Description -->
         <div class="space-y-4">
+          <span class="text-theme-accent font-bold uppercase tracking-widest text-xs block">Atelier Craftsmanship & Provenance</span>
           <h2 class="text-2xl font-bold text-theme-main dark:text-white">Service Overview & Heritage</h2>
           <p class="text-xs sm:text-sm text-theme-muted dark:text-gray-300 leading-relaxed">
             Our Venetian Masquerade collection is hand-curated from historical wardrobe ateliers in Venice and Florence. Each gown and tuxedo incorporates authentic 18th-century silhouettes enhanced with modern concealed stretch gussets and comfort linings so you can dance throughout the evening with effortless grace.
@@ -337,6 +338,7 @@
 
         <!-- FREQUENTLY ASKED QUESTIONS (ACCORDION) -->
         <div class="space-y-4">
+          <span class="text-theme-accent font-bold uppercase tracking-widest text-xs block">Curator Answers & Support</span>
           <h2 class="text-2xl font-bold text-theme-main dark:text-white">Frequently Asked Questions</h2>
           
           <div class="space-y-3" id="faqAccordion">
@@ -486,6 +488,13 @@
       const size = document.getElementById('quickSizeSelect').value;
       const duration = parseInt(document.getElementById('quickDurationSelect').value);
       const startDate = document.getElementById('quickStartDate').value;
+
+      const todayStr = new Date().toISOString().split('T')[0];
+      if (startDate < todayStr) {
+        if (window.showToast) window.showToast('Please select today or a future date for your rental.', 'warning');
+        document.getElementById('quickStartDate').focus();
+        return;
+      }
 
       window.store.addToCart('CST-CLT-302', {
         size: size,

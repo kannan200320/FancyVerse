@@ -589,7 +589,7 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1">Desired Appointment Date <span class="text-rose-500">*</span></label>
+              <label class="block text-xs font-bold text-theme-muted dark:text-gray-300 mb-1 flex items-center gap-1.5"><i class="bi bi-calendar-event text-theme-accent"></i> Preferred Consultation / Appointment Date <span class="text-rose-500">*</span></label>
               <input type="date" id="fittingDate" required class="theme-input text-xs">
             </div>
             <div>
@@ -786,6 +786,14 @@
       // Ensure all details are filled by user
       if (!name || !email || !phone || !tier || !suite || !occasion || !date || !timeSlot || !notes) {
         if (window.showToast) window.showToast('Please fill in all details before submitting.', 'warning');
+        return;
+      }
+
+      // Validate that date is today or in the future (reject past dates)
+      const todayStr = new Date().toISOString().split('T')[0];
+      if (date < todayStr) {
+        if (window.showToast) window.showToast('Please select today or a future date for your consultation.', 'warning');
+        document.getElementById('fittingDate').focus();
         return;
       }
 

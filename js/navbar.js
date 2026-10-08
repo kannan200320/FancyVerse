@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </a>
 
-      <!-- Desktop Navigation Menu (Issue 9: Perfect vertical centering and responsive spacing at 1024px) -->
-      <nav class="hidden lg:flex items-center lg:gap-3.5 xl:gap-6 text-xs font-bold whitespace-nowrap h-10" id="desktopNavLinks">
+      <!-- Desktop Navigation Menu (Well-spaced, elegantly aligned layout) -->
+      <nav class="hidden lg:flex items-center lg:gap-5 xl:gap-7 2xl:gap-8 text-xs font-bold whitespace-nowrap h-10 tracking-wide" id="desktopNavLinks">
         
         <!-- Home Dropdown -->
         <div class="relative nav-dropdown flex items-center h-10 group">
@@ -79,8 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
         <a href="contact.html" class="hover:text-theme-accent transition flex items-center h-10">Contact</a>
       </nav>
 
-      <!-- Desktop Right Controls (Issue 9: Responsive spacing and h-10 vertical centering) -->
-      <div class="hidden lg:flex items-center lg:gap-1.5 xl:gap-3 flex-shrink-0 h-10">
+      <!-- Desktop Right Controls (Comfortable spacing and clear separation) -->
+      <div class="hidden lg:flex items-center lg:gap-2.5 xl:gap-3.5 flex-shrink-0 h-10">
         
         <!-- Search Trigger -->
         <button id="searchModalBtn" aria-label="Search Catalog" class="w-9 h-9 flex items-center justify-center rounded-xl text-base hover:text-theme-accent hover:bg-theme-subtle transition" title="Search Costumes">
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </a>
 
         <!-- Book Fitting CTA -->
-        <a href="contact.html#fitting" class="btn-primary-theme text-xs py-2 px-3 xl:px-4 shadow-sm whitespace-nowrap ml-1 bg-gradient-to-r from-[#B7410E] to-[#C5A059] hover:opacity-90 flex items-center gap-1.5 text-white font-bold">
+        <a href="contact.html#fitting" class="btn-primary-theme text-xs py-2 px-3.5 xl:px-4 rounded-xl shadow-sm whitespace-nowrap ml-2 xl:ml-3 bg-gradient-to-r from-[#B7410E] to-[#C5A059] hover:opacity-90 flex items-center gap-1.5 text-white font-bold">
           <i class="bi bi-calendar-heart"></i> Book Fitting
         </a>
       </div>
