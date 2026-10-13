@@ -320,6 +320,9 @@ h6.text-white {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.16);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  outline: none;
 }
 
 .btn-primary-theme:hover {
@@ -341,6 +344,9 @@ h6.text-white {
   gap: 0.5rem;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   background: transparent;
+  overflow: hidden;
+  position: relative;
+  outline: none;
 }
 
 .btn-outline-theme:hover {
@@ -460,58 +466,116 @@ html:not(.dark):not([data-theme="dark"]) textarea::placeholder {
 
 /* 2. Gold Badges: Rich dark amber contrast in bright mode, radiant gold in dark mode */
 html:not(.dark):not([data-theme="dark"]) .theme-badge-gold,
-html:not(.dark):not([data-theme="dark"]) .theme-badge-gold *,
-html:not(.dark):not([data-theme="dark"]) .badge.theme-badge-gold,
-html:not(.dark):not([data-theme="dark"]) .badge.theme-badge-gold * {
+html:not(.dark):not([data-theme="dark"]) .badge.theme-badge-gold {
   background: linear-gradient(135deg, #FDF8ED 0%, #F5E8C8 100%) !important;
   color: #78350F !important;
   border: 1px solid #DFCB97 !important;
   font-weight: 800 !important;
 }
 
+html:not(.dark):not([data-theme="dark"]) .theme-badge-gold *,
+html:not(.dark):not([data-theme="dark"]) .badge.theme-badge-gold * {
+  background: transparent !important;
+  color: #78350F !important;
+}
+
 [data-theme="dark"] .theme-badge-gold,
 .dark .theme-badge-gold,
-[data-theme="dark"] .theme-badge-gold *,
-.dark .theme-badge-gold *,
 [data-theme="dark"] .badge.theme-badge-gold,
-.dark .badge.theme-badge-gold,
-[data-theme="dark"] .badge.theme-badge-gold *,
-.dark .badge.theme-badge-gold * {
+.dark .badge.theme-badge-gold {
   background: linear-gradient(135deg, #2B1E0A 0%, #3D2B0E 100%) !important;
   color: #E8CA7A !important;
   border: 1px solid #634718 !important;
 }
 
-/* 3. Wishlist Heart Buttons */
+[data-theme="dark"] .theme-badge-gold *,
+.dark .theme-badge-gold *,
+[data-theme="dark"] .badge.theme-badge-gold *,
+.dark .badge.theme-badge-gold * {
+  background: transparent !important;
+  color: #E8CA7A !important;
+}
+
+/* 3. Wishlist Heart Buttons (High-contrast & active red state in both bright & dark mode) */
+.wishlist-btn,
+#detailWishlistBtn,
+button[onclick*="toggleWishlist"],
+button[onclick*="Wishlist"] {
+  cursor: pointer !important;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease !important;
+}
+
+.wishlist-btn:hover,
+#detailWishlistBtn:hover,
+button[onclick*="toggleWishlist"]:hover,
+button[onclick*="Wishlist"]:hover {
+  transform: scale(1.1) !important;
+}
+
+html:not(.dark):not([data-theme="dark"]) .wishlist-btn,
+html:not(.dark):not([data-theme="dark"]) #detailWishlistBtn,
 html:not(.dark):not([data-theme="dark"]) button[onclick*="toggleWishlist"],
 html:not(.dark):not([data-theme="dark"]) button[onclick*="Wishlist"] {
   background-color: #FFFFFF !important;
   color: #18181B !important;
-  border-color: #E4E4E7 !important;
+  border: 1px solid #E4E4E7 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
 }
 
+html:not(.dark):not([data-theme="dark"]) .wishlist-btn i:not(.text-red-500),
+html:not(.dark):not([data-theme="dark"]) #detailWishlistBtn i:not(.text-red-500),
 html:not(.dark):not([data-theme="dark"]) button[onclick*="toggleWishlist"] i:not(.text-red-500),
 html:not(.dark):not([data-theme="dark"]) button[onclick*="Wishlist"] i:not(.text-red-500) {
   color: #18181B !important;
 }
 
+[data-theme="dark"] .wishlist-btn,
+.dark .wishlist-btn,
+[data-theme="dark"] #detailWishlistBtn,
+.dark #detailWishlistBtn,
+[data-theme="dark"] button[onclick*="toggleWishlist"],
+.dark button[onclick*="toggleWishlist"],
+[data-theme="dark"] button[onclick*="Wishlist"],
+.dark button[onclick*="Wishlist"] {
+  background-color: #1E1E24 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #2D2D38 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .wishlist-btn i:not(.text-red-500),
+.dark .wishlist-btn i:not(.text-red-500),
+[data-theme="dark"] #detailWishlistBtn i:not(.text-red-500),
+.dark #detailWishlistBtn i:not(.text-red-500),
+[data-theme="dark"] button[onclick*="toggleWishlist"] i:not(.text-red-500),
+.dark button[onclick*="toggleWishlist"] i:not(.text-red-500),
+[data-theme="dark"] button[onclick*="Wishlist"] i:not(.text-red-500),
+.dark button[onclick*="Wishlist"] i:not(.text-red-500) {
+  color: #FFFFFF !important;
+}
+
+/* Active / favorited state: crisp, radiant ruby red heart icon in all modes */
+.wishlist-btn i.text-red-500,
+.wishlist-btn.text-red-500 i,
+.wishlist-btn .text-red-500,
+#detailWishlistBtn i.text-red-500,
+#detailWishlistBtn.text-red-500 i,
+#detailWishlistBtn .text-red-500,
 button[onclick*="toggleWishlist"] i.text-red-500,
+button[onclick*="toggleWishlist"].text-red-500 i,
 button[onclick*="toggleWishlist"] .text-red-500,
 button[onclick*="Wishlist"] i.text-red-500,
-button[onclick*="Wishlist"] .text-red-500 {
+button[onclick*="Wishlist"].text-red-500 i,
+button[onclick*="Wishlist"] .text-red-500,
+i.bi-heart-fill.text-red-500 {
   color: #EF4444 !important;
 }
 
-[data-theme="dark"] button[onclick*="toggleWishlist"],
-.dark button[onclick*="toggleWishlist"] {
-  background-color: #1E1E24 !important;
-  color: #FFFFFF !important;
-  border-color: #2D2D38 !important;
-}
-
-[data-theme="dark"] button[onclick*="toggleWishlist"] i:not(.text-red-500),
-.dark button[onclick*="toggleWishlist"] i:not(.text-red-500) {
-  color: #FFFFFF !important;
+.wishlist-btn:hover i,
+#detailWishlistBtn:hover i,
+button[onclick*="toggleWishlist"]:hover i,
+button[onclick*="Wishlist"]:hover i {
+  color: #EF4444 !important;
 }
 
 /* 4. White / Light Buttons & Pills (MUST ALWAYS have dark text in all contexts) */
@@ -531,91 +595,148 @@ button.bg-white:hover * {
   color: #18181B !important;
 }
 
-/* 5. Primary Theme Buttons (Always crisp white text and white icons, in normal & hover states) */
+/* 5. Primary Theme Buttons & Universal CTA Reset (Always crisp white text, no child square markings) */
 .btn-primary-theme,
-.btn-primary-theme *,
 a.btn-primary-theme,
-a.btn-primary-theme *,
-button.btn-primary-theme,
-button.btn-primary-theme * {
+button.btn-primary-theme {
   color: #FFFFFF !important;
 }
 
+.btn-primary-theme *,
+a.btn-primary-theme *,
+button.btn-primary-theme * {
+  color: #FFFFFF !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Universal button & link reset: Prevents square outline or bounding box artifacts on hover/focus */
+.btn-primary-theme,
+.btn-outline-theme,
+.btn-white,
+a[class*="btn-"],
+button[class*="btn-"],
+a.btn-primary-theme,
+button.btn-primary-theme,
+a.btn-outline-theme,
+button.btn-outline-theme {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+.btn-primary-theme:focus,
+.btn-primary-theme:focus-visible,
+.btn-outline-theme:focus,
+.btn-outline-theme:focus-visible,
+a[class*="btn-"]:focus,
+a[class*="btn-"]:focus-visible,
+button[class*="btn-"]:focus,
+button[class*="btn-"]:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Primary buttons hover state */
 .btn-primary-theme:hover,
-.btn-primary-theme:hover *,
 a.btn-primary-theme:hover,
-a.btn-primary-theme:hover *,
-button.btn-primary-theme:hover,
-button.btn-primary-theme:hover * {
+button.btn-primary-theme:hover {
   color: #FFFFFF !important;
   background-color: var(--color-secondary, #C84E18) !important;
 }
 
+.btn-primary-theme:hover *,
+a.btn-primary-theme:hover *,
+button.btn-primary-theme:hover * {
+  color: #FFFFFF !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
 /* 6. Outline Theme Buttons: Default, Direct Hover & Card/Group Hover States */
-html:not(.dark):not([data-theme="dark"]) .btn-outline-theme:not(:hover):not(.group:hover .btn-outline-theme):not(.theme-card:hover .btn-outline-theme),
-html:not(.dark):not([data-theme="dark"]) .btn-outline-theme:not(:hover):not(.group:hover .btn-outline-theme):not(.theme-card:hover .btn-outline-theme) * {
+html:not(.dark):not([data-theme="dark"]) .btn-outline-theme:not(:hover):not(.group:hover .btn-outline-theme):not(.theme-card:hover .btn-outline-theme) {
   color: var(--color-primary, #B7410E) !important;
   border-color: var(--color-border, #EADBCE) !important;
 }
 
+html:not(.dark):not([data-theme="dark"]) .btn-outline-theme:not(:hover):not(.group:hover .btn-outline-theme):not(.theme-card:hover .btn-outline-theme) * {
+  color: var(--color-primary, #B7410E) !important;
+  background-color: transparent !important;
+}
+
 /* Whenever .btn-outline-theme is hovered, OR when its parent card/group is hovered */
 .btn-outline-theme:hover,
-.btn-outline-theme:hover *,
 a.btn-outline-theme:hover,
-a.btn-outline-theme:hover *,
 button.btn-outline-theme:hover,
-button.btn-outline-theme:hover *,
 .group:hover .btn-outline-theme,
-.group:hover .btn-outline-theme *,
 .theme-card:hover .btn-outline-theme,
-.theme-card:hover .btn-outline-theme *,
 .group:hover [class*="group-hover:bg-theme-main"],
-.group:hover [class*="group-hover:bg-theme-main"] *,
 .group:hover [class*="group-hover:bg-theme"]:not([class*="group-hover:text-"]),
-.group:hover [class*="group-hover:bg-theme"]:not([class*="group-hover:text-"]) *,
 [class*="hover:bg-theme-main"]:hover,
-[class*="hover:bg-theme-main"]:hover *,
-[class*="hover:bg-[#B7410E]"]:hover,
-[class*="hover:bg-[#B7410E]"]:hover * {
+[class*="hover:bg-[#B7410E]"]:hover {
   background-color: var(--color-primary, #B7410E) !important;
   border-color: var(--color-primary, #B7410E) !important;
   color: #FFFFFF !important;
+}
+
+.btn-outline-theme:hover *,
+a.btn-outline-theme:hover *,
+button.btn-outline-theme:hover *,
+.group:hover .btn-outline-theme *,
+.theme-card:hover .btn-outline-theme *,
+.group:hover [class*="group-hover:bg-theme-main"] *,
+.group:hover [class*="group-hover:bg-theme"]:not([class*="group-hover:text-"]) *,
+[class*="hover:bg-theme-main"]:hover *,
+[class*="hover:bg-[#B7410E]"]:hover * {
+  color: #FFFFFF !important;
+  background-color: transparent !important;
+  background-image: none !important;
 }
 
 .group:hover [class*="group-hover:text-white"]:not([class*="group-hover:bg-"]),
 .group:hover [class*="group-hover:text-white"]:not([class*="group-hover:bg-"]) * {
   color: #FFFFFF !important;
+  background-color: transparent !important;
 }
 
 [data-theme="dark"] .btn-outline-theme:hover,
 .dark .btn-outline-theme:hover,
-[data-theme="dark"] .btn-outline-theme:hover *,
-.dark .btn-outline-theme:hover *,
 [data-theme="dark"] .group:hover .btn-outline-theme,
 .dark .group:hover .btn-outline-theme,
-[data-theme="dark"] .group:hover .btn-outline-theme *,
-.dark .group:hover .btn-outline-theme *,
 [data-theme="dark"] .theme-card:hover .btn-outline-theme,
-.dark .theme-card:hover .btn-outline-theme,
-[data-theme="dark"] .theme-card:hover .btn-outline-theme *,
-.dark .theme-card:hover .btn-outline-theme * {
+.dark .theme-card:hover .btn-outline-theme {
   background-color: var(--color-primary, #B7410E) !important;
   border-color: var(--color-primary, #B7410E) !important;
   color: #FFFFFF !important;
 }
 
+[data-theme="dark"] .btn-outline-theme:hover *,
+.dark .btn-outline-theme:hover *,
+[data-theme="dark"] .group:hover .btn-outline-theme *,
+.dark .group:hover .btn-outline-theme *,
+[data-theme="dark"] .theme-card:hover .btn-outline-theme *,
+.dark .theme-card:hover .btn-outline-theme * {
+  color: #FFFFFF !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
 /* 6b. Outline buttons on dark or theme banners when hovered turn bright white with dark text */
 .bg-theme-main .btn-outline-theme:hover,
-.bg-theme-main .btn-outline-theme:hover *,
 [class*="bg-[#7E513B]"] .btn-outline-theme:hover,
-[class*="bg-[#7E513B]"] .btn-outline-theme:hover *,
 .btn-outline-theme.border-white:hover,
-.btn-outline-theme.border-white:hover *,
-.btn-outline-theme[class*="border-white"]:hover,
-.btn-outline-theme[class*="border-white"]:hover * {
+.btn-outline-theme[class*="border-white"]:hover {
   background-color: #FFFFFF !important;
   border-color: #FFFFFF !important;
   color: #111827 !important;
+}
+
+.bg-theme-main .btn-outline-theme:hover *,
+[class*="bg-[#7E513B]"] .btn-outline-theme:hover *,
+.btn-outline-theme.border-white:hover *,
+.btn-outline-theme[class*="border-white"]:hover * {
+  color: #111827 !important;
+  background-color: transparent !important;
+  background-image: none !important;
 }
 
 /* 7. Quick View Hover Overlay Button on Cards */
@@ -676,25 +797,34 @@ span.text-white,
 
 /* Buttons and elements that turn white on hover MUST always have sharp dark charcoal text */
 [class*="hover:bg-white"]:hover,
-[class*="hover:bg-white"]:hover *,
 a[class*="hover:bg-white"]:hover,
-a[class*="hover:bg-white"]:hover *,
 button[class*="hover:bg-white"]:hover,
-button[class*="hover:bg-white"]:hover *,
 a.text-white:hover[class*="hover:bg-white"],
-a.text-white:hover[class*="hover:bg-white"] *,
 button.text-white:hover[class*="hover:bg-white"],
+.group:hover [class*="group-hover:bg-white"] {
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+}
+
+[class*="hover:bg-white"]:hover *,
+a[class*="hover:bg-white"]:hover *,
+button[class*="hover:bg-white"]:hover *,
+a.text-white:hover[class*="hover:bg-white"] *,
 button.text-white:hover[class*="hover:bg-white"] *,
-.group:hover [class*="group-hover:bg-white"],
-.group:hover [class*="group-hover:bg-white"] *,
+.group:hover [class*="group-hover:bg-white"] * {
+  color: #111827 !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
 [class*="hover:text-zinc-950"]:hover,
 [class*="hover:text-zinc-950"]:hover *,
 [class*="hover:text-zinc-900"]:hover,
 [class*="hover:text-zinc-900"]:hover *,
 [class*="hover:text-black"]:hover,
 [class*="hover:text-black"]:hover * {
-  background-color: #FFFFFF !important;
   color: #111827 !important;
+  background-color: transparent !important;
 }
 
 /* 11. Home 2 Studio Hero Section Contrast & High Visibility */
@@ -706,13 +836,18 @@ button.text-white:hover[class*="hover:bg-white"] *,
 }
 
 [class*="bg-[#0D051A]"] a.text-white:hover,
-[class*="bg-[#0D051A]"] a.text-white:hover *,
 [class*="bg-[#0D051A]"] a[class*="hover:bg-white"]:hover,
-[class*="bg-[#0D051A]"] a[class*="hover:bg-white"]:hover *,
-[class*="bg-[#0D051A]"] a.bg-white,
-[class*="bg-[#0D051A]"] a.bg-white * {
+[class*="bg-[#0D051A]"] a.bg-white {
   background-color: #FFFFFF !important;
   color: #111827 !important;
+}
+
+[class*="bg-[#0D051A]"] a.text-white:hover *,
+[class*="bg-[#0D051A]"] a[class*="hover:bg-white"]:hover *,
+[class*="bg-[#0D051A]"] a.bg-white * {
+  color: #111827 !important;
+  background-color: transparent !important;
+  background-image: none !important;
 }
 
 [class*="bg-[#0D051A]"] .text-amber-200,
@@ -861,21 +996,14 @@ footer .text-zinc-500,
 /* Any button, link or badge with a white background must ALWAYS have dark, high-contrast text in all themes */
 a.bg-white,
 button.bg-white,
-a.bg-white *,
-button.bg-white *,
 .btn-white,
-.btn-white *,
 .bg-white.text-theme-main,
 .bg-white.text-\[\#7E513B\],
 .bg-white.text-\[\#271E1A\],
 [data-theme="dark"] a.bg-white,
 .dark a.bg-white,
-[data-theme="dark"] button.bg-white,
-.dark button.bg-white,
-[data-theme="dark"] a.bg-white *,
-.dark a.bg-white *,
-[data-theme="dark"] button.bg-white *,
-.dark button.bg-white *,
+[data-theme="dark"] button.bg-white:not([onclick*="Wishlist"]):not([onclick*="toggleWishlist"]):not(.wishlist-btn),
+.dark button.bg-white:not([onclick*="Wishlist"]):not([onclick*="toggleWishlist"]):not(.wishlist-btn),
 [data-theme="dark"] .bg-white.text-theme-main,
 .dark .bg-white.text-theme-main,
 [data-theme="dark"] .bg-white.text-\[\#7E513B\],
@@ -891,25 +1019,42 @@ button.bg-white *,
   font-weight: 800 !important;
 }
 
+a.bg-white *,
+button.bg-white *,
+.btn-white *,
+[data-theme="dark"] a.bg-white *,
+.dark a.bg-white *,
+[data-theme="dark"] button.bg-white *,
+.dark button.bg-white * {
+  background-color: transparent !important;
+  background-image: none !important;
+  color: #111827 !important;
+}
+
 /* Hover state for white callout buttons */
 a.bg-white:hover,
 button.bg-white:hover,
-a.bg-white:hover *,
-button.bg-white:hover *,
 [data-theme="dark"] a.bg-white:hover,
 .dark a.bg-white:hover,
 [data-theme="dark"] button.bg-white:hover,
 .dark button.bg-white:hover,
-[data-theme="dark"] a.bg-white:hover *,
-.dark a.bg-white:hover *,
-[data-theme="dark"] button.bg-white:hover *,
-.dark button.bg-white:hover *,
 [data-theme="dark"] .bg-theme-main a.bg-white:hover,
 .dark .bg-theme-main a.bg-white:hover,
 [data-theme="dark"] .bg-theme-main button.bg-white:hover,
 .dark .bg-theme-main button.bg-white:hover {
   background-color: #F4EFEB !important;
   color: #111827 !important;
+}
+
+a.bg-white:hover *,
+button.bg-white:hover *,
+[data-theme="dark"] a.bg-white:hover *,
+.dark a.bg-white:hover *,
+[data-theme="dark"] button.bg-white:hover *,
+.dark button.bg-white:hover * {
+  color: #111827 !important;
+  background-color: transparent !important;
+  background-image: none !important;
 }
 
 /* Responsive Container */
